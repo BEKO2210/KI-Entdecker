@@ -288,30 +288,31 @@ const Kurs = ({ progress }: KursProps) => {
                             </ul>
                           </div>
 
-                          {/* Meta & Action */}
-                          <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-neutral-light">
-                            <div className="flex items-center gap-4 text-sm text-neutral-gray">
-                              <div className="flex items-center gap-1">
-                                <Clock className="w-4 h-4" />
-                                <span>{day.duration}</span>
-                              </div>
-                              <div className="flex items-center gap-1">
-                                <BookOpen className="w-4 h-4" />
-                                <span>{day.lessons} Lektionen</span>
-                              </div>
+                          {/* Meta */}
+                          <div className="flex items-center gap-4 text-sm text-neutral-gray pt-4 border-t border-neutral-light">
+                            <div className="flex items-center gap-1">
+                              <Clock className="w-4 h-4" />
+                              <span>{day.duration}</span>
                             </div>
+                            <div className="flex items-center gap-1">
+                              <BookOpen className="w-4 h-4" />
+                              <span>{day.lessons} Lektionen</span>
+                            </div>
+                          </div>
 
+                          {/* Action Button */}
+                          <div className="mt-4">
                             {isUnlocked ? (
                               <button
                                 onClick={(e) => { e.stopPropagation(); handleStartDay(day.id); }}
-                                className="flex items-center gap-2 px-4 py-2 bg-primary-purple text-white rounded-xl text-sm font-medium hover:bg-primary-purple/90 transition-colors group/btn"
+                                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-primary-purple text-white rounded-xl text-sm font-semibold hover:bg-primary-purple/90 transition-colors group/btn"
                                 aria-label={`${day.title} starten`}
                               >
                                 {isCompleted ? 'Wiederholen' : (day.id === 1 && completedDays === 0 ? 'Starten' : 'Weitermachen')}
                                 <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                               </button>
                             ) : (
-                              <span className="flex items-center gap-2 px-4 py-2 bg-neutral-light text-neutral-gray rounded-xl text-sm">
+                              <span className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-neutral-light text-neutral-gray rounded-xl text-sm">
                                 <Lock className="w-4 h-4" />
                                 Tag {day.id - 1} zuerst
                               </span>
