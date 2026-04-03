@@ -1,174 +1,144 @@
+<div align="center">
+
+<img src="public/images/robot-hero.png" alt="KI-Entdecker Maskottchen" width="180">
+
 # KI-Entdecker
 
-Ein interaktiver KI-Kurs für junge Entdecker. Entdecke die Welt der Künstlichen Intelligenz – spielerisch, verständlich und mit echten Projekten.
+### Künstliche Intelligenz für junge Entdecker
 
-## 🚀 Live Demo
+**Ein kostenloser, interaktiver Kurs, der Kindern beibringt,
+das wichtigste Werkzeug unserer Zeit zu verstehen und zu nutzen.**
 
-Die Webseite ist live unter: [https://beko2210.github.io/KI-Entdecker/](https://beko2210.github.io/KI-Entdecker/)
-
-## 📋 Inhalt
-
-- **5 Tage KI-Abenteuer**: Von den Grundlagen bis zum Abschlussprojekt
-- **Interaktive Lektionen**: Videos, Übungen und Projekte
-- **Badges sammeln**: Motivierendes Belohnungssystem
-- **Arbeitsblätter**: Zum Ausdrucken oder digital Ausfüllen
-- **Eltern-Guide**: Umfassende Informationen für Eltern
-
-## 🛠️ Technologien
-
-- React + TypeScript
-- Tailwind CSS
-- React Router
-- Vite
-- Local Storage für Fortschritte
-
-## 📦 Installation & Entwicklung
-
-```bash
-# Repository klonen
-git clone https://github.com/beko2210/KI-Entdecker.git
-cd KI-Entdecker
-
-# Abhängigkeiten installieren
-npm install
-
-# Entwicklungsserver starten
-npm run dev
-
-# Build erstellen
-npm run build
-```
-
-## 🚀 Deployment auf GitHub Pages
-
-### 1. Repository Einstellungen
-
-1. Gehe zu deinem GitHub Repository
-2. Klicke auf **Settings**
-3. Wähle im linken Menü **Pages**
-4. Unter **Build and deployment** wähle:
-   - **Source**: GitHub Actions
-
-### 2. Workflow aktivieren
-
-Der Workflow ist bereits konfiguriert (`.github/workflows/deploy.yml`). Er wird automatisch ausgeführt:
-
-- Bei jedem Push auf `main` oder `master`
-- Manuell über die Actions-Registerkarte
-
-### 3. Ersten Deploy auslösen
-
-```bash
-# Änderungen committen und pushen
-git add .
-git commit -m "Initial commit"
-git push origin main
-```
-
-Nach dem Push wird der Workflow automatisch gestartet. Du kannst den Fortschritt unter **Actions** in deinem Repository verfolgen.
-
-### 4. URL anpassen (wichtig!)
-
-Nach dem ersten Deploy:
-
-1. Gehe zu **Settings** → **Pages**
-2. Die URL wird angezeigt (z.B. `https://beko2210.github.io/KI-Entdecker/`)
-3. Passe die `vite.config.ts` an:
-
-```typescript
-export default defineConfig({
-  base: '/KI-Entdecker/',  // <-- Dein Repository-Name
-  // ...
-});
-```
-
-4. Commite und pushe die Änderung
-
-## 📁 Projektstruktur
-
-```
-app/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml          # GitHub Actions Workflow
-├── public/
-│   └── images/                 # Bilder und Assets
-├── src/
-│   ├── components/             # Wiederverwendbare Komponenten
-│   │   ├── Navigation.tsx
-│   │   └── Footer.tsx
-│   ├── hooks/
-│   │   └── useProgress.ts      # Local Storage Hook für Fortschritte
-│   ├── pages/                  # Seiten-Komponenten
-│   │   ├── Home.tsx
-│   │   ├── Kurs.tsx
-│   │   ├── Materialien.tsx
-│   │   ├── Eltern.tsx
-│   │   ├── Wochenplan.tsx
-│   │   ├── Impressum.tsx
-│   │   └── Datenschutz.tsx
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css
-├── index.html
-├── package.json
-├── tailwind.config.js
-├── tsconfig.json
-└── vite.config.ts
-```
-
-## 🎯 Features
-
-### Fortschrittsspeicherung
-- Fortschritte werden im Browser Local Storage gespeichert
-- Keine Anmeldung nötig
-- Daten bleiben auf dem Gerät
-- Fortschritt kann zurückgesetzt werden
-
-### Responsive Design
-- Optimiert für Desktop, Tablet und Mobile
-- Touch-freundliche Bedienung
-- Schnelle Ladezeiten
-
-### Barrierefreiheit
-- Semantisches HTML
-- ARIA-Labels
-- Tastaturnavigation
-- Reduced Motion Support
-
-## 📝 Seiten
-
-| Seite | Pfad | Beschreibung |
-|-------|------|--------------|
-| Startseite | `/` | Hero-Bereich mit Überblick |
-| Der Kurs | `/kurs` | Alle 5 Tage mit Fortschritt |
-| Materialien | `/materialien` | Downloads und Ressourcen |
-| Für Eltern | `/eltern` | Informationen und FAQ |
-| Wochenplan | `/wochenplan` | Detaillierter Zeitplan |
-| Impressum | `/impressum` | Rechtliche Angaben |
-| Datenschutz | `/datenschutz` | Datenschutzerklärung |
-
-## 🔒 Datenschutz
-
-- Keine Cookies
-- Keine Tracking-Tools
-- Keine Datenweitergabe
-- Fortschritte nur lokal gespeichert
-- DSGVO-konform
-
-## 📧 Kontakt
-
-Bei Fragen oder Anregungen:
-
-**Belkis Aslani**  
-Vogelsangstraße 32  
-71691 Freiberg am Neckar  
-E-Mail: [belkis.aslani@gmail.com](mailto:belkis.aslani@gmail.com)
-
-## 📄 Lizenz
-
-Dieses Projekt ist Open Source und unter der MIT-Lizenz verfügbar.
+[![Live](https://img.shields.io/badge/Live%20Demo-beko2210.github.io-7F56D9?style=for-the-badge&logo=github)](https://beko2210.github.io/KI-Entdecker/)
+[![Lizenz](https://img.shields.io/badge/Lizenz-CC%20BY--NC--ND%204.0-14b8a6?style=for-the-badge)](LICENSE)
 
 ---
 
-Gemacht mit ❤️ für junge Entdecker
+</div>
+
+## Warum dieses Projekt existiert
+
+Ich bin 38 Jahre alt. In meinem Leben habe ich den Aufstieg des Internets erlebt, die ersten Smartphones, soziale Medien – und jetzt Künstliche Intelligenz. Jede dieser Technologien hat die Welt verändert. Aber keine davon wird so tiefgreifend sein wie KI.
+
+Meine Kinder wachsen in einer Welt auf, in der KI überall ist: in ihren Sprachassistenten, in ihren Suchmaschinen, in den Empfehlungen auf ihren Bildschirmen. Sie nutzen KI jeden Tag – oft ohne es zu wissen.
+
+**Wenn unsere Kinder 38 sind, wird KI das Werkzeug sein, das über Chancen entscheidet.** Nicht ob man es nutzt, sondern *wie gut* man es nutzt. Ich möchte nicht, dass meine Kinder von dieser Technologie benutzt werden. Ich möchte, dass sie sie beherrschen.
+
+Deshalb habe ich KI-Entdecker gebaut: einen Kurs, der Kindern ab 8 Jahren beibringt, KI zu verstehen, zu hinterfragen und kreativ einzusetzen. Nicht als passives Werkzeug, sondern als Partner zum Denken, Lernen und Erschaffen.
+
+**Dieser Kurs ist und bleibt kostenlos. Weil jedes Kind diesen Zugang verdient.**
+
+---
+
+## Was Kinder in 5 Tagen lernen
+
+<table>
+<tr>
+<td width="60" align="center"><strong>Tag</strong></td>
+<td><strong>Thema</strong></td>
+<td><strong>Was passiert</strong></td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td><strong>Was ist KI?</strong></td>
+<td>Die Grundlagen verstehen: Was KI ist, wie Maschinen lernen, und den ersten eigenen Chatbot-Prompt schreiben.</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td><strong>Prompt Engineering</strong></td>
+<td>Das 5-Sterne-Rezept für gute Fragen an die KI lernen: Rolle, Aufgabe, Zielgruppe, Format, Ton & Stil.</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td><strong>Kreativ mit KI</strong></td>
+<td>Bilder mit KI erstellen, Geschichten schreiben, Songtexte und Gedichte verfassen.</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td><strong>Problemlösen mit KI</strong></td>
+<td>KI als Lernhelfer nutzen: recherchieren, Texte zusammenfassen, Fehler finden und korrigieren.</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td><strong>Abschlussprojekt</strong></td>
+<td>Eines von drei Projekten umsetzen (KI-Comic, KI-Quiz oder KI-Assistent) und ein Zertifikat erhalten.</td>
+</tr>
+</table>
+
+---
+
+## Was im Kurs enthalten ist
+
+- **15 Lektionen** in 5 Kurstagen (je ~45 Minuten, Tag 5: ~60 Minuten)
+- **5 Badges** als Belohnung für jeden abgeschlossenen Tag
+- **Professionelles Zertifikat** zum Ausdrucken nach Abschluss
+- **Arbeitsblätter** mit Übungen und Lösungen
+- **Prompt-Cheat-Sheet** mit dem 5-Sterne-Rezept
+- **Eltern-Guide** mit Gesprächsanregungen für jeden Tag
+- **Wochenplan** zum Drucken für die Kursplanung
+- **KI-Tools-Übersicht** mit kindersicheren, kostenlosen Tools
+
+---
+
+## Für wen ist dieser Kurs?
+
+**Für Kinder ab 8 Jahren** – mit oder ohne Eltern.
+
+| Alter | Empfehlung |
+|-------|-----------|
+| 8–10 Jahre | Gemeinsam mit den Eltern durchführen |
+| 10–12 Jahre | Weitgehend selbstständig, Eltern in der Nähe |
+| 12–14 Jahre | Selbstständig, gelegentlich besprechen |
+
+Der Kurs braucht nur einen Browser und Internetzugang. Keine App, keine Installation, keine Anmeldung, keine Kosten.
+
+---
+
+## Was diesen Kurs besonders macht
+
+**Kein Frontalunterricht.** Kinder lesen, probieren aus, experimentieren und erstellen eigene Projekte.
+
+**Kein Tracking.** Keine Cookies, keine Accounts, keine Daten auf Servern. Der Fortschritt bleibt lokal im Browser.
+
+**Kein Marketing.** Keine Werbung, keine versteckten Kosten, keine Premium-Version.
+
+**Kritisches Denken.** Kinder lernen nicht nur, KI zu nutzen, sondern auch, KI-Antworten zu hinterfragen. Denn KI ist ein Werkzeug – kein Orakel.
+
+---
+
+## Installierbar als App
+
+KI-Entdecker ist eine Progressive Web App (PWA). Auf dem Handy oder Tablet kann die Seite als App installiert werden – mit dem Roboter als App-Icon. Updates passieren automatisch im Hintergrund.
+
+---
+
+## Kontakt
+
+**Belkis Aslani**
+[belkis.aslani@gmail.com](mailto:belkis.aslani@gmail.com)
+
+---
+
+## Lizenz
+
+Dieses Projekt steht unter der **Creative Commons BY-NC-ND 4.0** Lizenz.
+
+**Du darfst:**
+- Den Kurs kostenlos nutzen und teilen
+
+**Unter folgenden Bedingungen:**
+- **Namensnennung** – Der Name „KI-Entdecker" und die Autorin müssen genannt werden
+- **Nicht kommerziell** – Keine kommerzielle Nutzung
+- **Keine Bearbeitung** – Das Material darf nicht verändert oder als Grundlage für eigene Werke genutzt werden
+
+Vollständiger Lizenztext: [LICENSE](LICENSE)
+
+---
+
+<div align="center">
+
+Gemacht mit ❤️ für die nächste Generation
+
+*Damit unsere Kinder die KI beherrschen – und nicht umgekehrt.*
+
+</div>
