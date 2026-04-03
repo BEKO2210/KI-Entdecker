@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sparkles, Award } from 'lucide-react';
+import { Menu, X, Award } from 'lucide-react';
+import { buildAssetUrl } from '@/lib/paths';
 import type { useProgress } from '../hooks/useProgress';
 
 interface NavigationProps {
@@ -72,10 +73,11 @@ const Navigation = ({ progress }: NavigationProps) => {
               className="flex items-center gap-2 group"
               aria-label="Zur Startseite"
             >
-              <div className="relative w-10 h-10 flex items-center justify-center bg-gradient-to-br from-primary-purple to-primary-teal rounded-xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-                <Sparkles className="w-5 h-5 text-white" aria-hidden="true" />
-                <div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
+              <img
+                src={buildAssetUrl('images/robot-hero.png')}
+                alt=""
+                className="w-10 h-10 rounded-xl object-contain transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
+              />
               <span className="font-outfit font-bold text-xl text-neutral-dark">
                 KI-Entdecker
               </span>
