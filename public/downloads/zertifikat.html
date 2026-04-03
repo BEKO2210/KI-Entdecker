@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KI-Entdecker Zertifikat</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Outfit:wght@300;400;500;600&display=swap');
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     font-family: 'Outfit', sans-serif;
-    background: #f8f9fa;
+    background: #f0ede8;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,51 +28,54 @@
 
   .certificate {
     width: 297mm;
-    min-height: 210mm;
+    height: 210mm;
     background: #fff;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
   }
 
-  /* Decorative border frame */
-  .border-frame {
+  /* Outer gold border */
+  .border-outer {
     position: absolute;
-    inset: 12px;
-    border: 3px solid #7F56D9;
-    border-radius: 16px;
+    inset: 8mm;
+    border: 2px solid #b8972e;
     pointer-events: none;
   }
-  .border-frame::before {
-    content: '';
+  /* Inner fine border */
+  .border-inner {
     position: absolute;
-    inset: 4px;
-    border: 1px solid #E0D4F5;
-    border-radius: 12px;
+    inset: 10mm;
+    border: 0.5px solid #d4c17c;
+    pointer-events: none;
   }
 
-  /* Corner decorations */
-  .corner { position: absolute; width: 80px; height: 80px; opacity: 0.15; }
-  .corner svg { width: 100%; height: 100%; }
-  .corner-tl { top: 20px; left: 20px; }
-  .corner-tr { top: 20px; right: 20px; transform: scaleX(-1); }
-  .corner-bl { bottom: 20px; left: 20px; transform: scaleY(-1); }
-  .corner-br { bottom: 20px; right: 20px; transform: scale(-1); }
-
-  /* Background pattern */
-  .bg-pattern {
+  /* Subtle watermark pattern */
+  .watermark {
     position: absolute;
     inset: 0;
-    opacity: 0.03;
-    background-image: radial-gradient(circle at 2px 2px, #7F56D9 1px, transparent 0);
-    background-size: 24px 24px;
+    opacity: 0.02;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      #7F56D9 40px,
+      #7F56D9 41px
+    );
   }
 
-  /* Top gradient accent */
-  .top-accent {
-    height: 6px;
-    background: linear-gradient(90deg, #7F56D9, #14B8A6, #EC4899, #F97316, #EAB308);
+  /* Corner ornaments */
+  .ornament {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    opacity: 0.2;
   }
+  .ornament svg { width: 100%; height: 100%; }
+  .orn-tl { top: 10mm; left: 10mm; }
+  .orn-tr { top: 10mm; right: 10mm; transform: rotate(90deg); }
+  .orn-bl { bottom: 10mm; left: 10mm; transform: rotate(-90deg); }
+  .orn-br { bottom: 10mm; right: 10mm; transform: rotate(180deg); }
 
   .content {
     position: relative;
@@ -80,323 +83,294 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 48px 64px 40px;
-    min-height: calc(210mm - 6px);
-  }
-
-  /* Logo & Title */
-  .logo-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 8px;
-  }
-  .logo-icon {
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(135deg, #7F56D9, #14B8A6);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    color: #fff;
-    font-size: 22px;
-  }
-  .logo-text {
-    font-size: 18px;
-    font-weight: 700;
-    color: #7F56D9;
-    letter-spacing: -0.02em;
+    padding: 14mm 20mm;
+    height: 100%;
   }
 
-  .certificate-label {
-    font-size: 42px;
-    font-weight: 800;
-    color: #1a1a2e;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin: 16px 0 4px;
+  /* Top: institution line */
+  .institution {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
   }
-
-  .subtitle {
-    font-size: 15px;
-    color: #6b7280;
-    letter-spacing: 0.04em;
-    margin-bottom: 32px;
+  .institution img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: contain;
   }
-
-  /* Name section */
-  .awarded-to {
+  .institution-name {
+    font-family: 'Outfit', sans-serif;
     font-size: 14px;
-    color: #9ca3af;
+    font-weight: 600;
+    color: #7F56D9;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
+  }
+
+  /* Decorative line */
+  .divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b8972e, transparent);
+    margin: 10px 0;
+  }
+  .divider-wide {
+    width: 400px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4c17c, transparent);
+    margin: 16px 0;
+  }
+
+  /* Certificate title */
+  .cert-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a1a2e;
+    letter-spacing: 0.06em;
+    margin: 4px 0 2px;
+  }
+
+  .cert-subtitle {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #8b8b8b;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  /* Awarded to */
+  .awarded-label {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #999;
+    margin-top: 14px;
   }
 
   .name-field {
-    width: 460px;
-    border-bottom: 2px dashed #7F56D9;
-    padding: 8px 16px 12px;
+    width: 420px;
+    min-height: 44px;
+    border-bottom: 1.5px solid #1a1a2e;
     text-align: center;
-    min-height: 52px;
-    margin-bottom: 6px;
+    padding: 4px 16px 6px;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
     color: #1a1a2e;
-    font-size: 32px;
-    font-weight: 700;
+    margin: 4px 0 2px;
   }
 
   .name-hint {
-    font-size: 11px;
-    color: #c4b5d4;
-    margin-bottom: 28px;
+    font-size: 9px;
+    color: #c0c0c0;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
   }
 
-  /* Course info */
-  .course-title {
-    font-size: 20px;
+  /* Achievement text */
+  .achievement {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: #4b5563;
+    text-align: center;
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 14px;
+  }
+  .achievement strong {
+    color: #1a1a2e;
     font-weight: 600;
-    color: #374151;
-    margin-bottom: 6px;
   }
 
-  .course-desc {
-    font-size: 14px;
-    color: #6b7280;
-    max-width: 500px;
-    text-align: center;
-    line-height: 1.5;
-    margin-bottom: 28px;
-  }
-
-  /* Badges row */
-  .badges-row {
+  /* Badges as elegant pills */
+  .badges {
     display: flex;
-    gap: 16px;
-    margin-bottom: 28px;
-  }
-  .badge-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-  }
-  .badge-circle {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
     justify-content: center;
-    font-size: 24px;
-    color: #fff;
-    font-weight: 700;
   }
-  .badge-label {
-    font-size: 10px;
-    color: #6b7280;
-    text-align: center;
-    max-width: 72px;
-    line-height: 1.3;
-  }
-  .b1 { background: linear-gradient(135deg, #7F56D9, #4f46e5); }
-  .b2 { background: linear-gradient(135deg, #14b8a6, #0891b2); }
-  .b3 { background: linear-gradient(135deg, #ec4899, #e11d48); }
-  .b4 { background: linear-gradient(135deg, #f97316, #f59e0b); }
-  .b5 { background: linear-gradient(135deg, #eab308, #f59e0b); }
-
-  /* Stars */
-  .stars {
+  .badge {
     display: flex;
+    align-items: center;
     gap: 6px;
-    margin-bottom: 24px;
+    padding: 5px 14px;
+    border: 1px solid #e0dcd4;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #555;
+    background: #fafaf8;
   }
-  .star {
-    width: 28px;
-    height: 28px;
-    color: #EAB308;
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
   }
 
-  /* Footer */
+  /* Bottom section: date, seal, signature */
   .cert-footer {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     width: 100%;
+    max-width: 660px;
     margin-top: auto;
-    padding-top: 20px;
   }
 
-  .date-field {
-    text-align: left;
+  .field {
+    width: 160px;
   }
-  .date-label {
-    font-size: 11px;
-    color: #9ca3af;
+  .field-label {
+    font-size: 9px;
+    color: #aaa;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     margin-bottom: 4px;
   }
-  .date-line {
-    width: 180px;
-    border-bottom: 1px solid #d1d5db;
-    padding-bottom: 4px;
-    font-size: 14px;
-    color: #374151;
+  .field-line {
+    border-bottom: 1px solid #ccc;
+    min-height: 24px;
   }
+  .field-right { text-align: right; }
+  .field-right .field-line { text-align: right; }
 
+  /* Seal */
   .seal {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
   }
-  .seal-circle {
-    width: 64px;
-    height: 64px;
-    border: 3px solid #7F56D9;
+  .seal-ring {
+    width: 72px;
+    height: 72px;
+    border: 2.5px solid #7F56D9;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
-    background: linear-gradient(135deg, #f3f0ff, #fff);
+    background: #fff;
+    position: relative;
   }
-  .seal-text {
-    font-size: 10px;
-    color: #7F56D9;
+  .seal-ring::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border: 1px solid #c4b0e8;
+    border-radius: 50%;
+  }
+  .seal-ring img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  .seal-label {
+    font-size: 8px;
     font-weight: 600;
-    letter-spacing: 0.05em;
-  }
-
-  .signature-field {
-    text-align: right;
-  }
-  .sig-label {
-    font-size: 11px;
-    color: #9ca3af;
+    color: #7F56D9;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 4px;
-  }
-  .sig-line {
-    width: 180px;
-    border-bottom: 1px solid #d1d5db;
-    padding-bottom: 4px;
-    font-size: 14px;
-    color: #374151;
-    text-align: right;
   }
 
-  /* Print button */
-  .actions {
-    margin-top: 24px;
-    display: flex;
-    gap: 12px;
-  }
+  /* Print UI */
+  .actions { margin-top: 24px; }
   .print-btn {
     padding: 12px 32px;
     background: #7F56D9;
     color: #fff;
     border: none;
-    border-radius: 12px;
-    font-size: 16px;
+    border-radius: 10px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     font-family: 'Outfit', sans-serif;
   }
   .print-btn:hover { background: #6d45c7; }
-
   .tip {
-    margin-top: 16px;
-    font-size: 13px;
-    color: #9ca3af;
+    margin-top: 14px;
+    font-size: 12px;
+    color: #999;
     text-align: center;
-    max-width: 500px;
+    max-width: 480px;
   }
 </style>
 </head>
 <body>
 
 <div class="certificate">
-  <div class="top-accent"></div>
-  <div class="bg-pattern"></div>
-  <div class="border-frame"></div>
+  <div class="watermark"></div>
+  <div class="border-outer"></div>
+  <div class="border-inner"></div>
 
-  <!-- Corner decorations -->
-  <div class="corner corner-tl"><svg viewBox="0 0 80 80" fill="none"><path d="M0 0 C0 44 36 80 80 80 L80 72 C40 72 8 40 8 0Z" fill="#7F56D9"/></svg></div>
-  <div class="corner corner-tr"><svg viewBox="0 0 80 80" fill="none"><path d="M0 0 C0 44 36 80 80 80 L80 72 C40 72 8 40 8 0Z" fill="#7F56D9"/></svg></div>
-  <div class="corner corner-bl"><svg viewBox="0 0 80 80" fill="none"><path d="M0 0 C0 44 36 80 80 80 L80 72 C40 72 8 40 8 0Z" fill="#7F56D9"/></svg></div>
-  <div class="corner corner-br"><svg viewBox="0 0 80 80" fill="none"><path d="M0 0 C0 44 36 80 80 80 L80 72 C40 72 8 40 8 0Z" fill="#7F56D9"/></svg></div>
+  <!-- Corner ornaments -->
+  <div class="ornament orn-tl"><svg viewBox="0 0 60 60" fill="none"><path d="M0 0v60C0 27 27 0 60 0H0z" fill="#b8972e"/><path d="M4 4v48C4 28 28 4 52 4H4z" fill="none" stroke="#b8972e" stroke-width="0.5"/></svg></div>
+  <div class="ornament orn-tr"><svg viewBox="0 0 60 60" fill="none"><path d="M0 0v60C0 27 27 0 60 0H0z" fill="#b8972e"/><path d="M4 4v48C4 28 28 4 52 4H4z" fill="none" stroke="#b8972e" stroke-width="0.5"/></svg></div>
+  <div class="ornament orn-bl"><svg viewBox="0 0 60 60" fill="none"><path d="M0 0v60C0 27 27 0 60 0H0z" fill="#b8972e"/><path d="M4 4v48C4 28 28 4 52 4H4z" fill="none" stroke="#b8972e" stroke-width="0.5"/></svg></div>
+  <div class="ornament orn-br"><svg viewBox="0 0 60 60" fill="none"><path d="M0 0v60C0 27 27 0 60 0H0z" fill="#b8972e"/><path d="M4 4v48C4 28 28 4 52 4H4z" fill="none" stroke="#b8972e" stroke-width="0.5"/></svg></div>
 
   <div class="content">
-    <!-- Logo -->
-    <div class="logo-row">
-      <div class="logo-icon">&#10024;</div>
-      <div class="logo-text">KI-Entdecker</div>
+    <!-- Institution -->
+    <div class="institution">
+      <img src="../images/robot-hero.png" alt="KI-Entdecker">
+      <span class="institution-name">KI-Entdecker</span>
     </div>
 
-    <div class="certificate-label">Zertifikat</div>
-    <div class="subtitle">Erfolgreicher Abschluss des KI-Kurses</div>
+    <div class="divider"></div>
 
-    <!-- Name -->
-    <div class="awarded-to">Verliehen an</div>
+    <div class="cert-title">Zertifikat</div>
+    <div class="cert-subtitle">Certificate of Completion</div>
+
+    <div class="divider-wide"></div>
+
+    <!-- Recipient -->
+    <div class="awarded-label">Hiermit wird bescheinigt, dass</div>
     <div class="name-field"></div>
-    <div class="name-hint">Name hier eintragen</div>
+    <div class="name-hint">Name in Druckschrift eintragen</div>
 
-    <!-- Course -->
-    <div class="course-title">KI-Experte fuer Kinder</div>
-    <div class="course-desc">
-      Hat den gesamten KI-Entdecker-Kurs mit 5 Kurstagen und 15 Lektionen
-      erfolgreich abgeschlossen und dabei alle 5 Badges freigeschaltet.
+    <!-- Achievement -->
+    <div class="achievement">
+      den Kurs <strong>KI-Entdecker &ndash; Kuenstliche Intelligenz fuer junge Entdecker</strong>
+      mit <strong>5 Kurstagen</strong> und <strong>15 Lektionen</strong>
+      erfolgreich abgeschlossen und alle Kompetenzstufen erreicht hat.
     </div>
 
-    <!-- Badges -->
-    <div class="badges-row">
-      <div class="badge-item">
-        <div class="badge-circle b1">&#129302;</div>
-        <div class="badge-label">KI-Anfaenger</div>
-      </div>
-      <div class="badge-item">
-        <div class="badge-circle b2">&#128172;</div>
-        <div class="badge-label">Prompt-Meister</div>
-      </div>
-      <div class="badge-item">
-        <div class="badge-circle b3">&#127912;</div>
-        <div class="badge-label">Kreativ-Genie</div>
-      </div>
-      <div class="badge-item">
-        <div class="badge-circle b4">&#129513;</div>
-        <div class="badge-label">Problem-Loeser</div>
-      </div>
-      <div class="badge-item">
-        <div class="badge-circle b5">&#127942;</div>
-        <div class="badge-label">KI-Experte</div>
-      </div>
+    <!-- Badges as elegant pills -->
+    <div class="badges">
+      <div class="badge"><div class="badge-dot" style="background:#7F56D9"></div>KI-Grundlagen</div>
+      <div class="badge"><div class="badge-dot" style="background:#14b8a6"></div>Prompt Engineering</div>
+      <div class="badge"><div class="badge-dot" style="background:#ec4899"></div>Kreatives Arbeiten</div>
+      <div class="badge"><div class="badge-dot" style="background:#f97316"></div>Problemloesen</div>
+      <div class="badge"><div class="badge-dot" style="background:#eab308"></div>Abschlussprojekt</div>
     </div>
 
-    <!-- Stars -->
-    <div class="stars">
-      <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    </div>
+    <div class="divider-wide"></div>
 
-    <!-- Footer with date, seal, signature -->
+    <!-- Footer: Date / Seal / Signature -->
     <div class="cert-footer">
-      <div class="date-field">
-        <div class="date-label">Datum</div>
-        <div class="date-line"></div>
+      <div class="field">
+        <div class="field-label">Datum</div>
+        <div class="field-line"></div>
       </div>
+
       <div class="seal">
-        <div class="seal-circle">&#127891;</div>
-        <div class="seal-text">ZERTIFIZIERT</div>
+        <div class="seal-ring">
+          <img src="../images/robot-hero.png" alt="KI-Entdecker Siegel">
+        </div>
+        <div class="seal-label">Zertifiziert</div>
       </div>
-      <div class="signature-field">
-        <div class="sig-label">Unterschrift Elternteil</div>
-        <div class="sig-line"></div>
+
+      <div class="field field-right">
+        <div class="field-label">Unterschrift</div>
+        <div class="field-line"></div>
       </div>
     </div>
   </div>
@@ -406,8 +380,7 @@
   <button class="print-btn" onclick="window.print()">Als PDF speichern / Drucken</button>
 </div>
 <div class="tip no-print">
-  Tipp: Waehle beim Drucken &bdquo;Als PDF speichern&ldquo; um eine PDF-Datei zu erstellen.<br>
-  Den Namen und das Datum koennen die Eltern von Hand eintragen.
+  Waehle beim Drucken &bdquo;Als PDF speichern&ldquo;. Name und Datum von Hand eintragen.
 </div>
 
 </body>
