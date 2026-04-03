@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KI-Entdecker Wochenplan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 40px; max-width: 900px; margin: 0 auto; }
+  @media print { body { padding: 20px; } .no-print { display: none !important; } }
+  .header { text-align: center; margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #7F56D9; }
+  .header h1 { font-size: 32px; font-weight: 700; color: #7F56D9; margin-bottom: 8px; }
+  .header p { color: #6b7280; font-size: 14px; }
+  .day-card { border: 2px solid #e5e7eb; border-radius: 16px; padding: 24px; margin-bottom: 20px; page-break-inside: avoid; }
+  .day-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+  .day-badge { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 18px; flex-shrink: 0; }
+  .day-title h2 { font-size: 20px; font-weight: 700; }
+  .day-title span { font-size: 13px; color: #6b7280; }
+  .lessons { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .lesson { background: #f9fafb; border-radius: 10px; padding: 12px; }
+  .lesson .time { font-size: 11px; color: #7F56D9; font-weight: 600; margin-bottom: 4px; }
+  .lesson .name { font-size: 13px; font-weight: 600; }
+  .goals { display: flex; gap: 8px; flex-wrap: wrap; }
+  .goal-tag { background: #f3f0ff; color: #7F56D9; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .notes-box { border: 2px dashed #d1d5db; border-radius: 12px; padding: 16px; margin-top: 40px; min-height: 120px; }
+  .notes-box h3 { color: #6b7280; font-size: 14px; margin-bottom: 8px; }
+  .print-btn { display: block; margin: 30px auto; padding: 12px 32px; background: #7F56D9; color: #fff; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: 'Outfit', sans-serif; }
+  .print-btn:hover { background: #6d45c7; }
+  .footer { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .d1 { border-color: #7F56D9; } .d1 .day-badge { background: linear-gradient(135deg, #7F56D9, #4f46e5); }
+  .d2 { border-color: #14b8a6; } .d2 .day-badge { background: linear-gradient(135deg, #14b8a6, #0891b2); }
+  .d3 { border-color: #ec4899; } .d3 .day-badge { background: linear-gradient(135deg, #ec4899, #e11d48); }
+  .d4 { border-color: #f97316; } .d4 .day-badge { background: linear-gradient(135deg, #f97316, #f59e0b); }
+  .d5 { border-color: #eab308; } .d5 .day-badge { background: linear-gradient(135deg, #eab308, #f59e0b); }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>KI-Entdecker Wochenplan</h1>
+  <p>5 Tage KI-Abenteuer &bull; Je 45 Minuten &bull; Für Kinder ab 8 Jahren</p>
+</div>
+
+<div class="day-card d1">
+  <div class="day-header">
+    <div class="day-badge">1</div>
+    <div class="day-title"><h2>Was ist KI?</h2><span>45 Minuten &bull; Die Grundlagen verstehen</span></div>
+  </div>
+  <div class="lessons">
+    <div class="lesson"><div class="time">0 – 15 Min</div><div class="name">Was ist Künstliche Intelligenz?</div></div>
+    <div class="lesson"><div class="time">15 – 30 Min</div><div class="name">Wie lernen Computer?</div></div>
+    <div class="lesson"><div class="time">30 – 45 Min</div><div class="name">Dein erster Chatbot</div></div>
+  </div>
+  <div class="goals"><span class="goal-tag">KI-Grundlagen</span><span class="goal-tag">Maschinelles Lernen</span><span class="goal-tag">Chatbot erstellen</span></div>
+</div>
+
+<div class="day-card d2">
+  <div class="day-header">
+    <div class="day-badge">2</div>
+    <div class="day-title"><h2>Prompt Engineering</h2><span>45 Minuten &bull; Die Kunst der perfekten Frage</span></div>
+  </div>
+  <div class="lessons">
+    <div class="lesson"><div class="time">0 – 15 Min</div><div class="name">Was ist ein Prompt?</div></div>
+    <div class="lesson"><div class="time">15 – 30 Min</div><div class="name">Das 5-Sterne-Rezept</div></div>
+    <div class="lesson"><div class="time">30 – 45 Min</div><div class="name">Prompts verbessern</div></div>
+  </div>
+  <div class="goals"><span class="goal-tag">Prompt-Techniken</span><span class="goal-tag">5-Sterne-Rezept</span><span class="goal-tag">Praxis-Übungen</span></div>
+</div>
+
+<div class="day-card d3">
+  <div class="day-header">
+    <div class="day-badge">3</div>
+    <div class="day-title"><h2>Kreativ mit KI</h2><span>45 Minuten &bull; Dein kreativer Partner</span></div>
+  </div>
+  <div class="lessons">
+    <div class="lesson"><div class="time">0 – 15 Min</div><div class="name">Bilder mit KI erstellen</div></div>
+    <div class="lesson"><div class="time">15 – 30 Min</div><div class="name">Geschichten schreiben</div></div>
+    <div class="lesson"><div class="time">30 – 45 Min</div><div class="name">Musik & mehr</div></div>
+  </div>
+  <div class="goals"><span class="goal-tag">Bilder generieren</span><span class="goal-tag">Storytelling</span><span class="goal-tag">Kreativprojekt</span></div>
+</div>
+
+<div class="day-card d4">
+  <div class="day-header">
+    <div class="day-badge">4</div>
+    <div class="day-title"><h2>Problemlösen mit KI</h2><span>45 Minuten &bull; Der clevere Lernhelfer</span></div>
+  </div>
+  <div class="lessons">
+    <div class="lesson"><div class="time">0 – 15 Min</div><div class="name">KI als Lernhelfer</div></div>
+    <div class="lesson"><div class="time">15 – 30 Min</div><div class="name">Recherche & Zusammenfassen</div></div>
+    <div class="lesson"><div class="time">30 – 45 Min</div><div class="name">Fehler finden & Korrigieren</div></div>
+  </div>
+  <div class="goals"><span class="goal-tag">Mathe-Hilfe</span><span class="goal-tag">Recherche</span><span class="goal-tag">Fehler finden</span></div>
+</div>
+
+<div class="day-card d5">
+  <div class="day-header">
+    <div class="day-badge">5</div>
+    <div class="day-title"><h2>Das Abschlussprojekt</h2><span>60 Minuten &bull; Werde KI-Experte</span></div>
+  </div>
+  <div class="lessons">
+    <div class="lesson"><div class="time">0 – 20 Min</div><div class="name">Dein Projekt planen</div></div>
+    <div class="lesson"><div class="time">20 – 50 Min</div><div class="name">Projekt umsetzen</div></div>
+    <div class="lesson"><div class="time">50 – 60 Min</div><div class="name">Präsentation & Zertifikat</div></div>
+  </div>
+  <div class="goals"><span class="goal-tag">Eigenes Projekt</span><span class="goal-tag">Präsentation</span><span class="goal-tag">KI-Experten-Zertifikat</span></div>
+</div>
+
+<div class="notes-box">
+  <h3>Eigene Notizen:</h3>
+</div>
+
+<button class="print-btn no-print" onclick="window.print()">Als PDF speichern / Drucken</button>
+<div class="footer">KI-Entdecker &bull; Ein interaktiver KI-Kurs für Kinder &bull; ki-entdecker.de</div>
+</body>
+</html>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Calendar, FileText, Download, CheckCircle, FileDown, ExternalLink } from 'lucide-react';
-import { toast } from '@/hooks/use-toast';
 
 const Materialien = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,22 +8,10 @@ const Materialien = () => {
     setIsVisible(true);
   }, []);
 
-  const handleDownload = (itemName: string) => {
-    toast({
-      title: "Download bald verfügbar",
-      description: `Die ${itemName} werden in Kürze zum Download bereitgestellt.`,
-      variant: "info",
-      duration: 4000,
-    });
-  };
+  const basePath = import.meta.env.BASE_URL || '/';
 
-  const handleDownloadAll = () => {
-    toast({
-      title: "Komplettpaket kommt bald",
-      description: "Alle Materialien werden in Kürze als ZIP-Paket verfügbar sein.",
-      variant: "info",
-      duration: 4000,
-    });
+  const openDownload = (path: string) => {
+    window.open(`${basePath}downloads/${path}`, '_blank');
   };
 
   const materials = [
@@ -43,9 +30,8 @@ const Materialien = () => {
       color: 'text-primary-purple',
       bgColor: 'bg-primary-purple/10',
       buttonColor: 'bg-primary-purple hover:bg-primary-purple/90',
-      action: 'PDF herunterladen',
-      fileSize: '245 KB',
-      format: 'PDF',
+      action: 'Wochenplan öffnen',
+      file: 'wochenplan.html',
     },
     {
       id: 2,
@@ -63,15 +49,14 @@ const Materialien = () => {
       bgColor: 'bg-primary-teal/10',
       buttonColor: 'bg-primary-teal hover:bg-primary-teal/90',
       action: 'Arbeitsblätter öffnen',
-      fileSize: '1.2 MB',
-      format: 'PDF',
+      file: 'arbeitsblaetter.html',
     },
   ];
 
   const additionalResources = [
-    { name: 'Prompt-Cheat-Sheet', description: 'Die wichtigsten Prompt-Techniken auf einen Blick', size: '120 KB' },
-    { name: 'KI-Tools-Übersicht', description: 'Kostenlose und kindersichere KI-Tools', size: '180 KB' },
-    { name: 'Eltern-Guide', description: 'Tipps zur Unterstützung Ihres Kindes', size: '320 KB' },
+    { name: 'Prompt-Cheat-Sheet', description: 'Die wichtigsten Prompt-Techniken auf einen Blick', file: 'prompt-cheat-sheet.html' },
+    { name: 'KI-Tools-Übersicht', description: 'Kostenlose und kindersichere KI-Tools', file: 'ki-tools-uebersicht.html' },
+    { name: 'Eltern-Guide', description: 'Tipps zur Unterstützung Ihres Kindes', file: 'eltern-guide.html' },
   ];
 
   return (
@@ -140,17 +125,11 @@ const Materialien = () => {
                       ))}
                     </ul>
 
-                    {/* File Info */}
-                    <div className="flex items-center gap-4 mb-6 text-sm text-neutral-gray">
-                      <span className="px-2 py-1 bg-neutral-light rounded">{material.format}</span>
-                      <span>{material.fileSize}</span>
-                    </div>
-
                     {/* Action Button */}
                     <button
-                      onClick={() => handleDownload(material.title)}
+                      onClick={() => openDownload(material.file)}
                       className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium text-white transition-all duration-300 ${material.buttonColor}`}
-                      aria-label={`${material.title} herunterladen`}
+                      aria-label={`${material.title} öffnen`}
                     >
                       <Download className="w-5 h-5" />
                       {material.action}
@@ -181,7 +160,6 @@ const Materialien = () => {
                     <div className="w-10 h-10 bg-accent-yellow/10 rounded-xl flex items-center justify-center">
                       <FileDown className="w-5 h-5 text-accent-yellow" />
                     </div>
-                    <span className="text-xs text-neutral-gray">{resource.size}</span>
                   </div>
                   <h3 className="font-outfit font-bold text-neutral-dark mb-2">
                     {resource.name}
@@ -189,13 +167,13 @@ const Materialien = () => {
                   <p className="text-sm text-neutral-gray mb-4">
                     {resource.description}
                   </p>
-                  <button 
-                    onClick={() => handleDownload(resource.name)}
+                  <button
+                    onClick={() => openDownload(resource.file)}
                     className="flex items-center gap-2 text-sm text-primary-purple hover:text-primary-purple/80 transition-colors"
-                    aria-label={`${resource.name} herunterladen`}
+                    aria-label={`${resource.name} öffnen`}
                   >
                     <Download className="w-4 h-4" />
-                    Download
+                    Öffnen
                   </button>
                 </div>
               ))}
@@ -220,13 +198,26 @@ const Materialien = () => {
                 als komplettes Paket herunter.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <button 
-                  onClick={handleDownloadAll}
-                  className="flex items-center gap-2 px-8 py-4 bg-white text-primary-purple rounded-xl font-bold hover:bg-white/90 transition-colors"
-                  aria-label="Komplettpaket herunterladen"
+                <button
+                  onClick={() => openDownload('wochenplan.html')}
+                  className="flex items-center gap-2 px-6 py-4 bg-white text-primary-purple rounded-xl font-bold hover:bg-white/90 transition-colors"
                 >
                   <Download className="w-5 h-5" />
-                  Komplettpaket downloaden (2.1 MB)
+                  Wochenplan
+                </button>
+                <button
+                  onClick={() => openDownload('arbeitsblaetter.html')}
+                  className="flex items-center gap-2 px-6 py-4 bg-white text-primary-purple rounded-xl font-bold hover:bg-white/90 transition-colors"
+                >
+                  <Download className="w-5 h-5" />
+                  Arbeitsblätter
+                </button>
+                <button
+                  onClick={() => openDownload('eltern-guide.html')}
+                  className="flex items-center gap-2 px-6 py-4 bg-white text-primary-purple rounded-xl font-bold hover:bg-white/90 transition-colors"
+                >
+                  <Download className="w-5 h-5" />
+                  Eltern-Guide
                 </button>
               </div>
             </div>
