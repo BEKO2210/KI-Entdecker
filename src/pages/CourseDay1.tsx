@@ -984,7 +984,7 @@ Stell dich vor und frag mich, welches Tier mich interessiert!`}
                 },
                 {
                   q: 'Werde ich von KI ersetzt?',
-                  a: 'KI wird viele Berufe verändern, aber sie ersetzt nicht den menschlichen Kreativität, Empathie und kritisches Denken. Menschen, die KI beherrschen, haben bessere Chancen – deshalb ist es so wichtig, sie zu verstehen!'
+                  a: 'KI wird viele Berufe verändern, aber sie ersetzt nicht die menschliche Kreativität, Empathie und das kritische Denken. Menschen, die KI beherrschen, haben bessere Chancen – deshalb ist es so wichtig, sie zu verstehen!'
                 },
                 {
                   q: 'Ist KI gefährlich?',

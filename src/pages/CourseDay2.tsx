@@ -298,7 +298,7 @@ const CourseDay2 = ({ progress }: CourseDayProps) => {
                 },
                 {
                   bad: 'Was ist Klimawandel?',
-                  good: 'Erkläre den Klimawandel so, dass ein 10-Jähriger es versteht. Verwache 3 kurze Absätze und ein Alltagsbeispiel. Sei sachlich aber nicht beunruhigend.',
+                  good: 'Erkläre den Klimawandel so, dass ein 10-Jähriger es versteht. Verwende 3 kurze Absätze und ein Alltagsbeispiel. Sei sachlich aber nicht beunruhigend.',
                   topic: 'Erklärung'
                 }
               ].map((example, idx) => (

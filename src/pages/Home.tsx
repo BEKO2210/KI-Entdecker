@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Play, Users, FileText, Award, Star, ArrowRight, CheckCircle, BookOpen, Brain, Palette, Lightbulb, Trophy } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Play, Users, FileText, Award, Star, ArrowRight, CheckCircle, BookOpen, Brain, Palette, Lightbulb, Trophy, Lock } from 'lucide-react';
 import type { useProgress } from '../hooks/useProgress';
 
 interface HomeProps {
@@ -11,6 +11,7 @@ const Home = ({ progress }: HomeProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
   const unlockedCount = progress.getUnlockedBadgesCount();
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const Home = ({ progress }: HomeProps) => {
   }, []);
 
   const stats = [
-    { icon: Users, value: '5', label: 'Tage á 45 Minuten' },
+    { icon: Users, value: '5', label: 'Tage à 45 Minuten' },
     { icon: FileText, value: '4', label: 'Arbeitsblätter' },
     { icon: Award, value: '5', label: 'Badges zu sammeln' },
   ];
@@ -325,65 +326,87 @@ const Home = ({ progress }: HomeProps) => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {courses.map((course, index) => (
-                <Link
-                  key={index}
-                  to={course.path}
-                  className={`group relative ${course.bgColor} ${course.borderColor} border-2 rounded-3xl p-6 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden`}
-                  aria-label={`Tag ${course.day}: ${course.title}`}
-                >
-                  {/* Day Badge */}
-                  <div className={`absolute top-4 right-4 w-12 h-12 bg-gradient-to-br ${course.color} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <span className="text-white font-outfit font-bold text-lg">{course.day}</span>
-                  </div>
+              {courses.map((course, index) => {
+                const dayNum = Number(course.day);
+                const isUnlocked = progress.isDayUnlocked(dayNum);
+                const isCompleted = progress.getDayProgress(dayNum)?.completed;
 
-                  {/* Course Image */}
-                  <div className="relative mb-6">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${course.color} opacity-10 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300`} />
-                    <img 
-                      src={course.image} 
-                      alt={course.title}
-                      className="w-full h-40 object-contain relative z-10 group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-
-                  {/* Content */}
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-2 mb-3">
-                      <course.icon className={`w-5 h-5 text-${course.color.split('-')[1]}-500`} />
-                      <span className="text-sm font-medium text-neutral-gray">Tag {course.day}</span>
-                    </div>
-                    
-                    <h3 className="font-outfit font-bold text-xl text-neutral-dark mb-2 group-hover:text-primary-purple transition-colors">
-                      {course.title}
-                    </h3>
-                    <p className="text-sm text-neutral-gray mb-4">
-                      {course.description}
-                    </p>
-
-                    {/* Topics */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {course.topics.map((topic, tidx) => (
-                        <span 
-                          key={tidx} 
-                          className="px-2 py-1 bg-white/70 rounded-lg text-xs text-neutral-dark"
-                        >
-                          {topic}
-                        </span>
-                      ))}
+                return (
+                  <div
+                    key={index}
+                    onClick={() => isUnlocked && navigate(course.path)}
+                    className={`group relative ${course.bgColor} ${course.borderColor} border-2 rounded-3xl p-6 transition-all duration-500 overflow-hidden ${
+                      isUnlocked
+                        ? 'hover:shadow-2xl hover:-translate-y-2 cursor-pointer'
+                        : 'opacity-70 cursor-not-allowed'
+                    }`}
+                    role="button"
+                    tabIndex={isUnlocked ? 0 : -1}
+                    aria-label={isUnlocked ? `Tag ${course.day}: ${course.title}` : `Tag ${course.day} ist gesperrt`}
+                    onKeyDown={(e) => { if (isUnlocked && (e.key === 'Enter' || e.key === ' ')) navigate(course.path); }}
+                  >
+                    {/* Day Badge */}
+                    <div className={`absolute top-4 right-4 w-12 h-12 bg-gradient-to-br ${course.color} rounded-xl flex items-center justify-center shadow-lg ${isUnlocked ? 'group-hover:scale-110' : ''} transition-transform duration-300`}>
+                      <span className="text-white font-outfit font-bold text-lg">{course.day}</span>
                     </div>
 
-                    {/* CTA */}
-                    <div className="flex items-center gap-2 text-primary-purple font-medium">
-                      <span>Jetzt starten</span>
-                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
+                    {/* Course Image */}
+                    <div className="relative mb-6">
+                      <div className={`absolute inset-0 bg-gradient-to-br ${course.color} opacity-10 rounded-2xl transform rotate-3 ${isUnlocked ? 'group-hover:rotate-6' : ''} transition-transform duration-300`} />
+                      <img
+                        src={course.image}
+                        alt={course.title}
+                        className={`w-full h-40 object-contain relative z-10 ${isUnlocked ? 'group-hover:scale-105' : ''} transition-transform duration-300`}
+                      />
                     </div>
-                  </div>
 
-                  {/* Hover Glow */}
-                  <div className={`absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br ${course.color} opacity-0 group-hover:opacity-20 rounded-full blur-3xl transition-opacity duration-500`} />
-                </Link>
-              ))}
+                    {/* Content */}
+                    <div className="relative z-10">
+                      <div className="flex items-center gap-2 mb-3">
+                        <course.icon className={`w-5 h-5 text-${course.color.split('-')[1]}-500`} />
+                        <span className="text-sm font-medium text-neutral-gray">Tag {course.day}</span>
+                      </div>
+
+                      <h3 className={`font-outfit font-bold text-xl text-neutral-dark mb-2 ${isUnlocked ? 'group-hover:text-primary-purple' : ''} transition-colors`}>
+                        {course.title}
+                      </h3>
+                      <p className="text-sm text-neutral-gray mb-4">
+                        {course.description}
+                      </p>
+
+                      {/* Topics */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {course.topics.map((topic, tidx) => (
+                          <span
+                            key={tidx}
+                            className="px-2 py-1 bg-white/70 rounded-lg text-xs text-neutral-dark"
+                          >
+                            {topic}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* CTA */}
+                      {isUnlocked ? (
+                        <div className="flex items-center gap-2 text-primary-purple font-medium">
+                          <span>{isCompleted ? 'Wiederholen' : 'Jetzt starten'}</span>
+                          <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-2 text-neutral-gray font-medium">
+                          <Lock className="w-4 h-4" />
+                          <span>Schliesse Tag {dayNum - 1} ab</span>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Hover Glow */}
+                    {isUnlocked && (
+                      <div className={`absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br ${course.color} opacity-0 group-hover:opacity-20 rounded-full blur-3xl transition-opacity duration-500`} />
+                    )}
+                  </div>
+                );
+              })}
             </div>
 
             <div className="mt-12 text-center">

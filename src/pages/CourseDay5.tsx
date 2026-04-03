@@ -172,7 +172,7 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
                   <span className="bg-pink-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</span>
                   <div>
                     <h5 className="font-bold text-pink-800">Szenen beschreiben</h5>
-                    <p className="pink-700 text-sm mb-3">Erstelle Bildbeschreibungen für jedes Panel:</p>
+                    <p className="text-pink-700 text-sm mb-3">Erstelle Bildbeschreibungen für jedes Panel:</p>
                     <div className="bg-gray-900 rounded-lg p-3 relative">
                       <pre className="text-green-400 text-xs whitespace-pre-wrap">Schreibe mir 5 Bildbeschreibungen für meinen Comic. Jede Beschreibung sollte so detailliert sein, dass ich sie in ein KI-Bild-Tool eingeben kann. Comic-Stil, bunt und kinderfreundlich!</pre>
                       <button onClick={() => copyToClipboard('Schreibe mir 5 Bildbeschreibungen für meinen Comic. Jede Beschreibung sollte so detailliert sein, dass ich sie in ein KI-Bild-Tool eingeben kann. Comic-Stil, bunt und kinderfreundlich!')} className="absolute top-2 right-2 bg-white/10 hover:bg-white/20 text-white p-1 rounded">
