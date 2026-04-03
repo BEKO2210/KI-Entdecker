@@ -3,91 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prompt-Cheat-Sheet</title>
+<title>Prompt-Cheat-Sheet – KI-Entdecker</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 40px; max-width: 900px; margin: 0 auto; }
-  @media print { body { padding: 20px; } .no-print { display: none !important; } }
-  .header { text-align: center; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 3px solid #7F56D9; }
-  .header h1 { font-size: 28px; font-weight: 700; color: #7F56D9; }
+  body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 24px; max-width: 900px; margin: 0 auto; }
+  @media print { body { padding: 16px; } .no-print { display: none !important; } .recipe, .example-pair, .trick { page-break-inside: avoid; } }
+
+  .header { text-align: center; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 3px solid #7F56D9; }
+  .header h1 { font-size: 26px; font-weight: 700; color: #7F56D9; }
   .header p { color: #6b7280; font-size: 13px; margin-top: 6px; }
-  .recipe { background: linear-gradient(135deg, #f3f0ff, #ede9fe); border-radius: 16px; padding: 24px; margin-bottom: 24px; }
-  .recipe h2 { font-size: 20px; font-weight: 700; color: #7F56D9; margin-bottom: 16px; text-align: center; }
-  .stars { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-  .star { background: #fff; border-radius: 12px; padding: 14px; text-align: center; }
-  .star .num { width: 32px; height: 32px; background: #7F56D9; color: #fff; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; margin-bottom: 8px; }
-  .star h3 { font-size: 13px; font-weight: 700; color: #374151; margin-bottom: 4px; }
-  .star p { font-size: 11px; color: #6b7280; }
-  .examples { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-  .ex { border-radius: 14px; padding: 18px; }
+
+  /* 5-Sterne-Rezept */
+  .recipe { background: linear-gradient(135deg, #f3f0ff, #ede9fe); border-radius: 16px; padding: 20px; margin-bottom: 28px; }
+  .recipe h2 { font-size: 18px; font-weight: 700; color: #7F56D9; margin-bottom: 16px; text-align: center; }
+  .stars { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .star { background: #fff; border-radius: 12px; padding: 12px 8px; text-align: center; }
+  .star .num { width: 28px; height: 28px; background: #7F56D9; color: #fff; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; margin-bottom: 6px; }
+  .star h3 { font-size: 13px; font-weight: 700; color: #374151; margin-bottom: 2px; }
+  .star p { font-size: 11px; color: #6b7280; line-height: 1.3; }
+
+  @media (max-width: 600px) {
+    .stars { grid-template-columns: 1fr; gap: 10px; }
+    .star { display: flex; align-items: center; gap: 12px; text-align: left; padding: 14px; }
+    .star .num { flex-shrink: 0; }
+    .star .star-text { flex: 1; }
+    .star h3 { margin-bottom: 2px; }
+  }
+
+  /* Beispiele */
+  .section-title { font-size: 18px; font-weight: 700; color: #1a1a2e; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #f3f4f6; }
+  .examples { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+  .example-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .ex { border-radius: 12px; padding: 16px; }
   .ex-bad { background: #fef2f2; border: 2px solid #fecaca; }
   .ex-good { background: #f0fdf4; border: 2px solid #bbf7d0; }
-  .ex h3 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .ex h3 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
   .ex-bad h3 { color: #dc2626; }
   .ex-good h3 { color: #16a34a; }
-  .ex p { font-size: 13px; color: #4b5563; line-height: 1.5; }
-  .tricks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+  .ex .prompt { font-size: 13px; color: #374151; line-height: 1.5; font-style: italic; }
+  .ex .why { font-size: 11px; color: #9ca3af; margin-top: 6px; }
+
+  @media (max-width: 600px) {
+    .example-pair { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  /* Profi-Tricks */
+  .tricks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
   .trick { background: #f9fafb; border: 2px solid #e5e7eb; border-radius: 12px; padding: 14px; }
-  .trick h3 { font-size: 14px; font-weight: 700; color: #374151; margin-bottom: 6px; }
+  .trick h3 { font-size: 13px; font-weight: 700; color: #374151; margin-bottom: 4px; }
   .trick p { font-size: 12px; color: #6b7280; line-height: 1.5; }
-  .trick code { background: #e5e7eb; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
-  .section-title { font-size: 18px; font-weight: 700; color: #1a1a2e; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #f3f4f6; }
-  .print-btn { display: block; margin: 30px auto; padding: 12px 32px; background: #7F56D9; color: #fff; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: 'Outfit', sans-serif; }
+  .trick code { background: #e5e7eb; padding: 2px 6px; border-radius: 4px; font-size: 11px; color: #374151; }
+
+  @media (max-width: 600px) {
+    .tricks { grid-template-columns: 1fr; }
+  }
+
+  /* Schnell-Vorlagen */
+  .templates { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .template { background: #f3f0ff; border-radius: 12px; padding: 14px; }
+  .template .label { font-size: 12px; font-weight: 600; color: #7F56D9; margin-bottom: 4px; }
+  .template .text { font-size: 13px; color: #374151; line-height: 1.5; }
+  .template .blank { background: #ddd6fe; padding: 1px 8px; border-radius: 4px; font-style: italic; color: #5b21b6; }
+
+  .print-btn { display: block; margin: 24px auto; padding: 12px 32px; background: #7F56D9; color: #fff; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: 'Outfit', sans-serif; }
   .print-btn:hover { background: #6d45c7; }
-  .footer { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; padding-top: 16px; border-top: 1px solid #e5e7eb; }
+  .footer { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 24px; padding-top: 14px; border-top: 1px solid #e5e7eb; }
 </style>
 </head>
 <body>
 <div class="header">
   <h1>Prompt-Cheat-Sheet</h1>
-  <p>Die wichtigsten Prompt-Techniken auf einen Blick</p>
+  <p>Das 5-Sterne-Rezept und die besten Tricks fuer gute Prompts</p>
 </div>
 
+<!-- 5-Sterne-Rezept -->
 <div class="recipe">
   <h2>Das 5-Sterne-Prompt-Rezept</h2>
   <div class="stars">
-    <div class="star"><div class="num">1</div><h3>Rolle</h3><p>Wer soll die KI sein?</p></div>
-    <div class="star"><div class="num">2</div><h3>Aufgabe</h3><p>Was soll sie tun?</p></div>
-    <div class="star"><div class="num">3</div><h3>Kontext</h3><p>Für wen / warum?</p></div>
-    <div class="star"><div class="num">4</div><h3>Format</h3><p>Wie soll die Antwort aussehen?</p></div>
-    <div class="star"><div class="num">5</div><h3>Grenzen</h3><p>Was soll sie beachten?</p></div>
+    <div class="star">
+      <div class="num">1</div>
+      <div class="star-text"><h3>Rolle</h3><p>Wer soll die KI sein?</p></div>
+    </div>
+    <div class="star">
+      <div class="num">2</div>
+      <div class="star-text"><h3>Aufgabe</h3><p>Was genau soll sie tun?</p></div>
+    </div>
+    <div class="star">
+      <div class="num">3</div>
+      <div class="star-text"><h3>Zielgruppe</h3><p>Fuer wen ist das Ergebnis?</p></div>
+    </div>
+    <div class="star">
+      <div class="num">4</div>
+      <div class="star-text"><h3>Format</h3><p>Wie soll die Antwort aussehen?</p></div>
+    </div>
+    <div class="star">
+      <div class="num">5</div>
+      <div class="star-text"><h3>Ton &amp; Stil</h3><p>Wie soll es klingen?</p></div>
+    </div>
   </div>
 </div>
 
+<!-- Vorher/Nachher -->
 <h2 class="section-title">Schlecht vs. Gut</h2>
 <div class="examples">
-  <div class="ex ex-bad">
-    <h3>Schlecht</h3>
-    <p>"Schreib was über Tiere."</p>
-    <p style="margin-top:8px;font-size:11px;color:#9ca3af">Zu vage, kein Kontext, kein Format</p>
+  <div class="example-pair">
+    <div class="ex ex-bad">
+      <h3>Schlecht</h3>
+      <div class="prompt">&bdquo;Schreib was ueber Tiere.&ldquo;</div>
+      <div class="why">Zu vage, kein Kontext, kein Format</div>
+    </div>
+    <div class="ex ex-good">
+      <h3>Gut (alle 5 Sterne)</h3>
+      <div class="prompt">&bdquo;Du bist ein Biologe. Erklaere einem 10-Jaehrigen 5 spannende Fakten ueber Delfine. Schreibe kurze Saetze mit je einem Emoji. Klingt begeistert!&ldquo;</div>
+    </div>
   </div>
-  <div class="ex ex-good">
-    <h3>Gut</h3>
-    <p>"Du bist ein Biologe. Erkläre einem 10-Jährigen 5 Fakten über Delfine. Verwende kurze Sätze und ein Emoji pro Fakt."</p>
+  <div class="example-pair">
+    <div class="ex ex-bad">
+      <h3>Schlecht</h3>
+      <div class="prompt">&bdquo;Hilf mir bei Mathe.&ldquo;</div>
+      <div class="why">Keine Aufgabe, kein Level, kein Format</div>
+    </div>
+    <div class="ex ex-good">
+      <h3>Gut (alle 5 Sterne)</h3>
+      <div class="prompt">&bdquo;Du bist ein geduldiger Mathe-Lehrer. Erklaere mir Schritt fuer Schritt, wie man 3x + 5 = 20 loest. Ich bin in der 6. Klasse. Zeige jeden Zwischenschritt. Erklaere ruhig und ermutigend.&ldquo;</div>
+    </div>
   </div>
-  <div class="ex ex-bad">
-    <h3>Schlecht</h3>
-    <p>"Hilf mir bei Mathe."</p>
-    <p style="margin-top:8px;font-size:11px;color:#9ca3af">Keine Aufgabe, kein Level, kein Format</p>
-  </div>
-  <div class="ex ex-good">
-    <h3>Gut</h3>
-    <p>"Erkläre mir Schritt für Schritt, wie man 3x + 5 = 20 löst. Ich bin in der 6. Klasse. Zeige jeden Zwischenschritt."</p>
+  <div class="example-pair">
+    <div class="ex ex-bad">
+      <h3>Schlecht</h3>
+      <div class="prompt">&bdquo;Schreib eine Geschichte.&ldquo;</div>
+      <div class="why">Kein Thema, keine Laenge, kein Stil</div>
+    </div>
+    <div class="ex ex-good">
+      <h3>Gut (alle 5 Sterne)</h3>
+      <div class="prompt">&bdquo;Du bist ein Kinderbuch-Autor. Schreibe eine kurze Abenteuergeschichte ueber einen Roboter, der kochen lernt. Fuer Kinder ab 8. Maximal 10 Saetze. Lustig und spannend.&ldquo;</div>
+    </div>
   </div>
 </div>
 
+<!-- Profi-Tricks -->
 <h2 class="section-title">Profi-Tricks</h2>
 <div class="tricks">
-  <div class="trick"><h3>Schritt für Schritt</h3><p><code>"Erkläre Schritt für Schritt..."</code> Die KI gibt bessere Antworten, wenn sie ihre Gedanken ordnen soll.</p></div>
-  <div class="trick"><h3>Beispiele geben</h3><p><code>"Zum Beispiel so: ..."</code> Zeig der KI ein Beispiel, dann versteht sie genau, was du willst.</p></div>
-  <div class="trick"><h3>Rolle zuweisen</h3><p><code>"Du bist ein freundlicher Lehrer..."</code> Die KI passt ihren Stil an die Rolle an.</p></div>
-  <div class="trick"><h3>Nachfragen</h3><p><code>"Kannst du das einfacher erklären?"</code> Du kannst immer nachhaken und verfeinern!</p></div>
-  <div class="trick"><h3>Format vorgeben</h3><p><code>"Antworte als Liste mit 5 Punkten"</code> So bekommst du genau das Format, das du brauchst.</p></div>
-  <div class="trick"><h3>Zielgruppe nennen</h3><p><code>"...für ein Kind im Alter von 10 Jahren"</code> Die KI passt die Schwierigkeit an.</p></div>
+  <div class="trick">
+    <h3>Schritt fuer Schritt</h3>
+    <p><code>&bdquo;Erklaere Schritt fuer Schritt...&ldquo;</code> Die KI gibt bessere Antworten, wenn sie ihre Gedanken ordnen soll.</p>
+  </div>
+  <div class="trick">
+    <h3>Beispiele geben</h3>
+    <p><code>&bdquo;Zum Beispiel so: ...&ldquo;</code> Zeig der KI ein Beispiel, dann versteht sie genau, was du willst.</p>
+  </div>
+  <div class="trick">
+    <h3>Rolle zuweisen</h3>
+    <p><code>&bdquo;Du bist ein freundlicher Lehrer...&ldquo;</code> Die KI passt ihren Stil an die Rolle an.</p>
+  </div>
+  <div class="trick">
+    <h3>Nachfragen</h3>
+    <p><code>&bdquo;Kannst du das einfacher erklaeren?&ldquo;</code> Du kannst immer nachhaken und die Antwort verbessern!</p>
+  </div>
+  <div class="trick">
+    <h3>Format vorgeben</h3>
+    <p><code>&bdquo;Antworte als Liste mit 5 Punkten&ldquo;</code> So bekommst du genau die Struktur, die du brauchst.</p>
+  </div>
+  <div class="trick">
+    <h3>Zielgruppe nennen</h3>
+    <p><code>&bdquo;...fuer ein Kind im Alter von 10 Jahren&ldquo;</code> Die KI passt die Schwierigkeit automatisch an.</p>
+  </div>
+</div>
+
+<!-- Schnell-Vorlagen -->
+<h2 class="section-title">Schnell-Vorlagen zum Ausfuellen</h2>
+<div class="templates">
+  <div class="template">
+    <div class="label">Erklaerung</div>
+    <div class="text">Du bist ein <span class="blank">Rolle</span>. Erklaere <span class="blank">Thema</span> fuer <span class="blank">Zielgruppe</span>. Verwende <span class="blank">Format</span>. Klingt <span class="blank">Ton</span>.</div>
+  </div>
+  <div class="template">
+    <div class="label">Kreatives Schreiben</div>
+    <div class="text">Du bist ein <span class="blank">Rolle</span>. Schreibe <span class="blank">was genau</span> ueber <span class="blank">Thema</span>. Fuer <span class="blank">Zielgruppe</span>. Maximal <span class="blank">Laenge</span>. Stil: <span class="blank">Ton</span>.</div>
+  </div>
+  <div class="template">
+    <div class="label">Lernhilfe</div>
+    <div class="text">Du bist ein geduldiger Lehrer. Erklaere mir <span class="blank">Thema</span> Schritt fuer Schritt. Ich bin in der <span class="blank">Klasse</span>. Zeige <span class="blank">Format</span>. Erklaere <span class="blank">Ton</span>.</div>
+  </div>
+  <div class="template">
+    <div class="label">Fehler pruefen</div>
+    <div class="text">Du bist ein Korrekturleser. Pruefe folgenden Text auf Fehler: <span class="blank">Text einfuegen</span>. Erklaere jeden Fehler kurz. Sei ermutigend.</div>
+  </div>
 </div>
 
 <button class="print-btn no-print" onclick="window.print()">Als PDF speichern / Drucken</button>
-<div class="footer">KI-Entdecker &bull; Prompt-Cheat-Sheet &bull; ki-entdecker.de</div>
+<div class="footer">KI-Entdecker &bull; Prompt-Cheat-Sheet &bull; beko2210.github.io/KI-Entdecker</div>
 </body>
 </html>
