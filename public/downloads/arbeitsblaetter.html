@@ -27,6 +27,11 @@
   .match-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; }
   .match-item { padding: 8px 14px; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 13px; text-align: center; }
   .match-arrow { color: #d1d5db; font-size: 20px; text-align: center; }
+  @media (max-width: 600px) {
+    .match-grid { grid-template-columns: 1fr; gap: 4px; }
+    .match-arrow { transform: rotate(90deg); }
+    .match-item { text-align: left; }
+  }
   .tip-box { background: #fffbeb; border: 2px solid #fde68a; border-radius: 12px; padding: 14px; margin-top: 16px; }
   .tip-box strong { color: #92400e; font-size: 13px; }
   .tip-box p { font-size: 13px; color: #78716c; margin-top: 4px; }
@@ -81,7 +86,7 @@
 <div class="worksheet">
   <div class="ws-header">
     <div class="ws-num" style="background:linear-gradient(135deg,#14b8a6,#0891b2)">2</div>
-    <div><h2>Prompt-Profi werden</h2><span>Tag 2 – Die Kunst der perfekten Frage</span></div>
+    <div><h2>Prompt-Profi werden</h2><span>Tag 2 – Die Kunst der guten Frage</span></div>
   </div>
   <div class="question">
     <h3>Frage 1: Welcher Prompt ist besser? Begründe!</h3>
@@ -101,7 +106,7 @@
   <div class="question">
     <h3>Frage 3: Das 5-Sterne-Rezept</h3>
     <p>Schreibe einen perfekten Prompt mit allen 5 Zutaten:</p>
-    <div class="answer-box">1. Rolle: ___<br><br>2. Aufgabe: ___<br><br>3. Kontext: ___<br><br>4. Format: ___<br><br>5. Einschränkungen: ___</div>
+    <div class="answer-box">1. Rolle: ___<br><br>2. Aufgabe: ___<br><br>3. Zielgruppe: ___<br><br>4. Format: ___<br><br>5. Ton &amp; Stil: ___</div>
   </div>
 </div>
 
@@ -190,6 +195,6 @@
 </div>
 
 <button class="print-btn no-print" onclick="window.print()">Als PDF speichern / Drucken</button>
-<div class="footer">KI-Entdecker &bull; Arbeitsblätter &bull; ki-entdecker.de</div>
+<div class="footer">KI-Entdecker &bull; Arbeitsblaetter &bull; beko2210.github.io/KI-Entdecker</div>
 </body>
 </html>

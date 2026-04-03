@@ -12,13 +12,13 @@ const Materialien = () => {
     {
       id: 1,
       title: 'Wochenplan',
-      description: 'Die komplette Übersicht aller 5 Tage mit Zeitplan, Lernzielen und Pausen. Perfekt für Eltern und Kinder zur Planung.',
+      description: 'Die komplette Übersicht aller 5 Kurstage mit Zeitplan, Lernzielen und benötigten Materialien.',
       icon: Calendar,
       features: [
-        'Detaillierter Tagesplan für alle 5 Tage',
-        'Lernziele pro Tag übersichtlich dargestellt',
-        'Empfohlene Pausenzeiten',
-        'Material-Checkliste',
+        'Alle 15 Lektionen mit Zeitangaben',
+        'Lernziele pro Kurstag',
+        'Farbcodierte Lektionstypen (Lesen, Mitmachen, Übung, Projekt)',
+        'Benötigte Materialien pro Tag',
         'Platz für eigene Notizen',
       ],
       color: 'text-primary-purple',
@@ -48,9 +48,10 @@ const Materialien = () => {
   ];
 
   const additionalResources = [
-    { name: 'Prompt-Cheat-Sheet', description: 'Die wichtigsten Prompt-Techniken auf einen Blick', file: 'prompt-cheat-sheet.html' },
+    { name: 'Prompt-Cheat-Sheet', description: 'Das 5-Sterne-Rezept und Profi-Tricks auf einen Blick', file: 'prompt-cheat-sheet.html' },
     { name: 'KI-Tools-Übersicht', description: 'Kostenlose und kindersichere KI-Tools', file: 'ki-tools-uebersicht.html' },
-    { name: 'Eltern-Guide', description: 'Tipps zur Unterstützung Ihres Kindes', file: 'eltern-guide.html' },
+    { name: 'Eltern-Guide', description: 'Ausführlicher Guide mit Tipps, Regeln und Gesprächsanregungen', file: 'eltern-guide.html' },
+    { name: 'Zertifikat', description: 'Druckbares Zertifikat nach Abschluss des Kurses', file: 'zertifikat.html' },
   ];
 
   return (
