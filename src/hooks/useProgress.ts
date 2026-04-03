@@ -49,27 +49,26 @@ const getDefaultProgress = (): UserProgress => ({
   startedAt: new Date().toISOString(),
 });
 
-export const useProgress = () => {
-  const [progress, setProgress] = useState<UserProgress>(getDefaultProgress());
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  // Load progress from localStorage on mount
-  useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      try {
-        const parsed = JSON.parse(stored);
-        setProgress({
-          ...getDefaultProgress(),
-          ...parsed,
-          lastVisited: new Date().toISOString(),
-        });
-      } catch (e) {
-        console.error('Failed to parse progress:', e);
-      }
+const loadStoredProgress = (): UserProgress => {
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored) {
+    try {
+      const parsed = JSON.parse(stored);
+      return {
+        ...getDefaultProgress(),
+        ...parsed,
+        lastVisited: new Date().toISOString(),
+      };
+    } catch (e) {
+      console.error('Failed to parse progress:', e);
     }
-    setIsLoaded(true);
-  }, []);
+  }
+  return getDefaultProgress();
+};
+
+export const useProgress = () => {
+  const [progress, setProgress] = useState<UserProgress>(loadStoredProgress);
+  const [isLoaded] = useState(true);
 
   // Save progress to localStorage whenever it changes
   useEffect(() => {
