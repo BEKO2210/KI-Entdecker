@@ -195,37 +195,6 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
 
           {/* AI vs Regular Program Comparison */}
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="comparison-bad">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
-                  <span className="text-red-600 font-bold">VS</span>
-                </div>
-                <h4 className="font-bold text-red-800">Normales Programm</h4>
-              </div>
-              <img 
-                src="/KI-Entdecker/images/courses/day1-extra/ai-vs-program.png" 
-                alt="Vergleich: Normales Programm" 
-                className="w-full h-32 object-cover rounded-lg mb-4 opacity-70"
-              />
-              <ul className="space-y-2 text-red-700 text-sm">
-                <li className="flex items-start gap-2">
-                  <span className="text-red-400">•</span>
-                  <span>Folgt nur festen Regeln (Wenn-Dann)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-400">•</span>
-                  <span>Kann nichts Neues dazulernen</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-400">•</span>
-                  <span>Macht immer dasselbe bei gleicher Eingabe</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-400">•</span>
-                  <span>Braucht einen Programmierer für jede Änderung</span>
-                </li>
-              </ul>
-            </div>
             <div className="comparison-good">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
@@ -233,9 +202,9 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
                 </div>
                 <h4 className="font-bold text-green-800">Künstliche Intelligenz</h4>
               </div>
-              <img 
-                src="/KI-Entdecker/images/courses/day1/brain-circuits.png" 
-                alt="KI-Gehirn" 
+              <img
+                src="/KI-Entdecker/images/courses/day1/brain-circuits.png"
+                alt="KI-Gehirn"
                 className="w-full h-32 object-contain rounded-lg mb-4"
               />
               <ul className="space-y-2 text-green-700 text-sm">
@@ -254,6 +223,37 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                   <span>Passt sich an, ohne neu programmiert zu werden</span>
+                </li>
+              </ul>
+            </div>
+            <div className="comparison-bad">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                  <span className="text-red-600 font-bold">VS</span>
+                </div>
+                <h4 className="font-bold text-red-800">Normales Programm</h4>
+              </div>
+              <img
+                src="/KI-Entdecker/images/courses/day1-extra/ai-vs-program.png"
+                alt="Vergleich: Normales Programm"
+                className="w-full h-32 object-cover rounded-lg mb-4 opacity-70"
+              />
+              <ul className="space-y-2 text-red-700 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400">•</span>
+                  <span>Folgt nur festen Regeln (Wenn-Dann)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400">•</span>
+                  <span>Kann nichts Neues dazulernen</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400">•</span>
+                  <span>Macht immer dasselbe bei gleicher Eingabe</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-400">•</span>
+                  <span>Braucht einen Programmierer für jede Änderung</span>
                 </li>
               </ul>
             </div>
