@@ -1070,8 +1070,13 @@ const CourseDay2 = ({ progress }: CourseDayProps) => {
           {sections[activeSection].content}
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="flex justify-between mt-8 pt-8 border-t border-gray-200">
+        {/* Spacer for sticky nav */}
+        <div className="h-24" />
+      </div>
+
+      {/* Navigation Buttons - sticky bottom */}
+      <div className="sticky bottom-0 z-20 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+        <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between">
           <button
             onClick={() => setActiveSection(Math.max(0, activeSection - 1))}
             disabled={activeSection === 0}
