@@ -1,0 +1,282 @@
+import { useEffect, useRef, useState } from 'react';
+import { Calendar, FileText, Download, CheckCircle, FileDown, ExternalLink } from 'lucide-react';
+import { toast } from '@/hooks/use-toast';
+
+const Materialien = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleDownload = (itemName: string) => {
+    toast({
+      title: "Download bald verfügbar",
+      description: `Die ${itemName} werden in Kürze zum Download bereitgestellt.`,
+      variant: "info",
+      duration: 4000,
+    });
+  };
+
+  const handleDownloadAll = () => {
+    toast({
+      title: "Komplettpaket kommt bald",
+      description: "Alle Materialien werden in Kürze als ZIP-Paket verfügbar sein.",
+      variant: "info",
+      duration: 4000,
+    });
+  };
+
+  const materials = [
+    {
+      id: 1,
+      title: 'Wochenplan',
+      description: 'Die komplette Übersicht aller 5 Tage mit Zeitplan, Lernzielen und Pausen. Perfekt für Eltern und Kinder zur Planung.',
+      icon: Calendar,
+      features: [
+        'Detaillierter Tagesplan für alle 5 Tage',
+        'Lernziele pro Tag übersichtlich dargestellt',
+        'Empfohlene Pausenzeiten',
+        'Material-Checkliste',
+        'Platz für eigene Notizen',
+      ],
+      color: 'text-primary-purple',
+      bgColor: 'bg-primary-purple/10',
+      buttonColor: 'bg-primary-purple hover:bg-primary-purple/90',
+      action: 'PDF herunterladen',
+      fileSize: '245 KB',
+      format: 'PDF',
+    },
+    {
+      id: 2,
+      title: 'Arbeitsblätter',
+      description: 'Vier interaktive Arbeitsblätter zum Ausdrucken oder Ausfüllen am Bildschirm. Mit Lösungen für Eltern.',
+      icon: FileText,
+      features: [
+        '4 interaktive Übungen',
+        'Quiz-Fragen zum Wissen testen',
+        'Kreativ-Aufgaben zum Mitmachen',
+        'Lösungsblätter für Eltern',
+        'Druckfreundliches Format',
+      ],
+      color: 'text-primary-teal',
+      bgColor: 'bg-primary-teal/10',
+      buttonColor: 'bg-primary-teal hover:bg-primary-teal/90',
+      action: 'Arbeitsblätter öffnen',
+      fileSize: '1.2 MB',
+      format: 'PDF',
+    },
+  ];
+
+  const additionalResources = [
+    { name: 'Prompt-Cheat-Sheet', description: 'Die wichtigsten Prompt-Techniken auf einen Blick', size: '120 KB' },
+    { name: 'KI-Tools-Übersicht', description: 'Kostenlose und kindersichere KI-Tools', size: '180 KB' },
+    { name: 'Eltern-Guide', description: 'Tipps zur Unterstützung Ihres Kindes', size: '320 KB' },
+  ];
+
+  return (
+    <div className="min-h-screen pt-24 pb-16">
+      {/* Hero Banner */}
+      <section className="relative py-16 bg-gradient-to-br from-primary-teal to-cyan-600 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+            backgroundSize: '30px 30px'
+          }} />
+        </div>
+        
+        <div className="section-padding relative z-10">
+          <div className="container-wide text-center">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-outfit font-bold text-white mb-4">
+              Materialien
+            </h1>
+            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+              Arbeitsblätter, Wochenplan und zusätzliche Ressourcen für dein KI-Abenteuer.
+              Alles kostenlos zum Download.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Materials */}
+      <section ref={sectionRef} className="py-16 bg-white">
+        <div className="section-padding">
+          <div className="container-wide">
+            <div className="grid lg:grid-cols-2 gap-8">
+              {materials.map((material, index) => (
+                <div
+                  key={material.id}
+                  className={`group transition-all duration-700 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                  }`}
+                  style={{ transitionDelay: `${200 + index * 150}ms` }}
+                >
+                  <div className="relative h-full bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light">
+                    {/* Icon */}
+                    <div
+                      className={`w-16 h-16 ${material.bgColor} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}
+                    >
+                      <material.icon className={`w-8 h-8 ${material.color}`} />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-2xl font-outfit font-bold text-neutral-dark mb-3">
+                      {material.title}
+                    </h3>
+                    <p className="text-neutral-gray mb-6">
+                      {material.description}
+                    </p>
+
+                    {/* Features List */}
+                    <ul className="space-y-3 mb-8">
+                      {material.features.map((feature, featureIndex) => (
+                        <li
+                          key={featureIndex}
+                          className="flex items-start gap-3 text-sm text-neutral-dark"
+                        >
+                          <CheckCircle className={`w-5 h-5 ${material.color} flex-shrink-0 mt-0.5`} />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* File Info */}
+                    <div className="flex items-center gap-4 mb-6 text-sm text-neutral-gray">
+                      <span className="px-2 py-1 bg-neutral-light rounded">{material.format}</span>
+                      <span>{material.fileSize}</span>
+                    </div>
+
+                    {/* Action Button */}
+                    <button
+                      onClick={() => handleDownload(material.title)}
+                      className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium text-white transition-all duration-300 ${material.buttonColor}`}
+                      aria-label={`${material.title} herunterladen`}
+                    >
+                      <Download className="w-5 h-5" />
+                      {material.action}
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Resources */}
+      <section className="py-16 bg-neutral-light/50">
+        <div className="section-padding">
+          <div className="container-wide">
+            <h2 className="text-2xl font-outfit font-bold text-neutral-dark text-center mb-12">
+              Zusätzliche Ressourcen
+            </h2>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {additionalResources.map((resource, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-10 h-10 bg-accent-yellow/10 rounded-xl flex items-center justify-center">
+                      <FileDown className="w-5 h-5 text-accent-yellow" />
+                    </div>
+                    <span className="text-xs text-neutral-gray">{resource.size}</span>
+                  </div>
+                  <h3 className="font-outfit font-bold text-neutral-dark mb-2">
+                    {resource.name}
+                  </h3>
+                  <p className="text-sm text-neutral-gray mb-4">
+                    {resource.description}
+                  </p>
+                  <button 
+                    onClick={() => handleDownload(resource.name)}
+                    className="flex items-center gap-2 text-sm text-primary-purple hover:text-primary-purple/80 transition-colors"
+                    aria-label={`${resource.name} herunterladen`}
+                  >
+                    <Download className="w-4 h-4" />
+                    Download
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* All Materials Download */}
+      <section className="py-16 bg-white">
+        <div className="section-padding">
+          <div className="container-wide">
+            <div className="bg-gradient-to-br from-primary-purple to-primary-teal rounded-3xl p-8 sm:p-12 text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <FileDown className="w-8 h-8 text-white" />
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-outfit font-bold text-white mb-4">
+                Alle Materialien auf einmal
+              </h2>
+              <p className="text-white/80 max-w-xl mx-auto mb-8">
+                Lade alle Arbeitsblätter, den Wochenplan und alle Zusatzressourcen 
+                als komplettes Paket herunter.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button 
+                  onClick={handleDownloadAll}
+                  className="flex items-center gap-2 px-8 py-4 bg-white text-primary-purple rounded-xl font-bold hover:bg-white/90 transition-colors"
+                  aria-label="Komplettpaket herunterladen"
+                >
+                  <Download className="w-5 h-5" />
+                  Komplettpaket downloaden (2.1 MB)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Help Section */}
+      <section className="py-16 bg-neutral-light/50">
+        <div className="section-padding">
+          <div className="container-wide">
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                  <h3 className="text-xl font-outfit font-bold text-neutral-dark mb-2">
+                    Fragen zu den Materialien?
+                  </h3>
+                  <p className="text-neutral-gray">
+                    Schreib uns eine E-Mail, wir helfen dir gerne weiter.
+                  </p>
+                </div>
+                <a
+                  href="mailto:belkis.aslani@gmail.com?subject=Frage%20zu%20KI-Entdecker%20Materialien"
+                  className="flex items-center gap-2 px-6 py-3 bg-neutral-light text-neutral-dark rounded-xl font-medium hover:bg-neutral-light/80 transition-colors"
+                  aria-label="E-Mail an belkis.aslani@gmail.com schreiben"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  E-Mail schreiben
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Materialien;
