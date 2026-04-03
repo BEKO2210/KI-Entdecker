@@ -8,13 +8,15 @@ import './index.css';
 // Handle redirect from 404.html
 const redirect = new URLSearchParams(window.location.search).get('redirect');
 if (redirect) {
-  const newUrl = window.location.pathname + redirect + window.location.hash;
-  window.history.replaceState(null, '', newUrl);
+  // Use replaceState to update the URL without adding to history
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  window.history.replaceState(null, '', base + redirect + window.location.hash);
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+const root = ReactDOM.createRoot(document.getElementById('root')!);
+root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/KI-Entdecker">
+    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,

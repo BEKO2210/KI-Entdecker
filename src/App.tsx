@@ -32,6 +32,7 @@ function App() {
       <Navigation progress={progress} />
       <main id="main-content" className="flex-grow" tabIndex={-1}>
         <Routes>
+          <Route index element={<Home progress={progress} />} />
           <Route path="/" element={<Home progress={progress} />} />
           <Route path="/kurs" element={<Kurs progress={progress} />} />
           <Route path="/kurs/tag-1" element={<CourseDay1 />} />

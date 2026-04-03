@@ -73,17 +73,9 @@
   
   <script>
     // Single Page Apps for GitHub Pages
-    // MIT License
-    // https://github.com/rafgraph/spa-github-pages
-    
-    // This script takes the current URL and converts the path and query
-    // string into just a query string, and then redirects the browser
-    // to the new URL with only a query string and hash fragment.
-    
     var l = window.location;
-    var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      '/?redirect=' + encodeURIComponent(l.pathname + l.search + l.hash);
-    window.location.replace(redirectUrl);
+    var projectBase = '/KI-Entdecker';
+    l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + projectBase + '/?redirect=' + encodeURIComponent(l.pathname.slice(projectBase.length) + l.search + l.hash));
   </script>
 </body>
 </html>
