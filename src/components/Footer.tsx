@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Heart } from 'lucide-react';
-import { buildAssetUrl } from '@/lib/paths';
+import { buildAssetUrl, buildDownloadUrl } from '@/lib/paths';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -46,6 +46,17 @@ const Footer = () => {
                 </Link>
               ))}
             </nav>
+          </div>
+
+          {/* KI-Tools */}
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-6 text-xs text-neutral-gray">
+            <span className="font-medium text-neutral-dark">KI-Tools:</span>
+            <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-purple transition-colors">ChatGPT</a>
+            <a href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-purple transition-colors">Copilot</a>
+            <a href="https://duck.ai" target="_blank" rel="noopener noreferrer" className="hover:text-primary-purple transition-colors">Duck.ai</a>
+            <a href="https://www.canva.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-purple transition-colors">Canva</a>
+            <a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer" className="hover:text-primary-purple transition-colors">Perplexity</a>
+            <button onClick={() => window.open(buildDownloadUrl('ki-tools-uebersicht.html'), '_blank')} className="hover:text-primary-purple transition-colors underline underline-offset-2">Alle Tools</button>
           </div>
 
           {/* Bottom: Copyright + Heart */}

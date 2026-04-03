@@ -3,36 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KI-Tools Übersicht</title>
+<title>KI-Tools Uebersicht – KI-Entdecker</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 40px; max-width: 900px; margin: 0 auto; }
   @media print { body { padding: 20px; } .no-print { display: none !important; } }
+
   .header { text-align: center; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 3px solid #f97316; }
   .header h1 { font-size: 28px; font-weight: 700; color: #f97316; }
   .header p { color: #6b7280; font-size: 13px; margin-top: 6px; }
+
+  .section-title { font-size: 18px; font-weight: 700; margin: 28px 0 14px; padding-bottom: 8px; border-bottom: 2px solid #f3f4f6; }
+
   .tool-card { border: 2px solid #e5e7eb; border-radius: 14px; padding: 20px; margin-bottom: 16px; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: start; }
   @media (max-width: 600px) {
     .tool-card { grid-template-columns: 1fr; gap: 12px; }
-    .tool-icon { width: 40px; height: 40px; font-size: 20px; }
+    .tool-logo { width: 40px; height: 40px; }
     .tool-age { text-align: left; display: inline-block; }
   }
-  .tool-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+
+  /* Brand logos as styled marks */
+  .tool-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
   .tool-name { font-size: 17px; font-weight: 700; color: #1a1a2e; }
+  .tool-url { font-size: 11px; color: #9ca3af; margin-top: 1px; }
+  .tool-url a { color: #9ca3af; text-decoration: none; }
+  .tool-url a:hover { color: #6b7280; text-decoration: underline; }
   .tool-desc { font-size: 13px; color: #6b7280; margin-top: 4px; line-height: 1.5; }
   .tool-tags { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
   .tag { padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
   .tag-green { background: #f0fdf4; color: #16a34a; }
   .tag-blue { background: #eff6ff; color: #2563eb; }
   .tag-purple { background: #f3f0ff; color: #7F56D9; }
+  .tag-orange { background: #fff7ed; color: #ea580c; }
+
   .tool-age { background: #f9fafb; border-radius: 10px; padding: 8px 14px; text-align: center; white-space: nowrap; }
   .tool-age .label { font-size: 10px; color: #9ca3af; }
   .tool-age .value { font-size: 14px; font-weight: 700; color: #374151; }
+
   .warning { background: #fffbeb; border: 2px solid #fde68a; border-radius: 14px; padding: 18px; margin: 24px 0; }
   .warning h3 { color: #92400e; font-size: 15px; margin-bottom: 6px; }
   .warning p { font-size: 13px; color: #78716c; line-height: 1.6; }
-  .section-title { font-size: 18px; font-weight: 700; margin: 28px 0 14px; padding-bottom: 8px; border-bottom: 2px solid #f3f4f6; }
+
   .print-btn { display: block; margin: 30px auto; padding: 12px 32px; background: #f97316; color: #fff; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: 'Outfit', sans-serif; }
   .print-btn:hover { background: #ea580c; }
   .footer { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; padding-top: 16px; border-top: 1px solid #e5e7eb; }
@@ -40,69 +64,89 @@
 </head>
 <body>
 <div class="header">
-  <h1>Kostenlose & kindersichere KI-Tools</h1>
-  <p>Empfohlene Tools für den KI-Entdecker-Kurs</p>
+  <h1>Kostenlose KI-Tools fuer Kinder</h1>
+  <p>Empfohlene Tools fuer den KI-Entdecker-Kurs &bull; Stand 2026</p>
 </div>
 
-<h2 class="section-title">Text & Chat</h2>
+<!-- Text & Chat -->
+<h2 class="section-title">Text &amp; Chat</h2>
 
 <div class="tool-card">
-  <div class="tool-icon" style="background:#f3f0ff">🤖</div>
+  <div class="tool-logo" style="background:#10a37f">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22.28 9.37a5.97 5.97 0 0 0-.51-4.92 6.05 6.05 0 0 0-6.52-2.91A5.98 5.98 0 0 0 10.8.28a6.05 6.05 0 0 0-5.77 4.18 5.98 5.98 0 0 0-4 2.9 6.05 6.05 0 0 0 .74 7.14 5.97 5.97 0 0 0 .51 4.91 6.05 6.05 0 0 0 6.52 2.92 5.98 5.98 0 0 0 4.45 1.25 6.05 6.05 0 0 0 5.77-4.18 5.98 5.98 0 0 0 4-2.9 6.05 6.05 0 0 0-.74-7.14z" fill="#fff"/></svg>
+  </div>
   <div>
     <div class="tool-name">ChatGPT</div>
-    <div class="tool-desc">Der bekannteste KI-Chatbot. Perfekt für Fragen, Erklärungen, Geschichten und Lernhilfe.</div>
-    <div class="tool-tags"><span class="tag tag-green">Kostenlos</span><span class="tag tag-blue">Text</span><span class="tag tag-purple">Lernhilfe</span></div>
+    <div class="tool-url"><a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a></div>
+    <div class="tool-desc">Der bekannteste KI-Chatbot von OpenAI. Perfekt fuer Fragen, Erklaerungen, Geschichten schreiben und als Lernhilfe. Kann auch Bilder erstellen (DALL-E).</div>
+    <div class="tool-tags"><span class="tag tag-green">Kostenlos</span><span class="tag tag-blue">Text &amp; Bild</span><span class="tag tag-purple">Lernhilfe</span></div>
   </div>
   <div class="tool-age"><div class="label">Alter</div><div class="value">13+</div></div>
 </div>
 
 <div class="tool-card">
-  <div class="tool-icon" style="background:#eff6ff">💬</div>
+  <div class="tool-logo" style="background:linear-gradient(135deg,#2b5797,#05a6f0)">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+  </div>
   <div>
     <div class="tool-name">Microsoft Copilot</div>
-    <div class="tool-desc">KI-Assistent von Microsoft. In Bing integriert, kann auch Bilder erstellen.</div>
-    <div class="tool-tags"><span class="tag tag-green">Kostenlos</span><span class="tag tag-blue">Text & Bild</span></div>
+    <div class="tool-url"><a href="https://copilot.microsoft.com" target="_blank" rel="noopener">copilot.microsoft.com</a></div>
+    <div class="tool-desc">KI-Assistent von Microsoft. Kann Texte schreiben, Fragen beantworten und Bilder erstellen. Direkt im Browser nutzbar, kein Konto noetig.</div>
+    <div class="tool-tags"><span class="tag tag-green">Kostenlos</span><span class="tag tag-blue">Text &amp; Bild</span></div>
   </div>
   <div class="tool-age"><div class="label">Alter</div><div class="value">13+</div></div>
 </div>
 
+<div class="tool-card">
+  <div class="tool-logo" style="background:#de5833">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 3a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm0 14c-2.76 0-5.21-1.4-6.66-3.52C7.46 13.55 12 12.5 12 12.5s4.54 1.05 6.66 2.98A7.98 7.98 0 0 1 12 19z"/></svg>
+  </div>
+  <div>
+    <div class="tool-name">DuckDuckGo AI Chat</div>
+    <div class="tool-url"><a href="https://duck.ai" target="_blank" rel="noopener">duck.ai</a></div>
+    <div class="tool-desc">Anonymer KI-Chat von DuckDuckGo. Besonders datenschutzfreundlich: keine Anmeldung, kein Tracking, Chats werden nicht gespeichert. Nutzt verschiedene KI-Modelle.</div>
+    <div class="tool-tags"><span class="tag tag-green">Kostenlos</span><span class="tag tag-blue">Text</span><span class="tag tag-orange">Anonym</span></div>
+  </div>
+  <div class="tool-age"><div class="label">Alter</div><div class="value">18+*</div></div>
+</div>
+
+<!-- Bilder erstellen -->
 <h2 class="section-title">Bilder erstellen</h2>
 
 <div class="tool-card">
-  <div class="tool-icon" style="background:#fdf2f8">🎨</div>
-  <div>
-    <div class="tool-name">DALL-E (via ChatGPT)</div>
-    <div class="tool-desc">Erstellt Bilder aus Textbeschreibungen. Ideal für kreative Projekte und Illustrationen.</div>
-    <div class="tool-tags"><span class="tag tag-green">Kostenlos (limitiert)</span><span class="tag tag-purple">Bilder</span></div>
+  <div class="tool-logo" style="background:linear-gradient(135deg,#00c4cc,#7d2ae8)">
+    <span style="font-size:20px;font-weight:800;letter-spacing:-1px">C</span>
   </div>
-  <div class="tool-age"><div class="label">Alter</div><div class="value">13+</div></div>
-</div>
-
-<div class="tool-card">
-  <div class="tool-icon" style="background:#fef3c7">✏️</div>
   <div>
-    <div class="tool-name">Canva (KI-Funktionen)</div>
-    <div class="tool-desc">Design-Tool mit KI-Bildgenerator. Einfach zu bedienen, auch für Anfänger.</div>
-    <div class="tool-tags"><span class="tag tag-green">Kostenlos</span><span class="tag tag-purple">Design & Bilder</span></div>
+    <div class="tool-name">Canva</div>
+    <div class="tool-url"><a href="https://www.canva.com" target="_blank" rel="noopener">canva.com</a></div>
+    <div class="tool-desc">Design-Tool mit eingebautem KI-Bildgenerator. Einfach zu bedienen, auch fuer Anfaenger. Vorlagen fuer Poster, Praesentationen und mehr.</div>
+    <div class="tool-tags"><span class="tag tag-green">Kostenlos</span><span class="tag tag-purple">Design &amp; Bilder</span></div>
   </div>
   <div class="tool-age"><div class="label">Alter</div><div class="value">Alle</div></div>
 </div>
 
-<h2 class="section-title">Lernen & Recherche</h2>
+<!-- Lernen & Recherche -->
+<h2 class="section-title">Lernen &amp; Recherche</h2>
 
 <div class="tool-card">
-  <div class="tool-icon" style="background:#f0fdf4">📚</div>
+  <div class="tool-logo" style="background:#1a1a2e">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#22d3ee" stroke-width="2"/><path d="M12 6v6l4 4" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/></svg>
+  </div>
   <div>
     <div class="tool-name">Perplexity AI</div>
-    <div class="tool-desc">KI-Suchmaschine die Quellen angibt. Perfekt für Schulrecherche und Referate.</div>
-    <div class="tool-tags"><span class="tag tag-green">Kostenlos</span><span class="tag tag-blue">Recherche</span></div>
+    <div class="tool-url"><a href="https://www.perplexity.ai" target="_blank" rel="noopener">perplexity.ai</a></div>
+    <div class="tool-desc">KI-Suchmaschine, die Quellen angibt. Perfekt fuer Schulrecherche und Referate, weil man nachpruefen kann, woher die Informationen stammen.</div>
+    <div class="tool-tags"><span class="tag tag-green">Kostenlos</span><span class="tag tag-blue">Recherche</span><span class="tag tag-purple">Mit Quellen</span></div>
   </div>
   <div class="tool-age"><div class="label">Alter</div><div class="value">13+</div></div>
 </div>
 
+<!-- Hinweise -->
 <div class="warning">
-  <h3>Wichtiger Hinweis für Eltern</h3>
-  <p>Die meisten KI-Tools haben ein Mindestalter von 13 Jahren. Jüngere Kinder sollten die Tools nur unter Aufsicht nutzen. Besprechen Sie mit Ihrem Kind, dass KI-Antworten immer überprüft werden sollten und keine persönlichen Daten eingegeben werden dürfen.</p>
+  <h3>Wichtiger Hinweis fuer Eltern</h3>
+  <p>Die meisten KI-Tools haben ein Mindestalter von 13 Jahren. Juengere Kinder sollten die Tools nur unter Aufsicht nutzen. Besprechen Sie mit Ihrem Kind, dass KI-Antworten immer ueberprueft werden sollten und keine persoenlichen Daten eingegeben werden duerfen.</p>
+  <p style="margin-top:8px"><strong>* DuckDuckGo AI Chat</strong> hat laut Nutzungsbedingungen ein Mindestalter von 18 Jahren. Die Nutzung ist aber anonym und ohne Anmeldung moeglich &ndash; hier ist elterliche Begleitung besonders wichtig.</p>
 </div>
 
 <button class="print-btn no-print" onclick="window.print()">Als PDF speichern / Drucken</button>
