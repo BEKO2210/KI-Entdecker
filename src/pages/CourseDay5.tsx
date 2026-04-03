@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, Copy, Trophy, Rocket, GraduationCap, Star, Medal, Sparkles, Send } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle, Copy, Trophy, Rocket, GraduationCap, Star, Medal, Sparkles, Send } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
@@ -552,12 +552,17 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
             Zurück
           </button>
           <button
-            onClick={() => setActiveSection(Math.min(sections.length - 1, activeSection + 1))}
-            disabled={activeSection === sections.length - 1}
+            onClick={() => {
+              if (activeSection === sections.length - 1) {
+                setShowCertificate(true);
+              } else {
+                setActiveSection(activeSection + 1);
+              }
+            }}
             className="flex items-center gap-2 px-6 py-3 bg-yellow-500 text-white rounded-xl font-medium hover:bg-yellow-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Weiter
-            <ArrowLeft className="w-5 h-5 rotate-180" />
+            {activeSection === sections.length - 1 ? 'Zertifikat anzeigen' : 'Weiter'}
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
       </div>

@@ -1,12 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { Lock, Unlock, ArrowRight, Clock, BookOpen, CheckCircle, Award, RotateCcw, Sparkles, Rocket } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { useNavigate } from 'react-router-dom';
+import { Lock, Unlock, ArrowRight, Clock, BookOpen, CheckCircle, Award, RotateCcw } from 'lucide-react';
 import type { useProgress } from '../hooks/useProgress';
 
 interface DayCourse {
@@ -28,8 +22,7 @@ interface KursProps {
 const Kurs = ({ progress }: KursProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [selectedDay, setSelectedDay] = useState<DayCourse | null>(null);
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const unlockedCount = progress.getUnlockedBadgesCount();
@@ -133,13 +126,8 @@ const Kurs = ({ progress }: KursProps) => {
     return () => observer.disconnect();
   }, []);
 
-  const handleDayComplete = (dayId: number) => {
-    progress.completeDay(dayId);
-  };
-
-  const openDayDialog = (day: DayCourse) => {
-    setSelectedDay(day);
-    setDialogOpen(true);
+  const handleStartDay = (dayId: number) => {
+    navigate(`/kurs/tag-${dayId}`);
   };
 
   return (
@@ -312,22 +300,13 @@ const Kurs = ({ progress }: KursProps) => {
                               </div>
                             </div>
 
-                            {isCompleted ? (
+                            {isUnlocked ? (
                               <button
-                                onClick={() => openDayDialog(day)}
-                                className="flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-xl text-sm font-medium hover:bg-green-200 transition-colors"
-                                aria-label={`${day.title} wiederholen`}
-                              >
-                                <CheckCircle className="w-4 h-4" />
-                                Wiederholen
-                              </button>
-                            ) : isUnlocked ? (
-                              <button
-                                onClick={() => openDayDialog(day)}
+                                onClick={() => handleStartDay(day.id)}
                                 className="flex items-center gap-2 px-4 py-2 bg-primary-purple text-white rounded-xl text-sm font-medium hover:bg-primary-purple/90 transition-colors group/btn"
                                 aria-label={`${day.title} starten`}
                               >
-                                {day.id === 1 && completedDays === 0 ? 'Starten' : 'Weitermachen'}
+                                {isCompleted ? 'Wiederholen' : (day.id === 1 && completedDays === 0 ? 'Starten' : 'Weitermachen')}
                                 <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                               </button>
                             ) : (
@@ -359,54 +338,6 @@ const Kurs = ({ progress }: KursProps) => {
           </div>
         </div>
       </section>
-
-      {/* Day Dialog */}
-      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle className="flex items-center gap-2">
-              <Rocket className="w-5 h-5 text-primary-purple" />
-              {selectedDay?.title}
-            </DialogTitle>
-            <DialogDescription>
-              Die interaktiven Lektionen für diesen Tag werden in Kürze verfügbar sein.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="space-y-4 py-4">
-            <div className="bg-neutral-light rounded-xl p-4">
-              <h4 className="font-medium text-neutral-dark mb-2 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-primary-purple" />
-                Geplante Lektionen:
-              </h4>
-              <ul className="space-y-2">
-                {selectedDay?.lessonsList.map((lesson, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm text-neutral-gray">
-                    <div className="w-5 h-5 rounded-full bg-primary-purple/10 flex items-center justify-center text-xs font-medium text-primary-purple">
-                      {i + 1}
-                    </div>
-                    {lesson}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-neutral-gray">Dauer: {selectedDay?.duration}</span>
-              <button
-                onClick={() => {
-                  if (selectedDay) {
-                    handleDayComplete(selectedDay.id);
-                    setDialogOpen(false);
-                  }
-                }}
-                className="flex items-center gap-2 px-4 py-2 bg-primary-purple text-white rounded-xl text-sm font-medium hover:bg-primary-purple/90 transition-colors"
-              >
-                <CheckCircle className="w-4 h-4" />
-                Als abgeschlossen markieren
-              </button>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Lock, Unlock, ArrowRight, Clock, BookOpen } from 'lucide-react';
 
 interface DayCourse {
@@ -16,6 +17,7 @@ interface DayCourse {
 const CourseOverview = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const days: DayCourse[] = [
@@ -209,6 +211,7 @@ const CourseOverview = () => {
 
                     {/* CTA Button */}
                     <button
+                      onClick={() => !day.locked && navigate(`/kurs/tag-${day.id}`)}
                       className={`w-full flex items-center justify-center gap-2 py-3 rounded-xl font-medium transition-all duration-300 ${
                         day.locked
                           ? 'bg-neutral-light text-neutral-gray cursor-not-allowed'
@@ -243,7 +246,10 @@ const CourseOverview = () => {
             <p className="text-neutral-gray mb-4">
               Bereit für dein KI-Abenteuer?
             </p>
-            <button className="btn-primary">
+            <button 
+              onClick={() => navigate('/kurs/tag-1')}
+              className="btn-primary"
+            >
               Jetzt mit Tag 1 starten
             </button>
           </div>

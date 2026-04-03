@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle, Copy, Lightbulb, Calculator, Search, Bug, Target } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
 const CourseDay4 = () => {
   const [activeSection, setActiveSection] = useState(0);
+  const navigate = useNavigate();
   const [mathInput, setMathInput] = useState('');
   const [showAnswers, setShowAnswers] = useState<{[key: string]: boolean}>({});
   const [selectedProblem, setSelectedProblem] = useState<string | null>(null);
@@ -519,11 +520,16 @@ Markiere die Fehler und erkläre kurz, was falsch war.`}
             Zurück
           </button>
           <button
-            onClick={() => setActiveSection(Math.min(sections.length - 1, activeSection + 1))}
-            disabled={activeSection === sections.length - 1}
+            onClick={() => {
+              if (activeSection === sections.length - 1) {
+                navigate('/kurs/tag-5');
+              } else {
+                setActiveSection(activeSection + 1);
+              }
+            }}
             className="flex items-center gap-2 px-6 py-3 bg-orange-600 text-white rounded-xl font-medium hover:bg-orange-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Weiter
+            {activeSection === sections.length - 1 ? 'Tag 5 starten' : 'Weiter'}
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>

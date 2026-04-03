@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   ArrowLeft, ArrowRight, CheckCircle, Copy, Palette, Image, BookOpen, Music, Sparkles,
   Target, Zap, Play, HelpCircle, ChevronDown, ChevronUp, Wand2,
@@ -14,6 +14,7 @@ import { toast } from '@/hooks/use-toast';
 
 const CourseDay3 = () => {
   const [activeSection, setActiveSection] = useState(0);
+  const navigate = useNavigate();
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [completedExercises, setCompletedExercises] = useState<string[]>([]);
   const [storyPrompt, setStoryPrompt] = useState('');
@@ -918,11 +919,16 @@ Struktur:
             Zurück
           </button>
           <button
-            onClick={() => setActiveSection(Math.min(sections.length - 1, activeSection + 1))}
-            disabled={activeSection === sections.length - 1}
+            onClick={() => {
+              if (activeSection === sections.length - 1) {
+                navigate('/kurs/tag-4');
+              } else {
+                setActiveSection(activeSection + 1);
+              }
+            }}
             className="flex items-center gap-2 px-6 py-3 bg-pink-600 text-white rounded-xl font-medium hover:bg-pink-700 transition-colors shadow-lg shadow-pink-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Weiter
+            {activeSection === sections.length - 1 ? 'Tag 4 starten' : 'Weiter'}
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>
