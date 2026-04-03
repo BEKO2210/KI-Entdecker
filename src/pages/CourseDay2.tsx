@@ -27,14 +27,16 @@ const CourseDay2 = ({ progress }: CourseDayProps) => {
   const [showAnswers, setShowAnswers] = useState<{[key: string]: boolean}>({});
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  const { completeDay } = progress;
+
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    
+
     // Mark day as completed when reaching the last section
     if (activeSection === 4) { // CourseDay2 has 5 sections (0 to 4)
-      progress.completeDay(2);
+      completeDay(2);
     }
-  }, [activeSection, progress]);
+  }, [activeSection, completeDay]);
 
   const copyToClipboard = (text: string, description?: string) => {
     navigator.clipboard.writeText(text);

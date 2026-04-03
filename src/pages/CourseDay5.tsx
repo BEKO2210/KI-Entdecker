@@ -17,23 +17,24 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  const { completeDay, unlockBadge } = progress;
+
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    
+
     // Mark day as completed when reaching the last section
     if (activeSection === 5) { // CourseDay5 has 6 sections (0 to 5)
-      progress.completeDay(5);
-      progress.unlockBadge(5); // Unlock the final expert badge
+      completeDay(5);
+      unlockBadge(5); // Unlock the final expert badge
     }
-  }, [activeSection, progress]);
+  }, [activeSection, completeDay, unlockBadge]);
 
   useEffect(() => {
     if (showCertificate) {
-      // Just to be sure
-      progress.completeDay(5);
-      progress.unlockBadge(5);
+      completeDay(5);
+      unlockBadge(5);
     }
-  }, [showCertificate, progress]);
+  }, [showCertificate, completeDay, unlockBadge]);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
