@@ -8,7 +8,7 @@ const Materialien = () => {
     setIsVisible(true);
   }, []);
 
-  const basePath = import.meta.env.BASE_URL || '/';
+  const basePath = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '/');
 
   const openDownload = (path: string) => {
     window.open(`${basePath}downloads/${path}`, '_blank');
