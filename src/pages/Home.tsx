@@ -16,7 +16,7 @@ const Home = ({ progress }: HomeProps) => {
   const unlockedCount = progress.getUnlockedBadgesCount();
 
   const stats = [
-    { icon: Users, value: '5', label: 'Tage à 45 Minuten' },
+    { icon: Users, value: '5', label: 'Kurstage' },
     { icon: FileText, value: '4', label: 'Arbeitsblätter' },
     { icon: Award, value: '5', label: 'Badges zu sammeln' },
   ];
@@ -44,7 +44,7 @@ const Home = ({ progress }: HomeProps) => {
     {
       day: '2',
       title: 'Prompt Engineering',
-      description: 'Die Kunst der perfekten Frage',
+      description: 'Die Kunst der guten Frage',
       color: 'from-teal-500 to-cyan-600',
       bgColor: 'bg-teal-50',
       borderColor: 'border-teal-200',
@@ -56,7 +56,7 @@ const Home = ({ progress }: HomeProps) => {
     {
       day: '3',
       title: 'Kreativ mit KI',
-      description: 'Dein kreativer Partner für unendliche Möglichkeiten',
+      description: 'Bilder, Geschichten und Songtexte mit KI',
       color: 'from-pink-500 to-rose-600',
       bgColor: 'bg-pink-50',
       borderColor: 'border-pink-200',
@@ -68,19 +68,19 @@ const Home = ({ progress }: HomeProps) => {
     {
       day: '4',
       title: 'Problemlösen mit KI',
-      description: 'Dein smarter Helfer für alle Herausforderungen',
+      description: 'Recherchieren, zusammenfassen und korrigieren',
       color: 'from-orange-500 to-amber-600',
       bgColor: 'bg-orange-50',
       borderColor: 'border-orange-200',
       icon: Lightbulb,
       image: buildAssetUrl('images/courses/day4/puzzle-solution.png'),
       path: '/kurs/tag-4',
-      topics: ['Mathe-Hilfe', 'Recherche', 'Fehler finden']
+      topics: ['KI als Lernhelfer', 'Recherche', 'Fehler korrigieren']
     },
     {
       day: '5',
       title: 'Abschlussprojekt',
-      description: 'Deine große KI-Premiere!',
+      description: 'Zeig, was du gelernt hast!',
       color: 'from-yellow-500 to-amber-500',
       bgColor: 'bg-yellow-50',
       borderColor: 'border-yellow-200',
@@ -392,7 +392,7 @@ const Home = ({ progress }: HomeProps) => {
                       ) : (
                         <div className="flex items-center gap-2 text-neutral-gray font-medium">
                           <Lock className="w-4 h-4" />
-                          <span>Schliesse Tag {dayNum - 1} ab</span>
+                          <span>Schließe Tag {dayNum - 1} ab</span>
                         </div>
                       )}
                     </div>
@@ -438,7 +438,7 @@ const Home = ({ progress }: HomeProps) => {
                 {
                   icon: Play,
                   title: 'Interaktives Lernen',
-                  description: 'Nicht nur zuhören, sondern selbst ausprobieren! Mit praktischen Übungen und echten Projekten.'
+                  description: 'Nicht nur lesen, sondern selbst ausprobieren! Mit praktischen Übungen und echten Projekten.'
                 },
                 {
                   icon: Award,
