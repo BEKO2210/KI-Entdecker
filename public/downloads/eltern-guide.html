@@ -5,16 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KI-Entdecker Eltern-Guide</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 40px; max-width: 900px; margin: 0 auto; line-height: 1.6; }
   @media print { body { padding: 20px; } .no-print { display: none !important; } .section { page-break-inside: avoid; } }
   .header { text-align: center; margin-bottom: 36px; padding-bottom: 24px; border-bottom: 3px solid #ec4899; }
   .header h1 { font-size: 28px; font-weight: 700; color: #ec4899; }
   .header p { color: #6b7280; font-size: 13px; margin-top: 6px; }
-  .section { margin-bottom: 28px; }
+  .section { margin-bottom: 32px; }
   .section h2 { font-size: 20px; font-weight: 700; color: #1a1a2e; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #f3f4f6; }
+  .section h3 { font-size: 16px; font-weight: 600; color: #374151; margin: 16px 0 8px; }
   .section p { font-size: 14px; color: #4b5563; margin-bottom: 12px; }
+  .section ul { margin-left: 20px; margin-bottom: 12px; }
+  .section li { font-size: 13px; color: #4b5563; margin-bottom: 4px; }
   .tip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
   .tip { background: #fdf2f8; border: 2px solid #fbcfe8; border-radius: 12px; padding: 16px; }
   .tip h3 { font-size: 14px; font-weight: 700; color: #be185d; margin-bottom: 6px; }
@@ -25,15 +28,41 @@
   .do h3 { color: #16a34a; font-size: 14px; margin-bottom: 8px; }
   .dont h3 { color: #dc2626; font-size: 14px; margin-bottom: 8px; }
   .do li, .dont li { font-size: 13px; color: #4b5563; margin-bottom: 4px; margin-left: 16px; }
-  .checklist { list-style: none; }
+  .day-card { border: 2px solid #f3f4f6; border-radius: 14px; padding: 18px; margin-bottom: 14px; page-break-inside: avoid; }
+  .day-card .day-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .day-badge { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 15px; flex-shrink: 0; }
+  .day-card .day-title { font-size: 16px; font-weight: 700; color: #1a1a2e; }
+  .day-card .day-sub { font-size: 12px; color: #6b7280; }
+  .day-card .day-content { font-size: 13px; color: #4b5563; margin-bottom: 8px; }
+  .day-card .talk-box { background: #fdf2f8; border-radius: 10px; padding: 12px; }
+  .day-card .talk-box .label { font-size: 11px; font-weight: 600; color: #be185d; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .day-card .talk-box p { font-size: 13px; color: #6b7280; margin: 0; font-style: italic; }
+  .b1 { background: linear-gradient(135deg, #7F56D9, #4f46e5); border-color: #7F56D9; }
+  .b2 { background: linear-gradient(135deg, #14b8a6, #0891b2); border-color: #14b8a6; }
+  .b3 { background: linear-gradient(135deg, #ec4899, #e11d48); border-color: #ec4899; }
+  .b4 { background: linear-gradient(135deg, #f97316, #f59e0b); border-color: #f97316; }
+  .b5 { background: linear-gradient(135deg, #eab308, #f59e0b); border-color: #eab308; }
+  .dc1 { border-left: 4px solid #7F56D9; }
+  .dc2 { border-left: 4px solid #14b8a6; }
+  .dc3 { border-left: 4px solid #ec4899; }
+  .dc4 { border-left: 4px solid #f97316; }
+  .dc5 { border-left: 4px solid #eab308; }
+  .checklist { list-style: none; margin-left: 0; }
   .checklist li { font-size: 14px; color: #374151; padding: 8px 0; border-bottom: 1px solid #f3f4f6; }
-  .checklist li::before { content: "☐ "; color: #ec4899; font-size: 16px; }
+  .checklist li::before { content: "\2610  "; color: #ec4899; font-size: 16px; }
   .info-box { background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 14px; padding: 18px; margin: 16px 0; }
   .info-box h3 { color: #1e40af; font-size: 15px; margin-bottom: 8px; }
-  .info-box p { font-size: 13px; color: #4b5563; margin: 0; }
+  .info-box p { font-size: 13px; color: #4b5563; margin: 0 0 8px; }
+  .info-box p:last-child { margin: 0; }
+  .warn-box { background: #fffbeb; border: 2px solid #fde68a; border-radius: 14px; padding: 18px; margin: 16px 0; }
+  .warn-box h3 { color: #92400e; font-size: 15px; margin-bottom: 8px; }
+  .warn-box p { font-size: 13px; color: #4b5563; margin: 0; }
   .age-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
   .age-table th { background: #fdf2f8; color: #be185d; padding: 10px; text-align: left; font-weight: 700; }
   .age-table td { padding: 10px; border-bottom: 1px solid #f3f4f6; color: #4b5563; }
+  .badge-row { display: flex; gap: 10px; margin: 12px 0; flex-wrap: wrap; }
+  .badge-item { display: flex; align-items: center; gap: 8px; background: #f9fafb; border-radius: 10px; padding: 8px 14px; font-size: 13px; color: #374151; }
+  .badge-icon { font-size: 18px; }
   .print-btn { display: block; margin: 30px auto; padding: 12px 32px; background: #ec4899; color: #fff; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: 'Outfit', sans-serif; }
   .print-btn:hover { background: #db2777; }
   .footer { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; padding-top: 16px; border-top: 1px solid #e5e7eb; }
@@ -42,79 +71,188 @@
 <body>
 <div class="header">
   <h1>Eltern-Guide</h1>
-  <p>Tipps & Hinweise zur Begleitung Ihres Kindes beim KI-Entdecker-Kurs</p>
+  <p>Alles, was Sie wissen muessen, um Ihr Kind beim KI-Entdecker-Kurs zu begleiten</p>
 </div>
 
+<!-- Warum KI-Bildung wichtig ist -->
 <div class="section">
   <h2>Warum KI-Bildung wichtig ist</h2>
-  <p>Künstliche Intelligenz ist bereits Teil des Alltags Ihres Kindes: Sprachassistenten, Empfehlungen auf YouTube, Filter in sozialen Medien. Je früher Kinder verstehen, wie KI funktioniert, desto kompetenter und sicherer gehen sie damit um.</p>
-  <p>Dieser Kurs vermittelt nicht nur technisches Wissen, sondern fördert kritisches Denken und verantwortungsvollen Umgang mit Technologie.</p>
+  <p>Kuenstliche Intelligenz ist bereits Teil des Alltags Ihres Kindes: Sprachassistenten wie Siri und Alexa, Empfehlungen auf YouTube, Filter in sozialen Medien, Textvorschlaege auf dem Smartphone. Je frueher Kinder verstehen, wie diese Technologie funktioniert, desto kompetenter und sicherer gehen sie damit um.</p>
+  <p>Der KI-Entdecker-Kurs vermittelt nicht nur technisches Grundwissen, sondern foerdert vor allem kritisches Denken: Kinder lernen, KI-Antworten zu hinterfragen, KI als Werkzeug (nicht als Wahrheitsquelle) zu nutzen und verantwortungsvoll mit der Technologie umzugehen.</p>
 </div>
 
+<!-- Kursueberblick -->
 <div class="section">
-  <h2>So unterstützen Sie Ihr Kind optimal</h2>
-  <div class="tip-grid">
-    <div class="tip"><h3>Interesse zeigen</h3><p>Fragen Sie nach jedem Tag, was Ihr Kind gelernt hat. Lassen Sie es Ihnen die Konzepte erklären.</p></div>
-    <div class="tip"><h3>Gemeinsam ausprobieren</h3><p>Testen Sie die KI-Tools zusammen. Das macht Spaß und Sie lernen auch etwas!</p></div>
-    <div class="tip"><h3>Keine Angst vor Fehlern</h3><p>Es gibt kein Richtig oder Falsch beim Experimentieren. Ermutigen Sie zum Ausprobieren.</p></div>
-    <div class="tip"><h3>Pausen einplanen</h3><p>45 Minuten am Stück sind genug. Machen Sie zwischendurch eine kleine Pause.</p></div>
+  <h2>Was Ihr Kind in 5 Tagen lernt</h2>
+  <p>Der Kurs besteht aus 5 Kurstagen mit je ~45 Minuten (Tag 5: ~60 Minuten). Jeder Tag hat 3 Lektionen, eine FAQ-Sektion und wird mit einem Badge belohnt. Hier ist, was an jedem Tag passiert:</p>
+
+  <div class="day-card dc1">
+    <div class="day-head">
+      <div class="day-badge b1">1</div>
+      <div><div class="day-title">Was ist KI?</div><div class="day-sub">~45 Minuten &bull; Grundlagen</div></div>
+    </div>
+    <div class="day-content">Ihr Kind lernt, was Kuenstliche Intelligenz ist, wie sich KI von normalen Computerprogrammen unterscheidet und wie Maschinen &bdquo;lernen&ldquo;. Am Ende probiert es seinen ersten Chatbot-Prompt aus.</div>
+    <div class="talk-box">
+      <div class="label">Gespraechsanregung nach Tag 1</div>
+      <p>&bdquo;Was ist der Unterschied zwischen einem normalen Programm und einer KI? Kannst du mir ein Beispiel geben?&ldquo;</p>
+    </div>
+  </div>
+
+  <div class="day-card dc2">
+    <div class="day-head">
+      <div class="day-badge b2">2</div>
+      <div><div class="day-title">Prompt Engineering</div><div class="day-sub">~45 Minuten &bull; Die Kunst der guten Frage</div></div>
+    </div>
+    <div class="day-content">Ihr Kind lernt das &bdquo;5-Sterne-Rezept&ldquo; fuer gute Prompts: Rolle, Aufgabe, Zielgruppe, Format und Ton. Es uebt, schlechte Prompts in gute umzuschreiben und sieht den Unterschied in den Ergebnissen.</div>
+    <div class="talk-box">
+      <div class="label">Gespraechsanregung nach Tag 2</div>
+      <p>&bdquo;Zeig mir doch mal, wie man der KI eine gute Frage stellt. Was macht einen guten Prompt aus?&ldquo;</p>
+    </div>
+  </div>
+
+  <div class="day-card dc3">
+    <div class="day-head">
+      <div class="day-badge b3">3</div>
+      <div><div class="day-title">Kreativ mit KI</div><div class="day-sub">~45 Minuten &bull; Bilder, Geschichten, Songtexte</div></div>
+    </div>
+    <div class="day-content">Ihr Kind entdeckt die kreative Seite der KI: Es lernt, mit Bild-Prompts zu experimentieren, schreibt mit KI-Unterstuetzung Geschichten und probiert weitere kreative Moeglichkeiten wie Songtexte und Gedichte aus.</div>
+    <div class="talk-box">
+      <div class="label">Gespraechsanregung nach Tag 3</div>
+      <p>&bdquo;Was hast du heute mit der KI erstellt? Zeig mir dein Lieblings-Ergebnis! Wuerdest du sagen, das ist dein Werk oder das der KI?&ldquo;</p>
+    </div>
+  </div>
+
+  <div class="day-card dc4">
+    <div class="day-head">
+      <div class="day-badge b4">4</div>
+      <div><div class="day-title">Problemloesen mit KI</div><div class="day-sub">~45 Minuten &bull; KI als Lernhelfer</div></div>
+    </div>
+    <div class="day-content">Ihr Kind lernt, KI als Lernhilfe einzusetzen: Themen recherchieren, Texte zusammenfassen und Fehler in eigenen Texten finden. Wichtig: Die KI ersetzt nicht das eigene Denken, sondern unterstuetzt es.</div>
+    <div class="talk-box">
+      <div class="label">Gespraechsanregung nach Tag 4</div>
+      <p>&bdquo;Wie koennte dir die KI bei den Hausaufgaben helfen, ohne dass sie die Arbeit fuer dich macht?&ldquo;</p>
+    </div>
+  </div>
+
+  <div class="day-card dc5">
+    <div class="day-head">
+      <div class="day-badge b5">5</div>
+      <div><div class="day-title">Abschlussprojekt</div><div class="day-sub">~60 Minuten &bull; Eigenes Projekt &amp; Zertifikat</div></div>
+    </div>
+    <div class="day-content">Ihr Kind waehlt aus drei Projekten: einen KI-Comic gestalten, ein eigenes KI-Quiz erstellen oder einen KI-Assistenten bauen. Am Ende erhaelt es ein druckbares Zertifikat, das Sie gemeinsam ausfuellen koennen.</div>
+    <div class="talk-box">
+      <div class="label">Gespraechsanregung nach Tag 5</div>
+      <p>&bdquo;Erklaer mir dein Projekt! Was wuerdest du als naechstes mit KI ausprobieren wollen?&ldquo;</p>
+    </div>
   </div>
 </div>
 
+<!-- So unterstuetzen Sie Ihr Kind -->
 <div class="section">
-  <h2>Regeln für die KI-Nutzung</h2>
+  <h2>So unterstuetzen Sie Ihr Kind optimal</h2>
+  <div class="tip-grid">
+    <div class="tip"><h3>Interesse zeigen</h3><p>Fragen Sie nach jedem Kurstag, was Ihr Kind gelernt hat. Lassen Sie es Ihnen die Konzepte erklaeren &ndash; das festigt das Gelernte.</p></div>
+    <div class="tip"><h3>Gemeinsam ausprobieren</h3><p>Testen Sie die KI-Prompts zusammen aus. Das macht Spass und Sie lernen dabei auch selbst etwas ueber KI!</p></div>
+    <div class="tip"><h3>Keine Angst vor Fehlern</h3><p>Es gibt kein Richtig oder Falsch beim Experimentieren mit KI. Ermutigen Sie Ihr Kind zum Ausprobieren.</p></div>
+    <div class="tip"><h3>Pausen einplanen</h3><p>45 Minuten am Stueck sind genug Bildschirmzeit. Planen Sie zwischen den Lektionen kurze Pausen ein.</p></div>
+  </div>
+
+  <h3>Wenn Ihr Kind nicht weiterkommt</h3>
+  <ul>
+    <li>Lesen Sie den Abschnitt gemeinsam nochmal durch</li>
+    <li>Nutzen Sie die FAQ-Sektion am Ende jedes Kurstages &ndash; dort werden haeufige Fragen beantwortet</li>
+    <li>Ermutigen Sie Ihr Kind, den &bdquo;Zurueck&ldquo;-Button zu nutzen und die vorherige Lektion zu wiederholen</li>
+    <li>Es ist voellig in Ordnung, einen Kurstag ueber mehrere Sitzungen zu verteilen</li>
+  </ul>
+</div>
+
+<!-- Regeln fuer die KI-Nutzung -->
+<div class="section">
+  <h2>Regeln fuer die KI-Nutzung</h2>
+  <p>Besprechen Sie diese Regeln gemeinsam mit Ihrem Kind, bevor es den Kurs beginnt:</p>
   <div class="do-dont">
     <div class="do">
       <h3>Das sollte Ihr Kind tun</h3>
       <ul>
-        <li>KI-Antworten immer überprüfen</li>
-        <li>Eigene Gedanken einbringen</li>
-        <li>Bei Unsicherheiten nachfragen</li>
-        <li>KI als Lernhilfe nutzen, nicht als Ersatz</li>
-        <li>Spaß haben und experimentieren</li>
+        <li>KI-Antworten immer ueberpruefen und hinterfragen</li>
+        <li>Eigene Gedanken einbringen, bevor die KI gefragt wird</li>
+        <li>Bei Unsicherheiten Sie als Eltern fragen</li>
+        <li>KI als Lernhilfe und Werkzeug nutzen, nicht als Ersatz fuer eigenes Denken</li>
+        <li>Spass haben und frei experimentieren</li>
       </ul>
     </div>
     <div class="dont">
       <h3>Das sollte Ihr Kind vermeiden</h3>
       <ul>
-        <li>Persönliche Daten eingeben (Name, Adresse etc.)</li>
-        <li>KI-Texte als eigene Arbeit abgeben</li>
-        <li>Alles glauben, was die KI sagt</li>
-        <li>Ohne Aufsicht unbekannte Tools nutzen</li>
-        <li>Sich schlecht fühlen, wenn etwas nicht klappt</li>
+        <li>Persoenliche Daten eingeben (Name, Adresse, Schule, Fotos)</li>
+        <li>KI-Texte als eigene Arbeit in der Schule abgeben</li>
+        <li>Alles glauben, was die KI sagt &ndash; KI kann sich irren</li>
+        <li>Ohne Absprache unbekannte KI-Tools herunterladen</li>
+        <li>Sich schlecht fuehlen, wenn ein Prompt nicht funktioniert</li>
       </ul>
     </div>
   </div>
 </div>
 
+<!-- Fortschritt & Badges -->
+<div class="section">
+  <h2>So funktioniert der Fortschritt</h2>
+  <p>Ihr Kind sammelt beim Durcharbeiten des Kurses Badges (Abzeichen). Jeder abgeschlossene Kurstag schaltet einen Badge frei:</p>
+  <div class="badge-row">
+    <div class="badge-item"><span class="badge-icon">&#129302;</span> KI-Anfaenger (Tag 1)</div>
+    <div class="badge-item"><span class="badge-icon">&#128172;</span> Prompt-Meister (Tag 2)</div>
+    <div class="badge-item"><span class="badge-icon">&#127912;</span> Kreativ-Genie (Tag 3)</div>
+    <div class="badge-item"><span class="badge-icon">&#129513;</span> Problem-Loeser (Tag 4)</div>
+    <div class="badge-item"><span class="badge-icon">&#127942;</span> KI-Experte (Tag 5)</div>
+  </div>
+  <p>Die Kurstage muessen der Reihe nach durchgearbeitet werden &ndash; Tag 2 wird erst freigeschaltet, wenn Tag 1 vollstaendig abgeschlossen ist. Das stellt sicher, dass Ihr Kind die Grundlagen versteht, bevor es zu komplexeren Themen uebergeht.</p>
+  <p>Der Fortschritt wird automatisch im Browser gespeichert. Ihr Kind kann jederzeit unterbrechen und spaeter weitermachen. Wenn Sie den Fortschritt zuruecksetzen moechten (z.B. fuer ein Geschwisterkind), gibt es dafuer einen Button auf der Kurs-Seite.</p>
+</div>
+
+<!-- Altersempfehlungen -->
 <div class="section">
   <h2>Altersempfehlungen</h2>
   <table class="age-table">
-    <tr><th>Alter</th><th>Empfehlung</th><th>Begleitung</th></tr>
-    <tr><td>8 – 10 Jahre</td><td>Kurs mit elterlicher Unterstützung</td><td>Aktiv dabei sein, gemeinsam Tools nutzen</td></tr>
-    <tr><td>10 – 12 Jahre</td><td>Kurs weitgehend selbstständig</td><td>Bei Fragen verfügbar sein, Ergebnisse besprechen</td></tr>
-    <tr><td>12 – 14 Jahre</td><td>Kurs selbstständig + vertiefende Materialien</td><td>Gelegentlich nachfragen, Diskussionen anregen</td></tr>
+    <tr><th>Alter</th><th>Empfehlung</th><th>Ihre Rolle</th></tr>
+    <tr><td>8 &ndash; 10 Jahre</td><td>Kurs gemeinsam durchfuehren</td><td>Aktiv dabei sein, Texte vorlesen helfen, gemeinsam Prompts ausprobieren</td></tr>
+    <tr><td>10 &ndash; 12 Jahre</td><td>Kurs weitgehend selbststaendig</td><td>In der Naehe bleiben, bei Fragen helfen, Ergebnisse gemeinsam besprechen</td></tr>
+    <tr><td>12 &ndash; 14 Jahre</td><td>Kurs selbststaendig</td><td>Gelegentlich nachfragen, Diskussionen anregen, ueber Verantwortung sprechen</td></tr>
   </table>
 </div>
 
+<!-- Checkliste -->
 <div class="section">
-  <h2>Checkliste pro Tag</h2>
+  <h2>Checkliste: Vor jedem Kurstag</h2>
   <ul class="checklist">
-    <li>Computer/Tablet mit Internet bereit</li>
+    <li>Computer oder Tablet mit Internetzugang bereit</li>
+    <li>Moderner Browser geoeffnet (Chrome, Firefox, Safari oder Edge)</li>
     <li>Ruhiger Arbeitsplatz eingerichtet</li>
-    <li>Getränk und Snack vorbereitet</li>
-    <li>45-60 Minuten ungestörte Zeit eingeplant</li>
-    <li>Kind ist motiviert und ausgeruht</li>
-    <li>Eltern in der Nähe für Fragen</li>
+    <li>45&ndash;60 Minuten ungestoerte Zeit eingeplant</li>
+    <li>Getraenk bereitgestellt</li>
+    <li>Kind ist ausgeruht und motiviert</li>
+    <li>Sie sind in der Naehe fuer Rueckfragen</li>
   </ul>
 </div>
 
+<!-- Datenschutz -->
 <div class="info-box">
-  <h3>Datenschutz & Sicherheit</h3>
-  <p>Der KI-Entdecker-Kurs speichert keine personenbezogenen Daten. Der Lernfortschritt wird ausschließlich lokal im Browser gespeichert. Wir empfehlen nur Tools mit hohen Datenschutzstandards. Für die Nutzung externer KI-Tools (z.B. ChatGPT) gelten deren Nutzungsbedingungen – bitte prüfen Sie diese vor der Nutzung durch Ihr Kind.</p>
+  <h3>Datenschutz &amp; Sicherheit</h3>
+  <p>Der KI-Entdecker-Kurs speichert keine personenbezogenen Daten auf Servern. Der Lernfortschritt wird ausschliesslich lokal im Browser Ihres Geraetes gespeichert (sogenannter &bdquo;Local Storage&ldquo;). Es gibt kein Benutzerkonto und keine Registrierung.</p>
+  <p>Fuer die praktischen Uebungen empfiehlt der Kurs kostenlose KI-Tools wie ChatGPT. Fuer die Nutzung dieser externen Tools gelten deren jeweilige Datenschutzbestimmungen. Wir empfehlen: Lesen Sie die Nutzungsbedingungen und erstellen Sie ggf. ein Eltern-Konto, ueber das Ihr Kind die Tools nutzen kann.</p>
+</div>
+
+<div class="warn-box">
+  <h3>Wichtiger Hinweis</h3>
+  <p>KI-Tools koennen ungenaue oder falsche Informationen liefern. Der Kurs thematisiert dies ausdruecklich und bringt Kindern bei, KI-Antworten kritisch zu pruefen. Dennoch: Begleiten Sie juengere Kinder bei der Nutzung externer KI-Tools und sprechen Sie offen ueber die Grenzen der Technologie.</p>
+</div>
+
+<!-- Zertifikat -->
+<div class="section">
+  <h2>Das Zertifikat</h2>
+  <p>Nach Abschluss aller 5 Kurstage erhaelt Ihr Kind ein druckbares Zertifikat. Darauf sind alle 5 Badges und ein Namensfeld enthalten. Sie koennen den Namen Ihres Kindes und das Datum von Hand eintragen, das Zertifikat ausdrucken oder als PDF speichern &ndash; eine schoene Erinnerung an das Erreichte!</p>
 </div>
 
 <button class="print-btn no-print" onclick="window.print()">Als PDF speichern / Drucken</button>
-<div class="footer">KI-Entdecker &bull; Eltern-Guide &bull; ki-entdecker.de</div>
+<div class="footer">KI-Entdecker &bull; Eltern-Guide &bull; beko2210.github.io/KI-Entdecker</div>
 </body>
 </html>
