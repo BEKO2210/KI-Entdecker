@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
@@ -5,11 +6,11 @@ import ScrollToTop from './components/ScrollToTop';
 import { Toaster } from './components/ui/toaster';
 import Home from './pages/Home';
 import Kurs from './pages/Kurs';
-import CourseDay1 from './pages/CourseDay1';
-import CourseDay2 from './pages/CourseDay2';
-import CourseDay3 from './pages/CourseDay3';
-import CourseDay4 from './pages/CourseDay4';
-import CourseDay5 from './pages/CourseDay5';
+const CourseDay1 = lazy(() => import('./pages/CourseDay1'));
+const CourseDay2 = lazy(() => import('./pages/CourseDay2'));
+const CourseDay3 = lazy(() => import('./pages/CourseDay3'));
+const CourseDay4 = lazy(() => import('./pages/CourseDay4'));
+const CourseDay5 = lazy(() => import('./pages/CourseDay5'));
 import Materialien from './pages/Materialien';
 import Eltern from './pages/Eltern';
 import Wochenplan from './pages/Wochenplan';
@@ -34,6 +35,7 @@ function App() {
       
       <Navigation progress={progress} />
       <main id="main-content" className="flex-grow" tabIndex={-1}>
+        <Suspense fallback={<div className="min-h-screen" />}>
         <Routes>
           <Route index element={<Home progress={progress} />} />
           <Route path="/" element={<Home progress={progress} />} />
@@ -50,6 +52,7 @@ function App() {
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </main>
       <Footer />
       <Toaster />
