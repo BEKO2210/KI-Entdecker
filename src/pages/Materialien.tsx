@@ -1,26 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Calendar, FileText, Download, CheckCircle, FileDown, ExternalLink } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
 const Materialien = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
+    setIsVisible(true);
   }, []);
 
   const handleDownload = (itemName: string) => {
@@ -113,7 +99,7 @@ const Materialien = () => {
       </section>
 
       {/* Main Materials */}
-      <section ref={sectionRef} className="py-16 bg-white">
+      <section className="py-16 bg-white">
         <div className="section-padding">
           <div className="container-wide">
             <div className="grid lg:grid-cols-2 gap-8">

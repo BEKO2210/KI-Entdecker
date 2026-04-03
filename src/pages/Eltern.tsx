@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, Clock, BookOpen, MessageCircle, CheckCircle, ChevronDown, ChevronUp, Mail, ExternalLink } from 'lucide-react';
 
@@ -10,23 +10,9 @@ interface FAQ {
 const Eltern = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
+    setIsVisible(true);
   }, []);
 
   const benefits = [
@@ -156,7 +142,7 @@ const Eltern = () => {
       </section>
 
       {/* Content Split */}
-      <section ref={sectionRef} className="py-16 bg-neutral-light/50">
+      <section className="py-16 bg-neutral-light/50">
         <div className="section-padding">
           <div className="container-wide">
             <div className="grid lg:grid-cols-2 gap-12 items-start">
