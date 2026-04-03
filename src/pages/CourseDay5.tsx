@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle, Copy, Trophy, Rocket, GraduationCap, Star, Medal, Sparkles, Send } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
@@ -9,10 +9,11 @@ const CourseDay5 = () => {
   const [showCertificate, setShowCertificate] = useState(false);
   const [projectIdea, setProjectIdea] = useState('');
   const [completedTasks, setCompletedTasks] = useState<string[]>([]);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [activeSection]);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -536,7 +537,7 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
         </div>
 
         {/* Content */}
-        <div className="animate-fadeIn">
+        <div ref={sectionRef} className="animate-fadeIn">
           {sections[activeSection].content}
         </div>
 

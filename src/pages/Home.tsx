@@ -190,14 +190,14 @@ const Home = ({ progress }: HomeProps) => {
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                 >
-                  <Link
-                    to="/kurs"
+                  <button
+                    onClick={() => document.getElementById('course-path')?.scrollIntoView({ behavior: 'smooth' })}
                     className="btn-primary flex items-center justify-center gap-2 group"
                     aria-label={unlockedCount > 0 ? 'Kurs fortsetzen' : 'Kurs starten'}
                   >
                     <Play className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
                     {unlockedCount > 0 ? 'Weitermachen' : 'Kurs starten'}
-                  </Link>
+                  </button>
                   <Link
                     to="/eltern"
                     className="btn-secondary flex items-center justify-center"
@@ -311,7 +311,7 @@ const Home = ({ progress }: HomeProps) => {
       </section>
 
       {/* Course Cards Section */}
-      <section className="py-24 bg-white">
+      <section id="course-path" className="py-24 bg-white">
         <div className="section-padding">
           <div className="container-wide">
             <div className="text-center max-w-2xl mx-auto mb-16">

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowLeft, ArrowRight, CheckCircle, Copy, Star, MessageCircle, Zap, Target,
@@ -19,9 +19,10 @@ const CourseDay2 = () => {
   const [completedExercises, setCompletedExercises] = useState<string[]>([]);
   const [userPrompt, setUserPrompt] = useState('');
   const [showAnswers, setShowAnswers] = useState<{[key: string]: boolean}>({});
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [activeSection]);
 
   const copyToClipboard = (text: string, description?: string) => {
@@ -1052,7 +1053,7 @@ const CourseDay2 = () => {
         </div>
 
         {/* Content */}
-        <div className="animate-fade-in-up">
+        <div ref={sectionRef} className="animate-fade-in-up">
           {sections[activeSection].content}
         </div>
 

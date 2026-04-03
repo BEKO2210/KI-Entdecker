@@ -21,7 +21,7 @@ const CourseDay1 = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [activeSection]);
 
   const copyToClipboard = (text: string, description?: string) => {

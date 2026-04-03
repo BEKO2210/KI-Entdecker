@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle, Copy, Lightbulb, Calculator, Search, Bug, Target } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
@@ -8,10 +8,11 @@ const CourseDay4 = () => {
   const [mathInput, setMathInput] = useState('');
   const [showAnswers, setShowAnswers] = useState<{[key: string]: boolean}>({});
   const [selectedProblem, setSelectedProblem] = useState<string | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [activeSection]);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -503,7 +504,7 @@ Markiere die Fehler und erkläre kurz, was falsch war.`}
         </div>
 
         {/* Content */}
-        <div className="animate-fadeIn">
+        <div ref={sectionRef} className="animate-fadeIn">
           {sections[activeSection].content}
         </div>
 

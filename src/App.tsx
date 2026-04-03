@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import { Toaster } from './components/ui/toaster';
 import Home from './pages/Home';
 import Kurs from './pages/Kurs';
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden flex flex-col">
+      <ScrollToTop />
       {/* Skip to main content link for accessibility */}
       <a 
         href="#main-content" 
