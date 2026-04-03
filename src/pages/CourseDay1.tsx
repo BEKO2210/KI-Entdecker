@@ -20,6 +20,7 @@ interface CourseDayProps {
 
 const CourseDay1 = ({ progress }: CourseDayProps) => {
   const [activeSection, setActiveSection] = useState(0);
+  const [maxReachedSection, setMaxReachedSection] = useState(0);
   const navigate = useNavigate();
   const [fillBlankAnswers, setFillBlankAnswers] = useState<{[key: string]: string}>({});
   const [showAnswers, setShowAnswers] = useState<{[key: string]: boolean}>({});
@@ -28,6 +29,11 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const { completeDay } = progress;
+
+  // Track highest section reached (render-time update, no effect needed)
+  if (activeSection > maxReachedSection) {
+    setMaxReachedSection(activeSection);
+  }
 
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1106,17 +1112,18 @@ Stell dich vor und frag mich, welches Tier mich interessiert!`}
           {sections.map((section, index) => (
             <button
               key={section.id}
-              onClick={() => setActiveSection(index)}
+              onClick={() => index <= maxReachedSection && setActiveSection(index)}
+              disabled={index > maxReachedSection}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium transition-all ${
-                activeSection === index 
-                  ? 'bg-purple-600 text-white shadow-lg shadow-purple-200' 
-                  : activeSection > index
+                activeSection === index
+                  ? 'bg-purple-600 text-white shadow-lg shadow-purple-200'
+                  : index <= maxReachedSection
                   ? 'bg-green-100 text-green-700'
-                  : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                  : 'bg-white text-gray-400 border border-gray-200 opacity-50 cursor-not-allowed'
               }`}
               aria-current={activeSection === index ? 'step' : undefined}
             >
-              {activeSection > index ? (
+              {index <= maxReachedSection && activeSection !== index ? (
                 <CheckCircle className="w-4 h-4" />
               ) : (
                 <section.icon className="w-4 h-4" />
