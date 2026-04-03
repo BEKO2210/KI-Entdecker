@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Shield, Clock, BookOpen, MessageCircle, CheckCircle, ChevronDown, ChevronUp, Mail, ExternalLink } from 'lucide-react';
+import { Shield, Clock, BookOpen, MessageCircle, CheckCircle, ChevronDown, ChevronUp, Mail, Download } from 'lucide-react';
+import { buildDownloadUrl } from '@/lib/paths';
 
 interface FAQ {
   question: string;
@@ -14,7 +14,7 @@ const Eltern = () => {
   const benefits = [
     {
       icon: Shield,
-      title: 'Sicherheit first',
+      title: 'Sicherheit zuerst',
       description: 'Alle Inhalte sind altersgerecht und kindersicher. Keine Werbung, keine Datenweitergabe an Dritte, keine versteckten Kosten.',
     },
     {
@@ -24,23 +24,23 @@ const Eltern = () => {
     },
     {
       icon: BookOpen,
-      title: 'Bildungsorientiert',
-      description: 'Entwickelt mit Pädagogen und KI-Experten für maximale Lernwirkung. Praxisnah und zukunftsorientiert.',
+      title: 'Praxisnah & Verständlich',
+      description: 'Alle Lektionen sind praxisnah aufgebaut: lesen, ausprobieren, üben. Kein trockenes Theorie-Pauken.',
     },
     {
       icon: MessageCircle,
       title: 'Eltern-Guide inklusive',
-      description: 'Umfassende Informationen, wie Sie Ihr Kind unterstützen können – auch ohne eigenes KI-Wissen.',
+      description: 'Ein ausführlicher Guide mit Tipps, Gesprächsanregungen und Regeln für die KI-Nutzung – auch ohne eigenes KI-Wissen.',
     },
   ];
 
   const learningGoals = [
-    'Grundlagen der Künstlichen Intelligenz verstehen',
-    'Sicherer und verantwortungsvoller Umgang mit KI-Tools',
-    'Kreative Projekte mit KI-Unterstützung umsetzen',
-    'Kritisches Denken und Medienkompetenz entwickeln',
-    'Problemlösungsstrategien für die digitale Welt',
-    'Zukunftstechnologien spielerisch entdecken',
+    'Verstehen, was KI ist und wie Computer lernen (Tag 1)',
+    'Gute Prompts schreiben und KI gezielt steuern (Tag 2)',
+    'Kreativ mit KI arbeiten: Bilder, Geschichten, Songtexte (Tag 3)',
+    'KI als Lernhelfer nutzen: recherchieren, zusammenfassen, korrigieren (Tag 4)',
+    'Ein eigenes Projekt mit KI umsetzen: Comic, Quiz oder Assistent (Tag 5)',
+    'Kritisches Denken: KI-Antworten hinterfragen und prüfen',
   ];
 
   const faqs: FAQ[] = [
@@ -240,37 +240,46 @@ const Eltern = () => {
         </div>
       </section>
 
-      {/* Contact CTA */}
+      {/* Eltern-Guide Download */}
       <section className="py-16 bg-white">
         <div className="section-padding">
           <div className="container-wide">
-            <div className="bg-gradient-to-br from-primary-purple to-primary-teal rounded-3xl p-8 sm:p-12 text-center">
+            <div className="bg-gradient-to-br from-accent-pink to-rose-600 rounded-3xl p-8 sm:p-12 text-center">
               <h2 className="text-2xl sm:text-3xl font-outfit font-bold text-white mb-4">
-                Haben Sie weitere Fragen?
+                Eltern-Guide herunterladen
               </h2>
               <p className="text-white/80 max-w-xl mx-auto mb-8">
-                Wir sind für Sie da. Schreiben Sie uns eine E-Mail und wir antworten 
-                so schnell wie möglich.
+                Unser ausführlicher Guide enthält Tipps zur Begleitung, Gesprächsanregungen
+                für jeden Kurstag, Regeln für die KI-Nutzung und eine praktische Checkliste.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a
-                  href="mailto:belkis.aslani@gmail.com?subject=Frage%20zu%20KI-Entdecker"
-                  className="flex items-center gap-2 px-8 py-4 bg-white text-primary-purple rounded-xl font-bold hover:bg-white/90 transition-colors"
-                  aria-label="E-Mail an belkis.aslani@gmail.com schreiben"
-                >
-                  <Mail className="w-5 h-5" />
-                  E-Mail schreiben
-                </a>
-                <Link
-                  to="/materialien"
-                  className="flex items-center gap-2 px-8 py-4 bg-white/20 text-white rounded-xl font-bold hover:bg-white/30 transition-colors"
-                  aria-label="Zu den Materialien navigieren"
-                >
-                  <ExternalLink className="w-5 h-5" />
-                  Zu den Materialien
-                </Link>
-              </div>
+              <button
+                onClick={() => window.open(buildDownloadUrl('eltern-guide.html'), '_blank')}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent-pink rounded-xl font-bold hover:bg-white/90 transition-colors"
+                aria-label="Eltern-Guide als PDF herunterladen"
+              >
+                <Download className="w-5 h-5" />
+                Eltern-Guide öffnen (PDF / Druck)
+              </button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-8 bg-white">
+        <div className="section-padding">
+          <div className="container-wide text-center">
+            <p className="text-neutral-gray mb-4">
+              Haben Sie weitere Fragen? Wir sind für Sie da.
+            </p>
+            <a
+              href="mailto:belkis.aslani@gmail.com?subject=Frage%20zu%20KI-Entdecker"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-neutral-light text-neutral-dark rounded-xl font-medium hover:bg-neutral-light/80 transition-colors"
+              aria-label="E-Mail an belkis.aslani@gmail.com schreiben"
+            >
+              <Mail className="w-5 h-5" />
+              E-Mail schreiben
+            </a>
           </div>
         </div>
       </section>

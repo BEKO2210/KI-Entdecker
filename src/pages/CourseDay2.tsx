@@ -37,7 +37,7 @@ const CourseDay2 = ({ progress }: CourseDayProps) => {
   }
 
   useEffect(() => {
-    sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Mark day as completed when reaching the last section
     if (activeSection === 4) { // CourseDay2 has 5 sections (0 to 4)
