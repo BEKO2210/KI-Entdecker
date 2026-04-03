@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, Clock, BookOpen, MessageCircle, CheckCircle, ChevronDown, ChevronUp, Mail, ExternalLink } from 'lucide-react';
 
@@ -8,12 +8,8 @@ interface FAQ {
 }
 
 const Eltern = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const isVisible = true;
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   const benefits = [
     {

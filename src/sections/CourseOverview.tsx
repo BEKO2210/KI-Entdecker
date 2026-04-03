@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Lock, Unlock, ArrowRight, Clock, BookOpen } from 'lucide-react';
+import { buildAssetUrl } from '@/lib/paths';
 
 interface DayCourse {
   id: number;
@@ -28,7 +29,7 @@ const CourseOverview = () => {
       description: 'Verstehe den Unterschied zwischen einfachen Regeln und echter KI. Wir bauen einen einfachen Chatbot und lernen, wie Computer "denken" können.',
       duration: '45 Minuten',
       lessons: 3,
-      image: '/KI-Entdecker/images/day1-brain.png',
+      image: buildAssetUrl('images/day1-brain.png'),
       color: 'from-purple-500 to-indigo-600',
       locked: false,
     },
@@ -39,7 +40,7 @@ const CourseOverview = () => {
       description: 'Lerne die Kunst der perfekten Frage. Wie bekommst du genau die Antwort, die du brauchst? Mit dem 5-Sterne-Prompt-Rezept.',
       duration: '45 Minuten',
       lessons: 4,
-      image: '/KI-Entdecker/images/day2-chat.png',
+      image: buildAssetUrl('images/day2-chat.png'),
       color: 'from-teal-500 to-cyan-600',
       locked: true,
     },
@@ -50,7 +51,7 @@ const CourseOverview = () => {
       description: 'Erstelle eigene Bilder, schreibe Geschichten und designe Charaktere. Die KI wird zu deinem kreativen Partner für unendliche Möglichkeiten.',
       duration: '45 Minuten',
       lessons: 5,
-      image: '/KI-Entdecker/images/day3-creative.png',
+      image: buildAssetUrl('images/day3-creative.png'),
       color: 'from-pink-500 to-rose-600',
       locked: true,
     },
@@ -61,7 +62,7 @@ const CourseOverview = () => {
       description: 'Nutze KI als Lernhelfer. Verstehe komplexe Themen, werde Fehler-Jäger und löse knifflige Probleme Schritt für Schritt.',
       duration: '45 Minuten',
       lessons: 4,
-      image: '/KI-Entdecker/images/day4-puzzle.png',
+      image: buildAssetUrl('images/day4-puzzle.png'),
       color: 'from-orange-500 to-amber-600',
       locked: true,
     },
@@ -72,7 +73,7 @@ const CourseOverview = () => {
       description: 'Entwickle dein eigenes Projekt mit KI-Unterstützung. Präsentiere deine Idee und werde offizieller KI-Experte!',
       duration: '60 Minuten',
       lessons: 2,
-      image: '/KI-Entdecker/images/day5-trophy.png',
+      image: buildAssetUrl('images/day5-trophy.png'),
       color: 'from-yellow-500 to-amber-500',
       locked: true,
     },
