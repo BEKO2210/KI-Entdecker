@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Calendar, Clock, BookOpen, Coffee, CheckCircle, Download, ArrowRight, Sparkles } from 'lucide-react';
-import { toast } from '@/hooks/use-toast';
 
 const Wochenplan = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,13 +8,10 @@ const Wochenplan = () => {
     setIsVisible(true);
   }, []);
 
+  const basePath = import.meta.env.BASE_URL || '/';
+
   const handleDownload = () => {
-    toast({
-      title: "Download bald verfügbar",
-      description: "Der Wochenplan wird in Kürze als PDF zum Download bereitgestellt.",
-      variant: "info",
-      duration: 4000,
-    });
+    window.open(`${basePath}downloads/wochenplan.html`, '_blank');
   };
 
   const schedule = [
@@ -148,10 +144,10 @@ const Wochenplan = () => {
             <button 
               onClick={handleDownload}
               className="inline-flex items-center gap-2 px-6 py-3 bg-white text-orange-500 rounded-xl font-bold hover:bg-white/90 transition-colors"
-              aria-label="Wochenplan als PDF herunterladen"
+              aria-label="Wochenplan zum Drucken öffnen"
             >
               <Download className="w-5 h-5" aria-hidden="true" />
-              PDF herunterladen
+              Druckversion öffnen
             </button>
           </div>
         </div>
