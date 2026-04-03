@@ -21,8 +21,22 @@
   .lesson { background: #f9fafb; border-radius: 10px; padding: 12px; }
   .lesson .time { font-size: 11px; color: #7F56D9; font-weight: 600; margin-bottom: 4px; }
   .lesson .name { font-size: 13px; font-weight: 600; }
+  .lesson .desc { font-size: 11px; color: #6b7280; margin-top: 4px; }
+  .type-tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-top: 6px; }
+  .type-reading { background: #e0e7ff; color: #4338ca; }
+  .type-mitmachen { background: #dbeafe; color: #2563eb; }
+  .type-practice { background: #ffedd5; color: #ea580c; }
+  .type-project { background: #dcfce7; color: #16a34a; }
+  .type-review { background: #f3f4f6; color: #6b7280; }
+  .type-celebration { background: #fce7f3; color: #db2777; }
+  .day-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
   .goals { display: flex; gap: 8px; flex-wrap: wrap; }
   .goal-tag { background: #f3f0ff; color: #7F56D9; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .materials { font-size: 11px; color: #9ca3af; }
+  .faq-note { font-size: 11px; color: #9ca3af; margin-top: 12px; padding-top: 10px; border-top: 1px dashed #e5e7eb; }
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; }
+  .legend-item { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #6b7280; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 4px; }
   .notes-box { border: 2px dashed #d1d5db; border-radius: 12px; padding: 16px; margin-top: 40px; min-height: 120px; }
   .notes-box h3 { color: #6b7280; font-size: 14px; margin-bottom: 8px; }
   .print-btn { display: block; margin: 30px auto; padding: 12px 32px; background: #7F56D9; color: #fff; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: 'Outfit', sans-serif; }
@@ -38,72 +52,175 @@
 <body>
 <div class="header">
   <h1>KI-Entdecker Wochenplan</h1>
-  <p>5 Tage KI-Abenteuer &bull; Je 45 Minuten &bull; Für Kinder ab 8 Jahren</p>
+  <p>5 Kurstage &bull; 15 Lektionen &bull; ~4 Stunden gesamt &bull; Fuer Kinder ab 8 Jahren</p>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#e0e7ff"></div> Lesen</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#dbeafe"></div> Mitmachen</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#ffedd5"></div> Uebung</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#dcfce7"></div> Projekt</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f3f4f6"></div> Zusammenfassung</div>
 </div>
 
 <div class="day-card d1">
   <div class="day-header">
     <div class="day-badge">1</div>
-    <div class="day-title"><h2>Was ist KI?</h2><span>45 Minuten &bull; Die Grundlagen verstehen</span></div>
+    <div class="day-title"><h2>Was ist KI?</h2><span>~45 Minuten &bull; Die Grundlagen verstehen</span></div>
   </div>
   <div class="lessons">
-    <div class="lesson"><div class="time">0 – 15 Min</div><div class="name">Was ist Künstliche Intelligenz?</div></div>
-    <div class="lesson"><div class="time">15 – 30 Min</div><div class="name">Wie lernen Computer?</div></div>
-    <div class="lesson"><div class="time">30 – 45 Min</div><div class="name">Dein erster Chatbot</div></div>
+    <div class="lesson">
+      <div class="time">~15 Min</div>
+      <div class="name">Was ist KI?</div>
+      <div class="desc">Grundlagen lesen & verstehen</div>
+      <span class="type-tag type-reading">Lesen</span>
+    </div>
+    <div class="lesson">
+      <div class="time">~15 Min</div>
+      <div class="name">Wie lernen Computer?</div>
+      <div class="desc">Beispiele & Erklaerungen</div>
+      <span class="type-tag type-reading">Lesen</span>
+    </div>
+    <div class="lesson">
+      <div class="time">~10 Min</div>
+      <div class="name">Dein erster Chatbot</div>
+      <div class="desc">Prompts ausprobieren</div>
+      <span class="type-tag type-mitmachen">Mitmachen</span>
+    </div>
   </div>
-  <div class="goals"><span class="goal-tag">KI-Grundlagen</span><span class="goal-tag">Maschinelles Lernen</span><span class="goal-tag">Chatbot erstellen</span></div>
+  <div class="day-footer">
+    <div class="goals"><span class="goal-tag">KI-Grundlagen</span><span class="goal-tag">Maschinelles Lernen</span><span class="goal-tag">Chatbot ausprobieren</span></div>
+    <div class="materials">Computer/Tablet, Internetzugang</div>
+  </div>
+  <div class="faq-note">+ FAQ & Zusammenfassung (~5 Min)</div>
 </div>
 
 <div class="day-card d2">
   <div class="day-header">
     <div class="day-badge">2</div>
-    <div class="day-title"><h2>Prompt Engineering</h2><span>45 Minuten &bull; Die Kunst der perfekten Frage</span></div>
+    <div class="day-title"><h2>Prompt Engineering</h2><span>~45 Minuten &bull; Die Kunst der guten Frage</span></div>
   </div>
   <div class="lessons">
-    <div class="lesson"><div class="time">0 – 15 Min</div><div class="name">Was ist ein Prompt?</div></div>
-    <div class="lesson"><div class="time">15 – 30 Min</div><div class="name">Das 5-Sterne-Rezept</div></div>
-    <div class="lesson"><div class="time">30 – 45 Min</div><div class="name">Prompts verbessern</div></div>
+    <div class="lesson">
+      <div class="time">~10 Min</div>
+      <div class="name">Was ist ein Prompt?</div>
+      <div class="desc">Einfuehrung lesen</div>
+      <span class="type-tag type-reading">Lesen</span>
+    </div>
+    <div class="lesson">
+      <div class="time">~15 Min</div>
+      <div class="name">Das 5-Sterne-Rezept</div>
+      <div class="desc">Aufbau guter Prompts lernen</div>
+      <span class="type-tag type-reading">Lesen</span>
+    </div>
+    <div class="lesson">
+      <div class="time">~15 Min</div>
+      <div class="name">Prompts verbessern</div>
+      <div class="desc">Vorher/Nachher-Beispiele ueben</div>
+      <span class="type-tag type-practice">Uebung</span>
+    </div>
   </div>
-  <div class="goals"><span class="goal-tag">Prompt-Techniken</span><span class="goal-tag">5-Sterne-Rezept</span><span class="goal-tag">Praxis-Übungen</span></div>
+  <div class="day-footer">
+    <div class="goals"><span class="goal-tag">Prompt-Aufbau</span><span class="goal-tag">5-Sterne-Rezept</span><span class="goal-tag">Prompts verbessern</span></div>
+    <div class="materials">Computer/Tablet, optional Notizbuch</div>
+  </div>
+  <div class="faq-note">+ FAQ & Zusammenfassung (~5 Min)</div>
 </div>
 
 <div class="day-card d3">
   <div class="day-header">
     <div class="day-badge">3</div>
-    <div class="day-title"><h2>Kreativ mit KI</h2><span>45 Minuten &bull; Dein kreativer Partner</span></div>
+    <div class="day-title"><h2>Kreativ mit KI</h2><span>~45 Minuten &bull; Dein kreativer Partner</span></div>
   </div>
   <div class="lessons">
-    <div class="lesson"><div class="time">0 – 15 Min</div><div class="name">Bilder mit KI erstellen</div></div>
-    <div class="lesson"><div class="time">15 – 30 Min</div><div class="name">Geschichten schreiben</div></div>
-    <div class="lesson"><div class="time">30 – 45 Min</div><div class="name">Musik & mehr</div></div>
+    <div class="lesson">
+      <div class="time">~15 Min</div>
+      <div class="name">Bilder mit KI</div>
+      <div class="desc">Bild-Prompts ausprobieren</div>
+      <span class="type-tag type-mitmachen">Mitmachen</span>
+    </div>
+    <div class="lesson">
+      <div class="time">~15 Min</div>
+      <div class="name">Geschichten schreiben</div>
+      <div class="desc">Kreative Texte mit KI</div>
+      <span class="type-tag type-mitmachen">Mitmachen</span>
+    </div>
+    <div class="lesson">
+      <div class="time">~10 Min</div>
+      <div class="name">Musik & mehr</div>
+      <div class="desc">Weitere kreative Moeglichkeiten</div>
+      <span class="type-tag type-mitmachen">Mitmachen</span>
+    </div>
   </div>
-  <div class="goals"><span class="goal-tag">Bilder generieren</span><span class="goal-tag">Storytelling</span><span class="goal-tag">Kreativprojekt</span></div>
+  <div class="day-footer">
+    <div class="goals"><span class="goal-tag">Bilder erstellen</span><span class="goal-tag">Geschichten schreiben</span><span class="goal-tag">Kreativ experimentieren</span></div>
+    <div class="materials">Computer/Tablet, optional Papier & Stifte</div>
+  </div>
+  <div class="faq-note">+ FAQ & Zusammenfassung (~5 Min)</div>
 </div>
 
 <div class="day-card d4">
   <div class="day-header">
     <div class="day-badge">4</div>
-    <div class="day-title"><h2>Problemlösen mit KI</h2><span>45 Minuten &bull; Der clevere Lernhelfer</span></div>
+    <div class="day-title"><h2>Problemloesen mit KI</h2><span>~45 Minuten &bull; Der clevere Lernhelfer</span></div>
   </div>
   <div class="lessons">
-    <div class="lesson"><div class="time">0 – 15 Min</div><div class="name">KI als Lernhelfer</div></div>
-    <div class="lesson"><div class="time">15 – 30 Min</div><div class="name">Recherche & Zusammenfassen</div></div>
-    <div class="lesson"><div class="time">30 – 45 Min</div><div class="name">Fehler finden & Korrigieren</div></div>
+    <div class="lesson">
+      <div class="time">~10 Min</div>
+      <div class="name">KI als Lernhelfer</div>
+      <div class="desc">Praktische Beispiele lesen</div>
+      <span class="type-tag type-reading">Lesen</span>
+    </div>
+    <div class="lesson">
+      <div class="time">~15 Min</div>
+      <div class="name">Recherche & Zusammenfassen</div>
+      <div class="desc">Texte mit KI bearbeiten</div>
+      <span class="type-tag type-practice">Uebung</span>
+    </div>
+    <div class="lesson">
+      <div class="time">~15 Min</div>
+      <div class="name">Fehler finden & Korrigieren</div>
+      <div class="desc">KI als Korrekturhilfe</div>
+      <span class="type-tag type-practice">Uebung</span>
+    </div>
   </div>
-  <div class="goals"><span class="goal-tag">Mathe-Hilfe</span><span class="goal-tag">Recherche</span><span class="goal-tag">Fehler finden</span></div>
+  <div class="day-footer">
+    <div class="goals"><span class="goal-tag">Lernhelfer nutzen</span><span class="goal-tag">Recherche</span><span class="goal-tag">Texte korrigieren</span></div>
+    <div class="materials">Computer/Tablet, optional eigene Texte</div>
+  </div>
+  <div class="faq-note">+ FAQ & Zusammenfassung (~5 Min)</div>
 </div>
 
 <div class="day-card d5">
   <div class="day-header">
     <div class="day-badge">5</div>
-    <div class="day-title"><h2>Das Abschlussprojekt</h2><span>60 Minuten &bull; Werde KI-Experte</span></div>
+    <div class="day-title"><h2>Abschlussprojekt</h2><span>~60 Minuten &bull; Zeig, was du gelernt hast!</span></div>
   </div>
   <div class="lessons">
-    <div class="lesson"><div class="time">0 – 20 Min</div><div class="name">Dein Projekt planen</div></div>
-    <div class="lesson"><div class="time">20 – 50 Min</div><div class="name">Projekt umsetzen</div></div>
-    <div class="lesson"><div class="time">50 – 60 Min</div><div class="name">Präsentation & Zertifikat</div></div>
+    <div class="lesson">
+      <div class="time">~15 Min</div>
+      <div class="name">Projekt 1: KI-Comic</div>
+      <div class="desc">Eine Geschichte als Comic gestalten</div>
+      <span class="type-tag type-project">Projekt</span>
+    </div>
+    <div class="lesson">
+      <div class="time">~15 Min</div>
+      <div class="name">Projekt 2: KI-Quiz</div>
+      <div class="desc">Ein eigenes Quiz erstellen</div>
+      <span class="type-tag type-project">Projekt</span>
+    </div>
+    <div class="lesson">
+      <div class="time">~15 Min</div>
+      <div class="name">Projekt 3: KI-Assistent</div>
+      <div class="desc">Einen Helfer-Bot bauen</div>
+      <span class="type-tag type-project">Projekt</span>
+    </div>
   </div>
-  <div class="goals"><span class="goal-tag">Eigenes Projekt</span><span class="goal-tag">Präsentation</span><span class="goal-tag">KI-Experten-Zertifikat</span></div>
+  <div class="day-footer">
+    <div class="goals"><span class="goal-tag">Eigenes KI-Projekt</span><span class="goal-tag">Gelerntes anwenden</span><span class="goal-tag">Zertifikat erhalten</span></div>
+    <div class="materials">Computer/Tablet, Notizen aus Tag 1-4</div>
+  </div>
+  <div class="faq-note">+ Abschluss: Zertifikat & Badges (~15 Min)</div>
 </div>
 
 <div class="notes-box">
@@ -111,6 +228,6 @@
 </div>
 
 <button class="print-btn no-print" onclick="window.print()">Als PDF speichern / Drucken</button>
-<div class="footer">KI-Entdecker &bull; Ein interaktiver KI-Kurs für Kinder &bull; ki-entdecker.de</div>
+<div class="footer">KI-Entdecker &bull; Ein interaktiver KI-Kurs fuer Kinder &bull; beko2210.github.io/KI-Entdecker</div>
 </body>
 </html>

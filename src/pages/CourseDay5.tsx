@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, CheckCircle, Copy, Trophy, Rocket, GraduationCap, Star, Medal, Sparkles, Send, HelpCircle, ChevronDown, ChevronUp, BookOpen } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle, Copy, Trophy, Rocket, GraduationCap, Star, Medal, Sparkles, Send, HelpCircle, ChevronDown, ChevronUp, BookOpen, Download } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { buildAssetUrl } from '@/lib/paths';
+import { buildAssetUrl, buildDownloadUrl } from '@/lib/paths';
 import type { useProgress } from '../hooks/useProgress';
 
 interface CourseDayProps {
@@ -12,6 +12,7 @@ interface CourseDayProps {
 
 const CourseDay5 = ({ progress }: CourseDayProps) => {
   const [activeSection, setActiveSection] = useState(0);
+  const [maxReachedSection, setMaxReachedSection] = useState(0);
   const [showCertificate, setShowCertificate] = useState(false);
   const [projectIdea, setProjectIdea] = useState('');
   const [completedTasks, setCompletedTasks] = useState<string[]>([]);
@@ -19,6 +20,11 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const { completeDay, unlockBadge } = progress;
+
+  // Track highest section reached (render-time update, no effect needed)
+  if (activeSection > maxReachedSection) {
+    setMaxReachedSection(activeSection);
+  }
 
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -519,13 +525,22 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
               Herzlichen Glückwunsch! Du hast den kompletten KI-Kurs abgeschlossen! 
               Du bist jetzt ein echter KI-Experte und kannst die KI sicher und kreativ nutzen.
             </p>
-            <button
-              onClick={() => setShowCertificate(true)}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-yellow-500 text-white rounded-xl font-bold text-lg hover:bg-yellow-600 transition-colors shadow-lg"
-            >
-              <Medal className="w-6 h-6" />
-              Mein Zertifikat anzeigen
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                onClick={() => setShowCertificate(true)}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-yellow-500 text-white rounded-xl font-bold text-lg hover:bg-yellow-600 transition-colors shadow-lg"
+              >
+                <Medal className="w-6 h-6" />
+                Mein Zertifikat anzeigen
+              </button>
+              <button
+                onClick={() => window.open(buildDownloadUrl('zertifikat.html'), '_blank')}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-yellow-600 border-2 border-yellow-400 rounded-xl font-bold text-lg hover:bg-yellow-50 transition-colors"
+              >
+                <Download className="w-6 h-6" />
+                Als PDF herunterladen
+              </button>
+            </div>
           </div>
 
           <div className="bg-white rounded-2xl border-2 border-gray-100 p-8">
@@ -635,16 +650,17 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
           {sections.map((section, index) => (
             <button
               key={section.id}
-              onClick={() => setActiveSection(index)}
+              onClick={() => index <= maxReachedSection && setActiveSection(index)}
+              disabled={index > maxReachedSection}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
-                activeSection === index 
-                  ? 'bg-yellow-500 text-white' 
-                  : activeSection > index
+                activeSection === index
+                  ? 'bg-yellow-500 text-white'
+                  : index <= maxReachedSection
                   ? 'bg-green-100 text-green-700'
-                  : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                  : 'bg-white text-gray-400 border border-gray-200 opacity-50 cursor-not-allowed'
               }`}
             >
-              {activeSection > index ? (
+              {index <= maxReachedSection && activeSection !== index ? (
                 <CheckCircle className="w-4 h-4" />
               ) : (
                 <section.icon className="w-4 h-4" />
@@ -703,16 +719,26 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
           <div className="bg-gradient-to-br from-yellow-100 to-amber-100 rounded-2xl p-8 text-center border-4 border-yellow-400">
             <div className="text-6xl mb-4">🎓</div>
             <h2 className="text-2xl font-bold text-yellow-800 mb-2">Zertifikat</h2>
-            <p className="text-yellow-700 mb-4">Hiermit wird bescheinigt, dass</p>
-            <p className="text-3xl font-bold text-yellow-900 mb-4">KI-Entdecker</p>
-            <p className="text-yellow-700 mb-6">den Kurs erfolgreich abgeschlossen hat:</p>
+            <p className="text-yellow-700 mb-4">Hiermit wird bescheinigt, dass du</p>
+            <p className="text-xl font-bold text-yellow-800 mb-4">den KI-Entdecker-Kurs</p>
+            <p className="text-yellow-700 mb-6">mit allen 5 Kurstagen erfolgreich abgeschlossen hast!</p>
             <h3 className="text-xl font-bold text-yellow-800 mb-6">„KI-Experte für Kinder"</h3>
             <div className="flex justify-center gap-2 mb-4">
               {[1, 2, 3, 4, 5].map((star) => (
                 <Star key={star} className="w-8 h-8 text-yellow-500 fill-yellow-500" />
               ))}
             </div>
-            <p className="text-sm text-yellow-600">5 Tage · 5 Badges · Unendlich viel gelernt!</p>
+            <p className="text-sm text-yellow-600 mb-6">5 Tage · 5 Badges · 15 Lektionen</p>
+            <button
+              onClick={() => window.open(buildDownloadUrl('zertifikat.html'), '_blank')}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-500 text-white rounded-xl font-bold hover:bg-yellow-600 transition-colors shadow-lg"
+            >
+              <Download className="w-5 h-5" />
+              Zertifikat als PDF herunterladen
+            </button>
+            <p className="text-xs text-yellow-600/70 mt-3">
+              Öffnet eine Druckversion – dort &bdquo;Als PDF speichern&ldquo; wählen
+            </p>
           </div>
         </DialogContent>
       </Dialog>
