@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, CheckCircle, Copy, Lightbulb, Calculator, Search, Bug, Target } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle, Copy, Lightbulb, Calculator, Search, Bug, Target, HelpCircle, ChevronDown, ChevronUp, BookOpen } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import type { useProgress } from '../hooks/useProgress';
 
@@ -14,13 +14,14 @@ const CourseDay4 = ({ progress }: CourseDayProps) => {
   const [mathInput, setMathInput] = useState('');
   const [showAnswers, setShowAnswers] = useState<{[key: string]: boolean}>({});
   const [selectedProblem, setSelectedProblem] = useState<string | null>(null);
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     
     // Mark day as completed when reaching the last section
-    if (activeSection === 3) { // CourseDay4 has 4 sections (0 to 3)
+    if (activeSection === 4) { // CourseDay4 has 5 sections (0 to 4)
       progress.completeDay(4);
     }
   }, [activeSection, progress]);
@@ -433,21 +434,169 @@ Markiere die Fehler und erkläre kurz, was falsch war.`}
             </div>
 
             <div className="flex justify-between">
-              <Link 
-                to="/kurs/tag-3" 
+              <Link
+                to="/kurs/tag-3"
                 className="flex items-center gap-2 px-6 py-3 bg-white text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors border-2 border-gray-200"
               >
                 <ArrowLeft className="w-5 h-5" />
                 Zurück zu Tag 3
               </Link>
-              <Link 
-                to="/kurs/tag-5" 
+              <Link
+                to="/kurs/tag-5"
                 className="flex items-center gap-2 px-6 py-3 bg-orange-600 text-white rounded-xl font-medium hover:bg-orange-700 transition-colors"
               >
                 Weiter zu Tag 5
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'faq',
+      title: 'FAQ & Zusammenfassung',
+      icon: HelpCircle,
+      content: (
+        <div className="space-y-8">
+          {/* Zusammenfassung */}
+          <div className="bg-gradient-to-br from-orange-100 to-amber-100 rounded-3xl p-8 text-center">
+            <img
+              src="/KI-Entdecker/images/courses/day4/robot-problem-solver.png"
+              alt="Problem-Löser Roboter"
+              className="w-48 h-48 mx-auto mb-6"
+            />
+            <h3 className="text-2xl font-bold text-orange-800 mb-4">
+              Tag 4 geschafft!
+            </h3>
+            <p className="text-orange-700 max-w-2xl mx-auto leading-relaxed">
+              Du bist jetzt ein echter Problem-Löser! Du weißt, wie du die KI als Lernhelfer,
+              Recherche-Assistent und Korrekturleser einsetzen kannst.
+            </p>
+          </div>
+
+          {/* Wichtigste Punkte */}
+          <div className="bg-white rounded-2xl border-2 border-orange-100 p-6 sm:p-8">
+            <h4 className="font-bold text-gray-800 mb-6 flex items-center gap-2 text-lg">
+              <BookOpen className="w-5 h-5 text-orange-600" />
+              Die wichtigsten Punkte im Überblick
+            </h4>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="flex items-start gap-3 p-4 bg-orange-50 rounded-xl">
+                <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold">1</span>
+                </div>
+                <div>
+                  <p className="font-medium text-gray-800">KI als Nachhilfelehrer</p>
+                  <p className="text-sm text-gray-600">Lass dir Aufgaben Schritt für Schritt erklären</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 p-4 bg-orange-50 rounded-xl">
+                <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold">2</span>
+                </div>
+                <div>
+                  <p className="font-medium text-gray-800">Recherche mit KI</p>
+                  <p className="text-sm text-gray-600">Fakten sammeln und zusammenfassen lassen</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 p-4 bg-amber-50 rounded-xl">
+                <div className="w-8 h-8 bg-amber-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold">3</span>
+                </div>
+                <div>
+                  <p className="font-medium text-gray-800">Fehler finden</p>
+                  <p className="text-sm text-gray-600">KI als Korrekturleser für deine Texte</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 p-4 bg-amber-50 rounded-xl">
+                <div className="w-8 h-8 bg-amber-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold">4</span>
+                </div>
+                <div>
+                  <p className="font-medium text-gray-800">Immer prüfen!</p>
+                  <p className="text-sm text-gray-600">KI-Antworten bei wichtigen Themen überprüfen</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="bg-white rounded-2xl border-2 border-gray-100 p-6 sm:p-8">
+            <h4 className="font-bold text-gray-800 mb-6 flex items-center gap-2 text-lg">
+              <HelpCircle className="w-5 h-5 text-orange-600" />
+              Häufig gestellte Fragen
+            </h4>
+            <div className="space-y-3">
+              {[
+                {
+                  q: 'Kann ich KI für meine Hausaufgaben nutzen?',
+                  a: 'Ja, aber richtig! Lass dir Aufgaben erklären statt nur die Lösung zu kopieren. So lernst du wirklich etwas. Nutze KI als Nachhilfelehrer, nicht als Abschreib-Maschine.'
+                },
+                {
+                  q: 'Macht KI bei Mathe Fehler?',
+                  a: 'Ja, KI kann bei Rechenaufgaben Fehler machen, besonders bei komplexen Aufgaben. Prüfe die Ergebnisse immer nach – besonders bei Hausaufgaben und Tests!'
+                },
+                {
+                  q: 'Darf ich KI-Texte für die Schule abgeben?',
+                  a: 'Das hängt von deiner Schule und deinem Lehrer ab. Frag immer vorher nach! In der Regel solltest du KI nur als Hilfe nutzen und den Text selbst schreiben.'
+                },
+                {
+                  q: 'Wie weiß ich, ob KI-Informationen stimmen?',
+                  a: 'Prüfe wichtige Fakten in Büchern oder auf vertrauenswürdigen Websites. KI kann falsche Informationen liefern, die aber überzeugend klingen. Sei immer kritisch!'
+                }
+              ].map((faq, idx) => (
+                <div key={idx} className="border border-gray-200 rounded-xl overflow-hidden">
+                  <button
+                    onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
+                    className="w-full flex items-center justify-between p-4 text-left font-medium text-gray-800 hover:bg-gray-50 transition-colors"
+                  >
+                    <span>{faq.q}</span>
+                    {expandedFaq === idx ? (
+                      <ChevronUp className="w-5 h-5 text-orange-600 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                    )}
+                  </button>
+                  {expandedFaq === idx && (
+                    <div className="px-4 pb-4 text-gray-600 animate-fade-in-up">
+                      <p className="leading-relaxed">{faq.a}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Naechster Tag */}
+          <div className="bg-blue-50 rounded-2xl p-6">
+            <h4 className="font-bold text-blue-800 mb-3 text-lg">Was kommt als Nächstes?</h4>
+            <p className="text-blue-700 leading-relaxed mb-4">
+              Morgen ist der große Tag! Du erstellst dein eigenes <strong>Abschlussprojekt</strong> und
+              bekommst dein offizielles KI-Experten-Zertifikat!
+            </p>
+            <div className="flex items-center gap-2 text-blue-600">
+              <ArrowRight className="w-5 h-5" />
+              <span className="font-medium">Tag 5: Das Abschlussprojekt</span>
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+            <Link
+              to="/kurs"
+              className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors border-2 border-gray-200"
+            >
+              <ArrowLeft className="w-5 h-5" />
+              Zur Kursübersicht
+            </Link>
+            <Link
+              to="/kurs/tag-5"
+              className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white rounded-xl font-medium hover:from-orange-700 hover:to-amber-700 transition-all shadow-lg shadow-orange-200"
+            >
+              Weiter zu Tag 5
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       )

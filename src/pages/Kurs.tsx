@@ -289,7 +289,7 @@ const Kurs = ({ progress }: KursProps) => {
                           </div>
 
                           {/* Meta & Action */}
-                          <div className="flex items-center justify-between pt-4 border-t border-neutral-light">
+                          <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-neutral-light">
                             <div className="flex items-center gap-4 text-sm text-neutral-gray">
                               <div className="flex items-center gap-1">
                                 <Clock className="w-4 h-4" />
@@ -303,7 +303,7 @@ const Kurs = ({ progress }: KursProps) => {
 
                             {isUnlocked ? (
                               <button
-                                onClick={() => handleStartDay(day.id)}
+                                onClick={(e) => { e.stopPropagation(); handleStartDay(day.id); }}
                                 className="flex items-center gap-2 px-4 py-2 bg-primary-purple text-white rounded-xl text-sm font-medium hover:bg-primary-purple/90 transition-colors group/btn"
                                 aria-label={`${day.title} starten`}
                               >

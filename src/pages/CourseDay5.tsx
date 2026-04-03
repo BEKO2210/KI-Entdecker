@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, CheckCircle, Copy, Trophy, Rocket, GraduationCap, Star, Medal, Sparkles, Send } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle, Copy, Trophy, Rocket, GraduationCap, Star, Medal, Sparkles, Send, HelpCircle, ChevronDown, ChevronUp, BookOpen } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import type { useProgress } from '../hooks/useProgress';
@@ -14,13 +14,14 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
   const [showCertificate, setShowCertificate] = useState(false);
   const [projectIdea, setProjectIdea] = useState('');
   const [completedTasks, setCompletedTasks] = useState<string[]>([]);
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     
     // Mark day as completed when reaching the last section
-    if (activeSection === 4) { // CourseDay5 has 5 sections (0 to 4)
+    if (activeSection === 5) { // CourseDay5 has 6 sections (0 to 5)
       progress.completeDay(5);
       progress.unlockBadge(5); // Unlock the final expert badge
     }
@@ -397,6 +398,103 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
                   <Copy className="w-4 h-4" />
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'faq',
+      title: 'FAQ & Zusammenfassung',
+      icon: HelpCircle,
+      content: (
+        <div className="space-y-8">
+          {/* Zusammenfassung */}
+          <div className="bg-gradient-to-br from-yellow-100 to-amber-100 rounded-3xl p-8 text-center">
+            <img
+              src="/KI-Entdecker/images/courses/day5/trophy-celebration.png"
+              alt="Trophäe"
+              className="w-48 h-48 mx-auto mb-6"
+            />
+            <h3 className="text-2xl font-bold text-yellow-800 mb-4">
+              Alle 5 Tage gemeistert!
+            </h3>
+            <p className="text-yellow-700 max-w-2xl mx-auto leading-relaxed">
+              Du hast den gesamten KI-Entdecker-Kurs durchgearbeitet und bist jetzt ein
+              echter KI-Experte! Hier ist eine Zusammenfassung deiner Reise.
+            </p>
+          </div>
+
+          {/* Gesamtübersicht */}
+          <div className="bg-white rounded-2xl border-2 border-yellow-100 p-6 sm:p-8">
+            <h4 className="font-bold text-gray-800 mb-6 flex items-center gap-2 text-lg">
+              <BookOpen className="w-5 h-5 text-yellow-600" />
+              Deine KI-Reise im Überblick
+            </h4>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { day: 'Tag 1', title: 'KI-Grundlagen', desc: 'Was KI ist und wie Computer lernen', color: 'bg-purple-50', badge: 'bg-purple-600' },
+                { day: 'Tag 2', title: 'Prompt Engineering', desc: 'Die Kunst der perfekten Frage', color: 'bg-teal-50', badge: 'bg-teal-600' },
+                { day: 'Tag 3', title: 'Kreativ mit KI', desc: 'Bilder, Geschichten und Musik', color: 'bg-pink-50', badge: 'bg-pink-600' },
+                { day: 'Tag 4', title: 'Problemlösen', desc: 'KI als Lernhelfer und Korrekturleser', color: 'bg-orange-50', badge: 'bg-orange-600' },
+              ].map((item, i) => (
+                <div key={i} className={`flex items-start gap-3 p-4 ${item.color} rounded-xl`}>
+                  <div className={`w-8 h-8 ${item.badge} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                    <span className="text-white font-bold text-sm">{item.day.split(' ')[1]}</span>
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-800">{item.title}</p>
+                    <p className="text-sm text-gray-600">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="bg-white rounded-2xl border-2 border-gray-100 p-6 sm:p-8">
+            <h4 className="font-bold text-gray-800 mb-6 flex items-center gap-2 text-lg">
+              <HelpCircle className="w-5 h-5 text-yellow-600" />
+              Häufig gestellte Fragen
+            </h4>
+            <div className="space-y-3">
+              {[
+                {
+                  q: 'Wie geht es nach dem Kurs weiter?',
+                  a: 'Du kannst die KI-Tools weiter nutzen und eigene Projekte erstellen! Probiere neue Ideen aus, experimentiere mit verschiedenen Prompts und zeige deinen Freunden, was du gelernt hast.'
+                },
+                {
+                  q: 'Welche KI-Tools kann ich nutzen?',
+                  a: 'Es gibt viele tolle Tools: ChatGPT für Texte, DALL-E für Bilder, und viele mehr. Frag deine Eltern, welche Tools für dein Alter geeignet sind.'
+                },
+                {
+                  q: 'Kann ich den Kurs nochmal machen?',
+                  a: 'Klar! Du kannst jederzeit zu jedem Tag zurückkehren und die Übungen wiederholen. Übung macht den Meister!'
+                },
+                {
+                  q: 'Wo finde ich mehr über KI?',
+                  a: 'Es gibt viele Bücher und Websites für Kinder über KI. Frag auch in deiner Bibliothek nach oder schau auf unserer Materialien-Seite vorbei!'
+                }
+              ].map((faq, idx) => (
+                <div key={idx} className="border border-gray-200 rounded-xl overflow-hidden">
+                  <button
+                    onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
+                    className="w-full flex items-center justify-between p-4 text-left font-medium text-gray-800 hover:bg-gray-50 transition-colors"
+                  >
+                    <span>{faq.q}</span>
+                    {expandedFaq === idx ? (
+                      <ChevronUp className="w-5 h-5 text-yellow-600 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                    )}
+                  </button>
+                  {expandedFaq === idx && (
+                    <div className="px-4 pb-4 text-gray-600 animate-fade-in-up">
+                      <p className="leading-relaxed">{faq.a}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
