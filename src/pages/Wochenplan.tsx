@@ -19,7 +19,7 @@ const Wochenplan = () => {
         { time: '15-30 min', title: 'Wie lernen Computer?', type: 'interactive' },
         { time: '30-45 min', title: 'Dein erster Chatbot', type: 'project' },
       ],
-      goals: ['KI-Grundlagen verstehen', 'Unterschied Regeln vs. KI'],
+      goals: ['KI-Grundlagen verstehen', 'Unterschied zwischen Regeln und KI'],
       materials: ['Computer/Tablet', 'Internet'],
     },
     {
@@ -33,7 +33,7 @@ const Wochenplan = () => {
         { time: '25-40 min', title: 'Gute Prompts üben', type: 'interactive' },
         { time: '40-45 min', title: 'Zusammenfassung', type: 'review' },
       ],
-      goals: ['Perfekte Prompts schreiben', 'KI richtig steuern'],
+      goals: ['Gute Prompts schreiben', 'KI gezielt steuern'],
       materials: ['Computer/Tablet', 'Notizbuch'],
     },
     {
@@ -62,7 +62,7 @@ const Wochenplan = () => {
         { time: '25-35 min', title: 'Texte zusammenfassen', type: 'practice' },
         { time: '35-45 min', title: 'Fehler finden', type: 'game' },
       ],
-      goals: ['KI zum Lernen nutzen', 'Probleme lösen'],
+      goals: ['KI zum Lernen nutzen', 'Probleme mit KI lösen'],
       materials: ['Computer/Tablet', 'Schulbücher'],
     },
     {
@@ -161,7 +161,7 @@ const Wochenplan = () => {
                 <div className="text-sm text-neutral-gray">Gesamtzeit</div>
               </div>
               <div className="text-center p-4 bg-neutral-light rounded-xl">
-                <div className="text-2xl font-outfit font-bold text-accent-pink">18</div>
+                <div className="text-2xl font-outfit font-bold text-accent-pink">20</div>
                 <div className="text-sm text-neutral-gray">Lektionen</div>
               </div>
               <div className="text-center p-4 bg-neutral-light rounded-xl">
@@ -178,7 +178,7 @@ const Wochenplan = () => {
         <div className="section-padding">
           <div className="container-wide">
             <h2 className="text-2xl font-outfit font-bold text-neutral-dark text-center mb-12">
-              Dein Tagesplan
+              Die 5 Kurstage im Detail
             </h2>
 
             <div className="space-y-8">
