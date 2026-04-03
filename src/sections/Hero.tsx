@@ -1,13 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { Play, Users, FileText, Award, Star } from 'lucide-react';
+import { buildAssetUrl } from '@/lib/paths';
 
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  const isVisible = true;
 
   const stats = [
     { icon: Users, value: '5', label: 'Tage á 45 Minuten' },
@@ -161,7 +158,7 @@ const Hero = () => {
               {/* Robot Image */}
               <div className="relative z-10 floating">
                 <img
-                  src="/KI-Entdecker/images/robot-hero.png"
+                  src={buildAssetUrl('images/robot-hero.png')}
                   alt="KI-Roboter Maskottchen"
                   className="w-full max-w-md lg:max-w-lg drop-shadow-2xl"
                 />

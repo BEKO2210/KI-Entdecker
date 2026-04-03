@@ -1,22 +1,19 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Play, Users, FileText, Award, Star, ArrowRight, CheckCircle, BookOpen, Brain, Palette, Lightbulb, Trophy, Lock } from 'lucide-react';
 import type { useProgress } from '../hooks/useProgress';
+import { buildAssetUrl } from '@/lib/paths';
 
 interface HomeProps {
   progress: ReturnType<typeof useProgress>;
 }
 
 const Home = ({ progress }: HomeProps) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const isVisible = true;
   const [imageLoaded, setImageLoaded] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const unlockedCount = progress.getUnlockedBadgesCount();
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   const stats = [
     { icon: Users, value: '5', label: 'Tage à 45 Minuten' },
@@ -40,7 +37,7 @@ const Home = ({ progress }: HomeProps) => {
       bgColor: 'bg-purple-50',
       borderColor: 'border-purple-200',
       icon: Brain,
-      image: '/KI-Entdecker/images/courses/day1/robot-confused.png',
+      image: buildAssetUrl('images/courses/day1/robot-confused.png'),
       path: '/kurs/tag-1',
       topics: ['KI verstehen', 'Maschinelles Lernen', 'Erster Chatbot']
     },
@@ -52,7 +49,7 @@ const Home = ({ progress }: HomeProps) => {
       bgColor: 'bg-teal-50',
       borderColor: 'border-teal-200',
       icon: BookOpen,
-      image: '/KI-Entdecker/images/courses/day2/magic-prompt.png',
+      image: buildAssetUrl('images/courses/day2/magic-prompt.png'),
       path: '/kurs/tag-2',
       topics: ['Was ist ein Prompt?', '5-Sterne-Rezept', 'Prompts verbessern']
     },
@@ -64,7 +61,7 @@ const Home = ({ progress }: HomeProps) => {
       bgColor: 'bg-pink-50',
       borderColor: 'border-pink-200',
       icon: Palette,
-      image: '/KI-Entdecker/images/courses/day3/art-easel.png',
+      image: buildAssetUrl('images/courses/day3/art-easel.png'),
       path: '/kurs/tag-3',
       topics: ['Bilder erstellen', 'Geschichten schreiben', 'Musik & mehr']
     },
@@ -76,7 +73,7 @@ const Home = ({ progress }: HomeProps) => {
       bgColor: 'bg-orange-50',
       borderColor: 'border-orange-200',
       icon: Lightbulb,
-      image: '/KI-Entdecker/images/courses/day4/puzzle-solution.png',
+      image: buildAssetUrl('images/courses/day4/puzzle-solution.png'),
       path: '/kurs/tag-4',
       topics: ['Mathe-Hilfe', 'Recherche', 'Fehler finden']
     },
@@ -88,7 +85,7 @@ const Home = ({ progress }: HomeProps) => {
       bgColor: 'bg-yellow-50',
       borderColor: 'border-yellow-200',
       icon: Trophy,
-      image: '/KI-Entdecker/images/courses/day5/trophy-celebration.png',
+      image: buildAssetUrl('images/courses/day5/trophy-celebration.png'),
       path: '/kurs/tag-5',
       topics: ['KI-Comic', 'KI-Quiz', 'KI-Assistent']
     },
@@ -254,7 +251,7 @@ const Home = ({ progress }: HomeProps) => {
                 {/* Robot Image */}
                 <div className="relative z-10 floating">
                   <img
-                    src="/KI-Entdecker/images/robot-hero.png"
+                    src={buildAssetUrl('images/robot-hero.png')}
                     alt="KI-Roboter Maskottchen"
                     loading="eager"
                     onLoad={() => setImageLoaded(true)}

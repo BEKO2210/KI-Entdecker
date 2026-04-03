@@ -1,17 +1,11 @@
-import { useEffect, useState } from 'react';
 import { Calendar, Clock, BookOpen, Coffee, CheckCircle, Download, ArrowRight, Sparkles } from 'lucide-react';
+import { buildDownloadUrl } from '@/lib/paths';
 
 const Wochenplan = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
-  const basePath = import.meta.env.BASE_URL || '/';
+  const isVisible = true;
 
   const handleDownload = () => {
-    window.open(`${basePath}downloads/wochenplan.html`, '_blank');
+    window.open(buildDownloadUrl('wochenplan.html'), '_blank');
   };
 
   const schedule = [

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle, Copy, Lightbulb, Calculator, Search, Bug, Target, HelpCircle, ChevronDown, ChevronUp, BookOpen } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { buildAssetUrl } from '@/lib/paths';
 import type { useProgress } from '../hooks/useProgress';
 
 interface CourseDayProps {
@@ -47,7 +48,7 @@ const CourseDay4 = ({ progress }: CourseDayProps) => {
         <div className="space-y-6">
           <div className="bg-gradient-to-br from-orange-100 to-amber-100 rounded-2xl p-8 text-center">
             <img 
-              src="/KI-Entdecker/images/courses/day4/puzzle-solution.png" 
+              src={buildAssetUrl('images/courses/day4/puzzle-solution.png')} 
               alt="Puzzle-Lösung" 
               className="w-48 h-48 mx-auto mb-6"
             />
@@ -100,7 +101,7 @@ const CourseDay4 = ({ progress }: CourseDayProps) => {
           <div className="bg-white rounded-2xl border-2 border-gray-100 p-8">
             <div className="flex items-start gap-6 mb-8">
               <img 
-                src="/KI-Entdecker/images/courses/day4/robot-math.png" 
+                src={buildAssetUrl('images/courses/day4/robot-math.png')} 
                 alt="Mathe-Roboter" 
                 className="w-32 h-32 flex-shrink-0"
               />
@@ -200,7 +201,7 @@ Zeige mir jeden Zwischenschritt und erkläre, warum man das macht.`}
           <div className="bg-white rounded-2xl border-2 border-gray-100 p-8">
             <div className="flex items-start gap-6 mb-8">
               <img 
-                src="/KI-Entdecker/images/courses/day4/magnifying-glass.png" 
+                src={buildAssetUrl('images/courses/day4/magnifying-glass.png')} 
                 alt="Lupe" 
                 className="w-32 h-32 flex-shrink-0"
               />
@@ -312,7 +313,7 @@ Mache es interessant und verständlich!`}
           <div className="bg-white rounded-2xl border-2 border-gray-100 p-8">
             <div className="flex items-start gap-6 mb-8">
               <img 
-                src="/KI-Entdecker/images/courses/day4/robot-problem-solver.png" 
+                src={buildAssetUrl('images/courses/day4/robot-problem-solver.png')} 
                 alt="Problem-Löser Roboter" 
                 className="w-32 h-32 flex-shrink-0"
               />
@@ -403,7 +404,7 @@ Markiere die Fehler und erkläre kurz, was falsch war.`}
           <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8">
             <div className="flex items-center gap-4 mb-6">
               <img 
-                src="/KI-Entdecker/images/courses/day4/robot-problem-solver.png" 
+                src={buildAssetUrl('images/courses/day4/robot-problem-solver.png')} 
                 alt="Problem-Löser Roboter" 
                 className="w-20 h-20"
               />
@@ -464,7 +465,7 @@ Markiere die Fehler und erkläre kurz, was falsch war.`}
           {/* Zusammenfassung */}
           <div className="bg-gradient-to-br from-orange-100 to-amber-100 rounded-3xl p-8 text-center">
             <img
-              src="/KI-Entdecker/images/courses/day4/robot-problem-solver.png"
+              src={buildAssetUrl('images/courses/day4/robot-problem-solver.png')}
               alt="Problem-Löser Roboter"
               className="w-48 h-48 mx-auto mb-6"
             />

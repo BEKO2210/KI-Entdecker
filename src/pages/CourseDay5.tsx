@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle, Copy, Trophy, Rocket, GraduationCap, Star, Medal, Sparkles, Send, HelpCircle, ChevronDown, ChevronUp, BookOpen } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { buildAssetUrl } from '@/lib/paths';
 import type { useProgress } from '../hooks/useProgress';
 
 interface CourseDayProps {
@@ -63,7 +64,7 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
         <div className="space-y-6">
           <div className="bg-gradient-to-br from-yellow-100 to-amber-100 rounded-2xl p-8 text-center">
             <img 
-              src="/KI-Entdecker/images/courses/day5/trophy-celebration.png" 
+              src={buildAssetUrl('images/courses/day5/trophy-celebration.png')} 
               alt="Trophäen-Feier" 
               className="w-48 h-48 mx-auto mb-6"
             />
@@ -121,7 +122,7 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
           <div className="bg-white rounded-2xl border-2 border-gray-100 p-8">
             <div className="flex items-start gap-6 mb-8">
               <img 
-                src="/KI-Entdecker/images/courses/day5/robot-presentation.png" 
+                src={buildAssetUrl('images/courses/day5/robot-presentation.png')} 
                 alt="Roboter-Präsentation" 
                 className="w-32 h-32 flex-shrink-0"
               />
@@ -207,7 +208,7 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
           <div className="bg-white rounded-2xl border-2 border-gray-100 p-8">
             <div className="flex items-start gap-6 mb-8">
               <img 
-                src="/KI-Entdecker/images/courses/day5/rocket-launch.png" 
+                src={buildAssetUrl('images/courses/day5/rocket-launch.png')} 
                 alt="Raketen-Start" 
                 className="w-32 h-32 flex-shrink-0"
               />
@@ -306,7 +307,7 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
           <div className="bg-white rounded-2xl border-2 border-gray-100 p-8">
             <div className="flex items-start gap-6 mb-8">
               <img 
-                src="/KI-Entdecker/images/courses/day5/robot-graduate.png" 
+                src={buildAssetUrl('images/courses/day5/robot-graduate.png')} 
                 alt="Absolvent-Roboter" 
                 className="w-32 h-32 flex-shrink-0"
               />
@@ -413,7 +414,7 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
           {/* Zusammenfassung */}
           <div className="bg-gradient-to-br from-yellow-100 to-amber-100 rounded-3xl p-8 text-center">
             <img
-              src="/KI-Entdecker/images/courses/day5/trophy-celebration.png"
+              src={buildAssetUrl('images/courses/day5/trophy-celebration.png')}
               alt="Trophäe"
               className="w-48 h-48 mx-auto mb-6"
             />
@@ -509,7 +510,7 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
         <div className="space-y-6">
           <div className="bg-gradient-to-br from-yellow-100 via-amber-100 to-orange-100 rounded-2xl p-8 text-center">
             <img 
-              src="/KI-Entdecker/images/courses/day5/certificate.png" 
+              src={buildAssetUrl('images/courses/day5/certificate.png')} 
               alt="Zertifikat" 
               className="w-40 h-40 mx-auto mb-6"
             />

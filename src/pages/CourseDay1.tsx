@@ -6,6 +6,7 @@ import {
   Info, Rocket, Users, Award
 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { buildAssetUrl } from '@/lib/paths';
 import type { useProgress } from '../hooks/useProgress';
 
 interface CourseDayProps {
@@ -73,7 +74,7 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-200/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
             
             <img 
-              src="/KI-Entdecker/images/courses/day1/robot-confused.png" 
+              src={buildAssetUrl('images/courses/day1/robot-confused.png')} 
               alt="KI-Roboter begrüßt dich" 
               className="w-40 h-40 sm:w-56 sm:h-56 mx-auto mb-8 relative z-10 animate-float"
             />
@@ -173,7 +174,7 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
             <img 
-              src="/KI-Entdecker/images/courses/day1/brain-circuits.png" 
+              src={buildAssetUrl('images/courses/day1/brain-circuits.png')} 
               alt="Gehirn aus Schaltkreisen" 
               className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 mx-auto md:mx-0"
             />
@@ -203,7 +204,7 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
                 <h4 className="font-bold text-green-800">Künstliche Intelligenz</h4>
               </div>
               <img
-                src="/KI-Entdecker/images/courses/day1/brain-circuits.png"
+                src={buildAssetUrl('images/courses/day1/brain-circuits.png')}
                 alt="KI-Gehirn"
                 className="w-full h-32 object-contain rounded-lg mb-4"
               />
@@ -234,7 +235,7 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
                 <h4 className="font-bold text-red-800">Normales Programm</h4>
               </div>
               <img
-                src="/KI-Entdecker/images/courses/day1-extra/ai-vs-program.png"
+                src={buildAssetUrl('images/courses/day1-extra/ai-vs-program.png')}
                 alt="Vergleich: Normales Programm"
                 className="w-full h-32 object-cover rounded-lg mb-4 opacity-70"
               />
@@ -442,7 +443,7 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
             <img 
-              src="/KI-Entdecker/images/courses/day1/robot-learning.png" 
+              src={buildAssetUrl('images/courses/day1/robot-learning.png')} 
               alt="Lernender Roboter" 
               className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 mx-auto md:mx-0"
             />
@@ -622,7 +623,7 @@ Verwende diese Struktur:
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
             <img 
-              src="/KI-Entdecker/images/courses/day1-extra/chatbot-friendly.png" 
+              src={buildAssetUrl('images/courses/day1-extra/chatbot-friendly.png')} 
               alt="Freundlicher Chatbot" 
               className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 mx-auto md:mx-0"
             />
@@ -819,7 +820,7 @@ Stell dich vor und frag mich, welches Tier mich interessiert!`}
           <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border-2 border-green-200 p-6 sm:p-8">
             <div className="flex items-center gap-4 mb-6">
               <img 
-                src="/KI-Entdecker/images/courses/day1/robot-idea.png" 
+                src={buildAssetUrl('images/courses/day1/robot-idea.png')} 
                 alt="Roboter mit Idee" 
                 className="w-16 h-16"
               />
@@ -888,7 +889,7 @@ Stell dich vor und frag mich, welches Tier mich interessiert!`}
           {/* Final Summary */}
           <div className="bg-gradient-to-br from-purple-100 via-indigo-50 to-purple-100 rounded-3xl p-8 text-center">
             <img 
-              src="/KI-Entdecker/images/courses/day1-extra/robot-teacher.png" 
+              src={buildAssetUrl('images/courses/day1-extra/robot-teacher.png')} 
               alt="Roboter-Lehrer" 
               className="w-48 h-48 mx-auto mb-6 rounded-xl object-cover"
             />

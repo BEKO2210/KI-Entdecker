@@ -1,17 +1,11 @@
-import { useEffect, useState } from 'react';
 import { Calendar, FileText, Download, CheckCircle, FileDown, ExternalLink } from 'lucide-react';
+import { buildDownloadUrl } from '@/lib/paths';
 
 const Materialien = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
-  const basePath = import.meta.env.BASE_URL || '/';
+  const isVisible = true;
 
   const openDownload = (path: string) => {
-    window.open(`${basePath}downloads/${path}`, '_blank');
+    window.open(buildDownloadUrl(path), '_blank');
   };
 
   const materials = [

@@ -15,6 +15,7 @@ import Eltern from './pages/Eltern';
 import Wochenplan from './pages/Wochenplan';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
+import NotFound from './pages/NotFound';
 import { useProgress } from './hooks/useProgress';
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path="/wochenplan" element={<Wochenplan />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
