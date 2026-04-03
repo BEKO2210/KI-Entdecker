@@ -3,8 +3,13 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle, Copy, Trophy, Rocket, GraduationCap, Star, Medal, Sparkles, Send } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import type { useProgress } from '../hooks/useProgress';
 
-const CourseDay5 = () => {
+interface CourseDayProps {
+  progress: ReturnType<typeof useProgress>;
+}
+
+const CourseDay5 = ({ progress }: CourseDayProps) => {
   const [activeSection, setActiveSection] = useState(0);
   const [showCertificate, setShowCertificate] = useState(false);
   const [projectIdea, setProjectIdea] = useState('');
@@ -13,7 +18,21 @@ const CourseDay5 = () => {
 
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [activeSection]);
+    
+    // Mark day as completed when reaching the last section
+    if (activeSection === 3) { // CourseDay5 has 4 sections
+      progress.completeDay(5);
+      progress.unlockBadge(5); // Unlock the final expert badge
+    }
+  }, [activeSection, progress]);
+
+  useEffect(() => {
+    if (showCertificate) {
+      // Just to be sure
+      progress.completeDay(5);
+      progress.unlockBadge(5);
+    }
+  }, [showCertificate, progress]);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);

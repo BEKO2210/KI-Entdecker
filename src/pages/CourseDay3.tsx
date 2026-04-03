@@ -6,13 +6,18 @@ import {
   PenTool, Film, Camera, Star
 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import type { useProgress } from '../hooks/useProgress';
+
+interface CourseDayProps {
+  progress: ReturnType<typeof useProgress>;
+}
 
 // ============================================================================
 // COURSE DAY 3: KREATIV MIT KI - Comprehensive Expanded Version
 // 5x Content Expansion with Premium Design
 // ============================================================================
 
-const CourseDay3 = () => {
+const CourseDay3 = ({ progress }: CourseDayProps) => {
   const [activeSection, setActiveSection] = useState(0);
   const navigate = useNavigate();
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -22,7 +27,12 @@ const CourseDay3 = () => {
 
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [activeSection]);
+    
+    // Mark day as completed when reaching the last section
+    if (activeSection === 10) { // CourseDay3 has 11 sections
+      progress.completeDay(3);
+    }
+  }, [activeSection, progress]);
 
   const copyToClipboard = (text: string, description?: string) => {
     navigator.clipboard.writeText(text);

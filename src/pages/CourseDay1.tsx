@@ -6,13 +6,18 @@ import {
   Info, Rocket, Users, Award
 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import type { useProgress } from '../hooks/useProgress';
+
+interface CourseDayProps {
+  progress: ReturnType<typeof useProgress>;
+}
 
 // ============================================================================
 // COURSE DAY 1: WAS IST KI? - Comprehensive Expanded Version
 // 5x Content Expansion with Premium Design
 // ============================================================================
 
-const CourseDay1 = () => {
+const CourseDay1 = ({ progress }: CourseDayProps) => {
   const [activeSection, setActiveSection] = useState(0);
   const navigate = useNavigate();
   const [fillBlankAnswers, setFillBlankAnswers] = useState<{[key: string]: string}>({});
@@ -23,7 +28,12 @@ const CourseDay1 = () => {
 
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [activeSection]);
+    
+    // Mark day as completed when reaching the last section
+    if (activeSection === 10) { // CourseDay1 has 11 sections (0 to 10)
+      progress.completeDay(1);
+    }
+  }, [activeSection, progress]);
 
   const copyToClipboard = (text: string, description?: string) => {
     navigator.clipboard.writeText(text);

@@ -211,9 +211,10 @@ const Kurs = ({ progress }: KursProps) => {
                     style={{ transitionDelay: `${200 + index * 100}ms` }}
                     onMouseEnter={() => setHoveredCard(day.id)}
                     onMouseLeave={() => setHoveredCard(null)}
+                    onClick={() => isUnlocked && handleStartDay(day.id)}
                   >
                     <div className={`relative bg-white rounded-3xl overflow-hidden shadow-lg transition-all duration-500 ${
-                      isUnlocked ? 'hover:shadow-2xl hover:-translate-y-1' : 'opacity-75'
+                      isUnlocked ? 'hover:shadow-2xl hover:-translate-y-1 cursor-pointer' : 'opacity-75 cursor-not-allowed'
                     }`}>
                       {/* Status Banner */}
                       <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${day.color}`} />

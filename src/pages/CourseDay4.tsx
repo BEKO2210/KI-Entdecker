@@ -2,8 +2,13 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle, Copy, Lightbulb, Calculator, Search, Bug, Target } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import type { useProgress } from '../hooks/useProgress';
 
-const CourseDay4 = () => {
+interface CourseDayProps {
+  progress: ReturnType<typeof useProgress>;
+}
+
+const CourseDay4 = ({ progress }: CourseDayProps) => {
   const [activeSection, setActiveSection] = useState(0);
   const navigate = useNavigate();
   const [mathInput, setMathInput] = useState('');
@@ -13,7 +18,12 @@ const CourseDay4 = () => {
 
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [activeSection]);
+    
+    // Mark day as completed when reaching the last section
+    if (activeSection === 4) { // CourseDay4 has 5 sections
+      progress.completeDay(4);
+    }
+  }, [activeSection, progress]);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);

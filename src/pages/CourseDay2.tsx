@@ -6,13 +6,18 @@ import {
   Award, Wand2, Users, FileText, Palette
 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import type { useProgress } from '../hooks/useProgress';
+
+interface CourseDayProps {
+  progress: ReturnType<typeof useProgress>;
+}
 
 // ============================================================================
 // COURSE DAY 2: PROMPT ENGINEERING - Comprehensive Expanded Version
 // 5x Content Expansion with Premium Design
 // ============================================================================
 
-const CourseDay2 = () => {
+const CourseDay2 = ({ progress }: CourseDayProps) => {
   const [activeSection, setActiveSection] = useState(0);
   const navigate = useNavigate();
   const [promptRating, setPromptRating] = useState<{[key: string]: number}>({});
@@ -24,7 +29,12 @@ const CourseDay2 = () => {
 
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [activeSection]);
+    
+    // Mark day as completed when reaching the last section
+    if (activeSection === 10) { // CourseDay2 has 11 sections
+      progress.completeDay(2);
+    }
+  }, [activeSection, progress]);
 
   const copyToClipboard = (text: string, description?: string) => {
     navigator.clipboard.writeText(text);

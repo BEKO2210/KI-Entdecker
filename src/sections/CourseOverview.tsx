@@ -133,12 +133,13 @@ const CourseOverview = () => {
                 style={{ transitionDelay: `${200 + index * 100}ms` }}
                 onMouseEnter={() => setHoveredCard(day.id)}
                 onMouseLeave={() => setHoveredCard(null)}
+                onClick={() => !day.locked && navigate(`/kurs/tag-${day.id}`)}
               >
                 <div
                   className={`relative h-full bg-white rounded-3xl overflow-hidden transition-all duration-500 ${
                     day.locked
-                      ? 'opacity-80'
-                      : 'shadow-lg hover:shadow-2xl hover:-translate-y-2'
+                      ? 'opacity-80 cursor-not-allowed'
+                      : 'shadow-lg hover:shadow-2xl hover:-translate-y-2 cursor-pointer'
                   }`}
                 >
                   {/* Card Header with Image */}

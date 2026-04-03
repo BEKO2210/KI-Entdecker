@@ -37,11 +37,11 @@ function App() {
           <Route index element={<Home progress={progress} />} />
           <Route path="/" element={<Home progress={progress} />} />
           <Route path="/kurs" element={<Kurs progress={progress} />} />
-          <Route path="/kurs/tag-1" element={<CourseDay1 />} />
-          <Route path="/kurs/tag-2" element={<CourseDay2 />} />
-          <Route path="/kurs/tag-3" element={<CourseDay3 />} />
-          <Route path="/kurs/tag-4" element={<CourseDay4 />} />
-          <Route path="/kurs/tag-5" element={<CourseDay5 />} />
+          <Route path="/kurs/tag-1" element={<CourseDay1 progress={progress} />} />
+          <Route path="/kurs/tag-2" element={<CourseDay2 progress={progress} />} />
+          <Route path="/kurs/tag-3" element={<CourseDay3 progress={progress} />} />
+          <Route path="/kurs/tag-4" element={<CourseDay4 progress={progress} />} />
+          <Route path="/kurs/tag-5" element={<CourseDay5 progress={progress} />} />
           <Route path="/materialien" element={<Materialien />} />
           <Route path="/eltern" element={<Eltern />} />
           <Route path="/wochenplan" element={<Wochenplan />} />
