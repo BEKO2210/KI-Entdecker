@@ -20,7 +20,7 @@ const CourseDay4 = ({ progress }: CourseDayProps) => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     
     // Mark day as completed when reaching the last section
-    if (activeSection === 4) { // CourseDay4 has 5 sections
+    if (activeSection === 3) { // CourseDay4 has 4 sections (0 to 3)
       progress.completeDay(4);
     }
   }, [activeSection, progress]);
@@ -51,7 +51,7 @@ const CourseDay4 = ({ progress }: CourseDayProps) => {
             <h2 className="text-2xl font-bold text-orange-800 mb-4">Problemlösen mit KI</h2>
             <p className="text-orange-700 max-w-2xl mx-auto">
               Heute wirst du zum KI-Detektiv! Du lernst, wie die KI dir beim Lösen von Problemen hilft - 
-              von Mathe-Aufgaben bis zu kniffligen Rätseln. Die KI wird dein superhelfer bei allen Herausforderungen!
+              von Mathe-Aufgaben bis zu kniffligen Rätseln. Die KI wird dein Superhelfer bei allen Herausforderungen!
             </p>
           </div>
           
@@ -473,7 +473,7 @@ Markiere die Fehler und erkläre kurz, was falsch war.`}
       </div>
 
       {/* Progress Bar */}
-      <div className="bg-white border-b sticky top-16 z-30">
+      <div className="bg-white border-b sticky top-16 z-30 shadow-sm">
         <div className="max-w-4xl mx-auto px-4 py-4">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-sm text-gray-500">Fortschritt</span>
@@ -515,12 +515,12 @@ Markiere die Fehler und erkläre kurz, was falsch war.`}
         </div>
 
         {/* Content */}
-        <div ref={sectionRef} className="animate-fadeIn">
+        <div ref={sectionRef} className="animate-fade-in-up">
           {sections[activeSection].content}
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-between mt-8">
+        <div className="flex justify-between mt-8 pt-8 border-t border-gray-200">
           <button
             onClick={() => setActiveSection(Math.max(0, activeSection - 1))}
             disabled={activeSection === 0}
@@ -537,7 +537,7 @@ Markiere die Fehler und erkläre kurz, was falsch war.`}
                 setActiveSection(activeSection + 1);
               }
             }}
-            className="flex items-center gap-2 px-6 py-3 bg-orange-600 text-white rounded-xl font-medium hover:bg-orange-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 px-6 py-3 bg-orange-600 text-white rounded-xl font-medium hover:bg-orange-700 transition-colors shadow-lg shadow-orange-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {activeSection === sections.length - 1 ? 'Tag 5 starten' : 'Weiter'}
             <ArrowRight className="w-5 h-5" />

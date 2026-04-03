@@ -20,7 +20,7 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     
     // Mark day as completed when reaching the last section
-    if (activeSection === 3) { // CourseDay5 has 4 sections
+    if (activeSection === 4) { // CourseDay5 has 5 sections (0 to 4)
       progress.completeDay(5);
       progress.unlockBadge(5); // Unlock the final expert badge
     }
@@ -514,7 +514,7 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
       </div>
 
       {/* Progress Bar */}
-      <div className="bg-white border-b sticky top-16 z-30">
+      <div className="bg-white border-b sticky top-16 z-30 shadow-sm">
         <div className="max-w-4xl mx-auto px-4 py-4">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-sm text-gray-500">Fortschritt</span>
@@ -556,12 +556,12 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
         </div>
 
         {/* Content */}
-        <div ref={sectionRef} className="animate-fadeIn">
+        <div ref={sectionRef} className="animate-fade-in-up">
           {sections[activeSection].content}
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-between mt-8">
+        <div className="flex justify-between mt-8 pt-8 border-t border-gray-200">
           <button
             onClick={() => setActiveSection(Math.max(0, activeSection - 1))}
             disabled={activeSection === 0}
@@ -578,7 +578,7 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
                 setActiveSection(activeSection + 1);
               }
             }}
-            className="flex items-center gap-2 px-6 py-3 bg-yellow-500 text-white rounded-xl font-medium hover:bg-yellow-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 px-6 py-3 bg-yellow-500 text-white rounded-xl font-medium hover:bg-yellow-600 transition-colors shadow-lg shadow-yellow-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {activeSection === sections.length - 1 ? 'Zertifikat anzeigen' : 'Weiter'}
             <ArrowRight className="w-5 h-5" />

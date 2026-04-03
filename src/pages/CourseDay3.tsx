@@ -29,7 +29,7 @@ const CourseDay3 = ({ progress }: CourseDayProps) => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     
     // Mark day as completed when reaching the last section
-    if (activeSection === 10) { // CourseDay3 has 11 sections
+    if (activeSection === 4) { // CourseDay3 has 5 sections (0 to 4)
       progress.completeDay(3);
     }
   }, [activeSection, progress]);
