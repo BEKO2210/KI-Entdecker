@@ -696,20 +696,13 @@ Struktur:
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between gap-4">
-              <Link 
-                to="/kurs/tag-2" 
+            <div className="flex justify-start">
+              <Link
+                to="/kurs"
                 className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors border-2 border-gray-200"
               >
                 <ArrowLeft className="w-5 h-5" />
-                Zurück zu Tag 2
-              </Link>
-              <Link 
-                to="/kurs/tag-4" 
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl font-medium hover:from-pink-700 hover:to-rose-700 transition-all shadow-lg shadow-pink-200"
-              >
-                Weiter zu Tag 4
-                <ArrowRight className="w-5 h-5" />
+                Zurück zur Übersicht
               </Link>
             </div>
           </div>

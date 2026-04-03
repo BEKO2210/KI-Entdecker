@@ -846,20 +846,13 @@ const CourseDay2 = ({ progress }: CourseDayProps) => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between gap-4">
-              <Link 
-                to="/kurs/tag-1" 
+            <div className="flex justify-start">
+              <Link
+                to="/kurs"
                 className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors border-2 border-gray-200"
               >
                 <ArrowLeft className="w-5 h-5" />
-                Zurück zu Tag 1
-              </Link>
-              <Link 
-                to="/kurs/tag-3" 
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-xl font-medium hover:from-teal-700 hover:to-cyan-700 transition-all shadow-lg shadow-teal-200"
-              >
-                Weiter zu Tag 3
-                <ArrowRight className="w-5 h-5" />
+                Zurück zur Übersicht
               </Link>
             </div>
           </div>

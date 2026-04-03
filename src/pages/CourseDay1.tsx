@@ -862,20 +862,13 @@ Stell dich vor und frag mich, welches Tier mich interessiert!`}
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between gap-4">
-              <Link 
-                to="/kurs" 
+            <div className="flex justify-start">
+              <Link
+                to="/kurs"
                 className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors border-2 border-gray-200"
               >
                 <ArrowLeft className="w-5 h-5" />
                 Zurück zur Übersicht
-              </Link>
-              <Link 
-                to="/kurs/tag-2" 
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-xl font-medium hover:bg-purple-700 transition-colors shadow-lg shadow-purple-200"
-              >
-                Weiter zu Tag 2
-                <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
           </div>
