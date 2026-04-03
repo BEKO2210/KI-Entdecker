@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Sparkles, Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
+import { buildAssetUrl } from '@/lib/paths';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,9 +25,11 @@ const Footer = () => {
               className="flex items-center gap-2"
               aria-label="Zur Startseite"
             >
-              <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-primary-purple to-primary-teal rounded-lg">
-                <Sparkles className="w-4 h-4 text-white" aria-hidden="true" />
-              </div>
+              <img
+                src={buildAssetUrl('images/robot-hero.png')}
+                alt=""
+                className="w-8 h-8 rounded-lg object-contain"
+              />
               <span className="font-outfit font-bold text-lg text-neutral-dark">
                 KI-Entdecker
               </span>
