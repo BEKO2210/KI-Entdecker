@@ -8,7 +8,7 @@ const Wochenplan = () => {
     setIsVisible(true);
   }, []);
 
-  const basePath = import.meta.env.BASE_URL || '/';
+  const basePath = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '/');
 
   const handleDownload = () => {
     window.open(`${basePath}downloads/wochenplan.html`, '_blank');
