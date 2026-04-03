@@ -420,6 +420,64 @@ const Home = ({ progress }: HomeProps) => {
         </div>
       </section>
 
+      {/* Certificate Preview */}
+      <section className="py-16 bg-gradient-to-b from-white to-neutral-light">
+        <div className="section-padding">
+          <div className="container-wide">
+            <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              {/* Mini Certificate Preview */}
+              <div className="flex-shrink-0">
+                <div className="w-64 h-44 bg-white rounded-lg shadow-xl border border-neutral-light p-5 relative overflow-hidden">
+                  {/* Gold border effect */}
+                  <div className="absolute inset-[6px] border border-yellow-600/20 rounded pointer-events-none" />
+                  <div className="absolute inset-[8px] border border-yellow-600/10 rounded pointer-events-none" />
+
+                  <div className="flex flex-col items-center h-full justify-center relative z-10">
+                    <div className="flex items-center gap-1.5 mb-2">
+                      <img
+                        src={buildAssetUrl('images/robot-hero.png')}
+                        alt=""
+                        className="w-5 h-5 object-contain"
+                      />
+                      <span className="text-[8px] font-semibold text-primary-purple tracking-widest uppercase">KI-Entdecker</span>
+                    </div>
+                    <div className="font-serif text-lg font-bold text-neutral-dark tracking-wide">Zertifikat</div>
+                    <div className="text-[7px] text-neutral-gray tracking-wider uppercase mb-2">Certificate of Completion</div>
+                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-yellow-600/30 to-transparent mb-2" />
+                    <div className="w-24 border-b border-neutral-dark/30 mb-1" />
+                    <div className="text-[6px] text-neutral-gray/50">Dein Name</div>
+                    <div className="flex gap-1 mt-2">
+                      {['#7F56D9','#14b8a6','#ec4899','#f97316','#eab308'].map((c, i) => (
+                        <div key={i} className="w-1.5 h-1.5 rounded-full" style={{ background: c }} />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Text */}
+              <div className="text-center md:text-left">
+                <h2 className="text-2xl sm:text-3xl font-outfit font-bold text-neutral-dark mb-3">
+                  Dein Zertifikat wartet
+                </h2>
+                <p className="text-neutral-gray mb-4">
+                  Nach Abschluss aller 5 Kurstage erhältst du ein professionelles Zertifikat
+                  zum Ausdrucken und Aufhängen. Mit deinem Namen, allen erreichten
+                  Kompetenzstufen und dem offiziellen KI-Entdecker-Siegel.
+                </p>
+                <Link
+                  to="/kurs"
+                  className="inline-flex items-center gap-2 text-primary-purple font-medium hover:text-primary-purple/80 transition-colors"
+                >
+                  Jetzt Kurs starten
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-24 bg-neutral-light">
         <div className="section-padding">
