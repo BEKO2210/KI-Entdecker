@@ -43,7 +43,7 @@ const Kurs = ({ progress }: KursProps) => {
       description: 'Verstehe den Unterschied zwischen einfachen Regeln und echter KI. Wir bauen einen einfachen Chatbot und lernen, wie Computer "denken" können.',
       duration: '45 Minuten',
       lessons: 3,
-      image: '/images/day1-brain.png',
+      image: '/KI-Entdecker/images/day1-brain.png',
       color: 'from-purple-500 to-indigo-600',
       lessonsList: [
         'Was ist Künstliche Intelligenz?',
@@ -58,7 +58,7 @@ const Kurs = ({ progress }: KursProps) => {
       description: 'Lerne die Kunst der perfekten Frage. Wie bekommst du genau die Antwort, die du brauchst? Mit dem 5-Sterne-Prompt-Rezept.',
       duration: '45 Minuten',
       lessons: 4,
-      image: '/images/day2-chat.png',
+      image: '/KI-Entdecker/images/day2-chat.png',
       color: 'from-teal-500 to-cyan-600',
       lessonsList: [
         'Was ist ein Prompt?',
@@ -74,7 +74,7 @@ const Kurs = ({ progress }: KursProps) => {
       description: 'Erstelle eigene Bilder, schreibe Geschichten und designe Charaktere. Die KI wird zu deinem kreativen Partner für unendliche Möglichkeiten.',
       duration: '45 Minuten',
       lessons: 5,
-      image: '/images/day3-creative.png',
+      image: '/KI-Entdecker/images/day3-creative.png',
       color: 'from-pink-500 to-rose-600',
       lessonsList: [
         'Bilder mit KI erstellen',
@@ -91,7 +91,7 @@ const Kurs = ({ progress }: KursProps) => {
       description: 'Nutze KI als Lernhelfer. Verstehe komplexe Themen, werde Fehler-Jäger und löse knifflige Probleme Schritt für Schritt.',
       duration: '45 Minuten',
       lessons: 4,
-      image: '/images/day4-puzzle.png',
+      image: '/KI-Entdecker/images/day4-puzzle.png',
       color: 'from-orange-500 to-amber-600',
       lessonsList: [
         'KI als Lernhelfer',
@@ -107,7 +107,7 @@ const Kurs = ({ progress }: KursProps) => {
       description: 'Entwickle dein eigenes Projekt mit KI-Unterstützung. Präsentiere deine Idee und werde offizieller KI-Experte!',
       duration: '60 Minuten',
       lessons: 2,
-      image: '/images/day5-trophy.png',
+      image: '/KI-Entdecker/images/day5-trophy.png',
       color: 'from-yellow-500 to-amber-500',
       lessonsList: [
         'Dein Projekt planen',

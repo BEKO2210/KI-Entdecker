@@ -14,7 +14,7 @@ if (redirect) {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/KI-Entdecker">
       <App />
     </BrowserRouter>
   </React.StrictMode>,

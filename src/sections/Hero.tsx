@@ -161,7 +161,7 @@ const Hero = () => {
               {/* Robot Image */}
               <div className="relative z-10 floating">
                 <img
-                  src="/images/robot-hero.png"
+                  src="/KI-Entdecker/images/robot-hero.png"
                   alt="KI-Roboter Maskottchen"
                   className="w-full max-w-md lg:max-w-lg drop-shadow-2xl"
                 />

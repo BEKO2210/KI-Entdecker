@@ -64,7 +64,7 @@ const CourseDay2 = () => {
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-cyan-200/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
             
             <img 
-              src="/images/courses/day2/magic-prompt.png" 
+              src="/KI-Entdecker/images/courses/day2/magic-prompt.png" 
               alt="Magischer Prompt" 
               className="w-40 h-40 sm:w-56 sm:h-56 mx-auto mb-8 relative z-10 animate-float"
             />
@@ -164,7 +164,7 @@ const CourseDay2 = () => {
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
             <img 
-              src="/images/courses/day2/robot-speaking.png" 
+              src="/KI-Entdecker/images/courses/day2/robot-speaking.png" 
               alt="Sprechender Roboter" 
               className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 mx-auto md:mx-0"
             />
@@ -396,7 +396,7 @@ const CourseDay2 = () => {
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
             <img 
-              src="/images/courses/day2-extra/five-stars-recipe.png" 
+              src="/KI-Entdecker/images/courses/day2-extra/five-stars-recipe.png" 
               alt="Fünf Sterne Rezept" 
               className="w-32 h-32 md:w-48 md:h-32 flex-shrink-0 mx-auto md:mx-0 object-cover rounded-xl"
             />
@@ -624,7 +624,7 @@ const CourseDay2 = () => {
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
             <img 
-              src="/images/courses/day2-extra/prompt-transformation.png" 
+              src="/KI-Entdecker/images/courses/day2-extra/prompt-transformation.png" 
               alt="Prompt Transformation" 
               className="w-32 h-32 md:w-48 md:h-32 flex-shrink-0 mx-auto md:mx-0 object-cover rounded-xl"
             />
@@ -802,7 +802,7 @@ const CourseDay2 = () => {
           <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border-2 border-green-200 p-6 sm:p-8">
             <div className="flex items-center gap-4 mb-6">
               <img 
-                src="/images/courses/day2/robot-success.png" 
+                src="/KI-Entdecker/images/courses/day2/robot-success.png" 
                 alt="Erfolgreicher Roboter" 
                 className="w-16 h-16"
               />
@@ -858,7 +858,7 @@ const CourseDay2 = () => {
           {/* Final Summary */}
           <div className="bg-gradient-to-br from-teal-100 via-cyan-50 to-teal-100 rounded-3xl p-8 text-center">
             <img 
-              src="/images/courses/day2/magic-prompt.png" 
+              src="/KI-Entdecker/images/courses/day2/magic-prompt.png" 
               alt="Magischer Prompt" 
               className="w-32 h-32 mx-auto mb-6"
             />
