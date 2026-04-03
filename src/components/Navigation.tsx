@@ -8,10 +8,17 @@ interface NavigationProps {
 }
 
 const Navigation = ({ progress }: NavigationProps) => {
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const [prevPathname, setPrevPathname] = useState(location.pathname);
   const unlockedCount = progress.getUnlockedBadgesCount();
+
+  // Close mobile menu on route change (render-time reset, no effect needed)
+  if (location.pathname !== prevPathname) {
+    setPrevPathname(location.pathname);
+    setIsMobileMenuOpen(false);
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,11 +28,6 @@ const Navigation = ({ progress }: NavigationProps) => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [location.pathname]);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
