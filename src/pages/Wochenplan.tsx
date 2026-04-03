@@ -15,12 +15,13 @@ const Wochenplan = () => {
       duration: '45 Min',
       color: 'from-purple-500 to-indigo-600',
       lessons: [
-        { time: '0-15 min', title: 'Was ist Künstliche Intelligenz?', type: 'video' },
-        { time: '15-30 min', title: 'Wie lernen Computer?', type: 'interactive' },
-        { time: '30-45 min', title: 'Dein erster Chatbot', type: 'project' },
+        { time: '~15 min', title: 'Was ist KI? – Grundlagen lesen & verstehen', type: 'reading' },
+        { time: '~15 min', title: 'Wie lernen Computer? – Beispiele & Erklärungen', type: 'reading' },
+        { time: '~10 min', title: 'Dein erster Chatbot – Prompts ausprobieren', type: 'mitmachen' },
+        { time: '~5 min', title: 'FAQ & Zusammenfassung', type: 'review' },
       ],
-      goals: ['KI-Grundlagen verstehen', 'Unterschied zwischen Regeln und KI'],
-      materials: ['Computer/Tablet', 'Internet'],
+      goals: ['KI-Grundlagen verstehen', 'Unterschied zwischen Regeln und KI erkennen'],
+      materials: ['Computer oder Tablet', 'Internetzugang'],
     },
     {
       day: 2,
@@ -28,13 +29,13 @@ const Wochenplan = () => {
       duration: '45 Min',
       color: 'from-teal-500 to-cyan-600',
       lessons: [
-        { time: '0-10 min', title: 'Was ist ein Prompt?', type: 'video' },
-        { time: '10-25 min', title: 'Das 5-Sterne-Rezept', type: 'learning' },
-        { time: '25-40 min', title: 'Gute Prompts üben', type: 'interactive' },
-        { time: '40-45 min', title: 'Zusammenfassung', type: 'review' },
+        { time: '~10 min', title: 'Was ist ein Prompt? – Einführung lesen', type: 'reading' },
+        { time: '~15 min', title: 'Das 5-Sterne-Rezept – Aufbau guter Prompts lernen', type: 'reading' },
+        { time: '~15 min', title: 'Prompts verbessern – Vorher/Nachher-Beispiele üben', type: 'practice' },
+        { time: '~5 min', title: 'FAQ & Zusammenfassung', type: 'review' },
       ],
-      goals: ['Gute Prompts schreiben', 'KI gezielt steuern'],
-      materials: ['Computer/Tablet', 'Notizbuch'],
+      goals: ['Gute Prompts schreiben können', 'KI gezielt steuern lernen'],
+      materials: ['Computer oder Tablet', 'Optional: Notizbuch'],
     },
     {
       day: 3,
@@ -42,14 +43,13 @@ const Wochenplan = () => {
       duration: '45 Min',
       color: 'from-pink-500 to-rose-600',
       lessons: [
-        { time: '0-10 min', title: 'Bilder mit KI erstellen', type: 'video' },
-        { time: '10-20 min', title: 'Geschichten schreiben', type: 'project' },
-        { time: '20-30 min', title: 'Charaktere designen', type: 'interactive' },
-        { time: '30-40 min', title: 'Musik komponieren', type: 'explore' },
-        { time: '40-45 min', title: 'Dein Kreativprojekt', type: 'project' },
+        { time: '~15 min', title: 'Bilder mit KI – Bild-Prompts ausprobieren', type: 'mitmachen' },
+        { time: '~15 min', title: 'Geschichten schreiben – Kreative Texte mit KI', type: 'mitmachen' },
+        { time: '~10 min', title: 'Musik & mehr – Weitere kreative Möglichkeiten', type: 'mitmachen' },
+        { time: '~5 min', title: 'FAQ & Zusammenfassung', type: 'review' },
       ],
-      goals: ['KI als Kreativ-Partner nutzen', 'Eigene Werke erstellen'],
-      materials: ['Computer/Tablet', 'Papier & Stifte'],
+      goals: ['KI als Kreativ-Partner nutzen', 'Eigene Texte und Ideen erstellen'],
+      materials: ['Computer oder Tablet', 'Optional: Papier & Stifte'],
     },
     {
       day: 4,
@@ -57,13 +57,13 @@ const Wochenplan = () => {
       duration: '45 Min',
       color: 'from-orange-500 to-amber-600',
       lessons: [
-        { time: '0-10 min', title: 'KI als Lernhelfer', type: 'video' },
-        { time: '10-25 min', title: 'Mathe verstehen', type: 'interactive' },
-        { time: '25-35 min', title: 'Texte zusammenfassen', type: 'practice' },
-        { time: '35-45 min', title: 'Fehler finden', type: 'game' },
+        { time: '~10 min', title: 'KI als Lernhelfer – Praktische Beispiele lesen', type: 'reading' },
+        { time: '~15 min', title: 'Recherche & Zusammenfassen – Texte mit KI bearbeiten', type: 'practice' },
+        { time: '~15 min', title: 'Fehler finden & Korrigieren – KI als Korrekturhilfe', type: 'practice' },
+        { time: '~5 min', title: 'FAQ & Zusammenfassung', type: 'review' },
       ],
-      goals: ['KI zum Lernen nutzen', 'Probleme mit KI lösen'],
-      materials: ['Computer/Tablet', 'Schulbücher'],
+      goals: ['KI zum Lernen einsetzen', 'Texte prüfen und verbessern mit KI'],
+      materials: ['Computer oder Tablet', 'Optional: eigene Texte oder Schulaufgaben'],
     },
     {
       day: 5,
@@ -71,45 +71,35 @@ const Wochenplan = () => {
       duration: '60 Min',
       color: 'from-yellow-500 to-amber-500',
       lessons: [
-        { time: '0-15 min', title: 'Projekt wählen & planen', type: 'planning' },
-        { time: '15-45 min', title: 'Projekt umsetzen', type: 'project' },
-        { time: '45-55 min', title: 'Präsentation vorbereiten', type: 'prep' },
-        { time: '55-60 min', title: 'Zertifikat erhalten!', type: 'celebration' },
+        { time: '~15 min', title: 'Projekt 1: KI-Comic – Eine Geschichte als Comic gestalten', type: 'project' },
+        { time: '~15 min', title: 'Projekt 2: KI-Quiz – Ein eigenes Quiz erstellen', type: 'project' },
+        { time: '~15 min', title: 'Projekt 3: KI-Assistent – Einen Helfer-Bot bauen', type: 'project' },
+        { time: '~15 min', title: 'Abschluss – Zertifikat & Badges erhalten', type: 'celebration' },
       ],
-      goals: ['Eigenes Projekt erstellen', 'KI-Experte werden'],
-      materials: ['Computer/Tablet', 'Alle bisherigen Notizen'],
+      goals: ['Ein eigenes KI-Projekt umsetzen', 'Das Gelernte aus allen Tagen anwenden'],
+      materials: ['Computer oder Tablet', 'Notizen aus Tag 1–4'],
     },
   ];
 
   const getTypeLabel = (type: string) => {
     const labels: Record<string, string> = {
-      video: 'Video',
-      interactive: 'Interaktiv',
-      project: 'Projekt',
-      game: 'Spiel',
-      learning: 'Lernen',
-      review: 'Wiederholung',
-      explore: 'Entdecken',
+      reading: 'Lesen',
+      mitmachen: 'Mitmachen',
       practice: 'Übung',
-      planning: 'Planung',
-      prep: 'Vorbereitung',
-      celebration: 'Feier!',
+      project: 'Projekt',
+      review: 'Zusammenfassung',
+      celebration: 'Abschluss',
     };
     return labels[type] || type;
   };
 
   const getTypeStyle = (type: string) => {
     const styles: Record<string, string> = {
-      video: 'bg-red-100 text-red-600',
-      interactive: 'bg-blue-100 text-blue-600',
-      project: 'bg-green-100 text-green-600',
-      game: 'bg-purple-100 text-purple-600',
-      learning: 'bg-indigo-100 text-indigo-600',
-      review: 'bg-gray-100 text-gray-600',
-      explore: 'bg-cyan-100 text-cyan-600',
+      reading: 'bg-indigo-100 text-indigo-600',
+      mitmachen: 'bg-blue-100 text-blue-600',
       practice: 'bg-orange-100 text-orange-600',
-      planning: 'bg-teal-100 text-teal-600',
-      prep: 'bg-yellow-100 text-yellow-600',
+      project: 'bg-green-100 text-green-600',
+      review: 'bg-gray-100 text-gray-600',
       celebration: 'bg-pink-100 text-pink-600',
     };
     return styles[type] || 'bg-neutral-100 text-neutral-600';
@@ -132,8 +122,8 @@ const Wochenplan = () => {
               Wochenplan
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto mb-8">
-              Die komplette Übersicht aller 5 Tage mit Zeitplan, Lernzielen und Pausen.
-              So behältst du den Überblick!
+              Die komplette Übersicht aller 5 Kurstage mit Zeitplan, Lernzielen und Materialien.
+              So weißt du immer, was als Nächstes kommt!
             </p>
             <button 
               onClick={handleDownload}
@@ -161,7 +151,7 @@ const Wochenplan = () => {
                 <div className="text-sm text-neutral-gray">Gesamtzeit</div>
               </div>
               <div className="text-center p-4 bg-neutral-light rounded-xl">
-                <div className="text-2xl font-outfit font-bold text-accent-pink">20</div>
+                <div className="text-2xl font-outfit font-bold text-accent-pink">15</div>
                 <div className="text-sm text-neutral-gray">Lektionen</div>
               </div>
               <div className="text-center p-4 bg-neutral-light rounded-xl">
