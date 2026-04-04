@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Play, Users, FileText, Award, Star, ArrowRight, CheckCircle, BookOpen, Brain, Palette, Lightbulb, Trophy, Lock } from 'lucide-react';
+import { Play, Users, FileText, Award, Star, ArrowRight, CheckCircle, BookOpen, Brain, Palette, Lightbulb, Trophy, Lock, Download } from 'lucide-react';
 import type { useProgress } from '../hooks/useProgress';
-import { buildAssetUrl } from '@/lib/paths';
+import { buildAssetUrl, buildDownloadUrl } from '@/lib/paths';
 
 interface HomeProps {
   progress: ReturnType<typeof useProgress>;
@@ -14,6 +14,7 @@ const Home = ({ progress }: HomeProps) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const unlockedCount = progress.getUnlockedBadgesCount();
+  const completedDays = progress.getCompletedDaysCount();
 
   const stats = [
     { icon: Users, value: '5', label: 'Kurstage' },
@@ -455,23 +456,60 @@ const Home = ({ progress }: HomeProps) => {
                 </div>
               </div>
 
-              {/* Text */}
+              {/* Text + Button */}
               <div className="text-center md:text-left">
                 <h2 className="text-2xl sm:text-3xl font-outfit font-bold text-neutral-dark mb-3">
                   Dein Zertifikat wartet
                 </h2>
-                <p className="text-neutral-gray mb-4">
+                <p className="text-neutral-gray mb-5">
                   Nach Abschluss aller 5 Kurstage erhältst du ein professionelles Zertifikat
                   zum Ausdrucken und Aufhängen. Mit deinem Namen, allen erreichten
                   Kompetenzstufen und dem offiziellen KI-Entdecker-Siegel.
                 </p>
-                <Link
-                  to="/kurs"
-                  className="inline-flex items-center gap-2 text-primary-purple font-medium hover:text-primary-purple/80 transition-colors"
-                >
-                  Jetzt Kurs starten
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+
+                {completedDays === 5 ? (
+                  /* All done - download button */
+                  <button
+                    onClick={() => window.open(buildDownloadUrl('zertifikat.html'), '_blank')}
+                    className="relative inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-primary-purple rounded-xl hover:bg-primary-purple/90 transition-all duration-300 overflow-hidden group/cert"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl group-hover/cert:opacity-75 transition-opacity opacity-0" />
+                    <Download className="w-4 h-4 relative" />
+                    <span className="relative">Zertifikat herunterladen</span>
+                  </button>
+                ) : (
+                  /* Not done - locked button with tooltip */
+                  <div className="relative inline-block group/tip">
+                    <button
+                      className="relative inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-neutral-gray/40 rounded-xl cursor-not-allowed overflow-hidden"
+                      aria-disabled="true"
+                    >
+                      <Lock className="w-4 h-4" />
+                      <span>Zertifikat herunterladen</span>
+                    </button>
+
+                    {/* Tooltip */}
+                    <div className="absolute invisible opacity-0 group-hover/tip:visible group-hover/tip:opacity-100 bottom-full left-1/2 -translate-x-1/2 mb-3 w-72 transition-all duration-300 ease-out transform group-hover/tip:translate-y-0 translate-y-2 z-20">
+                      <div className="relative p-4 bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-md rounded-2xl border border-white/10 shadow-[0_0_30px_rgba(79,70,229,0.15)]">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-purple/20">
+                            <Award className="w-4 h-4 text-purple-400" />
+                          </div>
+                          <h3 className="text-sm font-semibold text-white">Noch nicht freigeschaltet</h3>
+                        </div>
+                        <p className="text-sm text-gray-300 mb-2">
+                          Schließe alle 5 Kurstage ab, um dein Zertifikat freizuschalten.
+                        </p>
+                        <div className="flex items-center gap-2 text-xs text-gray-400">
+                          <CheckCircle className="w-3.5 h-3.5" />
+                          <span>{completedDays} von 5 Tagen abgeschlossen</span>
+                        </div>
+                        {/* Arrow */}
+                        <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-gradient-to-br from-gray-900/95 to-gray-800/95 rotate-45 border-r border-b border-white/10" />
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
