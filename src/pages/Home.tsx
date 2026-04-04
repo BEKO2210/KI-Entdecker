@@ -489,7 +489,7 @@ const Home = ({ progress }: HomeProps) => {
                     </button>
 
                     {/* Tooltip */}
-                    <div className="absolute invisible opacity-0 group-hover/tip:visible group-hover/tip:opacity-100 bottom-full left-1/2 -translate-x-1/2 mb-3 w-72 transition-all duration-300 ease-out transform group-hover/tip:translate-y-0 translate-y-2 z-20">
+                    <div className="absolute invisible opacity-0 group-hover/tip:visible group-hover/tip:opacity-100 top-full left-1/2 -translate-x-1/2 mt-3 w-72 transition-all duration-300 ease-out transform group-hover/tip:translate-y-0 -translate-y-2 z-20">
                       <div className="relative p-4 bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-md rounded-2xl border border-white/10 shadow-[0_0_30px_rgba(79,70,229,0.15)]">
                         <div className="flex items-center gap-3 mb-2">
                           <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-purple/20">
@@ -505,7 +505,7 @@ const Home = ({ progress }: HomeProps) => {
                           <span>{completedDays} von 5 Tagen abgeschlossen</span>
                         </div>
                         {/* Arrow */}
-                        <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-gradient-to-br from-gray-900/95 to-gray-800/95 rotate-45 border-r border-b border-white/10" />
+                        <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-gradient-to-br from-gray-900/95 to-gray-800/95 rotate-45 border-l border-t border-white/10" />
                       </div>
                     </div>
                   </div>
