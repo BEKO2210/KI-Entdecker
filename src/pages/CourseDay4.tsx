@@ -18,21 +18,29 @@ const CourseDay4 = ({ progress }: CourseDayProps) => {
   const [selectedProblem, setSelectedProblem] = useState<string | null>(null);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const canProceed = useRef(false);
 
   const { completeDay } = progress;
 
-  // Track highest section reached (render-time update, no effect needed)
-  if (activeSection > maxReachedSection) {
-    setMaxReachedSection(activeSection);
-  }
+  const handleNext = () => {
+    if (!canProceed.current && activeSection < 4) {
+      toast({ title: "Nicht so schnell!", description: "Nimm dir Zeit und schau dir die Inhalte in Ruhe an. Gutes Lernen braucht etwas Geduld.", duration: 3000 });
+      return;
+    }
+    if (activeSection === 4) { navigate('/kurs/tag-5'); }
+    else { setActiveSection(activeSection + 1); }
+  };
+
+  if (activeSection > maxReachedSection) { setMaxReachedSection(activeSection); }
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // Mark day as completed when reaching the last section
-    if (activeSection === 4) { // CourseDay4 has 5 sections (0 to 4)
-      completeDay(4);
-    }
+    canProceed.current = false;
+    
+    const minSeconds = (activeSection === 0 || activeSection === 4) ? 8 : 15;
+    const timer = setTimeout(() => { canProceed.current = true; }, minSeconds * 1000);
+    if (activeSection === 4) { completeDay(4); }
+    return () => clearTimeout(timer);
   }, [activeSection, completeDay]);
 
   const copyToClipboard = (text: string) => {
@@ -687,13 +695,7 @@ Markiere die Fehler und erkläre kurz, was falsch war.`}
             Zurück
           </button>
           <button
-            onClick={() => {
-              if (activeSection === sections.length - 1) {
-                navigate('/kurs/tag-5');
-              } else {
-                setActiveSection(activeSection + 1);
-              }
-            }}
+            onClick={handleNext}
             className="flex items-center gap-2 px-6 py-3 bg-orange-600 text-white rounded-xl font-medium hover:bg-orange-700 transition-colors shadow-lg shadow-orange-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {activeSection === sections.length - 1 ? 'Tag 5 starten' : 'Weiter'}

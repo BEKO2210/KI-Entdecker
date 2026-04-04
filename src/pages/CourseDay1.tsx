@@ -27,8 +27,26 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [completedExercises, setCompletedExercises] = useState<string[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const canProceed = useRef(false);
 
   const { completeDay } = progress;
+
+  const handleNext = () => {
+    if (!canProceed.current && activeSection < 4) {
+      toast({
+        title: "Nicht so schnell!",
+        description: "Nimm dir Zeit und schau dir die Inhalte in Ruhe an. Gutes Lernen braucht etwas Geduld.",
+        duration: 3000,
+      });
+      return;
+    }
+
+    if (activeSection === 4) {
+      navigate('/kurs/tag-2');
+    } else {
+      setActiveSection(activeSection + 1);
+    }
+  };
 
   // Track highest section reached (render-time update, no effect needed)
   if (activeSection > maxReachedSection) {
@@ -38,10 +56,18 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
+    // Set minimum reading time before "Weiter" is allowed
+    canProceed.current = false;
+    
+    const minSeconds = (activeSection === 0 || activeSection === 4) ? 8 : 15;
+    const timer = setTimeout(() => { canProceed.current = true; }, minSeconds * 1000);
+
     // Mark day as completed when reaching the last section
     if (activeSection === 4) { // CourseDay1 has 5 sections (0 to 4)
       completeDay(1);
     }
+
+    return () => clearTimeout(timer);
   }, [activeSection, completeDay]);
 
   const copyToClipboard = (text: string, description?: string) => {
@@ -1148,13 +1174,7 @@ Stell dich vor und frag mich, welches Tier mich interessiert!`}
             Zurück
           </button>
           <button
-            onClick={() => {
-              if (activeSection === sections.length - 1) {
-                navigate('/kurs/tag-2');
-              } else {
-                setActiveSection(activeSection + 1);
-              }
-            }}
+            onClick={handleNext}
             className="flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-xl font-medium hover:bg-purple-700 transition-colors shadow-lg shadow-purple-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {activeSection === sections.length - 1 ? 'Tag 2 starten' : 'Weiter'}
