@@ -1,8 +1,14 @@
-import { Calendar, FileText, Download, CheckCircle, FileDown, ExternalLink } from 'lucide-react';
+import { Calendar, FileText, Download, CheckCircle, FileDown, ExternalLink, Lock, Award } from 'lucide-react';
 import { buildDownloadUrl } from '@/lib/paths';
+import type { useProgress } from '../hooks/useProgress';
 
-const Materialien = () => {
+interface MaterialienProps {
+  progress: ReturnType<typeof useProgress>;
+}
+
+const Materialien = ({ progress }: MaterialienProps) => {
   const isVisible = true;
+  const allCompleted = progress.getCompletedDaysCount() === 5;
 
   const openDownload = (path: string) => {
     window.open(buildDownloadUrl(path), '_blank');
@@ -51,7 +57,6 @@ const Materialien = () => {
     { name: 'Prompt-Cheat-Sheet', description: 'Das 5-Sterne-Rezept und Profi-Tricks auf einen Blick', file: 'prompt-cheat-sheet.html' },
     { name: 'KI-Tools-Übersicht', description: 'Kostenlose und kindersichere KI-Tools', file: 'ki-tools-uebersicht.html' },
     { name: 'Eltern-Guide', description: 'Ausführlicher Guide mit Tipps, Regeln und Gesprächsanregungen', file: 'eltern-guide.html' },
-    { name: 'Zertifikat', description: 'Druckbares Zertifikat nach Abschluss des Kurses', file: 'zertifikat.html' },
   ];
 
   return (
@@ -172,6 +177,36 @@ const Materialien = () => {
                   </button>
                 </div>
               ))}
+
+              {/* Zertifikat - locked until all days completed */}
+              <div className={`bg-white rounded-2xl p-6 shadow-md transition-all duration-300 ${allCompleted ? 'hover:shadow-lg hover:-translate-y-1' : 'opacity-70'}`}>
+                <div className="flex items-start justify-between mb-4">
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${allCompleted ? 'bg-green-100' : 'bg-neutral-light'}`}>
+                    {allCompleted ? <Award className="w-5 h-5 text-green-600" /> : <Lock className="w-5 h-5 text-neutral-gray" />}
+                  </div>
+                </div>
+                <h3 className="font-outfit font-bold text-neutral-dark mb-2">Zertifikat</h3>
+                <p className="text-sm text-neutral-gray mb-4">
+                  {allCompleted
+                    ? 'Herzlichen Glückwunsch! Dein Zertifikat ist bereit.'
+                    : `Schließe alle 5 Kurstage ab, um dein Zertifikat freizuschalten (${progress.getCompletedDaysCount()}/5).`
+                  }
+                </p>
+                {allCompleted ? (
+                  <button
+                    onClick={() => openDownload('zertifikat.html')}
+                    className="flex items-center gap-2 text-sm text-green-600 hover:text-green-700 transition-colors font-medium"
+                  >
+                    <Download className="w-4 h-4" />
+                    Zertifikat herunterladen
+                  </button>
+                ) : (
+                  <span className="flex items-center gap-2 text-sm text-neutral-gray/60">
+                    <Lock className="w-4 h-4" />
+                    Gesperrt
+                  </span>
+                )}
+              </div>
             </div>
           </div>
         </div>

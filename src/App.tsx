@@ -45,7 +45,7 @@ function App() {
           <Route path="/kurs/tag-3" element={<CourseDay3 progress={progress} />} />
           <Route path="/kurs/tag-4" element={<CourseDay4 progress={progress} />} />
           <Route path="/kurs/tag-5" element={<CourseDay5 progress={progress} />} />
-          <Route path="/materialien" element={<Materialien />} />
+          <Route path="/materialien" element={<Materialien progress={progress} />} />
           <Route path="/eltern" element={<Eltern />} />
           <Route path="/wochenplan" element={<Wochenplan />} />
           <Route path="/impressum" element={<Impressum />} />
