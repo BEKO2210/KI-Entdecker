@@ -18,22 +18,29 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
   const [completedTasks, setCompletedTasks] = useState<string[]>([]);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const canProceed = useRef(false);
 
   const { completeDay, unlockBadge } = progress;
 
-  // Track highest section reached (render-time update, no effect needed)
-  if (activeSection > maxReachedSection) {
-    setMaxReachedSection(activeSection);
-  }
+  const handleNext = () => {
+    if (!canProceed.current && activeSection < 5) {
+      toast({ title: "Nicht so schnell!", description: "Nimm dir Zeit und schau dir die Inhalte in Ruhe an. Gutes Lernen braucht etwas Geduld.", duration: 3000 });
+      return;
+    }
+    if (activeSection === 5) { setShowCertificate(true); }
+    else { setActiveSection(activeSection + 1); }
+  };
+
+  if (activeSection > maxReachedSection) { setMaxReachedSection(activeSection); }
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // Mark day as completed when reaching the last section
-    if (activeSection === 5) { // CourseDay5 has 6 sections (0 to 5)
-      completeDay(5);
-      unlockBadge(5); // Unlock the final expert badge
-    }
+    canProceed.current = false;
+    
+    const minSeconds = (activeSection === 0 || activeSection >= 4) ? 8 : 15;
+    const timer = setTimeout(() => { canProceed.current = true; }, minSeconds * 1000);
+    if (activeSection === 5) { completeDay(5); unlockBadge(5); }
+    return () => clearTimeout(timer);
   }, [activeSection, completeDay, unlockBadge]);
 
   useEffect(() => {
@@ -692,13 +699,7 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
             Zurück
           </button>
           <button
-            onClick={() => {
-              if (activeSection === sections.length - 1) {
-                setShowCertificate(true);
-              } else {
-                setActiveSection(activeSection + 1);
-              }
-            }}
+            onClick={handleNext}
             className="flex items-center gap-2 px-6 py-3 bg-yellow-500 text-white rounded-xl font-medium hover:bg-yellow-600 transition-colors shadow-lg shadow-yellow-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {activeSection === sections.length - 1 ? 'Zertifikat anzeigen' : 'Weiter'}
