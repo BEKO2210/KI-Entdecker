@@ -127,7 +127,7 @@ Dieses Projekt steht unter der **Creative Commons BY-NC-ND 4.0** Lizenz.
 - Den Kurs kostenlos nutzen und teilen
 
 **Unter folgenden Bedingungen:**
-- **Namensnennung** – Der Name „KI-Entdecker" und die Autorin müssen genannt werden
+- **Namensnennung** – Der Name „KI-Entdecker" und der Autor müssen genannt werden
 - **Nicht kommerziell** – Keine kommerzielle Nutzung
 - **Keine Bearbeitung** – Das Material darf nicht verändert oder als Grundlage für eigene Werke genutzt werden
 
