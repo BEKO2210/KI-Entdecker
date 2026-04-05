@@ -137,8 +137,4 @@ Vollständiger Lizenztext: [LICENSE](LICENSE)
 
 <div align="center">
 
-Gemacht mit ❤️ für die nächste Generation
-
-*Damit unsere Kinder die KI beherrschen – und nicht umgekehrt.*
-
-</div>
+Gemacht mit <img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUycWVrNmcyZGFjdWx5bWdlNGNqc2N1cTcxMmthejFicjJqMXk5Ym4xYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/D5LhYtVcda3eTrRq0E/giphy.gif" alt="Pulsierendes Herz" width="18"> für die nächste Generation
