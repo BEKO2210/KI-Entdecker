@@ -1,31 +1,31 @@
-# Security Policy
+# Sicherheitsrichtlinie
 
-## Supported Versions
+## Unterstützte Versionen
 
-This project is currently maintained on the `main` branch only.
+Dieses Projekt wird aktuell nur in der neuesten Hauptversion gepflegt.
 
-| Version | Supported |
-| ------- | --------- |
-| main    | ✅        |
-| older versions | ❌ |
+| Version | Unterstützt |
+| ------- | ----------- |
+| aktuelle Hauptversion | ✅ |
+| ältere Versionen | ❌ |
 
-## Reporting a Vulnerability
+## So meldest du eine Sicherheitslücke
 
-If you discover a security vulnerability, please do **not** open a public issue.
+Wenn du eine Sicherheitslücke entdeckst, veröffentliche sie bitte **nicht öffentlich auf GitHub oder einer anderen Webseite**.
 
-Please report it privately by email to:
+Bitte sende die Meldung stattdessen vertraulich per E-Mail an:
 
 **belkis.aslani@gmail.com**
 
-Please include:
-- a clear description of the vulnerability
-- steps to reproduce it
-- the possible impact
-- screenshots, logs, or proof of concept if available
+Bitte schreibe möglichst dazu:
+- eine klare Beschreibung des Problems
+- eine einfache Schritt-für-Schritt-Erklärung, wie man das Problem nachstellen kann
+- was dadurch passieren könnte
+- Bilder, Fehlermeldungen oder Beispielmaterial, falls vorhanden
 
-What to expect:
-- initial response within **7 days**
-- confirmation whether the issue is accepted, rejected, or needs more information
-- a fix will be prepared as soon as reasonably possible depending on severity
+Was du danach erwarten kannst:
+- eine erste Rückmeldung innerhalb von **7 Tagen**
+- eine Einschätzung, ob das Problem bestätigt wurde, abgelehnt wird oder noch weitere Informationen gebraucht werden
+- eine Behebung so schnell wie möglich, je nachdem wie schwerwiegend das Problem ist
 
-Please keep the vulnerability confidential until a fix is available.
+Bitte behandle die Sicherheitslücke vertraulich, bis eine Lösung verfügbar ist.
