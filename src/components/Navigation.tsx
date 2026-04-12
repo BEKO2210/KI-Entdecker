@@ -46,6 +46,7 @@ const Navigation = ({ progress }: NavigationProps) => {
     { name: 'Der Kurs', href: '/kurs' },
     { name: 'Materialien', href: '/materialien' },
     { name: 'Für Eltern', href: '/eltern' },
+    { name: 'Für Schulen', href: '/schulen' },
     { name: 'Wochenplan', href: '/wochenplan' },
   ];
 
