@@ -34,6 +34,7 @@ const Footer = () => {
                 <Link to="/materialien" className="text-xs text-neutral-gray hover:text-primary-purple transition-colors">Materialien</Link>
                 <Link to="/wochenplan" className="text-xs text-neutral-gray hover:text-primary-purple transition-colors">Wochenplan</Link>
                 <Link to="/eltern" className="text-xs text-neutral-gray hover:text-primary-purple transition-colors">Für Eltern</Link>
+                <Link to="/schulen" className="text-xs text-neutral-gray hover:text-primary-purple transition-colors">Für Schulen</Link>
               </nav>
             </div>
 

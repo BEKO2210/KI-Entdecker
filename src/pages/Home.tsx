@@ -204,6 +204,13 @@ const Home = ({ progress }: HomeProps) => {
                   >
                     Informationen für Eltern
                   </Link>
+                  <Link
+                    to="/schulen"
+                    className="btn-secondary flex items-center justify-center"
+                    aria-label="Informationen für Schulen und Lehrkräfte anzeigen"
+                  >
+                    Für Schulen / Lehrkräfte
+                  </Link>
                 </div>
 
                 {/* Stats */}

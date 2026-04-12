@@ -13,6 +13,7 @@ const CourseDay4 = lazy(() => import('./pages/CourseDay4'));
 const CourseDay5 = lazy(() => import('./pages/CourseDay5'));
 import Materialien from './pages/Materialien';
 import Eltern from './pages/Eltern';
+import Schulen from './pages/Schulen';
 import Wochenplan from './pages/Wochenplan';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
@@ -47,6 +48,7 @@ function App() {
           <Route path="/kurs/tag-5" element={<CourseDay5 progress={progress} />} />
           <Route path="/materialien" element={<Materialien progress={progress} />} />
           <Route path="/eltern" element={<Eltern />} />
+          <Route path="/schulen" element={<Schulen />} />
           <Route path="/wochenplan" element={<Wochenplan />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
