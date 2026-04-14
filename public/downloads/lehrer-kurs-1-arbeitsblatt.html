@@ -8,14 +8,21 @@
   @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 40px; max-width: 900px; margin: 0 auto; line-height: 1.6; }
+  @page { size: A4; margin: 12mm 12mm 14mm; }
   @media print {
-    body { padding: 15mm; max-width: none; }
+    html, body { background: #fff !important; }
+    body { padding: 0 !important; max-width: none !important; font-size: 10.5pt; line-height: 1.5; }
     .no-print { display: none !important; }
-    .sheet { page-break-after: always; }
-    .sheet:last-of-type { page-break-after: auto; }
     input, textarea { border: 1px solid #9ca3af !important; background: #fff !important; }
+    h2, h3 { break-after: avoid-page; page-break-after: avoid; }
+    p, li { orphans: 3; widows: 3; }
+    /* Worksheet and its questions never split across pages */
+    .sheet, .sheet-head, .q, .tip, .box, .choice-grid, .name-row, .meta { break-inside: avoid; page-break-inside: avoid; }
+    /* Let sheets flow naturally – no forced break, no half-empty pages */
+    .sheet { margin-bottom: 14px; padding: 18px; }
+    textarea { min-height: 52px; }
+    .footer { margin-top: 16px; padding-top: 10px; break-before: avoid; }
   }
-  @page { size: A4; margin: 12mm; }
   .no-print.bar { position: sticky; top: 0; background: #fff; padding: 10px 0; text-align: right; z-index: 10; }
   .print-btn { padding: 10px 22px; background: #7F56D9; color: #fff; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; }
   .meta { background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 12px; padding: 14px 18px; margin-bottom: 22px; font-size: 13px; color: #5b21b6; display: flex; gap: 18px; flex-wrap: wrap; }

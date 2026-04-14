@@ -8,13 +8,28 @@
   @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 40px; max-width: 900px; margin: 0 auto; line-height: 1.55; }
+  @page { size: A4; margin: 14mm 14mm 16mm; }
   @media print {
-    body { padding: 18mm; max-width: none; }
+    html, body { background: #fff !important; }
+    body { padding: 0 !important; max-width: none !important; font-size: 10.5pt; line-height: 1.45; }
     .no-print { display: none !important; }
-    .section, .phase { page-break-inside: avoid; }
     a { color: inherit; text-decoration: none; }
+    /* Headings stay with their content */
+    h1, h2, h3 { break-after: avoid-page; page-break-after: avoid; }
+    h2 + *, h3 + * { break-before: avoid-page; page-break-before: avoid; }
+    /* Prevent orphan / widow lines */
+    p, li { orphans: 3; widows: 3; }
+    /* Atomic blocks – never split */
+    .phase, .callout, .meta-grid, .meta-grid .cell, table, tr, .checklist li, .header { break-inside: avoid; page-break-inside: avoid; }
+    /* Sections may flow across pages to avoid half-empty pages */
+    .section { break-inside: auto; page-break-inside: auto; }
+    /* Tighter vertical rhythm for print */
+    .section { margin-bottom: 14px; }
+    .phase { margin-bottom: 8px; padding: 10px 12px; }
+    .header { margin-bottom: 18px; padding-bottom: 14px; }
+    .meta-grid { margin: 14px 0 18px; }
+    .footer { margin-top: 20px; padding-top: 10px; break-before: avoid; }
   }
-  @page { size: A4; margin: 15mm; }
   .badge { display: inline-block; background: #7F56D9; color: #fff; padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 12px; }
   .header { text-align: center; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 3px solid #7F56D9; }
   .header h1 { font-size: 26px; font-weight: 700; color: #1a1a2e; }
