@@ -214,13 +214,13 @@ const Schulen = () => {
         </div>
       </section>
 
-      {/* Zwei Kurse mit Premium-Material */}
+      {/* Zwei Kurse inklusive Material */}
       <section className="py-14 bg-white">
         <div className="section-padding">
           <div className="container-wide">
             <div className="text-center max-w-2xl mx-auto mb-10">
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-purple/10 text-primary-purple rounded-full text-sm font-medium mb-4">
-                <BookOpen className="w-4 h-4" /> Premium-Material für Schulen
+                <BookOpen className="w-4 h-4" /> Kurse für Schulen
               </span>
               <h2 className="text-2xl sm:text-3xl font-outfit font-bold text-neutral-dark mb-3">
                 Zwei fertige Kurse inklusive Material
@@ -279,7 +279,7 @@ const Schulen = () => {
                 className="inline-flex items-center gap-2 px-5 py-3 bg-neutral-light text-neutral-dark rounded-xl font-medium hover:bg-neutral-light/80 transition-colors"
               >
                 <ShieldCheck className="w-5 h-5 text-primary-teal" />
-                Konformität BW &amp; OPS-Grundschule · Übersicht als PDF
+                Konformität Baden-Württemberg &amp; Grundschule · Übersicht als PDF
               </button>
             </div>
           </div>
