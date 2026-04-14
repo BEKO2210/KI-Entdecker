@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arbeitsblätter · Kurs 1 – KI verstehen (Klasse 3/4)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 40px; max-width: 900px; margin: 0 auto; line-height: 1.6; }
+  @media print {
+    body { padding: 15mm; max-width: none; }
+    .no-print { display: none !important; }
+    .sheet { page-break-after: always; }
+    .sheet:last-of-type { page-break-after: auto; }
+    input, textarea { border: 1px solid #9ca3af !important; background: #fff !important; }
+  }
+  @page { size: A4; margin: 12mm; }
+  .no-print.bar { position: sticky; top: 0; background: #fff; padding: 10px 0; text-align: right; z-index: 10; }
+  .print-btn { padding: 10px 22px; background: #7F56D9; color: #fff; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; }
+  .meta { background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 12px; padding: 14px 18px; margin-bottom: 22px; font-size: 13px; color: #5b21b6; display: flex; gap: 18px; flex-wrap: wrap; }
+  .meta b { color: #1a1a2e; }
+  .sheet { border: 2px solid #e9d5ff; border-radius: 16px; padding: 26px; margin-bottom: 24px; background: #fff; }
+  .sheet-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 2px solid #f3f4f6; }
+  .sheet-num { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #7F56D9, #4f46e5); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; flex-shrink: 0; }
+  .sheet-head h2 { font-size: 20px; font-weight: 700; }
+  .sheet-head .sub { font-size: 12px; color: #6b7280; }
+  .name-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+  .name-row label { font-size: 11px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; display: block; margin-bottom: 4px; }
+  .name-row input { width: 100%; border: 1.5px solid #d1d5db; border-radius: 8px; padding: 8px 10px; font-size: 14px; font-family: inherit; background: #fafafa; }
+  .q { margin-bottom: 18px; }
+  .q h3 { font-size: 15px; font-weight: 700; color: #374151; margin-bottom: 6px; }
+  .q p { font-size: 13px; color: #4b5563; margin-bottom: 8px; }
+  textarea { width: 100%; border: 1.5px solid #d1d5db; border-radius: 10px; padding: 10px 12px; font-size: 13px; font-family: inherit; background: #fafafa; resize: vertical; min-height: 70px; }
+  .choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .choice { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1.5px solid #e5e7eb; border-radius: 10px; font-size: 13px; background: #fafafa; }
+  .choice input { width: 18px; height: 18px; accent-color: #7F56D9; }
+  .box { border: 2px dashed #d1d5db; border-radius: 10px; padding: 14px; min-height: 70px; font-size: 12px; color: #9ca3af; background: #fafafa; }
+  .tip { background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 10px; padding: 12px; margin-top: 10px; font-size: 12px; color: #92400e; }
+  .footer { text-align: center; color: #9ca3af; font-size: 11px; margin-top: 30px; padding-top: 14px; border-top: 1px solid #e5e7eb; }
+</style>
+</head>
+<body>
+<div class="no-print bar"><button class="print-btn" onclick="window.print()">Als PDF speichern / Drucken</button></div>
+
+<div class="meta">
+  <span><b>Kurs 1</b> · KI verstehen</span>
+  <span>Klasse 3/4 · Grundschule</span>
+  <span>Am Bildschirm ausfüllen oder ausdrucken</span>
+</div>
+
+<!-- A1 -->
+<div class="sheet">
+  <div class="sheet-head">
+    <div class="sheet-num">A1</div>
+    <div><h2>Mein erster Prompt</h2><div class="sub">Partnerarbeit · ca. 20 Minuten</div></div>
+  </div>
+
+  <div class="name-row">
+    <div><label>Name</label><input type="text" placeholder="…"></div>
+    <div><label>Klasse</label><input type="text" placeholder="…"></div>
+    <div><label>Datum</label><input type="date"></div>
+  </div>
+
+  <div class="q">
+    <h3>1. Was ist KI für mich?</h3>
+    <p>Erkläre einer Freundin oder einem Freund in zwei Sätzen, was Künstliche Intelligenz ist:</p>
+    <textarea placeholder="Schreibe hier …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>2. KI oder kein KI? Kreuze an!</h3>
+    <div class="choice-grid">
+      <label class="choice"><input type="checkbox"> Taschenrechner (2 + 2)</label>
+      <label class="choice"><input type="checkbox"> Gesichts-Erkennung in Fotos</label>
+      <label class="choice"><input type="checkbox"> Lichtschalter</label>
+      <label class="choice"><input type="checkbox"> Sprachassistent (z. B. „Hey …“)</label>
+      <label class="choice"><input type="checkbox"> Ampel mit festem Zeitplan</label>
+      <label class="choice"><input type="checkbox"> Chat-Programm mit Sprachmodell</label>
+    </div>
+  </div>
+
+  <div class="q">
+    <h3>3. Unser erster Prompt</h3>
+    <p>Schreibt gemeinsam einen freundlichen Auftrag an eine KI. Regel: <b>keine Namen, Adressen oder Fotos</b> nennen!</p>
+    <textarea placeholder="Unser Prompt …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>4. Unsere Beobachtung</h3>
+    <p>Was hat die KI geantwortet? War es hilfreich, lustig oder seltsam?</p>
+    <textarea placeholder="Unsere Beobachtung …"></textarea>
+  </div>
+
+  <div class="tip"><b>Regel:</b> Wenn etwas komisch wirkt, sag Bescheid. Deine Lehrerin oder dein Lehrer hilft dir beim Einordnen.</div>
+</div>
+
+<!-- A2 -->
+<div class="sheet">
+  <div class="sheet-head">
+    <div class="sheet-num">A2</div>
+    <div><h2>Stimmt das wirklich?</h2><div class="sub">Einzelarbeit · Faktencheck</div></div>
+  </div>
+
+  <div class="q">
+    <h3>1. Die KI sagt …</h3>
+    <p>Die Lehrkraft zeigt dir eine Antwort der KI. Kreuze an, was du prüfen würdest:</p>
+    <div class="choice-grid">
+      <label class="choice"><input type="checkbox"> Stimmt der Name / das Datum?</label>
+      <label class="choice"><input type="checkbox"> Gibt es eine Quelle (Buch, Seite)?</label>
+      <label class="choice"><input type="checkbox"> Klingt die Antwort logisch?</label>
+      <label class="choice"><input type="checkbox"> Kann ich jemanden fragen, der das kennt?</label>
+      <label class="choice"><input type="checkbox"> Hat die KI etwas „erfunden“?</label>
+      <label class="choice"><input type="checkbox"> Fehlen wichtige Infos?</label>
+    </div>
+  </div>
+
+  <div class="q">
+    <h3>2. Mein Urteil</h3>
+    <p>Würdest du diese Antwort in einem Referat verwenden? Warum ja / nein?</p>
+    <textarea placeholder="Meine Begründung …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>3. So prüfe ich eine Antwort</h3>
+    <p>Male die 3 Schritte in die Kästen (oder schreibe sie hinein):</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
+      <div class="box">Schritt 1 …</div>
+      <div class="box">Schritt 2 …</div>
+      <div class="box">Schritt 3 …</div>
+    </div>
+  </div>
+</div>
+
+<!-- A3 -->
+<div class="sheet">
+  <div class="sheet-head">
+    <div class="sheet-num">A3</div>
+    <div><h2>Unsere Klassenregeln für KI</h2><div class="sub">Sicherung · ca. 15 Minuten</div></div>
+  </div>
+
+  <div class="q">
+    <h3>Unsere drei wichtigsten Regeln</h3>
+    <textarea placeholder="Regel 1 …"></textarea>
+    <div style="height:8px"></div>
+    <textarea placeholder="Regel 2 …"></textarea>
+    <div style="height:8px"></div>
+    <textarea placeholder="Regel 3 …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>Meine wichtigste Erkenntnis heute</h3>
+    <textarea placeholder="Heute habe ich gelernt, dass …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>Ich schenke meinem Heft einen KI-Spruch</h3>
+    <div class="box" style="min-height:90px;">Zeichne oder schreibe …</div>
+  </div>
+</div>
+
+<div class="footer">
+  KI-Entdecker · Kurs 1 Arbeitsblätter · Zum Ausdrucken auf A4 oder am Bildschirm ausfüllen
+</div>
+
+</body>
+</html>

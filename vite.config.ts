@@ -13,11 +13,15 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
-        globPatterns: ['**/*.{js,css,html,png,jpg,svg,woff2}'],
+        globPatterns: ['**/*.{js,css,html,png,jpg,svg,woff2,pdf}'],
         // Network-first for navigation so users always get latest HTML
         navigateFallback: 'index.html',
+        // Don't rewrite direct downloads (PDFs / Handreichungen) to the SPA shell
+        navigateFallbackDenylist: [/\/downloads\//],
         // Clean old caches on update
         cleanupOutdatedCaches: true,
+        // Allow larger assets (teacher handouts can be >2 MB)
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
       },
       manifest: {
         name: 'KI-Entdecker',

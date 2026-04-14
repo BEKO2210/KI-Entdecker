@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lehrkraft-Handreichung · Kurs 2 – Prompt-Werkstatt (Klasse 5/6)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 40px; max-width: 900px; margin: 0 auto; line-height: 1.55; }
+  @media print {
+    body { padding: 18mm; max-width: none; }
+    .no-print { display: none !important; }
+    .section, .phase { page-break-inside: avoid; }
+  }
+  @page { size: A4; margin: 15mm; }
+  .badge { display: inline-block; background: #14b8a6; color: #fff; padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 12px; }
+  .header { text-align: center; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 3px solid #14b8a6; }
+  .header h1 { font-size: 26px; font-weight: 700; color: #1a1a2e; }
+  .header .sub { color: #6b7280; font-size: 14px; margin-top: 6px; }
+  .meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 22px 0 28px; }
+  .meta-grid .cell { background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 10px; padding: 10px 12px; }
+  .meta-grid .cell .label { font-size: 10px; color: #0e7490; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+  .meta-grid .cell .value { font-size: 13px; color: #1a1a2e; font-weight: 600; margin-top: 2px; }
+  .section { margin-bottom: 26px; }
+  .section h2 { font-size: 18px; font-weight: 700; color: #0d9488; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid #f3f4f6; }
+  .section p, .section li { font-size: 13px; color: #4b5563; }
+  .section ul { margin-left: 20px; }
+  .section li { margin-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px; }
+  th { background: #f3f4f6; text-align: left; padding: 8px 10px; font-weight: 600; color: #374151; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+  td { padding: 8px 10px; border-top: 1px solid #e5e7eb; vertical-align: top; color: #374151; }
+  .phase { background: #fff; border: 1px solid #e5e7eb; border-left: 4px solid #14b8a6; border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; }
+  .phase .phase-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .phase h3 { font-size: 14px; font-weight: 700; color: #1a1a2e; }
+  .phase .time { font-size: 12px; color: #0d9488; font-weight: 600; }
+  .phase p { font-size: 12px; color: #4b5563; }
+  .callout { background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 10px; padding: 12px 14px; margin: 10px 0; font-size: 12px; color: #155e75; }
+  .callout.warn { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+  .checklist { list-style: none; margin-left: 0; }
+  .checklist li { padding-left: 24px; position: relative; margin-bottom: 6px; font-size: 13px; color: #374151; }
+  .checklist li::before { content: ""; position: absolute; left: 0; top: 3px; width: 14px; height: 14px; border: 2px solid #14b8a6; border-radius: 3px; }
+  .footer { text-align: center; color: #9ca3af; font-size: 11px; margin-top: 36px; padding-top: 14px; border-top: 1px solid #e5e7eb; }
+  .print-bar { position: sticky; top: 0; background: #fff; padding: 10px 0; text-align: right; z-index: 10; }
+  .print-btn { padding: 10px 22px; background: #14b8a6; color: #fff; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; }
+</style>
+</head>
+<body>
+<div class="no-print print-bar"><button class="print-btn" onclick="window.print()">Als PDF speichern / Drucken</button></div>
+
+<div class="header">
+  <span class="badge">Lehrkraft-Handreichung · Kurs 2</span>
+  <h1>Prompt-Werkstatt – Mit KI sicher schreiben &amp; recherchieren</h1>
+  <div class="sub">Sekundarstufe I · Klasse 5/6 · Projektformat 180 Minuten (4 Schulstunden)</div>
+</div>
+
+<div class="meta-grid">
+  <div class="cell"><div class="label">Klassenstufe</div><div class="value">5 – 6</div></div>
+  <div class="cell"><div class="label">Dauer</div><div class="value">180 Minuten</div></div>
+  <div class="cell"><div class="label">Sozialform</div><div class="value">Gruppen (3–4)</div></div>
+  <div class="cell"><div class="label">Format</div><div class="value">Projekttag · Tablets/PC</div></div>
+</div>
+
+<div class="section">
+  <h2>1 · Bezüge zum Bildungsplan Baden-Württemberg (Sek I)</h2>
+  <p>Die Einheit bezieht sich auf den <strong>Bildungsplan 2016 Sekundarstufe I</strong> (Gemeinschaftsschule / Werkreal-, Hauptschule / Realschule / Gymnasium) sowie auf die <strong>KMK-Strategie „Bildung in der digitalen Welt“</strong> und die <strong>ergänzende KMK-Empfehlung zu Künstlicher Intelligenz (2024)</strong>.</p>
+  <table>
+    <thead><tr><th>Fach / Bereich</th><th>Anknüpfung</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Deutsch 5/6</strong></td><td>„Texte planen, schreiben, überarbeiten“: Prompts als präzise Textaufträge verstehen.</td></tr>
+      <tr><td><strong>Aufbaukurs Informatik (Kl. 7)</strong></td><td>Vorbereitende Kompetenzen: Algorithmen, Daten, Mensch-Maschine-Interaktion.</td></tr>
+      <tr><td><strong>Basiskurs Medienbildung (Kl. 5)</strong></td><td>Recherchieren, Informationen bewerten, Quellen prüfen, Kommunikation gestalten.</td></tr>
+      <tr><td><strong>Leitperspektive BTV</strong></td><td>Bias, Stereotype und Diversität in KI-Ausgaben erkennen und diskutieren.</td></tr>
+      <tr><td><strong>Leitperspektive PG</strong></td><td>Prävention und Gesundheit: Medienreflexion, Suchtprävention (Bildschirmzeit).</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">Kompatibel mit den Anforderungen des Landesdatenschutzbeauftragten BW (LfDI) und dem Handlungsleitfaden des LMZ zu KI in Schulen.</div>
+</div>
+
+<div class="section">
+  <h2>2 · Kompetenzen &amp; Lernziele</h2>
+  <ul>
+    <li>Die SuS formulieren strukturierte Prompts nach dem Prinzip <em>Rolle – Aufgabe – Kontext – Format</em>.</li>
+    <li>Die SuS bewerten KI-Antworten anhand eines Kriterienrasters (Richtigkeit, Quelle, Stil, Bias).</li>
+    <li>Die SuS erkennen, dass KI keine neutrale Autorität ist, sondern auf Wahrscheinlichkeiten arbeitet.</li>
+    <li>Die SuS wenden Regeln des Urheberrechts und des Datenschutzes (DSGVO, LDSG BW) in einem eigenen Projekt an.</li>
+    <li>Die SuS dokumentieren ihren Arbeitsprozess transparent (Prompt-Log).</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>3 · Unterrichtsverlauf (4 × 45 Min)</h2>
+
+  <div class="phase">
+    <div class="phase-head"><h3>Stunde 1 · Einstieg &amp; Prompt-Grundlagen</h3><span class="time">45 Min</span></div>
+    <p>Placemat-Methode zu „Was kann KI, was nicht?“. Einführung des <strong>RAKF-Schemas</strong> (Rolle – Aufgabe – Kontext – Format). SuS beginnen Arbeitsblatt B1.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h3>Stunde 2 · Prompt-Werkstatt (Gruppenarbeit)</h3><span class="time">45 Min</span></div>
+    <p>In Vierergruppen entwickeln SuS drei Prompts zu einem vorgegebenen Thema (z. B. „Kinderrechte in Baden-Württemberg“, „Unsere Schulgemeinschaft“) und dokumentieren jedes Ergebnis in Arbeitsblatt B2.</p>
+    <div class="callout warn"><b>Datenschutz:</b> Es werden keine echten Schülernamen, Fotos oder Lehrkraftdaten in Prompts verwendet. Nutzung einer schulkonformen KI-Umgebung (z. B. Fobizz-Chat, MNSpro-Chat, Schul-KI BW-Pilot).</div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h3>Stunde 3 · Faktencheck &amp; Bias</h3><span class="time">45 Min</span></div>
+    <p>SuS prüfen eine KI-Antwort mit mindestens 2 weiteren Quellen (Schulbuch, Kinder-Suchmaschine „fragFINN“, Landesportal BW). Reflexion zu Bias anhand von Beispielen (Arbeitsblatt B3).</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h3>Stunde 4 · Präsentation &amp; Abschluss</h3><span class="time">45 Min</span></div>
+    <p>Jede Gruppe stellt ihren besten Prompt, die Antwort und das Prüf-Ergebnis vor (3 Min). Klasse stimmt über „Prompt des Tages“ ab. Sicherung: persönlicher Prompt-Pass in Arbeitsblatt B4.</p>
+  </div>
+</div>
+
+<div class="section">
+  <h2>4 · Kriterienraster für die Bewertung</h2>
+  <table>
+    <thead><tr><th>Kriterium</th><th>0 Pkt</th><th>1 Pkt</th><th>2 Pkt</th></tr></thead>
+    <tbody>
+      <tr><td>Prompt-Struktur</td><td>fehlt</td><td>teilweise</td><td>RAKF vollständig</td></tr>
+      <tr><td>Datenschutz</td><td>Verstoß</td><td>kleine Lücke</td><td>sauber eingehalten</td></tr>
+      <tr><td>Quellenprüfung</td><td>keine</td><td>1 Quelle</td><td>≥ 2 Quellen</td></tr>
+      <tr><td>Reflexion / Bias</td><td>fehlt</td><td>knapp</td><td>argumentiert begründet</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>5 · Technik- &amp; Material-Check</h2>
+  <ul class="checklist">
+    <li>Beamer/Whiteboard · 1 Tablet oder PC pro Gruppe (BYOD möglich, wenn Schulordnung erlaubt)</li>
+    <li>Schulkonforme KI-Umgebung ohne SuS-Login (z. B. Lehrer-Account mit Gruppenzugang)</li>
+    <li>Arbeitsblätter B1 bis B4 ausgedruckt oder digital als fillable PDF</li>
+    <li>Plakatpapier, Moderationskarten, Filzstifte für Galerierundgang</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>6 · Differenzierung &amp; Inklusion</h2>
+  <ul>
+    <li><strong>Basisniveau:</strong> Prompt-Bausteine als Satzstreifen, Gruppen mit 3 statt 4 Teammitgliedern.</li>
+    <li><strong>Mittleres Niveau:</strong> Arbeitsblätter wie vorgesehen, freies Thema möglich.</li>
+    <li><strong>Erweitert:</strong> Eigener Prompt im Stil einer bestimmten Textsorte (Märchen, Reportage, Interview) inkl. Metareflexion.</li>
+    <li>Barrierearm: Arbeitsblätter in 12–14 pt, hoher Kontrast, einfache Sprache auf Wunsch verfügbar.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>7 · Nutzungsmodelle</h2>
+  <p>Die Einheit steht in drei Formaten zur Verfügung (Abstimmung per E-Mail):</p>
+  <ul>
+    <li><strong>Modell A – Lehrkraft allein:</strong> Durchführung in Eigenregie nach kurzer Einweisung.</li>
+    <li><strong>Modell B – Team-Teaching:</strong> Gemeinsame Durchführung mit Belkis Aslani (KI-Entdecker).</li>
+    <li><strong>Modell C – Externe Durchführung:</strong> Belkis Aslani übernimmt den Projekttag komplett.</li>
+  </ul>
+  <div class="callout">Material darf innerhalb der Schule kopiert und digital verteilt werden. Weitergabe an andere Schulen oder Dritte ist schriftlich zu vereinbaren.</div>
+</div>
+
+<div class="footer">
+  KI-Entdecker · Kurs 2 Lehrkraft-Handreichung · Stand 2026 · Für interne Nutzung an der buchenden Schule
+</div>
+
+</body>
+</html>
