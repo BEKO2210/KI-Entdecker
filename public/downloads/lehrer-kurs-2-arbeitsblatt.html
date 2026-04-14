@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arbeitsblätter · Kurs 2 – Prompt-Werkstatt (Klasse 5/6)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 40px; max-width: 900px; margin: 0 auto; line-height: 1.6; }
+  @media print {
+    body { padding: 15mm; max-width: none; }
+    .no-print { display: none !important; }
+    .sheet { page-break-after: always; }
+    .sheet:last-of-type { page-break-after: auto; }
+    input, textarea { border: 1px solid #9ca3af !important; background: #fff !important; }
+  }
+  @page { size: A4; margin: 12mm; }
+  .no-print.bar { position: sticky; top: 0; background: #fff; padding: 10px 0; text-align: right; z-index: 10; }
+  .print-btn { padding: 10px 22px; background: #14b8a6; color: #fff; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; }
+  .meta { background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 12px; padding: 14px 18px; margin-bottom: 22px; font-size: 13px; color: #155e75; display: flex; gap: 18px; flex-wrap: wrap; }
+  .meta b { color: #1a1a2e; }
+  .sheet { border: 2px solid #a5f3fc; border-radius: 16px; padding: 26px; margin-bottom: 24px; background: #fff; }
+  .sheet-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 2px solid #f3f4f6; }
+  .sheet-num { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #14b8a6, #0891b2); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; flex-shrink: 0; }
+  .sheet-head h2 { font-size: 20px; font-weight: 700; }
+  .sheet-head .sub { font-size: 12px; color: #6b7280; }
+  .name-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+  .name-row label { font-size: 11px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; display: block; margin-bottom: 4px; }
+  .name-row input { width: 100%; border: 1.5px solid #d1d5db; border-radius: 8px; padding: 8px 10px; font-size: 14px; font-family: inherit; background: #fafafa; }
+  .q { margin-bottom: 18px; }
+  .q h3 { font-size: 15px; font-weight: 700; color: #374151; margin-bottom: 6px; }
+  .q p { font-size: 13px; color: #4b5563; margin-bottom: 8px; }
+  textarea, input[type=text] { width: 100%; border: 1.5px solid #d1d5db; border-radius: 10px; padding: 10px 12px; font-size: 13px; font-family: inherit; background: #fafafa; }
+  textarea { resize: vertical; min-height: 70px; }
+  .rakf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .rakf-cell label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #0e7490; font-weight: 700; display: block; margin-bottom: 4px; }
+  .score-row { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 10px; align-items: center; margin-bottom: 8px; }
+  .score-row .crit { font-size: 13px; color: #374151; font-weight: 600; }
+  .score-row .opt { text-align: center; border: 1.5px solid #e5e7eb; border-radius: 8px; padding: 8px; font-size: 12px; background: #fafafa; cursor: default; }
+  .score-row .opt input { accent-color: #14b8a6; margin-right: 4px; }
+  .tip { background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 10px; padding: 12px; margin-top: 10px; font-size: 12px; color: #92400e; }
+  .footer { text-align: center; color: #9ca3af; font-size: 11px; margin-top: 30px; padding-top: 14px; border-top: 1px solid #e5e7eb; }
+</style>
+</head>
+<body>
+<div class="no-print bar"><button class="print-btn" onclick="window.print()">Als PDF speichern / Drucken</button></div>
+
+<div class="meta">
+  <span><b>Kurs 2</b> · Prompt-Werkstatt</span>
+  <span>Klasse 5/6 · Sekundarstufe I</span>
+  <span>Fillable · Am Bildschirm ausfüllen oder drucken</span>
+</div>
+
+<!-- B1 -->
+<div class="sheet">
+  <div class="sheet-head">
+    <div class="sheet-num">B1</div>
+    <div><h2>Das RAKF-Schema</h2><div class="sub">Rolle · Aufgabe · Kontext · Format</div></div>
+  </div>
+
+  <div class="name-row">
+    <div><label>Name</label><input type="text"></div>
+    <div><label>Gruppe</label><input type="text"></div>
+    <div><label>Klasse</label><input type="text"></div>
+    <div><label>Datum</label><input type="date"></div>
+  </div>
+
+  <div class="q">
+    <h3>Unser Thema</h3>
+    <input type="text" placeholder="z. B. Kinderrechte, unsere Schule, Umweltschutz …">
+  </div>
+
+  <div class="q">
+    <h3>Unser Prompt nach RAKF</h3>
+    <div class="rakf-grid">
+      <div class="rakf-cell"><label>R – Rolle</label><textarea placeholder="z. B. Du bist ein Reporter …"></textarea></div>
+      <div class="rakf-cell"><label>A – Aufgabe</label><textarea placeholder="Schreibe / Erkläre / Fasse zusammen …"></textarea></div>
+      <div class="rakf-cell"><label>K – Kontext</label><textarea placeholder="Für wen? In welcher Situation?"></textarea></div>
+      <div class="rakf-cell"><label>F – Format</label><textarea placeholder="Länge, Stil, Aufbau …"></textarea></div>
+    </div>
+  </div>
+
+  <div class="tip"><b>Datenschutz-Regel:</b> Keine echten Namen, Adressen, Fotos oder Telefonnummern in den Prompt. Erfundene Beispiele sind okay.</div>
+</div>
+
+<!-- B2 -->
+<div class="sheet">
+  <div class="sheet-head">
+    <div class="sheet-num">B2</div>
+    <div><h2>Prompt-Log · Unsere drei Versuche</h2><div class="sub">Dokumentation der Gruppenarbeit</div></div>
+  </div>
+
+  <div class="q">
+    <h3>Versuch 1</h3>
+    <textarea placeholder="Unser Prompt …"></textarea>
+    <div style="height:6px"></div>
+    <textarea placeholder="Antwort der KI (Zusammenfassung) …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>Versuch 2 (verbessert)</h3>
+    <textarea placeholder="Was haben wir geändert?"></textarea>
+    <div style="height:6px"></div>
+    <textarea placeholder="Antwort der KI …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>Versuch 3 (unser Favorit)</h3>
+    <textarea placeholder="Unser finaler Prompt …"></textarea>
+    <div style="height:6px"></div>
+    <textarea placeholder="Antwort der KI …"></textarea>
+  </div>
+</div>
+
+<!-- B3 -->
+<div class="sheet">
+  <div class="sheet-head">
+    <div class="sheet-num">B3</div>
+    <div><h2>Faktencheck &amp; Bias-Analyse</h2><div class="sub">Einzelarbeit mit Partnerabgleich</div></div>
+  </div>
+
+  <div class="q">
+    <h3>Quellen-Check</h3>
+    <p>Ich habe folgende zwei weitere Quellen geprüft:</p>
+    <input type="text" placeholder="Quelle 1 (Buch, Seite, Webseite …)">
+    <div style="height:6px"></div>
+    <input type="text" placeholder="Quelle 2 …">
+  </div>
+
+  <div class="q">
+    <h3>Bewertungsraster</h3>
+    <div class="score-row"><div class="crit">Inhaltlich korrekt?</div>
+      <label class="opt"><input type="radio" name="c1">Ja</label>
+      <label class="opt"><input type="radio" name="c1">Teilweise</label>
+      <label class="opt"><input type="radio" name="c1">Nein</label></div>
+    <div class="score-row"><div class="crit">Ausgewogen / ohne Stereotyp?</div>
+      <label class="opt"><input type="radio" name="c2">Ja</label>
+      <label class="opt"><input type="radio" name="c2">Teilweise</label>
+      <label class="opt"><input type="radio" name="c2">Nein</label></div>
+    <div class="score-row"><div class="crit">Sprache altersgerecht?</div>
+      <label class="opt"><input type="radio" name="c3">Ja</label>
+      <label class="opt"><input type="radio" name="c3">Teilweise</label>
+      <label class="opt"><input type="radio" name="c3">Nein</label></div>
+    <div class="score-row"><div class="crit">Datenschutz ok?</div>
+      <label class="opt"><input type="radio" name="c4">Ja</label>
+      <label class="opt"><input type="radio" name="c4">Teilweise</label>
+      <label class="opt"><input type="radio" name="c4">Nein</label></div>
+  </div>
+
+  <div class="q">
+    <h3>Unsere Einschätzung</h3>
+    <textarea placeholder="Begründung in 3–5 Sätzen …"></textarea>
+  </div>
+</div>
+
+<!-- B4 -->
+<div class="sheet">
+  <div class="sheet-head">
+    <div class="sheet-num">B4</div>
+    <div><h2>Mein Prompt-Pass</h2><div class="sub">Persönliche Sicherung</div></div>
+  </div>
+
+  <div class="q">
+    <h3>Drei Dinge, die ich heute gelernt habe</h3>
+    <textarea placeholder="1 …"></textarea>
+    <div style="height:6px"></div>
+    <textarea placeholder="2 …"></textarea>
+    <div style="height:6px"></div>
+    <textarea placeholder="3 …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>Meine Regeln beim KI-Einsatz</h3>
+    <textarea placeholder="z. B. Ich nenne keine Namen / Ich prüfe immer …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>Mein Lieblings-Prompt heute</h3>
+    <textarea placeholder="…"></textarea>
+  </div>
+
+  <div class="name-row" style="grid-template-columns:1fr 1fr;">
+    <div><label>Unterschrift Schüler:in</label><input type="text" placeholder="…"></div>
+    <div><label>Kenntnis genommen (Lehrkraft)</label><input type="text" placeholder="…"></div>
+  </div>
+</div>
+
+<div class="footer">
+  KI-Entdecker · Kurs 2 Arbeitsblätter · Zum Ausdrucken auf A4 oder digital als PDF ausfüllbar
+</div>
+
+</body>
+</html>
