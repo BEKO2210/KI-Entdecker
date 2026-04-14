@@ -8,8 +8,19 @@
   @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 40px; max-width: 900px; margin: 0 auto; line-height: 1.6; }
-  @media print { body { padding: 18mm; max-width: none; } .no-print { display: none !important; } section { page-break-inside: avoid; } }
-  @page { size: A4; margin: 15mm; }
+  @page { size: A4; margin: 14mm 14mm 16mm; }
+  @media print {
+    html, body { background: #fff !important; }
+    body { padding: 0 !important; max-width: none !important; font-size: 10.5pt; line-height: 1.5; }
+    .no-print { display: none !important; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3 { break-after: avoid-page; page-break-after: avoid; }
+    h2 + *, h3 + * { break-before: avoid-page; page-break-before: avoid; }
+    p, li { orphans: 3; widows: 3; }
+    .box, table, tr, .header { break-inside: avoid; page-break-inside: avoid; }
+    section { break-inside: auto; page-break-inside: auto; margin-bottom: 16px; }
+    .footer { margin-top: 18px; padding-top: 10px; break-before: avoid; }
+  }
   .header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 3px solid #7F56D9; }
   .header h1 { font-size: 26px; color: #7F56D9; font-weight: 700; }
   .header p { color: #6b7280; font-size: 14px; margin-top: 6px; }
