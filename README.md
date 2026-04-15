@@ -1,6 +1,6 @@
 <div align="center">
 
-![KI-Entdecker Logo Animation Hell](public/gif/Logo_GIF_hell.gif)
+![KI-Entdecker Logo Animation](public/gif/Logo_GIF_hell.gif)
 
 # KI-Entdecker
 
