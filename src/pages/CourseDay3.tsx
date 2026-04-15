@@ -676,42 +676,20 @@ Struktur:
             </div>
           </div>
 
-          {/* Completion */}
+          {/* Challenge */}
           <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border-2 border-green-200 p-6 sm:p-8">
-            <div className="flex items-center gap-4 mb-6">
-              <img 
-                src={buildAssetUrl('images/courses/day3/music-notes.png')} 
-                alt="Musik-Noten" 
-                className="w-16 h-16"
-              />
-              <div>
-                <h4 className="text-xl font-bold text-green-800">🎨 Kreativ-Meister!</h4>
-                <p className="text-green-600">Du hast die kreativen Grundlagen gelernt!</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 mb-6">
+            <div className="bg-white rounded-xl p-6">
               <h5 className="font-bold text-gray-800 mb-4">Deine nächste Challenge:</h5>
               <p className="text-gray-600 mb-4">
-                Starte dein eigenes Kreativprojekt! Wähle eines der Themen oben und 
+                Starte dein eigenes Kreativprojekt! Wähle eines der Themen oben und
                 nutze die KI, um es zu verwirklichen.
               </p>
               <div className="bg-green-50 rounded-lg p-4">
                 <p className="text-green-700 text-sm">
-                  <strong>Tipp:</strong> Dokumentiere deinen Prozess – welche Prompts hast du verwendet? 
+                  <strong>Tipp:</strong> Dokumentiere deinen Prozess – welche Prompts hast du verwendet?
                   Was hat funktioniert, was nicht?
                 </p>
               </div>
-            </div>
-
-            <div className="flex justify-start">
-              <Link
-                to="/kurs"
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors border-2 border-gray-200"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                Zurück zur Übersicht
-              </Link>
             </div>
           </div>
         </div>

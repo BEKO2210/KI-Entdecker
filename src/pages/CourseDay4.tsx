@@ -414,22 +414,10 @@ Markiere die Fehler und erkläre kurz, was falsch war.`}
             </div>
           </div>
 
-          {/* Abschluss */}
+          {/* Übersicht: Das kannst du jetzt */}
           <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8">
-            <div className="flex items-center gap-4 mb-6">
-              <img 
-                src={buildAssetUrl('images/courses/day4/robot-problem-solver.png')} 
-                alt="Problem-Löser Roboter" 
-                className="w-20 h-20"
-              />
-              <div>
-                <h4 className="text-xl font-bold text-green-800">🎉 Du bist ein Problem-Löser!</h4>
-                <p className="text-green-600">Heute hast du gelernt, wie die KI dir beim Lernen hilft.</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 mb-6">
-              <h5 className="font-bold text-gray-800 mb-4">Deine neuen Superkräfte:</h5>
+            <div className="bg-white rounded-xl p-6">
+              <h5 className="font-bold text-gray-800 mb-4">Das kannst du jetzt:</h5>
               <ul className="space-y-2 text-gray-600">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0" />
@@ -448,16 +436,6 @@ Markiere die Fehler und erkläre kurz, was falsch war.`}
                   <span>Lange Texte zusammenfassen</span>
                 </li>
               </ul>
-            </div>
-
-            <div className="flex justify-start">
-              <Link
-                to="/kurs"
-                className="flex items-center gap-2 px-6 py-3 bg-white text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors border-2 border-gray-200"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                Zurück zur Übersicht
-              </Link>
             </div>
           </div>
         </div>
