@@ -848,22 +848,10 @@ Stell dich vor und frag mich, welches Tier mich interessiert!`}
             </div>
           </div>
 
-          {/* Completion Quiz */}
+          {/* Selbstcheck */}
           <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border-2 border-green-200 p-6 sm:p-8">
-            <div className="flex items-center gap-4 mb-6">
-              <img 
-                src={buildAssetUrl('images/courses/day1/robot-idea.png')} 
-                alt="Roboter mit Idee" 
-                className="w-16 h-16"
-              />
-              <div>
-                <h4 className="text-xl font-bold text-green-800">🎉 Geschafft!</h4>
-                <p className="text-green-600">Du hast Tag 1 abgeschlossen!</p>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl p-6 mb-6">
-              <h5 className="font-bold text-gray-800 mb-4">Was hast du heute gelernt? (Checkliste)</h5>
+            <div className="bg-white rounded-xl p-6">
+              <h5 className="font-bold text-gray-800 mb-4">Kurzer Selbstcheck: Was hast du heute schon verstanden?</h5>
               <div className="space-y-3">
                 {[
                   'Ich weiß, was KI bedeutet und wie sie funktioniert',
@@ -872,12 +860,12 @@ Stell dich vor und frag mich, welches Tier mich interessiert!`}
                   'Ich habe meinen ersten eigenen Chatbot erstellt',
                   'Ich kenne Tipps für bessere Prompts'
                 ].map((item, idx) => (
-                  <label 
-                    key={idx} 
+                  <label
+                    key={idx}
                     className="checklist-item"
                   >
-                    <input 
-                      type="checkbox" 
+                    <input
+                      type="checkbox"
                       className="w-5 h-5 text-green-600 rounded mt-0.5"
                       checked={completedExercises.includes(`learned-${idx}`)}
                       onChange={() => toggleExercise(`learned-${idx}`)}
@@ -886,16 +874,6 @@ Stell dich vor und frag mich, welches Tier mich interessiert!`}
                   </label>
                 ))}
               </div>
-            </div>
-
-            <div className="flex justify-start">
-              <Link
-                to="/kurs"
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors border-2 border-gray-200"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                Zurück zur Übersicht
-              </Link>
             </div>
           </div>
         </div>

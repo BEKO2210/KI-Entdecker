@@ -844,24 +844,12 @@ const CourseDay2 = ({ progress }: CourseDayProps) => {
             </div>
           </div>
 
-          {/* Completion Section */}
+          {/* Challenge */}
           <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border-2 border-green-200 p-6 sm:p-8">
-            <div className="flex items-center gap-4 mb-6">
-              <img 
-                src={buildAssetUrl('images/courses/day2/robot-success.png')} 
-                alt="Erfolgreicher Roboter" 
-                className="w-16 h-16"
-              />
-              <div>
-                <h4 className="text-xl font-bold text-green-800">🎉 Super gemacht!</h4>
-                <p className="text-green-600">Du bist jetzt ein Prompt-Experte!</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 mb-6">
+            <div className="bg-white rounded-xl p-6">
               <h5 className="font-bold text-gray-800 mb-4">Deine Challenge für heute:</h5>
               <p className="text-gray-600 mb-4">
-                Schreibe einen 5-Sterne-Prompt über dein Lieblingstier und probiere ihn 
+                Schreibe einen 5-Sterne-Prompt über dein Lieblingstier und probiere ihn
                 in einem KI-Tool aus! Experimentiere mit verschiedenen Rollen und Tönen.
               </p>
               <div className="bg-teal-50 rounded-lg p-4">
@@ -869,16 +857,6 @@ const CourseDay2 = ({ progress }: CourseDayProps) => {
                   <strong>Tipp:</strong> Verwende alle 5 Zutaten: Rolle, Aufgabe, Zielgruppe, Format und Ton!
                 </p>
               </div>
-            </div>
-
-            <div className="flex justify-start">
-              <Link
-                to="/kurs"
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors border-2 border-gray-200"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                Zurück zur Übersicht
-              </Link>
             </div>
           </div>
         </div>
