@@ -578,7 +578,8 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
               Deine Übung: Der Katzen-Erkenner
             </h4>
             <p className="text-indigo-600 mb-6">
-              Kopiere diesen Prompt und probiere ihn in einem KI-Tool aus (z.B. ChatGPT). 
+              Kopiere diesen Prompt und probiere ihn in einer schulkonformen KI aus
+              (in Baden-Württemberg z. B. <strong>telli</strong> über SCHULE@BW).
               Du wirst erstaunt sein, wie gut die KI erklären kann!
             </p>
             
@@ -689,8 +690,9 @@ Verwende diese Struktur:
                   bestimmte Knöpfe hat.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Moderne KI-Chatbots wie ChatGPT verstehen natürliche Sprache. Du kannst 
-                  mit ihnen sprechen wie mit einem Menschen, und sie antworten sinnvoll – 
+                  Moderne KI-Chatbots wie die Landes-KI <strong>telli</strong> (für Schulen in
+                  Baden-Württemberg über SCHULE@BW verfügbar) verstehen natürliche Sprache.
+                  Du kannst mit ihnen sprechen wie mit einem Menschen, und sie antworten sinnvoll –
                   sogar auf Fragen, die sie noch nie gehört haben!
                 </p>
               </div>
@@ -730,7 +732,9 @@ Verwende diese Struktur:
             </div>
             
             <p className="text-purple-700 mb-6 leading-relaxed">
-              Kopiere diesen Prompt und füge ihn in ein KI-Tool ein (z.B. ChatGPT, Claude oder Gemini). 
+              Kopiere diesen Prompt und füge ihn in eine schulkonforme KI ein
+              (in Baden-Württemberg z. B. <strong>telli</strong> über SCHULE@BW; alternativ
+              Fobizz Chat oder MNSpro Chat, wenn deine Schule das anbietet).
               Dann kannst du mit deinem persönlichen Tier-Experten chatten!
             </p>
             
@@ -1002,7 +1006,7 @@ Stell dich vor und frag mich, welches Tier mich interessiert!`}
                 },
                 {
                   q: 'Muss ich programmieren können, um KI zu nutzen?',
-                  a: 'Überhaupt nicht! Mit Tools wie ChatGPT kannst du sofort loslegen – ganz ohne Programmierung. Wenn du später eigene KI-Systeme bauen willst, hilft Programmieren, aber zum Nutzen brauchst du es nicht.'
+                  a: 'Überhaupt nicht! Mit einer schulkonformen KI – in Baden-Württemberg z. B. telli über SCHULE@BW – kannst du sofort loslegen, ganz ohne Programmierung. Wenn du später eigene KI-Systeme bauen willst, hilft Programmieren, aber zum Nutzen brauchst du es nicht.'
                 }
               ].map((faq, idx) => (
                 <div key={idx} className="faq-item">

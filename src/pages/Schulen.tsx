@@ -32,9 +32,10 @@ const Schulen = () => {
   ];
 
   const allowedTools = [
-    'Fobizz Chat (Bildungslizenz, EU-Server, AVV vorhanden)',
-    'MNSpro Chat (DSGVO-konform, Schulserver)',
-    'Schul-KI BW-Pilot (Landes-Pilotumgebung)',
+    'telli (SCHULE@BW · Landes-KI BW · Lehrkräfte &amp; Schüler:innen · seit Okt. 2025)',
+    'F13 (SCHULE@BW · Landes-KI BW · nur Lehrkräfte · Chat &amp; Dokumente)',
+    'Fobizz Chat (Bildungslizenz, EU-Server, AVV vorhanden) – falls von der Schule gebucht',
+    'MNSpro Chat (DSGVO-konform, Schulserver) – falls von der Schule gebucht',
     'fragFINN, Blinde Kuh – Kindersuchmaschinen, ohne Konto',
   ];
   const forbiddenItems = [
@@ -348,7 +349,7 @@ const Schulen = () => {
                   {allowedTools.map((t) => (
                     <li key={t} className="flex items-start gap-2 text-sm text-neutral-dark">
                       <Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
-                      <span>{t}</span>
+                      <span dangerouslySetInnerHTML={{ __html: t }} />
                     </li>
                   ))}
                 </ul>
@@ -382,6 +383,18 @@ const Schulen = () => {
                 geplanten Prompt-Set getestet. Sollte ein Tool im Workshop dennoch unerwartet ungeeignete
                 Inhalte erzeugen, bricht die Workshop-Leitung sofort ab und ordnet pädagogisch ein.
                 Eltern werden binnen 24 Stunden informiert.
+              </p>
+            </div>
+
+            <div className="mt-4 bg-primary-teal/5 border border-primary-teal/20 rounded-2xl p-5 flex items-start gap-3">
+              <BookOpen className="w-5 h-5 text-primary-teal flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-neutral-dark">
+                <strong>Hinweis zur Bildgenerierung:</strong> Die offizielle Landes-KI Baden-Württemberg
+                (telli / F13 über SCHULE@BW) kann aktuell <em>noch keine Bilder erstellen</em> – diese
+                Funktion ist laut Kultusministerium BW in Entwicklung. Für die Kreativeinheit in unseren
+                Workshops arbeiten wir deshalb mit vorbereiteten Bildbeispielen und besprechen gemeinsam,
+                wie Bild-KIs grundsätzlich funktionieren – ohne dass Kinder im Unterricht eigenhändig
+                externe Bild-Tools nutzen.
               </p>
             </div>
           </div>
