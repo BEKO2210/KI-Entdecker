@@ -8,7 +8,16 @@
   @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 24px; max-width: 900px; margin: 0 auto; }
-  @media print { body { padding: 16px; } .no-print { display: none !important; } .recipe, .example-pair, .trick { page-break-inside: avoid; } }
+  @page { size: A4; margin: 14mm 14mm 16mm; }
+  @media print {
+    html, body { background: #fff !important; }
+    body { padding: 0 !important; max-width: none !important; font-size: 10.5pt; line-height: 1.45; }
+    .no-print { display: none !important; }
+    h1, h2, h3 { break-after: avoid-page; page-break-after: avoid; }
+    p, li { orphans: 3; widows: 3; }
+    .header, .recipe, .example-pair, .trick, .template, .tip, .footer { break-inside: avoid; page-break-inside: avoid; }
+    .footer { break-before: avoid; }
+  }
 
   .header { text-align: center; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 3px solid #7F56D9; }
   .header h1 { font-size: 26px; font-weight: 700; color: #7F56D9; }
