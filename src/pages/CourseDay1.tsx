@@ -20,9 +20,9 @@ interface CourseDayProps {
 //    • day1/robot-confused.png       · Kapitel-Opener
 //    • day1/brain-circuits.png       · 2x: "Wie lernen Computer?"
 //    • day1/robot-learning.png       · Maschinelles Lernen
-//    • day1-extra/ai-vs-program.png  · Vergleichsgrafik
-//    • day1-extra/chatbot-friendly.png · Chatbot-Demo
-//    • day1-extra/robot-teacher.png  · FAQ-Section
+//    • day1/ai-vs-program.png        · Vergleichsgrafik
+//    • day1/chatbot-friendly.png     · Chatbot-Demo
+//    • day1/robot-teacher.png        · FAQ-Section
 //
 //    Zum Austauschen: Datei unter gleichem Pfad ersetzen (gleicher Name).
 //    Komplette Bild-Dokumentation: siehe BILDER.md im Projekt-Root.
@@ -116,9 +116,10 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-200/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
             
-            <img 
-              src={buildAssetUrl('images/courses/day1/robot-confused.png')} 
-              alt="KI-Roboter begrüßt dich" 
+            {/* 🖼️  BILD: day1/robot-confused.png – Kapitel-Opener (verwirrter Roboter) */}
+            <img
+              src={buildAssetUrl('images/courses/day1/robot-confused.png')}
+              alt="KI-Roboter begrüßt dich"
               className="w-40 h-40 sm:w-56 sm:h-56 mx-auto mb-8 relative z-10 animate-float"
             />
             
@@ -216,9 +217,10 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
         <div className="space-y-8">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
-            <img 
-              src={buildAssetUrl('images/courses/day1/brain-circuits.png')} 
-              alt="Gehirn aus Schaltkreisen" 
+            {/* 🖼️  BILD: day1/brain-circuits.png – Gehirn mit Schaltkreisen (Wie lernen Computer?) */}
+            <img
+              src={buildAssetUrl('images/courses/day1/brain-circuits.png')}
+              alt="Gehirn aus Schaltkreisen"
               className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 mx-auto md:mx-0"
             />
             <div>
@@ -246,6 +248,7 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
                 </div>
                 <h4 className="font-bold text-green-800">Künstliche Intelligenz</h4>
               </div>
+              {/* 🖼️  BILD: day1/brain-circuits.png – wiederverwendet in 2. Abschnitt */}
               <img
                 src={buildAssetUrl('images/courses/day1/brain-circuits.png')}
                 alt="KI-Gehirn"
@@ -277,8 +280,9 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
                 </div>
                 <h4 className="font-bold text-red-800">Normales Programm</h4>
               </div>
+              {/* 🖼️  BILD: day1/ai-vs-program.png – Vergleichsgrafik KI vs. klassisches Programm */}
               <img
-                src={buildAssetUrl('images/courses/day1-extra/ai-vs-program.png')}
+                src={buildAssetUrl('images/courses/day1/ai-vs-program.png')}
                 alt="Vergleich: Normales Programm"
                 className="w-full h-32 object-cover rounded-lg mb-4 opacity-70"
               />
@@ -485,9 +489,10 @@ const CourseDay1 = ({ progress }: CourseDayProps) => {
         <div className="space-y-8">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
-            <img 
-              src={buildAssetUrl('images/courses/day1/robot-learning.png')} 
-              alt="Lernender Roboter" 
+            {/* 🖼️  BILD: day1/robot-learning.png – Roboter beim Lernen (Maschinelles Lernen) */}
+            <img
+              src={buildAssetUrl('images/courses/day1/robot-learning.png')}
+              alt="Lernender Roboter"
               className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 mx-auto md:mx-0"
             />
             <div>
@@ -666,9 +671,10 @@ Verwende diese Struktur:
         <div className="space-y-8">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
-            <img 
-              src={buildAssetUrl('images/courses/day1-extra/chatbot-friendly.png')} 
-              alt="Freundlicher Chatbot" 
+            {/* 🖼️  BILD: day1/chatbot-friendly.png – freundlicher Chatbot (Dein erster Chatbot) */}
+            <img
+              src={buildAssetUrl('images/courses/day1/chatbot-friendly.png')}
+              alt="Freundlicher Chatbot"
               className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 mx-auto md:mx-0"
             />
             <div>
@@ -906,9 +912,10 @@ Stell dich vor und frag mich, welches Tier mich interessiert!`}
         <div className="space-y-8">
           {/* Final Summary */}
           <div className="bg-gradient-to-br from-purple-100 via-indigo-50 to-purple-100 rounded-3xl p-8 text-center">
-            <img 
-              src={buildAssetUrl('images/courses/day1-extra/robot-teacher.png')} 
-              alt="Roboter-Lehrer" 
+            {/* 🖼️  BILD: day1/robot-teacher.png – Roboter-Lehrer (FAQ/Zusammenfassung) */}
+            <img
+              src={buildAssetUrl('images/courses/day1/robot-teacher.png')}
+              alt="Roboter-Lehrer"
               className="w-48 h-48 mx-auto mb-6 rounded-xl object-cover"
             />
             <h3 className="text-2xl font-bold text-purple-800 mb-4">

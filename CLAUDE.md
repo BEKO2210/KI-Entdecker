@@ -175,13 +175,22 @@ npm run lint    # muss grün
 
 ## Aktuelle Aufgaben
 
-<!-- Neue Aufgaben werden hier unten eingefügt, erledigte nach unten ins Archiv verschoben. -->
-
 _(leer — kein laufender Auftrag)_
 
 ---
 
 ## Erledigt-Archiv (chronologisch, neueste zuerst)
+
+### 2026-04-16 · Bilder-Neuordnung: flache dayN/-Struktur, Overview-Ordner, Archiv außerhalb public/ ✅
+- 10 Bilder aus `dayN-extra/` nach `dayN/` verschoben (flache Struktur)
+- 5 Kurs-Übersichtsbilder von `images/` nach `images/overview/` verschoben
+- 10 Waisen-Bilder nach `archive/images-unused/` (außerhalb public/, nicht im Build)
+- Solo-Ordner `images/day4/` komplett gelöscht (error-fix.png war die einzige Datei)
+- Alle 17 Code-Referenzen an neue Pfade angepasst (CourseDay1-5, Kurs, CourseOverview)
+- 20+ Inline-🖼️-Kommentare vor jeder `<img>` mit Dateiname + Zweck
+- BILDER.md komplett neu geschrieben mit finaler Struktur
+- `archive/images-unused/README.md` angelegt mit Rückhol-Anleitung
+- **Ergebnis:** Build-Precache von 83 → 72 Einträge, von 64,8 MB → 48,3 MB
 
 ### 2026-04-16 · Infrastruktur-Grundsteine für Förderfähigkeit & Live-Betrieb ✅
 - 5-Tage-Online-Kurs komplett strukturiert (Tag 1–5) + 3 Schul-Workshops (Kurs 1–3)

@@ -90,9 +90,10 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
       content: (
         <div className="space-y-6">
           <div className="bg-gradient-to-br from-yellow-100 to-amber-100 rounded-2xl p-8 text-center">
-            <img 
-              src={buildAssetUrl('images/courses/day5/trophy-celebration.png')} 
-              alt="Trophäen-Feier" 
+            {/* 🖼️  BILD: day5/trophy-celebration.png – Trophäe (Opener) */}
+            <img
+              src={buildAssetUrl('images/courses/day5/trophy-celebration.png')}
+              alt="Trophäen-Feier"
               className="w-48 h-48 mx-auto mb-6"
             />
             <h2 className="text-2xl font-bold text-yellow-800 mb-4">Abschlussprojekt</h2>
@@ -148,9 +149,10 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
         <div className="space-y-6">
           <div className="bg-white rounded-2xl border-2 border-gray-100 p-8">
             <div className="flex items-start gap-6 mb-8">
-              <img 
-                src={buildAssetUrl('images/courses/day5/robot-presentation.png')} 
-                alt="Roboter-Präsentation" 
+              {/* 🖼️  BILD: day5/robot-presentation.png – Projekt-Vorstellung */}
+              <img
+                src={buildAssetUrl('images/courses/day5/robot-presentation.png')}
+                alt="Roboter-Präsentation"
                 className="w-32 h-32 flex-shrink-0"
               />
               <div>
@@ -236,9 +238,10 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
         <div className="space-y-6">
           <div className="bg-white rounded-2xl border-2 border-gray-100 p-8">
             <div className="flex items-start gap-6 mb-8">
-              <img 
-                src={buildAssetUrl('images/courses/day5/rocket-launch.png')} 
-                alt="Raketen-Start" 
+              {/* 🖼️  BILD: day5/rocket-launch.png – Raketenstart (Motivation) */}
+              <img
+                src={buildAssetUrl('images/courses/day5/rocket-launch.png')}
+                alt="Raketen-Start"
                 className="w-32 h-32 flex-shrink-0"
               />
               <div>
@@ -336,9 +339,10 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
         <div className="space-y-6">
           <div className="bg-white rounded-2xl border-2 border-gray-100 p-8">
             <div className="flex items-start gap-6 mb-8">
-              <img 
-                src={buildAssetUrl('images/courses/day5/robot-graduate.png')} 
-                alt="Absolvent-Roboter" 
+              {/* 🖼️  BILD: day5/robot-graduate.png – Absolventen-Roboter */}
+              <img
+                src={buildAssetUrl('images/courses/day5/robot-graduate.png')}
+                alt="Absolvent-Roboter"
                 className="w-32 h-32 flex-shrink-0"
               />
               <div>
@@ -443,6 +447,7 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
         <div className="space-y-8">
           {/* Zusammenfassung */}
           <div className="bg-gradient-to-br from-yellow-100 to-amber-100 rounded-3xl p-8 text-center">
+            {/* 🖼️  BILD: day5/trophy-celebration.png – wiederverwendet (Abschluss-Screen) */}
             <img
               src={buildAssetUrl('images/courses/day5/trophy-celebration.png')}
               alt="Trophäe"
@@ -539,9 +544,10 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
       content: (
         <div className="space-y-6">
           <div className="bg-gradient-to-br from-yellow-100 via-amber-100 to-orange-100 rounded-2xl p-8 text-center">
-            <img 
-              src={buildAssetUrl('images/courses/day5/certificate.png')} 
-              alt="Zertifikat" 
+            {/* 🖼️  BILD: day5/certificate.png – Zertifikat-Thumbnail (Dialog-Vorschau) */}
+            <img
+              src={buildAssetUrl('images/courses/day5/certificate.png')}
+              alt="Zertifikat"
               className="w-40 h-40 mx-auto mb-6"
             />
             <h2 className="text-3xl font-bold text-yellow-800 mb-4">🎉 Du hast es geschafft!</h2>

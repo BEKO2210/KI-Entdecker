@@ -20,8 +20,8 @@ interface CourseDayProps {
 //    • day3/art-easel.png              · Opener
 //    • day3/robot-painting.png         · Bild-Generierung
 //    • day3/robot-artist.png           · Kreativ-Projekte
-//    • day3-extra/story-magic.png      · Story-Abschnitt
-//    • day3-extra/robot-artist-painting.png · FAQ-Section
+//    • day3/story-magic.png            · Story-Abschnitt
+//    • day3/robot-artist-painting.png  · FAQ-Section
 //
 //    Zum Austauschen: Datei unter gleichem Pfad ersetzen (gleicher Name).
 //    Komplette Bild-Dokumentation: siehe BILDER.md im Projekt-Root.
@@ -95,9 +95,10 @@ const CourseDay3 = ({ progress }: CourseDayProps) => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-pink-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-rose-200/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
             
-            <img 
-              src={buildAssetUrl('images/courses/day3/art-easel.png')} 
-              alt="Künstler-Staffelei" 
+            {/* 🖼️  BILD: day3/art-easel.png – Künstler-Staffelei (Opener) */}
+            <img
+              src={buildAssetUrl('images/courses/day3/art-easel.png')}
+              alt="Künstler-Staffelei"
               className="w-40 h-40 sm:w-56 sm:h-56 mx-auto mb-8 relative z-10 animate-float"
             />
             
@@ -183,9 +184,10 @@ const CourseDay3 = ({ progress }: CourseDayProps) => {
         <div className="space-y-8">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
-            <img 
-              src={buildAssetUrl('images/courses/day3/robot-painting.png')} 
-              alt="Maler-Roboter" 
+            {/* 🖼️  BILD: day3/robot-painting.png – Maler-Roboter (Text-zu-Bild) */}
+            <img
+              src={buildAssetUrl('images/courses/day3/robot-painting.png')}
+              alt="Maler-Roboter"
               className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 mx-auto md:mx-0"
             />
             <div>
@@ -401,9 +403,10 @@ const CourseDay3 = ({ progress }: CourseDayProps) => {
         <div className="space-y-8">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
-            <img 
-              src={buildAssetUrl('images/courses/day3-extra/story-magic.png')} 
-              alt="Geschichten-Magie" 
+            {/* 🖼️  BILD: day3/story-magic.png – Geschichten-Magie (Lektion 2) */}
+            <img
+              src={buildAssetUrl('images/courses/day3/story-magic.png')}
+              alt="Geschichten-Magie"
               className="w-32 h-32 md:w-48 md:h-32 flex-shrink-0 mx-auto md:mx-0 object-cover rounded-xl"
             />
             <div>
@@ -570,9 +573,10 @@ const CourseDay3 = ({ progress }: CourseDayProps) => {
         <div className="space-y-8">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
-            <img 
-              src={buildAssetUrl('images/courses/day3/robot-artist.png')} 
-              alt="Künstler-Roboter" 
+            {/* 🖼️  BILD: day3/robot-artist.png – Künstler-Roboter (Kreativ-Projekte) */}
+            <img
+              src={buildAssetUrl('images/courses/day3/robot-artist.png')}
+              alt="Künstler-Roboter"
               className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 mx-auto md:mx-0"
             />
             <div>
@@ -719,9 +723,10 @@ Struktur:
         <div className="space-y-8">
           {/* Final Summary */}
           <div className="bg-gradient-to-br from-pink-100 via-rose-50 to-pink-100 rounded-3xl p-8 text-center">
-            <img 
-              src={buildAssetUrl('images/courses/day3-extra/robot-artist-painting.png')} 
-              alt="Künstler-Roboter" 
+            {/* 🖼️  BILD: day3/robot-artist-painting.png – FAQ/Abschluss-Section */}
+            <img
+              src={buildAssetUrl('images/courses/day3/robot-artist-painting.png')}
+              alt="Künstler-Roboter"
               className="w-48 h-32 mx-auto mb-6 object-cover rounded-xl"
             />
             <h3 className="text-2xl font-bold text-pink-800 mb-4">

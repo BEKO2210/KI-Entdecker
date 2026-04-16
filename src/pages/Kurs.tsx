@@ -43,7 +43,7 @@ const Kurs = ({ progress }: KursProps) => {
       description: 'Verstehe den Unterschied zwischen einfachen Regeln und echter KI. Lerne, wie Computer „denken" können und probiere deinen ersten Chatbot aus.',
       duration: '45 Minuten',
       lessons: 3,
-      image: buildAssetUrl('images/day1-brain.png'),
+      image: buildAssetUrl('images/overview/day1-brain.png'),
       color: 'from-purple-500 to-indigo-600',
       lessonsList: [
         'Was ist KI?',
@@ -58,7 +58,7 @@ const Kurs = ({ progress }: KursProps) => {
       description: 'Lerne, wie du KI mit guten Fragen steuerst. Mit dem 5-Sterne-Rezept schreibst du Prompts, die genau die Antwort liefern, die du brauchst.',
       duration: '45 Minuten',
       lessons: 3,
-      image: buildAssetUrl('images/day2-chat.png'),
+      image: buildAssetUrl('images/overview/day2-chat.png'),
       color: 'from-teal-500 to-cyan-600',
       lessonsList: [
         'Was ist ein Prompt?',
@@ -73,7 +73,7 @@ const Kurs = ({ progress }: KursProps) => {
       description: 'Erstelle Bilder mit KI, schreibe kreative Geschichten und entdecke weitere Möglichkeiten wie Songtexte und Gedichte.',
       duration: '45 Minuten',
       lessons: 3,
-      image: buildAssetUrl('images/day3-creative.png'),
+      image: buildAssetUrl('images/overview/day3-creative.png'),
       color: 'from-pink-500 to-rose-600',
       lessonsList: [
         'Bilder mit KI',
@@ -88,7 +88,7 @@ const Kurs = ({ progress }: KursProps) => {
       description: 'Nutze KI als Lernhelfer. Lerne, wie du mit KI recherchierst, Texte zusammenfasst und Fehler in Texten findest und korrigierst.',
       duration: '45 Minuten',
       lessons: 3,
-      image: buildAssetUrl('images/day4-puzzle.png'),
+      image: buildAssetUrl('images/overview/day4-puzzle.png'),
       color: 'from-orange-500 to-amber-600',
       lessonsList: [
         'KI als Lernhelfer',
@@ -103,7 +103,7 @@ const Kurs = ({ progress }: KursProps) => {
       description: 'Wähle aus drei spannenden Projekten: Erstelle einen KI-Comic, baue ein KI-Quiz oder entwickle deinen eigenen KI-Assistenten.',
       duration: '60 Minuten',
       lessons: 3,
-      image: buildAssetUrl('images/day5-trophy.png'),
+      image: buildAssetUrl('images/overview/day5-trophy.png'),
       color: 'from-yellow-500 to-amber-500',
       lessonsList: [
         'Projekt 1: KI-Comic',
