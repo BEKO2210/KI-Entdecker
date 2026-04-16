@@ -39,10 +39,11 @@ const Datenschutz = () => {
                     Ihre Daten sind sicher
                   </h2>
                   <p className="text-neutral-gray">
-                    Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. 
-                    Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen 
-                    Bestimmungen (DSGVO, TMG). In dieser Datenschutzerklärung informieren wir Sie 
-                    über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.
+                    Der Schutz Ihrer persönlichen Daten ist mir ein besonderes Anliegen. Ich
+                    verarbeite Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen
+                    Bestimmungen (DSGVO, BDSG, TDDDG und DDG). In dieser Datenschutzerklärung
+                    informiere ich Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen
+                    dieser Website.
                   </p>
                 </div>
               </div>
@@ -145,16 +146,30 @@ const Datenschutz = () => {
                 </p>
               </article>
 
-              {/* Server Logs */}
+              {/* Hosting & Server Logs */}
               <article>
                 <h2 className="text-xl font-outfit font-bold text-neutral-dark mb-4 flex items-center gap-3">
                   <Database className="w-6 h-6 text-accent-pink" aria-hidden="true" />
-                  Server-Log-Dateien
+                  Hosting &amp; Server-Log-Dateien
                 </h2>
                 <p className="text-neutral-gray leading-relaxed">
-                  Der Hosting-Provider dieser Seite erhebt und speichert automatisch Informationen 
-                  in sogenannten Server-Log-Dateien, die Ihr Browser automatisch übermittelt. 
-                  Dies sind:
+                  Diese Website wird bei <strong>GitHub Pages</strong> gehostet, einem Dienst der
+                  GitHub Inc., 88 Colin P Kelly Jr Street, San Francisco, CA 94107, USA. GitHub ist
+                  nach dem <em>EU-U.S. Data Privacy Framework</em> zertifiziert; für zusätzliche
+                  Übermittlungen gelten EU-Standardvertragsklauseln nach Art. 46 Abs. 2 lit. c DSGVO.
+                  Die Datenschutzerklärung von GitHub ist abrufbar unter{' '}
+                  <a
+                    href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-purple hover:text-primary-purple/80 transition-colors"
+                  >
+                    docs.github.com/site-policy/privacy-policies
+                  </a>.
+                </p>
+                <p className="text-neutral-gray leading-relaxed mt-4">
+                  GitHub erhebt beim Aufruf der Seite automatisch Informationen in sogenannten
+                  Server-Log-Dateien, die Ihr Browser automatisch übermittelt:
                 </p>
                 <ul className="mt-4 space-y-2">
                   <li className="flex items-start gap-3">
@@ -167,7 +182,7 @@ const Datenschutz = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 bg-primary-purple rounded-full mt-2" aria-hidden="true" />
-                    <span className="text-neutral-gray">Referrer URL</span>
+                    <span className="text-neutral-gray">Referrer-URL</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 bg-primary-purple rounded-full mt-2" aria-hidden="true" />
@@ -179,15 +194,19 @@ const Datenschutz = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 bg-primary-purple rounded-full mt-2" aria-hidden="true" />
-                    <span className="text-neutral-gray">IP-Adresse</span>
+                    <span className="text-neutral-gray">IP-Adresse (gekürzt, siehe Hinweis unten)</span>
                   </li>
                 </ul>
                 <p className="text-neutral-gray leading-relaxed mt-4">
-                  Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. 
-                  Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. 
-                  Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien 
-                  Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Log-Files 
-                  erfasst werden.
+                  Rechtsgrundlage für die Erfassung dieser Daten ist Art. 6 Abs. 1 lit. f DSGVO –
+                  mein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der
+                  Sicherheit der Website. Eine Zusammenführung dieser Daten mit anderen
+                  Datenquellen erfolgt nicht.
+                </p>
+                <p className="text-neutral-gray leading-relaxed mt-4">
+                  <strong>Speicherdauer:</strong> Die Protokolldaten werden von GitHub laut deren
+                  Datenschutzhinweisen typischerweise 14 Tage aufbewahrt und anschließend gelöscht.
+                  Personenbezogene Auswertung oder Profilbildung durch mich findet nicht statt.
                 </p>
               </article>
 
@@ -269,10 +288,64 @@ const Datenschutz = () => {
                       <p className="text-sm text-neutral-gray">Sie können die Einschränkung der Verarbeitung verlangen.</p>
                     </div>
                   </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-primary-purple/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-primary-purple">5</span>
+                    </div>
+                    <div>
+                      <span className="font-medium text-neutral-dark">Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</span>
+                      <p className="text-sm text-neutral-gray">Sie können Ihre Daten in einem strukturierten, gängigen und maschinenlesbaren Format erhalten.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-primary-purple/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-primary-purple">6</span>
+                    </div>
+                    <div>
+                      <span className="font-medium text-neutral-dark">Widerspruchsrecht (Art. 21 DSGVO)</span>
+                      <p className="text-sm text-neutral-gray">Sie können jederzeit Widerspruch gegen die Verarbeitung Ihrer Daten einlegen, die auf berechtigten Interessen beruht.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-primary-purple/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-primary-purple">7</span>
+                    </div>
+                    <div>
+                      <span className="font-medium text-neutral-dark">Beschwerderecht bei der Aufsichtsbehörde (Art. 77 DSGVO)</span>
+                      <p className="text-sm text-neutral-gray">
+                        Sie können sich jederzeit bei der zuständigen Aufsichtsbehörde beschweren:<br />
+                        <em>Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg (LfDI BW)</em><br />
+                        Lautenschlagerstraße 20, 70173 Stuttgart ·
+                        {' '}
+                        <a
+                          href="https://www.baden-wuerttemberg.datenschutz.de/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary-purple hover:text-primary-purple/80 transition-colors"
+                        >
+                          baden-wuerttemberg.datenschutz.de
+                        </a>
+                      </p>
+                    </div>
+                  </li>
                 </ul>
                 <p className="text-neutral-gray leading-relaxed mt-4">
-                  Zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte unter der oben angegebenen 
+                  Zur Ausübung Ihrer Rechte kontaktieren Sie mich bitte unter der oben angegebenen
                   E-Mail-Adresse.
+                </p>
+              </article>
+
+              {/* Automatisierte Entscheidungen */}
+              <article>
+                <h2 className="text-xl font-outfit font-bold text-neutral-dark mb-4 flex items-center gap-3">
+                  <Shield className="w-6 h-6 text-primary-teal" aria-hidden="true" />
+                  Automatisierte Entscheidungsfindung (Art. 22 DSGVO)
+                </h2>
+                <p className="text-neutral-gray leading-relaxed">
+                  Auf dieser Website findet <strong>keine automatisierte Entscheidungsfindung
+                  einschließlich Profiling</strong> im Sinne des Art. 22 DSGVO statt. Die Inhalte
+                  der Website sind statisch; der Lernfortschritt wird rein lokal im Browser
+                  gespeichert (Local Storage) und nicht zur Profilbildung verwendet.
                 </p>
               </article>
 
