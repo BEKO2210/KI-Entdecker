@@ -1,5 +1,5 @@
 import { Calendar, FileText, Download, CheckCircle, FileDown, ExternalLink, Lock, Award } from 'lucide-react';
-import { buildDownloadUrl } from '@/lib/paths';
+import { buildDownloadUrl, buildAssetUrl } from '@/lib/paths';
 import type { useProgress } from '../hooks/useProgress';
 
 interface MaterialienProps {
@@ -207,6 +207,40 @@ const Materialien = ({ progress }: MaterialienProps) => {
                   </span>
                 )}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Zertifikat-Vorschau */}
+      <section className="py-16 bg-white">
+        <div className="section-padding">
+          <div className="container-wide">
+            <div className="text-center max-w-2xl mx-auto mb-8">
+              <h2 className="text-2xl sm:text-3xl font-outfit font-bold text-neutral-dark mb-3">
+                Vorschau: Dein Zertifikat
+              </h2>
+              <p className="text-neutral-gray">
+                So sieht das Zertifikat aus, das du nach Abschluss aller fünf Kurstage bekommst.
+                Zum Ausdrucken auf DIN A4 oder als PDF speichern.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-primary-purple/5 to-primary-teal/5 rounded-3xl p-4 sm:p-8 shadow-inner border border-neutral-light">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={buildAssetUrl('images/preview/zertifikatvorschau.webp')}
+                />
+                <img
+                  src={buildAssetUrl('images/preview/zertifikatvorschau.png')}
+                  alt="Vorschau des KI-Entdecker Zertifikats"
+                  loading="lazy"
+                  decoding="async"
+                  width={1600}
+                  height={1054}
+                  className="w-full h-auto max-w-3xl mx-auto rounded-2xl shadow-lg ring-1 ring-neutral-light/60"
+                />
+              </picture>
             </div>
           </div>
         </div>

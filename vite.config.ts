@@ -13,7 +13,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
-        globPatterns: ['**/*.{js,css,html,png,jpg,svg,woff2,pdf}'],
+        globPatterns: ['**/*.{js,css,html,png,jpg,svg,woff2,webp,pdf}'],
         // Network-first for navigation so users always get latest HTML
         navigateFallback: 'index.html',
         // Don't rewrite direct downloads (PDFs / Handreichungen) to the SPA shell
