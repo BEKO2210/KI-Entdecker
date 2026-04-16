@@ -388,6 +388,28 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 
 ## Erledigt-Archiv (chronologisch, neueste zuerst)
 
+### 2026-04-16 · Impressum + Datenschutz auf professionelle Wir-Form ✅
+- **Auftrag:** „Impressum und so professionell, nicht ich version".
+- **[`Impressum.tsx`](./src/pages/Impressum.tsx):** 10 Ich-Stellen auf
+  Wir-Form umgestellt (Haftung für Inhalte, Haftung für Links,
+  Urheberrecht, Streitschlichtung). „bin ich" → „sind wir", „werde
+  ich" → „werden wir", „von mir" → „von uns", „bitte ich" → „bitten
+  wir", „Ich bin nicht bereit…" → „Wir sind nicht bereit…".
+- **[`Datenschutz.tsx`](./src/pages/Datenschutz.tsx):** 4 Ich-Stellen
+  auf Wir-Form umgestellt. Intro („ist mir" → „ist uns", „Ich
+  verarbeite" → „Wir verarbeiten", „informiere ich Sie" →
+  „informieren wir Sie"), Server-Logs („mein berechtigtes Interesse" →
+  „unser berechtigtes Interesse", „durch mich" → „durch uns"),
+  Rechte-Section („kontaktieren Sie mich" → „kontaktieren Sie uns").
+- **Juristisch passend:** Beide Dokumente deklarieren Belkis + Damien
+  als gemeinsames Angebot (§ 5 DDG bzw. Art. 26 DSGVO). Wir-Form ist
+  hier sachlich zutreffend und professioneller als Ich-Form.
+- **Grep-Verifikation:** `\b(ich|mich|mir|mein[ea-z]*)\b` liefert in
+  beiden Dateien 0 Treffer.
+- **Legal-Guard (Regel 6):** Erledigt durch Claude — vor Live-Sichtung
+  durch Belkis ggf. noch ein Review mit DSB/Steuerberater möglich.
+- **Build + Lint grün**, gepusht auf `claude/check-claude-dm-bugs-jQrpw`.
+
 ### 2026-04-16 · CLAUDE.md-Bugs gefixt + Dead-Code-Ordner `src/sections/` entfernt ✅
 - **Auftrag:** „Checke die claude.md und prüfe auf bugs" — Fix-Freigabe
   für Bug 1.a und Drift 3 (mit PIN 1518).
@@ -482,3 +504,4 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 | 2026-04-16 | Regel Null Schritt 5 (Dokumentationspflicht 🔒) hart festgeschrieben. Komplette Projekt-Chronologie (Phase 1–9) mit allen Commits seit Projektstart eingetragen. |
 | 2026-04-16 | PIN-Schutz (1518) für Regel-Null- und Regeländerungen eingeführt. Neuer Abschnitt „🔐 Regeländerungs-Schutz" + neue Claude-Regel Nr. 11. |
 | 2026-04-16 | Bugs aus Audit gefixt: Dead-Code-Ordner `src/sections/` gelöscht, Hero-Eintrag aus Datei-Index entfernt, Branch-Angabe (Zeile 75 + Regel 5, mit PIN 1518) auf generische Formulierung umgestellt, Chronologie-Drift „09a"→„09" korrigiert, Gender-Fix-Zeile klarer formuliert. Zusätzlich BILDER.md + `.planning/codebase/STRUCTURE.md` + `ARCHITECTURE.md` entsprechend nachgezogen. |
+| 2026-04-16 | Impressum + Datenschutz auf professionelle Wir-Form umgestellt (10 + 4 Ich-Stellen). Passt zum gemeinsamen Angebot nach § 5 DDG / Art. 26 DSGVO (Belkis + Damien). Grep-Verifikation: 0 Ich-Treffer mehr. |
