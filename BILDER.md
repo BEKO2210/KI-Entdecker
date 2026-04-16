@@ -145,25 +145,30 @@ verwendet.
 
 ---
 
-## Derzeit nicht verwendete Bilder (Waisen)
+## Derzeit nicht verwendete Bilder (Waisen) – mit Einbau-Vorschlägen
 
-Diese Dateien liegen im Repo, werden aber nirgends eingebunden. Du kannst
-sie behalten als Reserve/Alternativen oder löschen. **Build wird dadurch
-aktuell um ca. 3–5 MB größer** als nötig.
+Diese Dateien liegen im Repo, werden aber nirgends eingebunden. Build
+wird dadurch aktuell um ca. **3–5 MB größer** als nötig.
 
-| Datei | Kommentar |
-|-------|-----------|
-| `public/images/courses/day1/chat-window.png` | Alternative zu `robot-confused`? |
-| `public/images/courses/day1/robot-idea.png` | Alternative |
-| `public/images/courses/day2/five-stars.png` | Alternative zu `five-stars-recipe` |
-| `public/images/courses/day2/robot-success.png` | Alternative |
-| `public/images/courses/day2/writing-pad.png` | Alternative |
-| `public/images/courses/day2-extra/prompt-magic.png` | Alternative |
-| `public/images/courses/day3/music-notes.png` | Alternative |
-| `public/images/courses/day3/story-book.png` | Alternative |
-| `public/images/courses/day4-extra/robot-detective.png` | Alternative |
-| `public/images/courses/day5-extra/graduation-celebration.png` | Alternative |
-| `public/images/day4/error-fix.png` | Einzeln in `day4/` – alle anderen Kurs-Bilder liegen unter `courses/day4/` |
+**Wichtig:** Die Seite ist live. Jede Änderung an bestehenden Bildreferenzen
+ist riskant. Zusätzliche `<img>`-Tags einzubauen ist dagegen sicher
+(rein additiv, alter Code bleibt intakt).
+
+| Datei | Status | Einbau-Vorschlag |
+|-------|--------|-------------------|
+| `public/images/courses/day1/chat-window.png` | ❔ | könnte bei Tag 1 Lektion 3 „Dein erster Chatbot" als Icon/Teaser verwendet werden |
+| `public/images/courses/day1/robot-idea.png` | ❔ | Alternative Opener oder im „Was kann KI?"-Abschnitt |
+| `public/images/courses/day2/five-stars.png` | 🔁 | Duplikat / Alternative zu aktivem `five-stars-recipe.png` |
+| `public/images/courses/day2/robot-success.png` | 🗑️ | Löschen-Kandidat — keine Stelle, wo es natürlich passt |
+| `public/images/courses/day2/writing-pad.png` | ❔ | in „Prompt-Übungen" (CourseDay2:250-300) als dekoratives Icon |
+| `public/images/courses/day2-extra/prompt-magic.png` | 🔁 | Duplikat / Alternative zu `magic-prompt.png` |
+| `public/images/courses/day3/music-notes.png` | ✅ | **passt!** In CourseDay3 bei „Musik & Songtexte" (Zeile ~125, 160) als Abschnitts-Icon |
+| `public/images/courses/day3/story-book.png` | 🔁 | Alternative zu bereits aktivem `story-magic.png` |
+| `public/images/courses/day4-extra/robot-detective.png` | ❔ | „Fehler finden & korrigieren"-Abschnitt in Tag 4 |
+| `public/images/courses/day5-extra/graduation-celebration.png` | 🔁 | Alternative zu `trophy-celebration.png` |
+| `public/images/day4/error-fix.png` | 🗑️ | Liegt in falschem Ordner (`images/day4/` statt `courses/day4/`). Keine Referenz. |
+
+**Legende:** ✅ passt wo rein / ❔ könnte optional rein / 🔁 Duplikat / 🗑️ Löschen-Kandidat
 
 **Zum Löschen** (falls du willst):
 ```bash
