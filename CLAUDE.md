@@ -384,6 +384,15 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 
 ## Erledigt-Archiv (chronologisch, neueste zuerst)
 
+### 2026-04-16 · Badge-Bubble auf Home (Mobile) nach oben verschoben ✅
+- `src/pages/Home.tsx` Zeile 283: Klasse `top-10` → `top-2 sm:top-10`
+- Wirkung: Auf Handy (Viewport < 640 px) sitzt die „X Badges
+  freigeschaltet!"-Bubble jetzt ~32 px weiter oben und wird nicht mehr
+  vom Roboter-Maskottchen verdeckt.
+- Desktop und Tablet (≥ 640 px) unverändert — `sm:top-10` stellt den
+  alten Wert wieder her.
+- Kommentar im Code ergänzt, der die Mobile-Optimierung erklärt.
+
 ### 2026-04-16 · PIN-Schutz für Regel-Null- und Regel-Änderungen ✅
 - Neuer Abschnitt „🔐 Regeländerungs-Schutz (PIN: 1518)" direkt vor
   „Regel Null" eingefügt. Legt fest, welche Abschnitte verhaltens-

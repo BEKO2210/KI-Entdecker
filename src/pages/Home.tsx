@@ -278,9 +278,12 @@ const Home = ({ progress }: HomeProps) => {
                   )}
                 </div>
 
-                {/* Floating Badges */}
+                {/* Floating Badges
+                    🎯 Badge-Bubble-Position: auf Handy (< sm) etwas nach oben gezogen
+                    damit sie nicht vom Roboter überlappt wird.
+                    Desktop/Tablet (ab sm): unverändert bei top-10. */}
                 {unlockedCount > 0 && (
-                  <div className="absolute top-10 right-10 bg-white rounded-xl p-3 shadow-lg animate-float" style={{ animationDelay: '1s' }}>
+                  <div className="absolute top-2 sm:top-10 right-10 bg-white rounded-xl p-3 shadow-lg animate-float" style={{ animationDelay: '1s' }}>
                     <div className="flex items-center gap-2">
                       <div className="w-8 h-8 bg-accent-yellow/20 rounded-lg flex items-center justify-center">
                         <Star className="w-4 h-4 text-accent-yellow fill-accent-yellow" aria-hidden="true" />
