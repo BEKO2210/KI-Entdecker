@@ -39,11 +39,11 @@ const Datenschutz = () => {
                     Ihre Daten sind sicher
                   </h2>
                   <p className="text-neutral-gray">
-                    Der Schutz Ihrer persönlichen Daten ist mir ein besonderes Anliegen. Ich
-                    verarbeite Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen
+                    Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir
+                    verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen
                     Bestimmungen (DSGVO, BDSG, TDDDG und DDG). In dieser Datenschutzerklärung
-                    informiere ich Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen
-                    dieser Website.
+                    informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im
+                    Rahmen dieser Website.
                   </p>
                 </div>
               </div>
@@ -226,14 +226,14 @@ const Datenschutz = () => {
                 </ul>
                 <p className="text-neutral-gray leading-relaxed mt-4">
                   Rechtsgrundlage für die Erfassung dieser Daten ist Art. 6 Abs. 1 lit. f DSGVO –
-                  mein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der
+                  unser berechtigtes Interesse an der technisch fehlerfreien Darstellung und der
                   Sicherheit der Website. Eine Zusammenführung dieser Daten mit anderen
                   Datenquellen erfolgt nicht.
                 </p>
                 <p className="text-neutral-gray leading-relaxed mt-4">
                   <strong>Speicherdauer:</strong> Die Protokolldaten werden von GitHub laut deren
                   Datenschutzhinweisen typischerweise 14 Tage aufbewahrt und anschließend gelöscht.
-                  Personenbezogene Auswertung oder Profilbildung durch mich findet nicht statt.
+                  Eine personenbezogene Auswertung oder Profilbildung durch uns findet nicht statt.
                 </p>
               </article>
 
@@ -357,7 +357,7 @@ const Datenschutz = () => {
                   </li>
                 </ul>
                 <p className="text-neutral-gray leading-relaxed mt-4">
-                  Zur Ausübung Ihrer Rechte kontaktieren Sie mich bitte unter der oben angegebenen
+                  Zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte unter der oben angegebenen
                   E-Mail-Adresse.
                 </p>
               </article>
