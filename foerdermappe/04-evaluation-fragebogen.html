@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Evaluation · Vorher-/Nachher-Fragebögen · KI-Entdecker</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Outfit',sans-serif;color:#1a1a2e;background:#fff;padding:40px;max-width:980px;margin:0 auto;line-height:1.55}
+  @page{size:A4;margin:12mm 12mm 14mm}
+  @media print{
+    html,body{background:#fff!important}
+    body{padding:0!important;max-width:none!important;font-size:10.5pt;line-height:1.5}
+    .no-print{display:none!important}
+    h2,h3{break-after:avoid-page;page-break-after:avoid}
+    p,li{orphans:3;widows:3}
+    .sheet,.q,.tip,.meta,.name-row,.scale-grid{break-inside:avoid;page-break-inside:avoid}
+    input,textarea{border:1px solid #9ca3af!important;background:#fff!important}
+  }
+  .meta{background:#faf5ff;border:1px solid #e9d5ff;border-radius:10px;padding:12px 16px;margin-bottom:18px;font-size:12px;color:#5b21b6;display:flex;gap:14px;flex-wrap:wrap}
+  .meta b{color:#1a1a2e}
+  .sheet{border:2px solid #e9d5ff;border-radius:14px;padding:22px;margin-bottom:18px;background:#fff}
+  .sheet-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #f3f4f6}
+  .sheet-num{width:40px;height:40px;border-radius:10px;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+  .pre{background:linear-gradient(135deg,#7F56D9,#4f46e5)}
+  .post{background:linear-gradient(135deg,#14b8a6,#0891b2)}
+  .teacher{background:linear-gradient(135deg,#ec4899,#e11d48)}
+  .sheet-head h2{font-size:18px;font-weight:700}
+  .sheet-head .sub{font-size:11px;color:#6b7280}
+  .name-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:14px}
+  .name-row label{font-size:10px;color:#6b7280;text-transform:uppercase;letter-spacing:.05em;font-weight:600;display:block;margin-bottom:3px}
+  .name-row input{width:100%;border:1.5px solid #d1d5db;border-radius:8px;padding:7px 10px;font-size:13px;font-family:inherit;background:#fafafa}
+  .q{margin-bottom:14px}
+  .q h3{font-size:13px;font-weight:700;color:#374151;margin-bottom:4px}
+  .q p{font-size:12px;color:#4b5563;margin-bottom:6px}
+  textarea,input[type=text]{width:100%;border:1.5px solid #d1d5db;border-radius:10px;padding:8px 10px;font-size:12px;font-family:inherit;background:#fafafa}
+  textarea{resize:vertical;min-height:48px}
+  .scale-grid{display:grid;grid-template-columns:2fr repeat(5,1fr);gap:6px;align-items:center;margin-bottom:6px;font-size:11px}
+  .scale-grid .crit{color:#374151;font-weight:600}
+  .scale-grid .opt{text-align:center;border:1.5px solid #e5e7eb;border-radius:8px;padding:6px;background:#fafafa}
+  .scale-grid .opt input{accent-color:#7F56D9}
+  .scale-legend{font-size:10px;color:#6b7280;margin-bottom:6px;display:flex;justify-content:space-between}
+  .tip{background:#fffbeb;border:1.5px solid #fde68a;border-radius:10px;padding:10px;margin-top:8px;font-size:11px;color:#92400e}
+  .footer{text-align:center;color:#9ca3af;font-size:10px;margin-top:18px;padding-top:10px;border-top:1px solid #e5e7eb}
+  .print-btn{display:block;margin:16px auto 22px;padding:10px 22px;background:#7F56D9;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer}
+</style>
+</head>
+<body>
+<button class="no-print print-btn" onclick="window.print()">Als PDF speichern / Drucken</button>
+
+<div class="meta">
+  <span><b>Evaluation</b> · KI-Entdecker Pilot</span>
+  <span>Anonym · keine Namen erfassen</span>
+  <span>Drei Bögen: Vorher (E1) · Nachher (E2) · Lehrkraft (E3)</span>
+</div>
+
+<!-- E1 PRE -->
+<div class="sheet">
+  <div class="sheet-head"><div class="sheet-num pre">E1</div>
+    <div><h2>Vorher-Fragebogen Schüler:in</h2><div class="sub">Ausfüllen 1 Woche vor dem Workshop · ca. 8 Minuten · anonym</div></div></div>
+
+  <div class="name-row">
+    <div><label>Klasse</label><input type="text"></div>
+    <div><label>Alter</label><input type="text"></div>
+    <div><label>Mädchen / Junge / divers</label><input type="text"></div>
+    <div><label>Code (3 Buchstaben + Tag Geb.)</label><input type="text" placeholder="z. B. MKP07"></div>
+  </div>
+  <div class="tip">Der Code ist <b>anonym</b> – wir können damit Vorher- und Nachher-Bogen eines Kindes matchen, ohne den Namen zu kennen.</div>
+
+  <div class="q">
+    <h3>1. Was ist KI (Künstliche Intelligenz) für dich?</h3>
+    <textarea placeholder="In eigenen Worten …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>2. Wie sicher fühlst du dich bei folgenden Aussagen?</h3>
+    <div class="scale-legend"><span>stimmt gar nicht</span><span>stimmt voll</span></div>
+    <div class="scale-grid"><div class="crit">Ich weiß, was KI ist.</div>
+      <label class="opt"><input type="radio" name="p1"> 1</label>
+      <label class="opt"><input type="radio" name="p1"> 2</label>
+      <label class="opt"><input type="radio" name="p1"> 3</label>
+      <label class="opt"><input type="radio" name="p1"> 4</label>
+      <label class="opt"><input type="radio" name="p1"> 5</label></div>
+    <div class="scale-grid"><div class="crit">Ich kann erklären, wie Computer lernen.</div>
+      <label class="opt"><input type="radio" name="p2"> 1</label>
+      <label class="opt"><input type="radio" name="p2"> 2</label>
+      <label class="opt"><input type="radio" name="p2"> 3</label>
+      <label class="opt"><input type="radio" name="p2"> 4</label>
+      <label class="opt"><input type="radio" name="p2"> 5</label></div>
+    <div class="scale-grid"><div class="crit">Ich weiß, was ein „Prompt" ist.</div>
+      <label class="opt"><input type="radio" name="p3"> 1</label>
+      <label class="opt"><input type="radio" name="p3"> 2</label>
+      <label class="opt"><input type="radio" name="p3"> 3</label>
+      <label class="opt"><input type="radio" name="p3"> 4</label>
+      <label class="opt"><input type="radio" name="p3"> 5</label></div>
+    <div class="scale-grid"><div class="crit">Ich weiß, dass KI auch Fehler macht.</div>
+      <label class="opt"><input type="radio" name="p4"> 1</label>
+      <label class="opt"><input type="radio" name="p4"> 2</label>
+      <label class="opt"><input type="radio" name="p4"> 3</label>
+      <label class="opt"><input type="radio" name="p4"> 4</label>
+      <label class="opt"><input type="radio" name="p4"> 5</label></div>
+    <div class="scale-grid"><div class="crit">Ich weiß, welche Daten ich nicht eingeben soll.</div>
+      <label class="opt"><input type="radio" name="p5"> 1</label>
+      <label class="opt"><input type="radio" name="p5"> 2</label>
+      <label class="opt"><input type="radio" name="p5"> 3</label>
+      <label class="opt"><input type="radio" name="p5"> 4</label>
+      <label class="opt"><input type="radio" name="p5"> 5</label></div>
+  </div>
+
+  <div class="q">
+    <h3>3. Wo hast du schon KI benutzt? (Mehrfachauswahl)</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px">
+      <label><input type="checkbox"> Sprachassistent (Siri, Alexa …)</label>
+      <label><input type="checkbox"> Chatbot (z. B. ChatGPT)</label>
+      <label><input type="checkbox"> Bildgenerator</label>
+      <label><input type="checkbox"> Smartphone-Kamera / Filter</label>
+      <label><input type="checkbox"> Empfehlungen (YouTube, TikTok, Netflix)</label>
+      <label><input type="checkbox"> Noch nie / weiß nicht</label>
+    </div>
+  </div>
+</div>
+
+<!-- E2 POST -->
+<div class="sheet">
+  <div class="sheet-head"><div class="sheet-num post">E2</div>
+    <div><h2>Nachher-Fragebogen Schüler:in</h2><div class="sub">Direkt nach dem Workshop · ca. 8 Minuten · anonym</div></div></div>
+
+  <div class="name-row">
+    <div><label>Klasse</label><input type="text"></div>
+    <div><label>Alter</label><input type="text"></div>
+    <div><label>Workshop-Datum</label><input type="date"></div>
+    <div><label>Gleicher Code wie E1</label><input type="text" placeholder="MKP07"></div>
+  </div>
+
+  <div class="q">
+    <h3>1. Erkläre jetzt, was KI ist.</h3>
+    <textarea placeholder="In eigenen Worten …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>2. Wie sicher fühlst du dich jetzt?</h3>
+    <div class="scale-legend"><span>stimmt gar nicht</span><span>stimmt voll</span></div>
+    <div class="scale-grid"><div class="crit">Ich weiß, was KI ist.</div>
+      <label class="opt"><input type="radio" name="q1"> 1</label>
+      <label class="opt"><input type="radio" name="q1"> 2</label>
+      <label class="opt"><input type="radio" name="q1"> 3</label>
+      <label class="opt"><input type="radio" name="q1"> 4</label>
+      <label class="opt"><input type="radio" name="q1"> 5</label></div>
+    <div class="scale-grid"><div class="crit">Ich kann einen guten Prompt schreiben.</div>
+      <label class="opt"><input type="radio" name="q2"> 1</label>
+      <label class="opt"><input type="radio" name="q2"> 2</label>
+      <label class="opt"><input type="radio" name="q2"> 3</label>
+      <label class="opt"><input type="radio" name="q2"> 4</label>
+      <label class="opt"><input type="radio" name="q2"> 5</label></div>
+    <div class="scale-grid"><div class="crit">Ich kann eine KI-Antwort prüfen.</div>
+      <label class="opt"><input type="radio" name="q3"> 1</label>
+      <label class="opt"><input type="radio" name="q3"> 2</label>
+      <label class="opt"><input type="radio" name="q3"> 3</label>
+      <label class="opt"><input type="radio" name="q3"> 4</label>
+      <label class="opt"><input type="radio" name="q3"> 5</label></div>
+    <div class="scale-grid"><div class="crit">Ich weiß, welche Daten nicht in einen Prompt gehören.</div>
+      <label class="opt"><input type="radio" name="q4"> 1</label>
+      <label class="opt"><input type="radio" name="q4"> 2</label>
+      <label class="opt"><input type="radio" name="q4"> 3</label>
+      <label class="opt"><input type="radio" name="q4"> 4</label>
+      <label class="opt"><input type="radio" name="q4"> 5</label></div>
+    <div class="scale-grid"><div class="crit">Der Workshop hat mir Spaß gemacht.</div>
+      <label class="opt"><input type="radio" name="q5"> 1</label>
+      <label class="opt"><input type="radio" name="q5"> 2</label>
+      <label class="opt"><input type="radio" name="q5"> 3</label>
+      <label class="opt"><input type="radio" name="q5"> 4</label>
+      <label class="opt"><input type="radio" name="q5"> 5</label></div>
+  </div>
+
+  <div class="q">
+    <h3>3. Was hat dir am besten gefallen?</h3>
+    <textarea></textarea>
+  </div>
+
+  <div class="q">
+    <h3>4. Was könnte man besser machen?</h3>
+    <textarea></textarea>
+  </div>
+</div>
+
+<!-- E3 TEACHER -->
+<div class="sheet">
+  <div class="sheet-head"><div class="sheet-num teacher">E3</div>
+    <div><h2>Fragebogen Lehrkraft</h2><div class="sub">Nach Abschluss des Workshops · ca. 5 Minuten</div></div></div>
+
+  <div class="name-row">
+    <div><label>Schule</label><input type="text"></div>
+    <div><label>Klasse / Stufe</label><input type="text"></div>
+    <div><label>Datum</label><input type="date"></div>
+    <div><label>Durchführungsmodell</label><input type="text" placeholder="A / B / C"></div>
+  </div>
+
+  <div class="q">
+    <h3>1. Bewertung der Einheit</h3>
+    <div class="scale-legend"><span>trifft nicht zu</span><span>trifft voll zu</span></div>
+    <div class="scale-grid"><div class="crit">Passt zum Bildungsplan BW.</div>
+      <label class="opt"><input type="radio" name="t1"> 1</label>
+      <label class="opt"><input type="radio" name="t1"> 2</label>
+      <label class="opt"><input type="radio" name="t1"> 3</label>
+      <label class="opt"><input type="radio" name="t1"> 4</label>
+      <label class="opt"><input type="radio" name="t1"> 5</label></div>
+    <div class="scale-grid"><div class="crit">Material ist sofort einsetzbar.</div>
+      <label class="opt"><input type="radio" name="t2"> 1</label>
+      <label class="opt"><input type="radio" name="t2"> 2</label>
+      <label class="opt"><input type="radio" name="t2"> 3</label>
+      <label class="opt"><input type="radio" name="t2"> 4</label>
+      <label class="opt"><input type="radio" name="t2"> 5</label></div>
+    <div class="scale-grid"><div class="crit">Zeitplanung war realistisch.</div>
+      <label class="opt"><input type="radio" name="t3"> 1</label>
+      <label class="opt"><input type="radio" name="t3"> 2</label>
+      <label class="opt"><input type="radio" name="t3"> 3</label>
+      <label class="opt"><input type="radio" name="t3"> 4</label>
+      <label class="opt"><input type="radio" name="t3"> 5</label></div>
+    <div class="scale-grid"><div class="crit">Kinder waren aktiv beteiligt.</div>
+      <label class="opt"><input type="radio" name="t4"> 1</label>
+      <label class="opt"><input type="radio" name="t4"> 2</label>
+      <label class="opt"><input type="radio" name="t4"> 3</label>
+      <label class="opt"><input type="radio" name="t4"> 4</label>
+      <label class="opt"><input type="radio" name="t4"> 5</label></div>
+    <div class="scale-grid"><div class="crit">Datenschutz war transparent umgesetzt.</div>
+      <label class="opt"><input type="radio" name="t5"> 1</label>
+      <label class="opt"><input type="radio" name="t5"> 2</label>
+      <label class="opt"><input type="radio" name="t5"> 3</label>
+      <label class="opt"><input type="radio" name="t5"> 4</label>
+      <label class="opt"><input type="radio" name="t5"> 5</label></div>
+    <div class="scale-grid"><div class="crit">Würde Kolleg:innen empfehlen.</div>
+      <label class="opt"><input type="radio" name="t6"> 1</label>
+      <label class="opt"><input type="radio" name="t6"> 2</label>
+      <label class="opt"><input type="radio" name="t6"> 3</label>
+      <label class="opt"><input type="radio" name="t6"> 4</label>
+      <label class="opt"><input type="radio" name="t6"> 5</label></div>
+  </div>
+
+  <div class="q"><h3>2. Stärken der Einheit</h3><textarea></textarea></div>
+  <div class="q"><h3>3. Verbesserungswünsche</h3><textarea></textarea></div>
+  <div class="q"><h3>4. Buchen Sie einen Folgetermin / empfehlen weiter?</h3>
+    <textarea placeholder="Ja / Nein / Vielleicht – Begründung"></textarea></div>
+</div>
+
+<div class="footer">Fördermappe KI-Entdecker · 04 Evaluation · anonym · Aufbewahrung max. 3 Monate</div>
+</body>
+</html>

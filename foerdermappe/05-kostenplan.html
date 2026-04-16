@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Kostenplan · KI-Entdecker</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Outfit',sans-serif;color:#1a1a2e;background:#fff;padding:40px;max-width:980px;margin:0 auto;line-height:1.55}
+  @page{size:A4;margin:14mm 14mm 16mm}
+  @media print{
+    html,body{background:#fff!important}
+    body{padding:0!important;max-width:none!important;font-size:10pt;line-height:1.45}
+    .no-print{display:none!important}
+    h2,h3{break-after:avoid-page;page-break-after:avoid}
+    p,li{orphans:3;widows:3}
+    table,tr,.header,.note,.totals{break-inside:avoid;page-break-inside:avoid}
+    input,textarea{border:1px solid #9ca3af!important;background:#fff!important}
+  }
+  .header{border-bottom:3px solid #f97316;padding-bottom:14px;margin-bottom:22px}
+  .header h1{font-size:24px;color:#c2410c;font-weight:700}
+  .header .sub{font-size:13px;color:#6b7280;margin-top:4px}
+  .section{margin-bottom:22px}
+  .section h2{font-size:17px;color:#1a1a2e;border-bottom:2px solid #f3f4f6;padding-bottom:6px;margin-bottom:10px;font-weight:700}
+  .section p,.section li{font-size:12px;color:#4b5563}
+  .section ul{margin-left:20px}
+  table{width:100%;border-collapse:collapse;margin-top:8px;font-size:11px}
+  th{background:#fff7ed;text-align:left;padding:7px 9px;font-weight:700;color:#9a3412;font-size:10px;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid #fed7aa}
+  td{padding:6px 9px;border-top:1px solid #f3f4f6;vertical-align:middle;color:#374151}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  input[type=text],input[type=number]{width:100%;border:1px solid #e5e7eb;border-radius:6px;padding:5px 7px;font-size:11px;font-family:inherit;background:#fafafa}
+  input.num{text-align:right}
+  .totals{background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:14px 16px;margin-top:14px;font-size:13px;color:#9a3412}
+  .totals table{margin-top:6px}
+  .totals th{background:transparent;border:none;font-size:11px}
+  .totals td{border:none;padding:4px 9px}
+  .totals tr.grand td{font-weight:700;font-size:14px;color:#1a1a2e;border-top:2px solid #fed7aa;padding-top:8px}
+  .note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 14px;margin:10px 0;font-size:11px;color:#92400e}
+  .input{display:inline-block;border-bottom:1px dashed #9ca3af;min-width:120px;padding:0 4px}
+  .footer{text-align:center;color:#9ca3af;font-size:10px;margin-top:22px;padding-top:10px;border-top:1px solid #e5e7eb}
+  .print-btn{display:block;margin:16px auto 22px;padding:10px 22px;background:#f97316;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer}
+</style>
+</head>
+<body>
+<button class="no-print print-btn" onclick="window.print()">Als PDF speichern / Drucken</button>
+
+<div class="header">
+  <h1>05 · Kostenplan (fillable)</h1>
+  <div class="sub">Budgetblatt Pilotphase · 3–4 Monate · Richtwerte — vor Antragstellung mit Steuerberater:in prüfen</div>
+</div>
+
+<div class="section">
+  <p>Zeitraum: <span class="input">________________</span> &nbsp;&nbsp;&nbsp;
+  Projektnr./Kennung: <span class="input">________________</span> &nbsp;&nbsp;&nbsp;
+  Aufgestellt am: <span class="input">________________</span></p>
+</div>
+
+<div class="section">
+  <h2>A · Personalkosten</h2>
+  <table>
+    <thead><tr><th style="width:38%">Position</th><th>Stunden</th><th>Ø-Satz (€/h)</th><th>Betrag (€)</th><th>Bemerkung</th></tr></thead>
+    <tbody>
+      <tr><td>Konzeptentwicklung &amp; Materialpflege</td><td><input type="number" class="num"></td><td><input type="number" class="num" placeholder="65"></td><td><input type="number" class="num"></td><td><input type="text" placeholder="eigene Leistung"></td></tr>
+      <tr><td>Workshop-Durchführung (Kurs A · 90 Min inkl. An-/Abreise, Vor-/Nachbereitung)</td><td><input type="number" class="num" placeholder="4"></td><td><input type="number" class="num" placeholder="85"></td><td><input type="number" class="num"></td><td><input type="text" placeholder="pro Durchführung"></td></tr>
+      <tr><td>Workshop-Durchführung (Kurs B · 180 Min)</td><td><input type="number" class="num" placeholder="7"></td><td><input type="number" class="num" placeholder="85"></td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+      <tr><td>Eltern-Abend / Kollegiums-Info (60 Min)</td><td><input type="number" class="num" placeholder="3"></td><td><input type="number" class="num" placeholder="75"></td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+      <tr><td>Evaluation &amp; Projektbericht</td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+      <tr><td>Kommunikation &amp; Orga (E-Mail, Termine, Website)</td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>B · Sachkosten Material &amp; Druck</h2>
+  <table>
+    <thead><tr><th style="width:38%">Position</th><th>Menge</th><th>Einzelpreis (€)</th><th>Betrag (€)</th><th>Bemerkung</th></tr></thead>
+    <tbody>
+      <tr><td>Druck Handreichungen + Arbeitsblätter (Klassensatz)</td><td><input type="number" class="num"></td><td><input type="number" class="num" placeholder="25"></td><td><input type="number" class="num"></td><td><input type="text" placeholder="pro Klasse"></td></tr>
+      <tr><td>Zertifikate hochwertig drucken</td><td><input type="number" class="num"></td><td><input type="number" class="num" placeholder="1.50"></td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+      <tr><td>Plakate / Moderationskarten / Stifte</td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+      <tr><td>Büromaterial, Briefumschläge, Porto</td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>C · Technik &amp; Software</h2>
+  <table>
+    <thead><tr><th style="width:38%">Position</th><th>Menge</th><th>Einzelpreis (€)</th><th>Betrag (€)</th><th>Bemerkung</th></tr></thead>
+    <tbody>
+      <tr><td>KI-Bildungslizenzen (Fobizz / MNSpro / Schul-KI BW)</td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="text" placeholder="ggf. durch Schule gestellt"></td></tr>
+      <tr><td>Domain + Hosting (aktuell GitHub Pages kostenlos)</td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="text" placeholder="Domain-Jahresgebühr"></td></tr>
+      <tr><td>Cloud-Speicher / Passwortmanager</td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+      <tr><td>Ggf. mobiles WLAN / Backup-Tablet</td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>D · Fahrt- &amp; Reisekosten</h2>
+  <table>
+    <thead><tr><th style="width:38%">Strecke / Termin</th><th>Anzahl Termine</th><th>Km</th><th>Satz (€/km)</th><th>Betrag (€)</th></tr></thead>
+    <tbody>
+      <tr><td>Ludwigsburg / Freiberg → Partnerschule</td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="number" class="num" placeholder="0.30"></td><td><input type="number" class="num"></td></tr>
+      <tr><td>Fahrt zu Elternabenden</td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="number" class="num" placeholder="0.30"></td><td><input type="number" class="num"></td></tr>
+      <tr><td>Kick-off- / Abschlusstermine</td><td><input type="number" class="num"></td><td><input type="number" class="num"></td><td><input type="number" class="num" placeholder="0.30"></td><td><input type="number" class="num"></td></tr>
+      <tr><td>ÖPNV / Bahn</td><td><input type="number" class="num"></td><td>—</td><td>—</td><td><input type="number" class="num"></td></tr>
+    </tbody>
+  </table>
+  <div class="note">Kilometerpauschale 0,30 €/km ist steuerlich anerkannt (§ 9 EStG), für Beifahrer:in zusätzlich 0,02 €/km. Größere Fahrten ggf. mit ÖPNV-Ticket belegen.</div>
+</div>
+
+<div class="section">
+  <h2>E · Externe Leistungen</h2>
+  <table>
+    <thead><tr><th style="width:38%">Leistung</th><th colspan="3">Anbieter / Bemerkung</th><th>Betrag (€)</th></tr></thead>
+    <tbody>
+      <tr><td>Steuerberatung (Gründung + Jahresabschluss)</td><td colspan="3"><input type="text"></td><td><input type="number" class="num"></td></tr>
+      <tr><td>Datenschutzberatung (externe DSB)</td><td colspan="3"><input type="text"></td><td><input type="number" class="num"></td></tr>
+      <tr><td>Grafik / Layout / Video</td><td colspan="3"><input type="text"></td><td><input type="number" class="num"></td></tr>
+      <tr><td>Evaluation begleitend (wissenschaftlich)</td><td colspan="3"><input type="text"></td><td><input type="number" class="num"></td></tr>
+      <tr><td>IHK-Tragfähigkeitsbescheinigung / ggf. Coaching</td><td colspan="3"><input type="text"></td><td><input type="number" class="num"></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>F · Versicherung &amp; Rechtliches</h2>
+  <table>
+    <thead><tr><th style="width:38%">Position</th><th colspan="3">Bemerkung</th><th>Betrag (€)</th></tr></thead>
+    <tbody>
+      <tr><td>Berufshaftpflicht (Dozententätigkeit)</td><td colspan="3"><input type="text" placeholder="Jahresbeitrag, anteilig"></td><td><input type="number" class="num"></td></tr>
+      <tr><td>Rechtsschutz</td><td colspan="3"><input type="text"></td><td><input type="number" class="num"></td></tr>
+      <tr><td>Erweitertes Führungszeugnis</td><td colspan="3"><input type="text" placeholder="ca. 13 €"></td><td><input type="number" class="num" placeholder="13"></td></tr>
+      <tr><td>Gewerbeanmeldung</td><td colspan="3"><input type="text" placeholder="ca. 20 – 60 €"></td><td><input type="number" class="num"></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="totals">
+  <table>
+    <tr><td>A · Personalkosten</td><td class="num" style="text-align:right"><input type="number" class="num"></td></tr>
+    <tr><td>B · Sachkosten Material</td><td class="num" style="text-align:right"><input type="number" class="num"></td></tr>
+    <tr><td>C · Technik &amp; Software</td><td class="num" style="text-align:right"><input type="number" class="num"></td></tr>
+    <tr><td>D · Fahrt- &amp; Reisekosten</td><td class="num" style="text-align:right"><input type="number" class="num"></td></tr>
+    <tr><td>E · Externe Leistungen</td><td class="num" style="text-align:right"><input type="number" class="num"></td></tr>
+    <tr><td>F · Versicherung / Rechtliches</td><td class="num" style="text-align:right"><input type="number" class="num"></td></tr>
+    <tr class="grand"><td>GESAMT (netto)</td><td class="num" style="text-align:right"><input type="number" class="num"></td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>Finanzierungsseite</h2>
+  <table>
+    <thead><tr><th>Quelle</th><th>Betrag (€)</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Eigenmittel</td><td><input type="number" class="num"></td><td><input type="text" placeholder="offen / zugesagt"></td></tr>
+      <tr><td>Gründungszuschuss Agentur für Arbeit</td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+      <tr><td>Start-up BW Pre-Seed</td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+      <tr><td>Innovationsgutschein BW</td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+      <tr><td>Stiftungen (Vector, Bosch, Heidehof …)</td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+      <tr><td>Kommunale Mittel (Stadt LB / Bildungsbüro)</td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+      <tr><td>Schulbudget / Förderverein</td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+      <tr><td>Workshop-Honorare (ab Monat 4)</td><td><input type="number" class="num"></td><td><input type="text"></td></tr>
+      <tr><td colspan="2" style="font-weight:700">Summe Finanzierung</td><td><input type="text"></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="note"><strong>Wichtig:</strong> Kleinunternehmerregelung nach § 19 UStG prüfen – solange der Jahresumsatz unter der gesetzlichen Grenze bleibt, wird keine Umsatzsteuer ausgewiesen. Steuerliche Einordnung zwingend mit Steuerberater:in klären.</div>
+
+<div class="footer">Fördermappe KI-Entdecker · 05 Kostenplan · fillable · alle Angaben netto/brutto je nach USt-Status</div>
+</body>
+</html>

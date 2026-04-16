@@ -1,8 +1,58 @@
-import { School, Clock3, Target, ClipboardList, ShieldCheck, MonitorSmartphone, Handshake, Mail, MapPin, FileDown, Download, Users, UserCheck, User, CheckCircle2, BookOpen } from 'lucide-react';
+import { School, Clock3, Target, ClipboardList, ShieldCheck, MonitorSmartphone, Handshake, Mail, MapPin, FileDown, Download, Users, UserCheck, User, CheckCircle2, BookOpen, Award, FileText, FlaskConical, Sparkles, X, Check, AlertTriangle } from 'lucide-react';
 import { buildDownloadUrl } from '@/lib/paths';
 
 const Schulen = () => {
   const openDownload = (file: string) => window.open(buildDownloadUrl(file), '_blank');
+
+  const competencies = [
+    { area: 'Fachkompetenz', items: ['KI verstehen und in eigenen Worten erklären', 'Regelbasierte Programme von lernenden Systemen unterscheiden', 'Strukturierte Prompts nach RAKF-Schema formulieren'] },
+    { area: 'Methodenkompetenz', items: ['KI-Antworten anhand von Kriterien prüfen', 'Mit kindersicheren Suchwerkzeugen recherchieren', 'Prompt-Prozess dokumentieren'] },
+    { area: 'Sozialkompetenz', items: ['In Partner- und Gruppenarbeit zusammenarbeiten', 'Diskriminierungssensibel über KI-Output reflektieren'] },
+    { area: 'Selbstkompetenz', items: ['Eigene Regeln im Umgang mit KI formulieren', 'Grenzen beim Teilen persönlicher Daten benennen'] },
+  ];
+
+  const bildungsplan = [
+    { fach: 'Sachunterricht Kl. 3/4', anknuepfung: 'Bereich „Technik und Kultur" – Funktionsweise technischer Systeme verstehen und kritisch bewerten' },
+    { fach: 'Deutsch Kl. 3 – 8', anknuepfung: 'Mit Texten und Medien umgehen, Informationen prüfen, Sprache zur Anweisung nutzen' },
+    { fach: 'Basiskurs Medienbildung (Kl. 5)', anknuepfung: 'Recherchieren, Informationen bewerten, Kommunikation gestalten' },
+    { fach: 'Aufbaukurs Informatik (Kl. 7)', anknuepfung: 'Algorithmen, Daten, Mensch-Maschine-Interaktion' },
+    { fach: 'Leitperspektive Medienbildung (MB)', anknuepfung: 'Medienanalyse, Information und Wissen, Kommunikation, Produktion' },
+    { fach: 'Leitperspektive Verbraucherbildung (VB)', anknuepfung: 'Reflektierte Entscheidungen beim Umgang mit digitalen Angeboten' },
+    { fach: 'Leitperspektive Bildung für Toleranz (BTV)', anknuepfung: 'Bias und Stereotype erkennen, Vielfalt wahrnehmen' },
+    { fach: 'KMK-Empfehlung KI (2024)', anknuepfung: 'Anschluss an die ergänzende KMK-Strategie zu KI in der Bildung' },
+  ];
+
+  const methods = [
+    { title: 'Handlungsorientierung', desc: 'Jede Einheit endet mit einem konkreten Produkt: ein Prompt, ein Plakat, ein Prompt-Pass.' },
+    { title: 'Entdeckendes Lernen', desc: 'Kinder probieren selbst, die Lehrkraft moderiert.' },
+    { title: 'Kooperatives Lernen', desc: 'Placemat, Gruppenpuzzle, Partnerarbeit.' },
+    { title: 'Scaffolding & Differenzierung', desc: 'Prompt-Bausteine als Satzkarten für Basisniveau, Reflexionsaufgaben für erweitertes Niveau.' },
+    { title: 'Visuelle Sprache', desc: 'Farbcodierung, Icons, große Schrift, hoher Kontrast – barrierearm.' },
+    { title: 'Transparenz', desc: 'KI-Antworten werden im Klassengespräch gemeinsam bewertet.' },
+  ];
+
+  const allowedTools = [
+    'Fobizz Chat (Bildungslizenz, EU-Server, AVV vorhanden)',
+    'MNSpro Chat (DSGVO-konform, Schulserver)',
+    'Schul-KI BW-Pilot (Landes-Pilotumgebung)',
+    'fragFINN, Blinde Kuh – Kindersuchmaschinen, ohne Konto',
+  ];
+  const forbiddenItems = [
+    'Schüler:innen legen niemals eigene Accounts an',
+    'Keine echten Namen, Adressen, Fotos, Telefonnummern in Prompts',
+    'Keine Consumer-KI ohne AVV (kein ChatGPT-Web, kein Gemini-Web)',
+    'Keine Speicherung personenbezogener Schülerdaten',
+  ];
+
+  const conceptDocs = [
+    { title: 'Pädagogisches Konzept', desc: 'Lernziele, Methoden, Differenzierung, Bildungsplanbezug BW.', file: 'konzept-paedagogisch.html', icon: BookOpen, color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
+    { title: 'Datenschutz- &amp; Schutzkonzept', desc: 'DSGVO, LDSG BW, Tool-Liste, Jugendmedienschutz, Verhaltenskodex.', file: 'konzept-datenschutz.html', icon: ShieldCheck, color: 'text-primary-teal', bg: 'bg-primary-teal/10' },
+    { title: 'Durchführungskonzept', desc: 'Pilotplan, 4 Phasen, Rollen, Zeitplan, Risiken &amp; Erfolgskriterien.', file: 'konzept-durchfuehrung.html', icon: ClipboardList, color: 'text-accent-pink', bg: 'bg-accent-pink/10' },
+    { title: 'Evaluations-Vorlage', desc: 'Vorher- / Nachher-Bögen + Lehrkräfte-Feedback, anonym, fillable.', file: 'evaluation-vorlage.html', icon: FlaskConical, color: 'text-orange-600', bg: 'bg-orange-100' },
+    { title: 'Elternbrief &amp; Einverständnis', desc: 'Muster für Datenschutz-Information und Einwilligungserklärung.', file: 'elternbrief-einverstaendnis.html', icon: FileText, color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
+    { title: 'Projekt-Übersicht (One-Pager)', desc: 'Kurzpitch für Förderer, Schulleitungen und Stiftungen.', file: 'projekt-uebersicht.html', icon: Sparkles, color: 'text-yellow-600', bg: 'bg-yellow-100' },
+  ];
+
 
   const teacherCourses = [
     {
@@ -178,18 +228,253 @@ const Schulen = () => {
         </div>
       </section>
 
+      {/* Kompetenzen */}
       <section className="py-14 bg-white">
         <div className="section-padding">
-          <div className="container-wide grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-neutral-light rounded-2xl p-6">
-              <h3 className="font-outfit font-bold text-neutral-dark mb-3 flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-primary-teal" /> Datenschutz
-              </h3>
-              <p className="text-sm text-neutral-gray">
-                Es werden keine personenbezogenen Schülerdaten gespeichert. Wo möglich arbeiten wir mit anonymisierten Beispielen.
-                Bei Tool-Einsatz werden datenschutzfreundliche Einstellungen und schulische Vorgaben beachtet.
+          <div className="container-wide">
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-purple/10 text-primary-purple rounded-full text-sm font-medium mb-4">
+                <Award className="w-4 h-4" /> Kompetenzen
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-outfit font-bold text-neutral-dark mb-3">
+                Was Kinder konkret lernen
+              </h2>
+              <p className="text-neutral-gray">
+                Vier Kompetenzbereiche, klar formuliert und in jedem Workshop überprüfbar.
               </p>
             </div>
+            <div className="grid sm:grid-cols-2 gap-5">
+              {competencies.map((c) => (
+                <div key={c.area} className="bg-neutral-light rounded-2xl p-6 border-l-4 border-primary-purple">
+                  <h3 className="font-outfit font-bold text-neutral-dark mb-3">{c.area}</h3>
+                  <ul className="space-y-2">
+                    {c.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-neutral-dark">
+                        <CheckCircle2 className="w-4 h-4 text-primary-purple flex-shrink-0 mt-1" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bildungsplan BW */}
+      <section className="py-14 bg-neutral-light/40">
+        <div className="section-padding">
+          <div className="container-wide">
+            <div className="text-center max-w-2xl mx-auto mb-8">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-teal/10 text-primary-teal rounded-full text-sm font-medium mb-4">
+                <BookOpen className="w-4 h-4" /> Bildungsplan Baden-Württemberg
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-outfit font-bold text-neutral-dark mb-3">
+                Klar verankert im Bildungsplan
+              </h2>
+              <p className="text-neutral-gray">
+                Bildungsplan 2016 (Grundschule &amp; Sek I), Leitperspektiven sowie KMK-Empfehlung KI (2024).
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+              <table className="w-full text-sm">
+                <thead className="bg-primary-purple/5">
+                  <tr>
+                    <th className="text-left px-5 py-3 text-xs uppercase tracking-wide font-semibold text-primary-purple">Fach / Bereich</th>
+                    <th className="text-left px-5 py-3 text-xs uppercase tracking-wide font-semibold text-primary-purple">Anknüpfung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {bildungsplan.map((row, i) => (
+                    <tr key={row.fach} className={i % 2 ? 'bg-neutral-light/30' : 'bg-white'}>
+                      <td className="px-5 py-3 font-medium text-neutral-dark whitespace-nowrap align-top">{row.fach}</td>
+                      <td className="px-5 py-3 text-neutral-gray">{row.anknuepfung}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Methoden */}
+      <section className="py-14 bg-white">
+        <div className="section-padding">
+          <div className="container-wide">
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-pink/10 text-accent-pink rounded-full text-sm font-medium mb-4">
+                <Sparkles className="w-4 h-4" /> Methoden
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-outfit font-bold text-neutral-dark mb-3">
+                Methodisch fundiert, praktisch erprobbar
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {methods.map((m) => (
+                <div key={m.title} className="bg-neutral-light rounded-2xl p-5">
+                  <h3 className="font-outfit font-bold text-neutral-dark mb-2">{m.title}</h3>
+                  <p className="text-sm text-neutral-gray">{m.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Datenschutz im Detail */}
+      <section className="py-14 bg-neutral-light/40">
+        <div className="section-padding">
+          <div className="container-wide">
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-teal/10 text-primary-teal rounded-full text-sm font-medium mb-4">
+                <ShieldCheck className="w-4 h-4" /> Datenschutz &amp; Sicherheit
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-outfit font-bold text-neutral-dark mb-3">
+                Was wir machen — und was wir <em>nicht</em> machen
+              </h2>
+              <p className="text-neutral-gray">
+                DSGVO, Landesdatenschutzgesetz BW, Schulgesetz BW und Jugendmedienschutz sind die Leitplanken.
+                Eltern und Schulleitungen erhalten vorab das vollständige Datenschutzkonzept.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-2xl p-6 shadow-sm border-l-4 border-green-500">
+                <h3 className="font-outfit font-bold text-neutral-dark mb-3 flex items-center gap-2">
+                  <Check className="w-5 h-5 text-green-600" /> Was wir einsetzen
+                </h3>
+                <ul className="space-y-2">
+                  {allowedTools.map((t) => (
+                    <li key={t} className="flex items-start gap-2 text-sm text-neutral-dark">
+                      <Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs text-neutral-gray mt-4">
+                  Tool-Auswahl wird vorab mit dem schulischen Datenschutzbeauftragten abgestimmt.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 shadow-sm border-l-4 border-red-500">
+                <h3 className="font-outfit font-bold text-neutral-dark mb-3 flex items-center gap-2">
+                  <X className="w-5 h-5 text-red-600" /> Was wir nicht machen
+                </h3>
+                <ul className="space-y-2">
+                  {forbiddenItems.map((t) => (
+                    <li key={t} className="flex items-start gap-2 text-sm text-neutral-dark">
+                      <X className="w-4 h-4 text-red-600 flex-shrink-0 mt-1" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs text-neutral-gray mt-4">
+                  Erweitertes Führungszeugnis wird auf Anfrage vorgelegt. Zwei-Personen-Prinzip im Klassenraum.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 bg-amber-50 border border-amber-200 rounded-2xl p-5 flex items-start gap-3">
+              <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-amber-900">
+                <strong>So gehen wir bei ungeeignetem Output vor:</strong> Alle KI-Demos werden vorab mit dem
+                geplanten Prompt-Set getestet. Sollte ein Tool im Workshop dennoch unerwartet ungeeignete
+                Inhalte erzeugen, bricht die Workshop-Leitung sofort ab und ordnet pädagogisch ein.
+                Eltern werden binnen 24 Stunden informiert.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pilot 2026 */}
+      <section className="py-14 bg-white">
+        <div className="section-padding">
+          <div className="container-wide">
+            <div className="bg-gradient-to-br from-primary-purple to-primary-teal rounded-3xl p-8 sm:p-12 text-white">
+              <div className="max-w-3xl mx-auto text-center">
+                <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-4">
+                  <FlaskConical className="w-4 h-4" /> Pilotphase 2026
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-outfit font-bold mb-4">
+                  Wir suchen 2 – 3 Pilotschulen in der Region Ludwigsburg
+                </h2>
+                <p className="text-white/90 mb-8">
+                  Im Rahmen der Pilotphase erhält Ihre Schule die Workshops zu vergünstigten
+                  Konditionen oder im Rahmen einer Förderung kostenfrei. Im Gegenzug fließt Ihr
+                  Feedback in die Weiterentwicklung des Materials ein.
+                </p>
+                <div className="grid sm:grid-cols-3 gap-4 mb-8 text-left">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                    <div className="text-xs uppercase tracking-wide text-white/70 font-semibold mb-1">Was Sie geben</div>
+                    <p className="text-sm">2 – 3 Klassen, Termine und Räume, kurze Lehrkräfte-Rückmeldung</p>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                    <div className="text-xs uppercase tracking-wide text-white/70 font-semibold mb-1">Was Sie bekommen</div>
+                    <p className="text-sm">Workshops + Material + Lehrkraft-Handreichungen + anonyme Evaluations-Auswertung</p>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                    <div className="text-xs uppercase tracking-wide text-white/70 font-semibold mb-1">Wie lange</div>
+                    <p className="text-sm">Ein Schulhalbjahr (3 – 4 Monate) inkl. Auswertung und Bericht</p>
+                  </div>
+                </div>
+                <a
+                  href="mailto:belkis.aslani@gmail.com?subject=Pilotschule%202026%20%E2%80%93%20KI-Entdecker"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-purple rounded-xl font-bold hover:bg-white/90 transition-colors"
+                >
+                  <Mail className="w-5 h-5" />
+                  Pilot-Anfrage senden
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Konzepte & Transparenz Downloads */}
+      <section className="py-14 bg-neutral-light/40">
+        <div className="section-padding">
+          <div className="container-wide">
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-purple/10 text-primary-purple rounded-full text-sm font-medium mb-4">
+                <FileDown className="w-4 h-4" /> Transparenz
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-outfit font-bold text-neutral-dark mb-3">
+                Konzepte &amp; Dokumente zum Download
+              </h2>
+              <p className="text-neutral-gray">
+                Alle Konzepte sind öffentlich einsehbar. Wir glauben: Eltern, Lehrkräfte und Förderer
+                sollen vorab genau wissen, wie wir arbeiten.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {conceptDocs.map((doc) => (
+                <button
+                  key={doc.file}
+                  onClick={() => openDownload(doc.file)}
+                  className="text-left bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow border border-neutral-light"
+                  aria-label={`${doc.title} öffnen`}
+                >
+                  <div className={`w-11 h-11 ${doc.bg} rounded-xl flex items-center justify-center mb-4`}>
+                    <doc.icon className={`w-5 h-5 ${doc.color}`} />
+                  </div>
+                  <h3 className="font-outfit font-bold text-neutral-dark mb-2" dangerouslySetInnerHTML={{ __html: doc.title }} />
+                  <p className="text-sm text-neutral-gray mb-3" dangerouslySetInnerHTML={{ __html: doc.desc }} />
+                  <span className="inline-flex items-center gap-2 text-sm text-primary-purple font-medium">
+                    <Download className="w-4 h-4" /> Öffnen
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technik & Kosten */}
+      <section className="py-14 bg-white">
+        <div className="section-padding">
+          <div className="container-wide grid md:grid-cols-2 gap-6">
 
             <div className="bg-neutral-light rounded-2xl p-6">
               <h3 className="font-outfit font-bold text-neutral-dark mb-3 flex items-center gap-2">

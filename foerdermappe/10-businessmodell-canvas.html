@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Business Model Canvas · KI-Entdecker</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Outfit',sans-serif;color:#1a1a2e;background:#fff;padding:24px;max-width:1180px;margin:0 auto;line-height:1.45}
+  @page{size:A4 landscape;margin:10mm}
+  @media print{
+    html,body{background:#fff!important}
+    body{padding:0!important;max-width:none!important;font-size:9.5pt;line-height:1.4}
+    .no-print{display:none!important}
+    .canvas{break-inside:avoid;page-break-inside:avoid}
+    textarea{border:1px solid #9ca3af!important;background:#fff!important}
+  }
+  .header{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #7F56D9;padding-bottom:10px;margin-bottom:14px}
+  .header h1{font-size:22px;color:#7F56D9;font-weight:700}
+  .header .sub{font-size:11px;color:#6b7280;margin-top:2px}
+  .canvas{display:grid;grid-template-columns:2fr 2fr 2fr 2fr 2fr;grid-template-rows:1fr 1fr 0.7fr;gap:6px;width:100%}
+  .cell{border:1.5px solid #e5e7eb;border-radius:8px;padding:8px 10px;background:#fafafa;display:flex;flex-direction:column}
+  .cell h3{font-size:11px;color:#7F56D9;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:5px}
+  .cell p.desc{font-size:9.5pt;color:#6b7280;margin-bottom:5px;font-style:italic}
+  .cell textarea{width:100%;border:none;resize:none;flex-grow:1;font-family:inherit;font-size:10px;color:#1a1a2e;background:transparent;padding:2px 0;line-height:1.35}
+  .c-kp{grid-column:1;grid-row:1/3}
+  .c-ka{grid-column:2;grid-row:1}
+  .c-vp{grid-column:3;grid-row:1/3}
+  .c-cr{grid-column:4;grid-row:1}
+  .c-cs{grid-column:5;grid-row:1/3}
+  .c-kr{grid-column:2;grid-row:2}
+  .c-ch{grid-column:4;grid-row:2}
+  .c-c {grid-column:1/4;grid-row:3}
+  .c-r {grid-column:4/6;grid-row:3}
+  .footer{text-align:center;color:#9ca3af;font-size:10px;margin-top:14px;padding-top:8px;border-top:1px solid #e5e7eb}
+  .print-btn{display:block;margin:12px auto 16px;padding:10px 22px;background:#7F56D9;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer}
+</style>
+</head>
+<body>
+<button class="no-print print-btn" onclick="window.print()">Als PDF speichern / Drucken (Querformat A4)</button>
+
+<div class="header">
+  <div>
+    <h1>10 · Business Model Canvas</h1>
+    <div class="sub">KI-Entdecker · Belkis Aslani · Querformat A4 · fillable</div>
+  </div>
+  <div style="font-size:11px;color:#6b7280;text-align:right">
+    Stand: <input type="date" style="border:1px solid #d1d5db;border-radius:6px;padding:3px 6px;font-family:inherit">
+  </div>
+</div>
+
+<div class="canvas">
+  <div class="cell c-kp">
+    <h3>Schlüsselpartner</h3>
+    <p class="desc">Wer unterstützt dich strategisch?</p>
+    <textarea>• Medienzentrum Landkreis Ludwigsburg
+• Partnerschulen (Oskar-Paret-Schule, GS Ludwigsburg/Freiberg)
+• Staatliches Schulamt Ludwigsburg
+• IHK Region Stuttgart (Gründung)
+• bwcon / RKW (Pre-Seed-Betreuung)
+• Stadtbibliothek Ludwigsburg
+• Förderverein der Partnerschule
+• externe Datenschutzberatung
+</textarea>
+  </div>
+
+  <div class="cell c-ka">
+    <h3>Schlüsselaktivitäten</h3>
+    <p class="desc">Was musst du tun?</p>
+    <textarea>• Workshop-Durchführung in Schulen
+• Material pflegen (Handreichungen, Arbeitsblätter)
+• Website/PWA weiterentwickeln
+• Lehrkräfte-Fortbildungen
+• Evaluation &amp; Projektbericht
+• Kundenakquise / Netzwerk
+</textarea>
+  </div>
+
+  <div class="cell c-vp">
+    <h3>Werteversprechen</h3>
+    <p class="desc">Welches Problem löst du?</p>
+    <textarea>Bildungsplan-konforme, datenschutz-
+sichere KI-Workshops für Kinder
+ab Klasse 3 – sofort einsetzbar,
+mit Material, Handreichung und
+Eltern-Kommunikation.
+
+Für Lehrkräfte: Kein Vorbereitungs-
+aufwand, drei flexible Modelle.
+
+Für Kinder: Kritisches Denken statt
+passivem Tool-Konsum.
+
+Für Schulträger: Rechts- &amp; datensichere
+Umsetzung der KMK-KI-Empfehlung.
+</textarea>
+  </div>
+
+  <div class="cell c-cr">
+    <h3>Kundenbeziehungen</h3>
+    <p class="desc">Wie trittst du mit Kunden in Kontakt?</p>
+    <textarea>• Persönlicher Kontakt zu Schulleitungen
+• Vor-Ort-Workshops
+• Newsletter für Lehrkräfte (Opt-in)
+• Website mit Materialien
+• Empfehlungsmarketing
+• Folgetermine &amp; Jahreslizenzen
+</textarea>
+  </div>
+
+  <div class="cell c-cs">
+    <h3>Kundensegmente</h3>
+    <p class="desc">Wer zahlt / bestellt?</p>
+    <textarea>Primär:
+• Öffentliche Grundschulen
+• Sekundarstufe I (GMS, Werkreal, Real, Gym)
+• Fördervereine / Elternbeiräte
+
+Sekundär:
+• Kommunen / Bildungsbüros
+• Stadtbibliotheken
+• Jugendhäuser (Ferienangebote)
+• Freie Schulen / Privatschulen
+• Stiftungen (als Drittmittelgeber)
+</textarea>
+  </div>
+
+  <div class="cell c-kr">
+    <h3>Schlüsselressourcen</h3>
+    <p class="desc">Was brauchst du?</p>
+    <textarea>• Eigene pädagogische Expertise
+• Material-Bibliothek (Kurs 1 &amp; 2)
+• Website/PWA als Schaufenster
+• Laptop, Tablet, Beamer-Adapter
+• Netzwerk zu Schulen in der Region
+• Zertifizierung (erw. Führungszeugnis)
+</textarea>
+  </div>
+
+  <div class="cell c-ch">
+    <h3>Kanäle</h3>
+    <p class="desc">Wie erreichst du Kunden?</p>
+    <textarea>• Direkte E-Mail an Schulleitung
+• Infoveranstaltungen (Medienzentrum, Schulamt)
+• Website beko2210.github.io/KI-Entdecker
+• Empfehlungen von Pilotschulen
+• Social Media / LinkedIn
+• Gastbeiträge in Schulzeitungen
+</textarea>
+  </div>
+
+  <div class="cell c-c">
+    <h3>Kostenstruktur</h3>
+    <p class="desc">Was kostet dich der Betrieb?</p>
+    <textarea>• Eigenes Honorar (Gründungszuschuss in Startphase)
+• Druck / Material / Klassensätze
+• Fahrt-/Reisekosten
+• KI-Bildungslizenzen (Fobizz, MNSpro, Schul-KI BW)
+• Domain, Hosting, Versicherungen
+• Steuerberatung, Datenschutzberatung
+• Fortbildungen (Eigenqualifikation)
+</textarea>
+  </div>
+
+  <div class="cell c-r">
+    <h3>Einnahmequellen</h3>
+    <p class="desc">Womit verdienst du Geld?</p>
+    <textarea>• Workshop-Honorar je Klasse
+    – Kurs A 300 – 450 € · Kurs B 600 – 800 €
+• Tagessätze Kollegiums-Fortbildung
+• Jahreslizenz Material-Paket je Standort
+• Auftragsworkshops Ferienangebote (JuHaus, Bibo)
+• Fördermittel + Stiftungsgelder (Startphase)
+• Langfristig: Online-Premium-Kurs mit Lehrer-Zertifikat (optional)
+</textarea>
+  </div>
+</div>
+
+<div class="footer">Fördermappe KI-Entdecker · 10 Business Model Canvas · Querformat A4 · fillable</div>
+</body>
+</html>

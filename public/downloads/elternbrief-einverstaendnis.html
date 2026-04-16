@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Elternbrief &amp; Einverständnis · KI-Entdecker</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Outfit',sans-serif;color:#1a1a2e;background:#fff;padding:40px;max-width:900px;margin:0 auto;line-height:1.6}
+  @page{size:A4;margin:18mm 16mm 18mm}
+  @media print{
+    html,body{background:#fff!important}
+    body{padding:0!important;max-width:none!important;font-size:11pt;line-height:1.5}
+    .no-print{display:none!important}
+    h2,h3{break-after:avoid-page;page-break-after:avoid}
+    p,li{orphans:3;widows:3}
+    .letter,.form,.info-box,.signature{break-inside:avoid;page-break-inside:avoid}
+    input,textarea{border:1px solid #9ca3af!important;background:#fff!important}
+    .page-break{page-break-before:always}
+  }
+  .letter{padding:10px 0}
+  .letter .head-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:22px;font-size:11px;color:#6b7280}
+  .letter h1{font-size:20px;color:#1a1a2e;font-weight:700;margin-bottom:6px}
+  .letter p{font-size:12.5px;color:#1a1a2e;margin-bottom:10px}
+  .info-box{background:#faf5ff;border:1px solid #e9d5ff;border-left:4px solid #7F56D9;border-radius:10px;padding:12px 14px;margin:14px 0;font-size:12px;color:#1a1a2e}
+  .info-box b{color:#5b21b6}
+  .form{border:2px solid #7F56D9;border-radius:12px;padding:20px;margin-top:24px;background:#fff}
+  .form h2{font-size:16px;color:#7F56D9;margin-bottom:6px}
+  .form h3{font-size:13px;color:#374151;margin:12px 0 4px;font-weight:700}
+  .form p{font-size:12px;color:#4b5563;margin-bottom:10px}
+  .form label{font-size:11px;color:#6b7280;text-transform:uppercase;letter-spacing:.05em;font-weight:600;display:block;margin-bottom:3px}
+  input[type=text],input[type=date],input[type=email],input[type=tel]{width:100%;border:1.5px solid #d1d5db;border-radius:8px;padding:7px 10px;font-size:12px;font-family:inherit;background:#fafafa;margin-bottom:8px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .row-3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px}
+  .choice{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1.5px solid #e5e7eb;border-radius:10px;margin-bottom:8px;font-size:12px;background:#fafafa}
+  .choice input{margin-top:3px;accent-color:#7F56D9;width:16px;height:16px;flex-shrink:0}
+  .signature{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px;font-size:11px;color:#6b7280}
+  .signature .line{border-top:1px solid #9ca3af;margin-top:40px;padding-top:4px}
+  .footer{text-align:center;color:#9ca3af;font-size:10px;margin-top:22px;padding-top:10px;border-top:1px solid #e5e7eb}
+  .print-btn{display:block;margin:16px auto 22px;padding:10px 22px;background:#7F56D9;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer}
+</style>
+</head>
+<body>
+<button class="no-print print-btn" onclick="window.print()">Als PDF speichern / Drucken</button>
+
+<!-- Seite 1: Elternbrief -->
+<div class="letter">
+  <div class="head-row">
+    <div>
+      <strong>Belkis Aslani · KI-Entdecker</strong><br>
+      [Anschrift einfügen]<br>
+      belkis.aslani@gmail.com
+    </div>
+    <div style="text-align:right">
+      [Ort], <input type="date" style="width:160px;display:inline-block">
+    </div>
+  </div>
+
+  <h1>Information zum KI-Workshop in der Klasse Ihres Kindes</h1>
+  <p><strong>Liebe Eltern, liebe Erziehungsberechtigte,</strong></p>
+  <p>in der Klasse Ihres Kindes findet am <input type="date" style="width:160px;display:inline-block"> ein Workshop zum Thema
+  <strong>„Künstliche Intelligenz verstehen"</strong> statt, begleitet durch die Klassenlehrkraft und
+  Belkis Aslani (KI-Entdecker).</p>
+
+  <div class="info-box">
+    <b>Worum geht es?</b><br>
+    Kinder begegnen KI täglich – in Sprachassistenten, Empfehlungen auf Bildschirmen, in Apps. Der
+    Workshop erklärt altersgerecht, was KI ist, wie sie lernt, was sie <em>nicht</em> kann und wie man
+    sie sicher nutzt. Ziel ist, Ihrem Kind Medienkompetenz und kritisches Denken zu vermitteln.
+  </div>
+
+  <h3 style="font-size:14px;color:#1a1a2e;margin-top:14px;margin-bottom:6px">Ablauf und Dauer</h3>
+  <p><strong>Dauer:</strong> ca. <input type="text" placeholder="90" style="width:60px;display:inline-block"> Minuten, eingebunden in den regulären Unterricht.<br>
+  <strong>Ort:</strong> Klassenzimmer bzw. Medien-/Computerraum der Schule.<br>
+  <strong>Methoden:</strong> Gespräch, Partner- und Gruppenarbeit, Arbeitsblätter, geführte KI-Demonstration am Beamer.</p>
+
+  <h3 style="font-size:14px;color:#1a1a2e;margin-top:14px;margin-bottom:6px">Datenschutz und Sicherheit</h3>
+  <p>Uns ist wichtig, dass Kinder KI kennenlernen – <strong>ohne persönliche Daten preiszugeben</strong>.
+  Deshalb gilt in jedem Workshop:</p>
+  <ul style="margin-left:22px;font-size:12px;color:#1a1a2e">
+    <li>Die Kinder legen <strong>keine eigenen Accounts</strong> bei KI-Anbietern an.</li>
+    <li>Die Lehrkraft bedient die KI im Plenum – die Kinder sehen die Antworten über den Beamer.</li>
+    <li>Es werden <strong>keine echten Namen, Adressen, Fotos oder Telefonnummern</strong> in Prompts eingegeben.</li>
+    <li>Es werden <strong>keine personenbezogenen Daten</strong> der Kinder gespeichert oder weitergegeben.</li>
+    <li>Wir nutzen ausschließlich KI-Dienste mit Datenschutzvereinbarung (z. B. Fobizz Chat, MNSpro Chat oder vergleichbare, von der Schule freigegebene Umgebungen).</li>
+  </ul>
+
+  <div class="info-box" style="background:#ecfeff;border-color:#a5f3fc;border-left-color:#14b8a6">
+    <b>Rechtlicher Rahmen:</b> DSGVO, Landesdatenschutzgesetz BW (LDSG), Schulgesetz BW sowie die
+    KMK-Empfehlung zum Umgang mit KI in der Bildung (2024). Das vollständige Datenschutzkonzept
+    senden wir Ihnen auf Anfrage gerne zu.
+  </div>
+
+  <h3 style="font-size:14px;color:#1a1a2e;margin-top:14px;margin-bottom:6px">Ihre Zustimmung</h3>
+  <p>Für die Teilnahme Ihres Kindes bitten wir Sie um die unten stehende Einverständniserklärung.
+  Die Teilnahme ist <strong>freiwillig</strong>. Ihrem Kind entstehen keine Nachteile, wenn Sie nicht
+  zustimmen – es erhält in dieser Zeit eine gleichwertige Alternative durch die Lehrkraft.</p>
+
+  <p>Bei Fragen erreichen Sie mich gerne unter <strong>belkis.aslani@gmail.com</strong> oder die
+  Klassenlehrkraft.</p>
+
+  <p>Mit freundlichen Grüßen<br>
+  <strong>Belkis Aslani</strong> · KI-Entdecker</p>
+</div>
+
+<!-- Seite 2: Einverständniserklärung -->
+<div class="page-break"></div>
+
+<div class="form">
+  <h2>Einverständniserklärung · bitte bis <input type="date" style="width:150px;display:inline-block"> an die Klassenlehrkraft zurückgeben</h2>
+  <p>Workshop „KI-Entdecker" · Schule: <input type="text" style="width:50%;display:inline-block"> · Klasse: <input type="text" style="width:15%;display:inline-block"></p>
+
+  <h3>Angaben zum Kind</h3>
+  <div class="row">
+    <div><label>Vorname</label><input type="text"></div>
+    <div><label>Nachname</label><input type="text"></div>
+  </div>
+  <div class="row-3">
+    <div><label>Geburtsdatum</label><input type="date"></div>
+    <div><label>Klasse</label><input type="text"></div>
+    <div><label>Klassenlehrkraft</label><input type="text"></div>
+  </div>
+
+  <h3>Angaben zu den Erziehungsberechtigten</h3>
+  <div class="row">
+    <div><label>Name</label><input type="text"></div>
+    <div><label>Telefon (für Rückfragen)</label><input type="tel"></div>
+  </div>
+  <label>E-Mail (optional)</label>
+  <input type="email">
+
+  <h3>Zustimmung</h3>
+  <label class="choice"><input type="checkbox"> <span>Ich bin / wir sind einverstanden, dass mein/unser Kind am KI-Workshop teilnimmt und die beschriebenen altersgerechten Methoden verwendet werden.</span></label>
+  <label class="choice"><input type="checkbox"> <span>Ich bestätige, dass ich die Datenschutzhinweise (Seite 1) gelesen habe. Es werden <strong>keine personenbezogenen Daten meines Kindes</strong> in KI-Tools eingegeben.</span></label>
+  <label class="choice"><input type="checkbox"> <span>Optional: Ich bin einverstanden, dass <strong>anonyme Fotos/Videos</strong> (keine Nahaufnahmen, keine Namen) im Rahmen eines Projektberichts und für Presseanfragen verwendet werden dürfen.</span></label>
+  <label class="choice"><input type="checkbox"> <span>Optional: Ich möchte <strong>Informationen zu kommenden Angeboten</strong> per E-Mail erhalten (jederzeit widerrufbar).</span></label>
+
+  <h3>Widerruf</h3>
+  <p style="font-size:11px;color:#4b5563">Sie können diese Einwilligung jederzeit ohne Angabe von Gründen schriftlich widerrufen (per E-Mail an belkis.aslani@gmail.com oder über die Schule). Die Rechtmäßigkeit der bisherigen Verarbeitung bleibt davon unberührt.</p>
+
+  <div class="signature">
+    <div><div class="line">Ort, Datum</div></div>
+    <div><div class="line">Unterschrift Erziehungsberechtigte:r</div></div>
+  </div>
+</div>
+
+<div class="footer">Fördermappe KI-Entdecker · 07 Elternbrief &amp; Einverständnis · Muster · vor Einsatz von DSB der Schule prüfen lassen</div>
+</body>
+</html>
