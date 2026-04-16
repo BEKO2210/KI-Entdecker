@@ -9,7 +9,12 @@ const Footer = () => {
   // Hide footer on active course day pages
   if (/^\/kurs\/tag-\d+$/.test(pathname)) return null;
 
-  const tools = [
+  const schoolTools = [
+    { name: 'telli', href: 'https://km.baden-wuerttemberg.de/de/schule/digitalisierung/kuenstliche-intelligenz-im-unterricht', label: 'telli (SCHULE@BW)' },
+    { name: 'F13', href: 'https://km.baden-wuerttemberg.de/de/schule/digitalisierung/kuenstliche-intelligenz-im-unterricht', label: 'F13 (SCHULE@BW)' },
+  ];
+
+  const homeTools = [
     { name: 'ChatGPT', href: 'https://chat.openai.com' },
     { name: 'Claude', href: 'https://claude.ai', fav: true },
     { name: 'Copilot', href: 'https://copilot.microsoft.com' },
@@ -38,10 +43,28 @@ const Footer = () => {
               </nav>
             </div>
 
-            {/* Tools row */}
+            {/* Tools row – Schule in BW */}
             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] text-neutral-gray/80">
-              <span className="font-medium text-neutral-gray">KI-Tools:</span>
-              {tools.map((tool) => (
+              <span className="font-medium text-neutral-gray">Für die Schule (BW):</span>
+              {schoolTools.map((tool) => (
+                <a
+                  key={tool.name}
+                  href={tool.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-0.5 font-medium text-primary-purple/70 hover:text-primary-purple transition-colors"
+                  title={tool.label}
+                >
+                  {tool.label}
+                  <ExternalLink className="w-2 h-2 opacity-30" aria-hidden="true" />
+                </a>
+              ))}
+            </div>
+
+            {/* Tools row – Zu Hause */}
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] text-neutral-gray/80">
+              <span className="font-medium text-neutral-gray">Zu Hause (mit Eltern):</span>
+              {homeTools.map((tool) => (
                 <a
                   key={tool.name}
                   href={tool.href}
@@ -58,8 +81,10 @@ const Footer = () => {
 
           {/* Legal + Copyright */}
           <div className="border-t border-neutral-light pt-3 flex flex-col items-center gap-2">
-            <p className="text-[10px] text-neutral-gray/50 text-center max-w-xl leading-relaxed">
-              Externe KI-Tools sind Angebote von Drittanbietern (ab 13 J., nur unter Aufsicht). Es gelten deren{' '}
+            <p className="text-[10px] text-neutral-gray/50 text-center max-w-2xl leading-relaxed">
+              <strong>telli</strong> und <strong>F13</strong> sind Landes-Angebote Baden-Württembergs über SCHULE@BW
+              (Zugang über die Schule). Die übrigen KI-Tools sind Angebote von Drittanbietern (ab 13 J., nur mit
+              elterlicher Aufsicht); es gelten deren{' '}
               <Link to="/datenschutz" className="underline underline-offset-2 hover:text-neutral-gray transition-colors">Datenschutzbestimmungen</Link>.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11px] text-neutral-gray/60">
