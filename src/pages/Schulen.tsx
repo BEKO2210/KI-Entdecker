@@ -278,7 +278,27 @@ const Schulen = () => {
                 Bildungsplan 2016 (Grundschule &amp; Sek I), Leitperspektiven sowie KMK-Empfehlung KI (2024).
               </p>
             </div>
-            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+            {/* Mobile: Card-Stapel */}
+            <div className="sm:hidden space-y-3">
+              {bildungsplan.map((row) => (
+                <div
+                  key={row.fach}
+                  className="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-primary-purple"
+                >
+                  <div className="text-xs uppercase tracking-wide font-semibold text-primary-purple mb-1">
+                    Fach / Bereich
+                  </div>
+                  <div className="text-sm font-medium text-neutral-dark mb-3">{row.fach}</div>
+                  <div className="text-xs uppercase tracking-wide font-semibold text-primary-purple mb-1">
+                    Anknüpfung
+                  </div>
+                  <div className="text-sm text-neutral-gray">{row.anknuepfung}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Ab sm: Tabelle, horizontal scrollbar als Fallback */}
+            <div className="hidden sm:block bg-white rounded-2xl shadow-sm overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-primary-purple/5">
                   <tr>
@@ -289,7 +309,7 @@ const Schulen = () => {
                 <tbody>
                   {bildungsplan.map((row, i) => (
                     <tr key={row.fach} className={i % 2 ? 'bg-neutral-light/30' : 'bg-white'}>
-                      <td className="px-5 py-3 font-medium text-neutral-dark whitespace-nowrap align-top">{row.fach}</td>
+                      <td className="px-5 py-3 font-medium text-neutral-dark align-top">{row.fach}</td>
                       <td className="px-5 py-3 text-neutral-gray">{row.anknuepfung}</td>
                     </tr>
                   ))}
