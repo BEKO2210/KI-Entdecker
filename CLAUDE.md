@@ -388,6 +388,61 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 
 ## Erledigt-Archiv (chronologisch, neueste zuerst)
 
+### 2026-04-16 · Finanzierungsplan + restliche Fördermappe auf Team-Version + Gender-Korrektur ✅
+- **Auftrag:** „Auch den Finanzierungsplan aktualisieren, da wir jetzt
+  zu zweit sind. Und alle Dateien in der Fördermappe, die man anpassen
+  sollte." + „ich bin männlich, Belkis Aslani ist männlich".
+- **[`05-kostenplan.html`](./foerdermappe/05-kostenplan.html)** größter
+  Umbau:
+  - Muster-Note mit Team-Struktur erklärt (Belkis = Projektleitung/
+    Pädagogik/Technik + Hauptantragsteller Gründungszuschuss; Damien =
+    Organisation/Verwaltung, Einsatz je nach Erwerbsstatus).
+  - Personalkosten-Tabelle: neue Zeilen **„Kooperationen &amp;
+    Förderantragsmanagement"** (30 h, 45 €/h, 1.350 €) und **„Termin-,
+    Vertrags- &amp; Rechnungsverwaltung"** (20 h, 45 €/h, 900 €) als
+    Damien-Positionen. Alle Bestandspositionen mit „BA" / „DE"
+    gekennzeichnet. Gesamt-Personal 10.340 € → **12.590 €**.
+  - Fahrtkosten neue Zeile „Hardthausen → Ludwigsburg (DE ·
+    Kooperations-/Beratungstermine)" (2 × 80 km × 0,30 € = 48 €).
+    Fahrtkosten 176 € → **224 €**.
+  - Totals-Block aktualisiert, Gesamt 14.939 € → **17.237 €** („Team-
+    Version").
+  - Finanzierungsseite: Start-up BW Pre-Seed 4.000 → 5.000 €, Stiftungen
+    2.000 → 2.500 €, neue Zeile „Damien: Aufwandsentschädigung /
+    Nebentätigkeit / Ehrenamt" (0 €, zu klären). Summe 15.000 → **16.500 €**.
+    Label Gründungszuschuss klargestellt als „personenbezogen · Belkis".
+  - Schluss-Note ergänzt: AfA-Zuschuss nur für Belkis; für Damien
+    separate Regelungen (Aufwandsentschädigung/Nebentätigkeit/Minijob/
+    Ehrenamt) mit AfA + Steuerberatung klären. Footer um Team ergänzt.
+- **[`09-executive-summary.html`](./foerdermappe/09-executive-summary.html)
+  + Mirror [`projekt-uebersicht.html`](./public/downloads/projekt-uebersicht.html):**
+  Title-Tag und Footer von „09a Pitch Bildung" auf „09 Pitch Bildung"
+  bereinigt (passt jetzt zum Datei-Index). Kontakt-Kasten oben um
+  Damien erweitert.
+- **[`09b-pitch-business.html`](./foerdermappe/09b-pitch-business.html):**
+  Kontakt-Kasten auf „Belkis Aslani &amp; Damien Eynius · KI-Entdecker ·
+  Gründer-Team". KPI-Kachel Pilot-Budget 15.000 € → **17.000 €**;
+  Finanzplan-Kachel „Pilotphase" entsprechend aktualisiert.
+- **[`10-businessmodell-canvas.html`](./foerdermappe/10-businessmodell-canvas.html):**
+  Kostenstruktur neu strukturiert (Personalkosten Team: BA + DE; Sach-
+  &amp; Betriebskosten). Schlüsselressourcen um „Verwaltungs- &amp;
+  Kooperations-Know-how (Damien)" erweitert. Footer um Team ergänzt.
+- **00-Checkliste, 02-Datenschutz, 04-Evaluation, 06-Partnerliste:**
+  geprüft, keine Anpassung nötig (neutral formuliert bzw. Team-Zeile
+  für Datenschutz war bereits vorhanden).
+- **Gender-Korrektur:** Belkis Aslani ist männlich — in diesem Update
+  versehentlich zwei Mal „Antragstellerin"/„Hauptantragstellerin"
+  geschrieben, beide auf **„Antragsteller"/„Hauptantragsteller"**
+  korrigiert. Grep über das gesamte Projekt nach femininen Endungen
+  (Projektleiterin, Gründerin, Anbieterin, Referentin, Pädagogin etc.)
+  liefert keine Belkis-bezogenen Treffer mehr. „Dozentinnen/Dozenten"
+  (09b Z. 113) ist generische Wettbewerbsanalyse, bleibt.
+- **Legal-Guard (Regel 6):** Kostenplan ist nicht rechtsverbindlich,
+  aber vor Einreichung bei Fördergeber mit Steuerberatung und AfA
+  abstimmen. Musterbeträge sind Richtwerte.
+- **Build + Lint grün**, Precache weiterhin 72 / 48,3 MB, gepusht auf
+  `claude/check-claude-dm-bugs-jQrpw`.
+
 ### 2026-04-16 · Fördermappe + Mirror-Downloads auf Team Belkis + Damien ✅
 - **Auftrag:** „foerdermappe bitte updaten, da wird jetzt 2 sind".
 - **[`08-anschreiben-schulen.html`](./foerdermappe/08-anschreiben-schulen.html):**
@@ -554,3 +609,4 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 | 2026-04-16 | Bugs aus Audit gefixt: Dead-Code-Ordner `src/sections/` gelöscht, Hero-Eintrag aus Datei-Index entfernt, Branch-Angabe (Zeile 75 + Regel 5, mit PIN 1518) auf generische Formulierung umgestellt, Chronologie-Drift „09a"→„09" korrigiert, Gender-Fix-Zeile klarer formuliert. Zusätzlich BILDER.md + `.planning/codebase/STRUCTURE.md` + `ARCHITECTURE.md` entsprechend nachgezogen. |
 | 2026-04-16 | Impressum + Datenschutz auf professionelle Wir-Form umgestellt (10 + 4 Ich-Stellen). Passt zum gemeinsamen Angebot nach § 5 DDG / Art. 26 DSGVO (Belkis + Damien). Grep-Verifikation: 0 Ich-Treffer mehr. |
 | 2026-04-16 | Fördermappe + Mirror-Downloads auf Team Belkis + Damien: 08-Anschreiben (11 Briefe-Ichs → wir, Unterschriften beider Namen), 09/projekt-uebersicht (1), 07/elternbrief-mirror (1 + Signatur), 10-Canvas (Subtitle), 03-Durchführung (Phasen 1+4, Rollen-Tabelle um Damien), 01+09b Footer „Team:…", foerdermappe/README.md. Schüler-Ichs, Eltern-Ichs und konkrete Workshop-Durchführungs-Nennungen absichtlich unverändert. |
+| 2026-04-16 | Finanzierungsplan (05-Kostenplan) + restliche Fördermappe auf Team-Version + Gender-Korrektur: neue Damien-Zeilen (Kooperationen/Förderantragsmanagement 1.350 € + Termin-/Vertragsverwaltung 900 €), BA/DE-Kennzeichnung, Fahrtkosten-Zeile Hardthausen→Ludwigsburg, Gesamt 14.939 € → 17.237 €; Finanzierung Start-up BW 4.000 → 5.000 €, Stiftungen 2.000 → 2.500 €, neue Damien-Honorar-Zeile, Summe 15.000 → 16.500 €. 09+Mirror: Title+Footer „09a" → „09"; 09b: KPI 15.000 → 17.000 € Team-Budget; 09+09b+10: Kontakt-Kästen auf Team, 10-Canvas Kostenstruktur+Ressourcen um Damien. Gender-Fix: „(Haupt-)Antragstellerin" → „(Haupt-)Antragsteller" (Belkis ist männlich). |
