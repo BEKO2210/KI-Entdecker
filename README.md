@@ -80,6 +80,18 @@ Deshalb habe ich KI-Entdecker gebaut: einen Kurs, der Kindern ab 8 Jahren beibri
 
 ---
 
+## Vorschau: Das Zertifikat
+
+<div align="center">
+
+<img src="public/images/preview/zertifikatvorschau.png" alt="Vorschau des KI-Entdecker Zertifikats" width="720">
+
+*Nach Abschluss aller fünf Kurstage erhält jedes Kind dieses Zertifikat zum Ausdrucken auf DIN A4 oder als PDF.*
+
+</div>
+
+---
+
 ## Für wen ist dieser Kurs?
 
 **Für Kinder ab 8 Jahren** – mit oder ohne Eltern.
