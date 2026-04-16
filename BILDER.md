@@ -68,7 +68,7 @@ mehr** – alle Detail-Bilder sind flach in `courses/dayN/` organisiert.
 
 | Datei | Verwendet in | Zweck |
 |-------|-------------|-------|
-| `public/images/robot-hero.png` | `Navigation.tsx`, `Footer.tsx`, `Home.tsx`, `Hero.tsx`, `zertifikat.html` | Haupt-Maskottchen |
+| `public/images/robot-hero.png` | `Navigation.tsx`, `Footer.tsx`, `Home.tsx`, `zertifikat.html` | Haupt-Maskottchen |
 | `public/favicon.png` | Browser | Tab-Icon |
 | `public/apple-touch-icon.png` | iOS | Homescreen-Icon |
 | `public/pwa-192x192.png`, `pwa-512x512.png` | `vite.config.ts` | Android/PWA-Icons |

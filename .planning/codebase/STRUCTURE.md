@@ -36,16 +36,6 @@ app/
 │   │   ├── Wochenplan.tsx        # Weekly planner page
 │   │   ├── Impressum.tsx         # Legal - Impressum
 │   │   └── Datenschutz.tsx       # Legal - Data privacy
-│   ├── sections/                 # Reusable page sections
-│   │   ├── Hero.tsx              # Hero banner section (landing)
-│   │   ├── CourseOverview.tsx    # Course cards display
-│   │   ├── Features.tsx          # Features list section
-│   │   ├── ProgressTracker.tsx   # Progress/badges display
-│   │   ├── Materials.tsx         # Materials section
-│   │   ├── Parents.tsx           # Parent info section
-│   │   ├── CTA.tsx               # Call-to-action section
-│   │   ├── Navigation.tsx        # Navigation section (different from component)
-│   │   └── Footer.tsx            # Footer section (different from component)
 │   ├── hooks/                    # Custom React hooks
 │   │   ├── useProgress.ts        # Progress tracking (badges, days, lessons)
 │   │   ├── use-mobile.ts         # Responsive breakpoint detection
@@ -103,12 +93,6 @@ app/
 - Contains: Home page, course pages (Day 1-5), info pages (Materialien, Eltern, Wochenplan, Impressum, Datenschutz), Kurs overview
 - Naming: PascalCase with descriptive names (CourseDay1.tsx, Materialien.tsx)
 - Characteristics: Accept progress prop, manage page-level state, may contain sections
-
-**`src/sections/`**
-- Purpose: Reusable layout sections and composed components
-- Contains: Hero, CourseOverview, Features, ProgressTracker, Materials, Parents, CTA, Navigation, Footer
-- Pattern: Focused sections that can be composed into pages
-- Difference from components/: Sections are larger, more specialized; components are smaller, more reusable primitives
 
 **`src/hooks/`**
 - Purpose: Custom React hooks encapsulating stateful logic
@@ -195,7 +179,7 @@ app/
 **New Feature:**
 - **Primary code**: 
   - If it's a full page: `src/pages/NewPage.tsx`
-  - If it's a reusable section: `src/sections/NewSection.tsx`
+  - If it's a reusable section: inline in the page that uses it (e.g. `src/pages/Home.tsx`) — there is no separate `src/sections/` folder anymore
   - If it's a UI component: `src/components/ui/new-component.tsx`
 - **Logic**: Extract to `src/hooks/useNewFeature.ts` if stateful
 - **Routes**: Add to `src/App.tsx` routes array
@@ -209,7 +193,7 @@ app/
 **New Component/Module:**
 - **If reusable across pages**: `src/components/NewComponent.tsx`
 - **If UI primitive**: `src/components/ui/new-component.tsx` with Radix UI wrapper + Tailwind
-- **If section-specific**: `src/sections/NewSection.tsx`
+- **If section-specific**: inline in the page (keep page self-contained)
 
 **New Utilities:**
 - Simple functions: Add to `src/lib/utils.ts`
