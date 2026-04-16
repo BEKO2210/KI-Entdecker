@@ -222,7 +222,9 @@ const Materialien = ({ progress }: MaterialienProps) => {
               </h2>
               <p className="text-neutral-gray">
                 So sieht das Zertifikat aus, das du nach Abschluss aller fünf Kurstage bekommst.
-                Zum Ausdrucken auf DIN A4 oder als PDF speichern.
+                Du erhältst es als <strong>PDF-Datei</strong> zum eigenständigen Ausdruck auf
+                DIN&nbsp;A4 (Empfehlung: mindestens 160&nbsp;g/m², alternativ Copyshop). Bei
+                Präsenz-Seminaren wird es vor Ort gedruckt überreicht.
               </p>
             </div>
             <div className="bg-gradient-to-br from-primary-purple/5 to-primary-teal/5 rounded-3xl p-4 sm:p-8 shadow-inner border border-neutral-light">
