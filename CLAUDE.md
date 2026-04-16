@@ -388,6 +388,54 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 
 ## Erledigt-Archiv (chronologisch, neueste zuerst)
 
+### 2026-04-16 · Fördermappe + Mirror-Downloads auf Team Belkis + Damien ✅
+- **Auftrag:** „foerdermappe bitte updaten, da wird jetzt 2 sind".
+- **[`08-anschreiben-schulen.html`](./foerdermappe/08-anschreiben-schulen.html):**
+  alle 11 Betreiber-Ichs in den 4 Musterbriefen (Schulleitung,
+  Medienzentrum, Förderverein, Stiftung) auf Wir-Form umgestellt.
+  Einleitungen „mein Name ist Belkis Aslani. Ich entwickle…" →
+  „wir sind Belkis Aslani (Projektleitung, Pädagogik, Technik) und
+  Damien Eynius (Organisation, Verwaltung)… Wir entwickeln…".
+  Alle 4 Grußzeilen auf „Belkis Aslani &amp; Damien Eynius · KI-Entdecker".
+- **[`09-executive-summary.html`](./foerdermappe/09-executive-summary.html)
+  + Mirror [`projekt-uebersicht.html`](./public/downloads/projekt-uebersicht.html):**
+  „biete ich zusätzlich Vor-Ort-Workshops" → „bieten wir zusätzlich…".
+- **[`07-elternbrief-einverstaendnis.html`](./foerdermappe/07-elternbrief-einverstaendnis.html)
+  + Mirror [`elternbrief-einverstaendnis.html`](./public/downloads/elternbrief-einverstaendnis.html):**
+  Kontakt-Zeile „erreichen Sie mich" → „erreichen Sie uns", Signatur
+  „Belkis Aslani · KI-Entdecker" → „Belkis Aslani &amp; Damien Eynius ·
+  KI-Entdecker". Eltern-Einverständnis-Checkboxen („Ich bin / wir sind
+  einverstanden", „Ich bestätige", „Ich bin einverstanden") und die
+  konkrete Workshop-Begleitungs-Zeile („Belkis Aslani (KI-Entdecker)")
+  bewusst unverändert gelassen (rechtliche Erklärung aus erster Person
+  bzw. tatsächliche Durchführungsperson).
+- **[`10-businessmodell-canvas.html`](./foerdermappe/10-businessmodell-canvas.html):**
+  Subtitle „Belkis Aslani" → „Belkis Aslani &amp; Damien Eynius".
+  Key-Activities-Textarea hatte bereits beide Rollen; unverändert.
+- **[`03-durchfuehrungskonzept.html`](./foerdermappe/03-durchfuehrungskonzept.html):**
+  Phase 1 (Vorbereitung) und Phase 4 (Abschluss/Skalierung) um Damien
+  ergänzt. Rollen-Tabelle mit neuer Zeile „Organisation &amp; Verwaltung
+  · Damien Eynius · Kooperationen, Förderanträge, Termine, Verträge,
+  Verwendungsnachweise".
+- **Footer-Updates:** [`01-paedagogisches-konzept.html`](./foerdermappe/01-paedagogisches-konzept.html)
+  und [`09b-pitch-business.html`](./foerdermappe/09b-pitch-business.html)
+  — „Autor: Belkis Aslani" → „Team: Belkis Aslani &amp; Damien Eynius".
+- **[`foerdermappe/README.md`](./foerdermappe/README.md):**
+  „Vertraulich · Interne Arbeitsunterlage für Belkis Aslani" → „…für
+  Belkis Aslani &amp; Damien Eynius". „…Dokumente, die du brauchst…" →
+  „…die wir brauchen…" + expliziter Rollenverteilungs-Satz.
+- **Unverändert (absichtlich):** 00-Checkliste, 05-Kostenplan,
+  06-Partnerliste (reine Tabellen ohne Personenbezug); 02-Datenschutz
+  und 09b-Pitch hatten Damien bereits; Schüler-Ichs in 01+04 und
+  Eltern-Ichs in 07 sind rechtlich/pädagogisch korrekt.
+- **Grep-Verifikation:** Nur 6 „ich"-Treffer in Fördermappe übrig,
+  alle davon legitim (Schüler-Arbeitsblatt-Titel, Schüler-Fragebogen,
+  Eltern-Einverständnis).
+- **Legal-Guard (Regel 6):** Elternbrief berührt — vor Live-Einsatz an
+  Eltern von schulischem DSB gegenprüfen lassen.
+- **Build + Lint grün**, Precache weiterhin 72 Einträge / 48,3 MB,
+  gepusht auf `claude/check-claude-dm-bugs-jQrpw`.
+
 ### 2026-04-16 · Impressum + Datenschutz auf professionelle Wir-Form ✅
 - **Auftrag:** „Impressum und so professionell, nicht ich version".
 - **[`Impressum.tsx`](./src/pages/Impressum.tsx):** 10 Ich-Stellen auf
@@ -505,3 +553,4 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 | 2026-04-16 | PIN-Schutz (1518) für Regel-Null- und Regeländerungen eingeführt. Neuer Abschnitt „🔐 Regeländerungs-Schutz" + neue Claude-Regel Nr. 11. |
 | 2026-04-16 | Bugs aus Audit gefixt: Dead-Code-Ordner `src/sections/` gelöscht, Hero-Eintrag aus Datei-Index entfernt, Branch-Angabe (Zeile 75 + Regel 5, mit PIN 1518) auf generische Formulierung umgestellt, Chronologie-Drift „09a"→„09" korrigiert, Gender-Fix-Zeile klarer formuliert. Zusätzlich BILDER.md + `.planning/codebase/STRUCTURE.md` + `ARCHITECTURE.md` entsprechend nachgezogen. |
 | 2026-04-16 | Impressum + Datenschutz auf professionelle Wir-Form umgestellt (10 + 4 Ich-Stellen). Passt zum gemeinsamen Angebot nach § 5 DDG / Art. 26 DSGVO (Belkis + Damien). Grep-Verifikation: 0 Ich-Treffer mehr. |
+| 2026-04-16 | Fördermappe + Mirror-Downloads auf Team Belkis + Damien: 08-Anschreiben (11 Briefe-Ichs → wir, Unterschriften beider Namen), 09/projekt-uebersicht (1), 07/elternbrief-mirror (1 + Signatur), 10-Canvas (Subtitle), 03-Durchführung (Phasen 1+4, Rollen-Tabelle um Damien), 01+09b Footer „Team:…", foerdermappe/README.md. Schüler-Ichs, Eltern-Ichs und konkrete Workshop-Durchführungs-Nennungen absichtlich unverändert. |
