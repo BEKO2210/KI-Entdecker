@@ -226,6 +226,10 @@ const Materialien = ({ progress }: MaterialienProps) => {
                 DIN&nbsp;A4 (Empfehlung: mindestens 160&nbsp;g/m², alternativ Copyshop). Bei
                 Präsenz-Seminaren wird es vor Ort gedruckt überreicht.
               </p>
+              <p className="text-sm text-neutral-gray/80 mt-3">
+                <strong>Name und Datum</strong> sind auf dem Zertifikat <strong>nicht vorausgefüllt</strong>
+                – du trägst sie nach dem Druck per Hand in Druckschrift ein.
+              </p>
             </div>
             <div className="bg-gradient-to-br from-primary-purple/5 to-primary-teal/5 rounded-3xl p-4 sm:p-8 shadow-inner border border-neutral-light">
               <picture>

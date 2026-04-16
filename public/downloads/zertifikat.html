@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KI-Entdecker Zertifikat</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Outfit:wght@300;400;500;600&family=Great+Vibes&display=swap');
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -240,7 +240,29 @@
     min-height: 24px;
   }
   .field-right { text-align: right; }
-  .field-right .field-line { text-align: right; }
+  .field-right .field-line { text-align: right; position: relative; }
+
+  /* Stilisierte Namens-Unterschrift (keine echte Handschrift)
+     Wird über der Signatur-Linie eingeblendet, rechtsbündig. */
+  .cert-signature {
+    font-family: 'Great Vibes', 'Playfair Display', cursive;
+    font-size: 34px;
+    font-weight: 400;
+    color: #1a1a2e;
+    line-height: 1;
+    display: inline-block;
+    transform: rotate(-3deg);
+    transform-origin: bottom right;
+    padding-right: 10px;
+    padding-bottom: 2px;
+  }
+  .cert-signature-sub {
+    font-size: 8px;
+    color: #aaa;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
 
   /* Seal */
   .seal {
@@ -370,7 +392,10 @@
 
       <div class="field field-right">
         <div class="field-label">Unterschrift</div>
-        <div class="field-line"></div>
+        <div class="field-line">
+          <span class="cert-signature">Belkis Aslani</span>
+        </div>
+        <div class="cert-signature-sub">Projektleitung · KI-Entdecker</div>
       </div>
     </div>
   </div>
