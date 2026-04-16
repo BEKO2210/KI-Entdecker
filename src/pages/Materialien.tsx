@@ -226,13 +226,21 @@ const Materialien = ({ progress }: MaterialienProps) => {
               </p>
             </div>
             <div className="bg-gradient-to-br from-primary-purple/5 to-primary-teal/5 rounded-3xl p-4 sm:p-8 shadow-inner border border-neutral-light">
-              <img
-                src={buildAssetUrl('images/preview/zertifikatvorschau.png')}
-                alt="Vorschau des KI-Entdecker Zertifikats"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-auto max-w-3xl mx-auto rounded-2xl shadow-lg ring-1 ring-neutral-light/60"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={buildAssetUrl('images/preview/zertifikatvorschau.webp')}
+                />
+                <img
+                  src={buildAssetUrl('images/preview/zertifikatvorschau.png')}
+                  alt="Vorschau des KI-Entdecker Zertifikats"
+                  loading="lazy"
+                  decoding="async"
+                  width={1600}
+                  height={1054}
+                  className="w-full h-auto max-w-3xl mx-auto rounded-2xl shadow-lg ring-1 ring-neutral-light/60"
+                />
+              </picture>
             </div>
           </div>
         </div>
