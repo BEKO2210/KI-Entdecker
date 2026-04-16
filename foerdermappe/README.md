@@ -1,9 +1,11 @@
 # Fördermappe KI-Entdecker
 
-**Vertraulich · Interne Arbeitsunterlage für Belkis Aslani**
+**Vertraulich · Interne Arbeitsunterlage für Belkis Aslani &amp; Damien Eynius**
 
-Dieser Ordner enthält alle Dokumente, die du brauchst, um KI-Entdecker als
+Dieser Ordner enthält alle Dokumente, die wir brauchen, um KI-Entdecker als
 Bildungsangebot förderfähig zu machen und erste Einnahmen zu generieren.
+Rollenverteilung: **Belkis** leitet Projekt, Pädagogik und Technik, **Damien**
+verantwortet Organisation, Kooperationen und Verwaltung.
 
 Jede HTML-Datei lässt sich im Browser öffnen und über „Drucken → Als PDF speichern"
 auf DIN A4 in ein sauberes PDF überführen. Die mit **fillable** gekennzeichneten
