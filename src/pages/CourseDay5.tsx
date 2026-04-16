@@ -531,9 +531,13 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
               className="w-40 h-40 mx-auto mb-6"
             />
             <h2 className="text-3xl font-bold text-yellow-800 mb-4">🎉 Du hast es geschafft!</h2>
-            <p className="text-yellow-700 max-w-2xl mx-auto mb-6">
-              Herzlichen Glückwunsch! Du hast den kompletten KI-Kurs abgeschlossen! 
+            <p className="text-yellow-700 max-w-2xl mx-auto mb-3">
+              Herzlichen Glückwunsch! Du hast den kompletten KI-Kurs abgeschlossen!
               Du bist jetzt ein echter KI-Experte und kannst die KI sicher und kreativ nutzen.
+            </p>
+            <p className="text-sm text-yellow-700/80 max-w-2xl mx-auto mb-6">
+              Dein Zertifikat erhältst du als <strong>PDF-Datei</strong> zum eigenständigen
+              Ausdruck (am besten A4, mindestens 160&nbsp;g/m² – oder im Copyshop).
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
