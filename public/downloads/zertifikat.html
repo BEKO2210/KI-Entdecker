@@ -20,10 +20,37 @@
   }
 
   @media print {
-    body { background: #fff; padding: 0; }
+    @page { size: 297mm 210mm; margin: 0; }
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 297mm;
+      height: 210mm;
+      min-height: 0 !important;
+      overflow: hidden !important;
+      background: #fff !important;
+      display: block !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
     .no-print { display: none !important; }
-    .certificate { box-shadow: none !important; }
-    @page { size: A4 landscape; margin: 0; }
+    .certificate {
+      box-shadow: none !important;
+      margin: 0 !important;
+      page-break-after: avoid;
+      page-break-inside: avoid;
+      break-after: avoid;
+      break-inside: avoid;
+    }
+    /* Erzwingt, dass Badge-Dots, Siegel, Ornamente, Watermark mitgedruckt werden */
+    .certificate *, .badge, .badge-dot, .watermark, .ornament, .ornament svg,
+    .seal-ring, .seal-ring::before, .seal-label, .divider, .divider-wide,
+    .institution-name, .cert-signature {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
   }
 
   .certificate {
