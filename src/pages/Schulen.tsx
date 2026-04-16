@@ -35,7 +35,7 @@ const Schulen = () => {
     'telli (SCHULE@BW · Landes-KI BW · Lehrkräfte &amp; Schüler:innen · seit Okt. 2025)',
     'F13 (SCHULE@BW · Landes-KI BW · nur Lehrkräfte · Chat &amp; Dokumente)',
     'Fobizz Chat (Bildungslizenz, EU-Server, AVV vorhanden) – falls von der Schule gebucht',
-    'MNSpro Chat (DSGVO-konform, Schulserver) – falls von der Schule gebucht',
+    'MNSpro Chat (datenschutzfreundlich, auf Schulserver) – falls von der Schule gebucht',
     'fragFINN, Blinde Kuh – Kindersuchmaschinen, ohne Konto',
   ];
   const forbiddenItems = [
@@ -91,6 +91,24 @@ const Schulen = () => {
       btn: 'bg-primary-teal hover:bg-primary-teal/90',
       handreichung: 'lehrer-kurs-2-handreichung.html',
       arbeitsblatt: 'lehrer-kurs-2-arbeitsblatt.html',
+    },
+    {
+      id: 3,
+      title: 'Kurs 3 · KI kritisch prüfen',
+      level: 'Sekundarstufe I · Klasse 7/8',
+      duration: '180 Minuten (Projekttag, 4 Schulstunden)',
+      summary: 'Vertiefender Projekttag zu Quellenprüfung, Deepfake-Erkennung, Bias-Analyse und Urheberrecht bei KI-Inhalten. Knüpft an den Aufbaukurs Informatik (Kl. 7) und Gemeinschaftskunde (Kl. 8) an.',
+      bullets: [
+        '4 Arbeitsblätter (C1–C4) als fillable PDF / druckfertig',
+        'Handreichung inkl. Kriterienraster &amp; Bewertungshilfe',
+        'Quellen, Deepfakes, Bias-Stereotype, Urheberrecht',
+      ],
+      color: 'from-orange-500 to-amber-600',
+      accent: 'text-orange-600',
+      bg: 'bg-orange-100',
+      btn: 'bg-orange-500 hover:bg-orange-600',
+      handreichung: 'lehrer-kurs-3-handreichung.html',
+      arbeitsblatt: 'lehrer-kurs-3-arbeitsblatt.html',
     },
   ];
 
@@ -546,11 +564,13 @@ const Schulen = () => {
               <p className="text-neutral-gray">
                 Jeder Kurs enthält eine <strong>Lehrkraft-Handreichung</strong> (Bildungsplanbezug, Verlauf, Differenzierung)
                 und passende <strong>Arbeitsblätter zum Ausdrucken oder am Bildschirm / im PDF-Editor auszufüllen</strong>.
-                Alle Inhalte sind konform mit dem Bildungsplan Baden-Württemberg, den Leitperspektiven sowie DSGVO / LDSG BW.
+                Inhalte sind <strong>auf den Bildungsplan Baden-Württemberg ausgerichtet</strong> und
+                datenschutzfreundlich konzipiert; die konkrete Durchführung wird vor jedem Workshop
+                mit Schulleitung und schulischem Datenschutzbeauftragten abgestimmt.
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {teacherCourses.map((c) => (
                 <div key={c.id} className="bg-white rounded-3xl shadow-lg border border-neutral-light overflow-hidden flex flex-col">
                   <div className={`bg-gradient-to-br ${c.color} p-6 text-white`}>
@@ -647,13 +667,21 @@ const Schulen = () => {
               Für Anfragen von Schulen, Medienzentren oder Fördervereinen bitte mit Klassenstufe,
               gewünschtem Zeitraum und Technik-Setup melden.
             </p>
-            <a
-              href="mailto:belkis.aslani@gmail.com?subject=Kooperation%20Schulworkshop%20KI-Entdecker"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary-purple text-white rounded-xl font-medium hover:bg-primary-purple/90 transition-colors"
-            >
-              <Mail className="w-5 h-5" />
-              Kooperation anfragen
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href="mailto:belkis.aslani@gmail.com?subject=Kooperation%20Schulworkshop%20KI-Entdecker"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-purple text-white rounded-xl font-medium hover:bg-primary-purple/90 transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+                E-Mail schreiben
+              </a>
+              <a
+                href="tel:+4917681462526"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-purple border-2 border-primary-purple rounded-xl font-medium hover:bg-primary-purple/5 transition-colors"
+              >
+                +49 176 81462526
+              </a>
+            </div>
           </div>
         </div>
       </section>

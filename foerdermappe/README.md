@@ -25,7 +25,8 @@ PDF-XChange, Xournal++) direkt ausgefüllt werden.
 | 06   | `06-partnerliste.html`                   | Kontakt-Tracker für Partner (fillable)           | Arbeitsbl. |
 | 07   | `07-elternbrief-einverstaendnis.html`    | Elternbrief + Einverständnis (fillable)          | Pilot-Tool |
 | 08   | `08-anschreiben-schulen.html`            | Mustertext für die Erstansprache von Schulen     | Vorlage    |
-| 09   | `09-executive-summary.html`              | One-Pager für Förderer & Partner                 | Pitch      |
+| 09a  | `09-executive-summary.html`              | Pitch Bildung – für Förderer, Schulen, Stiftungen | Pitch A    |
+| 09b  | `09b-pitch-business.html`                | Pitch Business – für IHK, RKW, bwcon, Start-up BW | Pitch B    |
 | 10   | `10-businessmodell-canvas.html`          | Geschäftsmodell auf einer Seite                  | Strategie  |
 
 ---

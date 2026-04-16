@@ -1,4 +1,4 @@
-import { Mail, MapPin, User } from 'lucide-react';
+import { Mail, MapPin, Phone, User } from 'lucide-react';
 
 const Impressum = () => {
   return (
@@ -60,12 +60,28 @@ const Impressum = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-primary-purple/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-primary-purple" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-neutral-gray mb-1">Telefon</p>
+                    <a
+                      href="tel:+4917681462526"
+                      className="font-medium text-primary-purple hover:text-primary-purple/80 transition-colors"
+                      aria-label="Telefonnummer anrufen"
+                    >
+                      +49 176 81462526
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-accent-pink/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5 text-accent-pink" aria-hidden="true" />
                   </div>
                   <div>
-                    <p className="text-sm text-neutral-gray mb-1">Kontakt</p>
-                    <a 
+                    <p className="text-sm text-neutral-gray mb-1">E-Mail</p>
+                    <a
                       href="mailto:belkis.aslani@gmail.com"
                       className="font-medium text-primary-purple hover:text-primary-purple/80 transition-colors"
                       aria-label="E-Mail an belkis.aslani@gmail.com senden"
@@ -84,9 +100,9 @@ const Impressum = () => {
                   Haftung für Inhalte
                 </h2>
                 <p className="text-neutral-gray leading-relaxed">
-                  Als Diensteanbieterin bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen
+                  Als Diensteanbieter bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen
                   Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG bin ich
-                  als Diensteanbieterin jedoch nicht verpflichtet, übermittelte oder gespeicherte
+                  als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte
                   fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine
                   rechtswidrige Tätigkeit hinweisen.
                 </p>
@@ -123,10 +139,10 @@ const Impressum = () => {
                   Urheberrecht
                 </h2>
                 <p className="text-neutral-gray leading-relaxed">
-                  Die durch die Seitenbetreiberin erstellten Inhalte und Werke auf diesen Seiten
+                  Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
                   unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung,
                   Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes
-                  bedürfen der schriftlichen Zustimmung der jeweiligen Autorin bzw. Erstellerin.
+                  bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
                   Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen
                   Gebrauch gestattet. Es gilt die Lizenz
                   <a
