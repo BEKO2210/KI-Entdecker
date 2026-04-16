@@ -32,9 +32,10 @@ const Schulen = () => {
   ];
 
   const allowedTools = [
-    'Fobizz Chat (Bildungslizenz, EU-Server, AVV vorhanden)',
-    'MNSpro Chat (DSGVO-konform, Schulserver)',
-    'Schul-KI BW-Pilot (Landes-Pilotumgebung)',
+    'telli (SCHULE@BW · Landes-KI BW · Lehrkräfte &amp; Schüler:innen · seit Okt. 2025)',
+    'F13 (SCHULE@BW · Landes-KI BW · nur Lehrkräfte · Chat &amp; Dokumente)',
+    'Fobizz Chat (Bildungslizenz, EU-Server, AVV vorhanden) – falls von der Schule gebucht',
+    'MNSpro Chat (DSGVO-konform, Schulserver) – falls von der Schule gebucht',
     'fragFINN, Blinde Kuh – Kindersuchmaschinen, ohne Konto',
   ];
   const forbiddenItems = [
@@ -348,7 +349,7 @@ const Schulen = () => {
                   {allowedTools.map((t) => (
                     <li key={t} className="flex items-start gap-2 text-sm text-neutral-dark">
                       <Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
-                      <span>{t}</span>
+                      <span dangerouslySetInnerHTML={{ __html: t }} />
                     </li>
                   ))}
                 </ul>
@@ -384,6 +385,18 @@ const Schulen = () => {
                 Eltern werden binnen 24 Stunden informiert.
               </p>
             </div>
+
+            <div className="mt-4 bg-primary-teal/5 border border-primary-teal/20 rounded-2xl p-5 flex items-start gap-3">
+              <BookOpen className="w-5 h-5 text-primary-teal flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-neutral-dark">
+                <strong>Hinweis zur Bildgenerierung:</strong> Die offizielle Landes-KI Baden-Württemberg
+                (telli / F13 über SCHULE@BW) kann aktuell <em>noch keine Bilder erstellen</em> – diese
+                Funktion ist laut Kultusministerium BW in Entwicklung. Für die Kreativeinheit in unseren
+                Workshops arbeiten wir deshalb mit vorbereiteten Bildbeispielen und besprechen gemeinsam,
+                wie Bild-KIs grundsätzlich funktionieren – ohne dass Kinder im Unterricht eigenhändig
+                externe Bild-Tools nutzen.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -395,7 +408,7 @@ const Schulen = () => {
             <div className="bg-gradient-to-br from-primary-purple to-primary-teal rounded-3xl p-8 sm:p-12 text-white">
               <div className="max-w-3xl mx-auto text-center">
                 <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-4">
-                  <FlaskConical className="w-4 h-4" /> Pilotphase 2026
+                  <FlaskConical className="w-4 h-4" /> Pilotphase 2026/27
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-outfit font-bold mb-4">
                   Wir suchen 2 – 3 Pilotschulen in der Region Ludwigsburg

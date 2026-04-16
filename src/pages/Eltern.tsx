@@ -57,8 +57,8 @@ const Eltern = () => {
       answer: 'Der Kurs umfasst 5 Tage mit jeweils ca. 45 Minuten Lernzeit. Das Abschlussprojekt am Tag 5 dauert etwa 60 Minuten. Sie können aber in Ihrem eigenen Tempo arbeiten und Pausen einlegen, wann immer Sie möchten. Es gibt keinen Zeitdruck.',
     },
     {
-      question: 'Ist der Kurs wirklich kostenlos?',
-      answer: 'Ja, der komplette Kurs ist und bleibt zu 100% kostenlos. Wir glauben, dass jeder Zugang zu KI-Bildung haben sollte. Es gibt keine versteckten Kosten, keine Abos und keine Pflicht zur Angabe von Zahlungsdaten. Optional gibt es ein kostenloses Zertifikat am Ende.',
+      question: 'Ist der Online-Kurs wirklich kostenlos?',
+      answer: 'Ja, der komplette Online-Kurs auf dieser Website ist und bleibt für Familien kostenfrei – ohne Anmeldung, ohne Abo, ohne Angabe von Zahlungsdaten. Auch das Abschluss-Zertifikat ist kostenfrei. Zusätzlich biete ich kostenpflichtige Vor-Ort-Workshops und Fortbildungen für Schulen und Fördervereine an (siehe Bereich „Für Schulen"). Der Online-Kurs bleibt davon unabhängig und wird nicht hinter einer Bezahlschranke verschwinden.',
     },
     {
       question: 'Was lernen die Kinder genau?',

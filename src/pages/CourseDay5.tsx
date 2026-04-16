@@ -203,9 +203,11 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
             <div className="bg-yellow-50 rounded-xl p-6">
               <h4 className="font-bold text-yellow-800 mb-3">💡 Tipp:</h4>
               <p className="text-yellow-700">
-                Verwende ein KI-Bild-Tool wie Bing Image Creator oder Midjourney, um aus deinen 
-                Beschreibungen echte Bilder zu machen. Dann kannst du sie ausdrucken und zu einem 
-                echten Comic zusammenkleben!
+                In der Schule arbeitest du mit der Landes-KI <strong>telli</strong> (SCHULE@BW) –
+                dort gibt es aktuell noch keine Bildgenerierung, dafür viele Text-Bausteine für
+                deinen Comic. Zu Hause kannst du gemeinsam mit deinen Eltern ein Bild-KI-Tool
+                ausprobieren (z. B. Adobe Firefly oder Bing Image Creator). Drucke die Bilder
+                aus und klebe sie zu einem echten Comic zusammen!
               </p>
             </div>
           </div>
@@ -276,8 +278,9 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
                   <div>
                     <h5 className="font-bold text-green-800">Spiele das Quiz</h5>
                     <p className="text-green-700 text-sm">
-                      Kopiere den Prompt in ein KI-Tool (z.B. ChatGPT) und spiele dein Quiz! 
-                      Antworte auf jede Frage und schau, wie gut du abschneidest.
+                      Kopiere den Prompt in eine schulkonforme KI (in Baden-Württemberg z. B. telli
+                      über SCHULE@BW) und spiele dein Quiz! Antworte auf jede Frage und schau, wie
+                      gut du abschneidest.
                     </p>
                   </div>
                 </div>
@@ -480,7 +483,7 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
                 },
                 {
                   q: 'Welche KI-Tools kann ich nutzen?',
-                  a: 'Es gibt viele tolle Tools: ChatGPT für Texte, DALL-E für Bilder, und viele mehr. Frag deine Eltern, welche Tools für dein Alter geeignet sind.'
+                  a: 'In der Schule in Baden-Württemberg ist die offizielle Landes-KI telli (über SCHULE@BW) für dich freigegeben – sie beherrscht Text sehr gut. Bildgenerierung gibt es dort aktuell noch nicht (Funktion ist in Entwicklung). Zu Hause frag bitte deine Eltern, bevor du andere KI-Tools verwendest – viele haben eine Altersgrenze.'
                 },
                 {
                   q: 'Kann ich den Kurs nochmal machen?',

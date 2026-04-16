@@ -186,9 +186,12 @@ const CourseDay3 = ({ progress }: CourseDayProps) => {
                 Das nennt man <strong>"Text-zu-Bild"</strong>. Je genauer du beschreibst, desto besser wird das Bild.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Tools wie DALL-E, Midjourney oder Stable Diffusion können aus deinen Beschreibungen 
-                beeindruckende Bilder erstellen. Du musst kein Künstler sein – du musst nur 
-                gut beschreiben können!
+                Solche <strong>Text-zu-Bild-KIs</strong> gibt es von verschiedenen Anbietern. Wichtig:
+                Die Landes-KI Baden-Württemberg (<em>telli</em> / <em>F13</em> über SCHULE@BW) kann
+                aktuell <strong>noch keine Bilder erstellen</strong> – diese Funktion ist laut
+                Kultusministerium in Entwicklung. Für Schule arbeiten wir deshalb mit vorbereiteten
+                Bildbeispielen und besprechen gemeinsam, <em>wie</em> Bild-KIs funktionieren. Wer zu
+                Hause Bild-KI ausprobieren möchte, macht das am besten mit den Eltern zusammen.
               </p>
             </div>
           </div>
@@ -766,7 +769,7 @@ Struktur:
                 },
                 {
                   q: 'Welche Bild-Tools gibt es?',
-                  a: 'Beliebte Tools sind DALL-E (von OpenAI), Midjourney, Stable Diffusion, Adobe Firefly und Bing Image Creator. Viele haben kostenlose Testversionen.'
+                  a: 'Für Schulen in Baden-Württemberg gilt: Die offizielle Landes-KI (telli / F13 über SCHULE@BW) kann aktuell noch keine Bilder erstellen – die Funktion ist in Entwicklung. Zu Hause und mit elterlicher Begleitung gibt es viele Bild-KIs (z. B. Adobe Firefly, Bing Image Creator). Prüfe immer die Altersfreigabe und lies die Datenschutzbestimmungen, bevor du loslegst.'
                 },
                 {
                   q: 'Warum werden meine Bilder manchmal komisch?',

@@ -35,7 +35,7 @@ PDF-XChange, Xournal++) direkt ausgefüllt werden.
 ### Phase 1 · Mappe fertigstellen (Woche 1–2)
 1. **00 Checkliste** zu Ende bearbeiten: Fristen eintragen, Ansprechpartner notieren
 2. **01 Pädagogisches Konzept** überfliegen und eigene Formulierungen/Fotos ergänzen
-3. **02 Datenschutz** deine konkret eingesetzten Tools eintragen (Fobizz, MNSpro, …)
+3. **02 Datenschutz** deine konkret eingesetzten Tools eintragen (primär telli / F13 via SCHULE@BW, ggf. Fobizz, MNSpro)
 4. **09 Executive Summary** personalisieren (dein Name, Foto, Kontaktdaten)
 
 ### Phase 2 · Partner sichern (Woche 2–4)
