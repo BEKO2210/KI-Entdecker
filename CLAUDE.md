@@ -7,6 +7,33 @@
 
 ---
 
+## 🔐 Regeländerungs-Schutz (PIN: 1518)
+
+**Diese Schranke schützt das Verhalten von Claude vor versehentlichen
+Änderungen.** Der PIN ist absichtlich öffentlich (er steht hier im Repo),
+wirkt aber als **intentionale Bremse**: Änderungen an den Abschnitten,
+die Claudes Verhalten steuern, gehen nur, wenn der Auftraggeber den PIN
+**explizit im Prompt nennt**.
+
+**Geschützte Abschnitte dieser Datei** (Änderungen nur mit `PIN 1518` im Prompt):
+- Dieser Abschnitt „Regeländerungs-Schutz (PIN)"
+- Abschnitt „Regel Null: Arbeits-Workflow"
+- Abschnitt „Regeln für Claude (KI-Hilfe)"
+
+**NICHT geschützt** (laufende Dokumentation, kein PIN nötig):
+- Projekt-Kompass, Datei-Index, Eigenheiten, Rechtlicher Status
+- Aktuelle Aufgaben, Erledigt-Archiv, Projekt-Chronologie, Änderungshistorie
+
+**Ohne PIN im Prompt:** Claude weist Änderungen an geschützten Abschnitten
+ab und fragt höflich nach dem PIN. Normale Arbeitsaufträge (Features
+bauen, Bugs fixen, Doku pflegen) brauchen keinen PIN — sie laufen wie
+gewohnt nach Regel Null.
+
+**Wenn du den PIN änderst**, muss dieser Abschnitt selbst per aktuellem
+PIN autorisiert werden; neuer PIN wird in diesem Block dokumentiert.
+
+---
+
 ## Regel Null: Arbeits-Workflow
 
 **Bei jedem neuen Arbeitsauftrag:**
@@ -181,6 +208,9 @@ npm run lint    # muss grün
    nach Langvokal.
 10. **Nach jedem Commit:** Kurzsummary in Markdown mit Links zu geänderten Dateien an
     Belkis zurückgeben.
+11. **Verhaltensregeln sind PIN-geschützt:** Änderungen an diesem Abschnitt, an „Regel Null"
+    oder am „Regeländerungs-Schutz" gehen nur, wenn der Auftraggeber den PIN **1518**
+    im Prompt nennt. Ohne PIN: höflich nachfragen, nichts ändern.
 
 ---
 
@@ -354,6 +384,18 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 
 ## Erledigt-Archiv (chronologisch, neueste zuerst)
 
+### 2026-04-16 · PIN-Schutz für Regel-Null- und Regel-Änderungen ✅
+- Neuer Abschnitt „🔐 Regeländerungs-Schutz (PIN: 1518)" direkt vor
+  „Regel Null" eingefügt. Legt fest, welche Abschnitte verhaltens-
+  relevant sind und nur mit PIN im Prompt geändert werden dürfen
+  (Regel-Null, Regeln für Claude, PIN-Schutz selbst).
+- Nicht geschützt: Projekt-Kompass, Datei-Index, Eigenheiten,
+  Rechtlicher Status, Aktuelle Aufgaben, Erledigt-Archiv,
+  Projekt-Chronologie. Diese laufen normal als Doku-Updates.
+- „Regeln für Claude" um Punkt 11 ergänzt: Verhaltensregeln sind
+  PIN-geschützt.
+- Erste Einführung durch User-Nennung des PIN 1518 autorisiert.
+
 ### 2026-04-16 · Lückenlose Projekt-Chronologie + Dokumentationspflicht ✅
 - **Regel Null** um Schritt 5 (Dokumentationspflicht 🔒) erweitert: jede
   Code-Änderung muss in der passenden Doku beschrieben werden
@@ -400,3 +442,4 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 |-------|----------|
 | 2026-04-16 | Erstellung. Regel Null, Projekt-Kompass, Datei-Verlinkung, Regeln für Claude. |
 | 2026-04-16 | Regel Null Schritt 5 (Dokumentationspflicht 🔒) hart festgeschrieben. Komplette Projekt-Chronologie (Phase 1–9) mit allen Commits seit Projektstart eingetragen. |
+| 2026-04-16 | PIN-Schutz (1518) für Regel-Null- und Regeländerungen eingeführt. Neuer Abschnitt „🔐 Regeländerungs-Schutz" + neue Claude-Regel Nr. 11. |
