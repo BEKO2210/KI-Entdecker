@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arbeitsblätter · Kurs 3 – KI kritisch prüfen (Klasse 7/8)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 40px; max-width: 900px; margin: 0 auto; line-height: 1.6; }
+  @page { size: A4; margin: 12mm 12mm 14mm; }
+  @media print {
+    html, body { background: #fff !important; }
+    body { padding: 0 !important; max-width: none !important; font-size: 10.5pt; line-height: 1.5; }
+    .no-print { display: none !important; }
+    input, textarea { border: 1px solid #9ca3af !important; background: #fff !important; }
+    h2, h3 { break-after: avoid-page; page-break-after: avoid; }
+    p, li { orphans: 3; widows: 3; }
+    .sheet, .sheet-head, .q, .tip, .box, .rubric, .name-row, .meta, .score-row { break-inside: avoid; page-break-inside: avoid; }
+    .sheet { margin-bottom: 14px; padding: 18px; }
+    textarea { min-height: 52px; }
+    .footer { margin-top: 16px; padding-top: 10px; break-before: avoid; }
+  }
+  .no-print.bar { position: sticky; top: 0; background: #fff; padding: 10px 0; text-align: right; z-index: 10; }
+  .print-btn { padding: 10px 22px; background: #f97316; color: #fff; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; }
+  .meta { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 12px; padding: 14px 18px; margin-bottom: 22px; font-size: 13px; color: #9a3412; display: flex; gap: 18px; flex-wrap: wrap; }
+  .meta b { color: #1a1a2e; }
+  .sheet { border: 2px solid #fed7aa; border-radius: 16px; padding: 26px; margin-bottom: 24px; background: #fff; }
+  .sheet-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 2px solid #f3f4f6; }
+  .sheet-num { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #f97316, #c2410c); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; flex-shrink: 0; }
+  .sheet-head h2 { font-size: 20px; font-weight: 700; }
+  .sheet-head .sub { font-size: 12px; color: #6b7280; }
+  .name-row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+  .name-row label { font-size: 11px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; display: block; margin-bottom: 4px; }
+  .name-row input { width: 100%; border: 1.5px solid #d1d5db; border-radius: 8px; padding: 8px 10px; font-size: 14px; font-family: inherit; background: #fafafa; }
+  .q { margin-bottom: 18px; }
+  .q h3 { font-size: 15px; font-weight: 700; color: #374151; margin-bottom: 6px; }
+  .q p { font-size: 13px; color: #4b5563; margin-bottom: 8px; }
+  textarea, input[type=text] { width: 100%; border: 1.5px solid #d1d5db; border-radius: 10px; padding: 10px 12px; font-size: 13px; font-family: inherit; background: #fafafa; }
+  textarea { resize: vertical; min-height: 70px; }
+  .rubric { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 8px; margin-bottom: 6px; align-items: center; font-size: 12px; }
+  .rubric .crit { font-weight: 600; color: #374151; }
+  .rubric .opt { text-align: center; border: 1.5px solid #e5e7eb; border-radius: 8px; padding: 6px; background: #fafafa; cursor: default; font-size: 11px; }
+  .rubric .opt input { accent-color: #f97316; margin-right: 3px; }
+  .tip { background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 10px; padding: 12px; margin-top: 10px; font-size: 12px; color: #92400e; }
+  .footer { text-align: center; color: #9ca3af; font-size: 11px; margin-top: 30px; padding-top: 14px; border-top: 1px solid #e5e7eb; }
+</style>
+</head>
+<body>
+<div class="no-print bar"><button class="print-btn" onclick="window.print()">Als PDF speichern / Drucken</button></div>
+
+<div class="meta">
+  <span><b>Kurs 3</b> · KI kritisch prüfen</span>
+  <span>Klasse 7/8 · Sekundarstufe I</span>
+  <span>Fillable · Am Bildschirm ausfüllen oder drucken</span>
+</div>
+
+<!-- C1 -->
+<div class="sheet">
+  <div class="sheet-head">
+    <div class="sheet-num">C1</div>
+    <div><h2>Quellen-Prüfung</h2><div class="sub">Gruppenarbeit · Fakten-Check einer KI-Antwort</div></div>
+  </div>
+
+  <div class="name-row">
+    <div><label>Name</label><input type="text"></div>
+    <div><label>Gruppe</label><input type="text"></div>
+    <div><label>Klasse</label><input type="text"></div>
+    <div><label>Datum</label><input type="date"></div>
+  </div>
+
+  <div class="q">
+    <h3>1. Die KI-Antwort im Wortlaut</h3>
+    <textarea placeholder="Antwort der KI (Kurzfassung) …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>2. Unsere Quellen</h3>
+    <input type="text" placeholder="Quelle 1 (Schulbuch, Seite · Website · Lexikon)">
+    <div style="height:6px"></div>
+    <input type="text" placeholder="Quelle 2 …">
+    <div style="height:6px"></div>
+    <input type="text" placeholder="Quelle 3 (optional) …">
+  </div>
+
+  <div class="q">
+    <h3>3. Unser Urteil</h3>
+    <textarea placeholder="Was stimmt · was stimmt nicht · was fehlt · was wirkt erfunden?"></textarea>
+  </div>
+
+  <div class="tip"><b>Regel:</b> Seriös ist eine Quelle nur, wenn sie nachprüfbar, transparent und
+  von der KI unabhängig ist. Wikipedia reicht als einzige Quelle nicht.</div>
+</div>
+
+<!-- C2 -->
+<div class="sheet">
+  <div class="sheet-head">
+    <div class="sheet-num">C2</div>
+    <div><h2>Deepfake-Check</h2><div class="sub">Merkmals-Checkliste für KI-generierte Bilder und Videos</div></div>
+  </div>
+
+  <div class="q">
+    <h3>Typische Schwachstellen, die wir prüfen</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:13px">
+      <label><input type="checkbox"> Hände und Finger (Anzahl, Form)</label>
+      <label><input type="checkbox"> Ohren / Schmuck / Brillen</label>
+      <label><input type="checkbox"> Texte auf Bildern (Buchstaben-Fehler)</label>
+      <label><input type="checkbox"> Schatten- und Lichtrichtung</label>
+      <label><input type="checkbox"> Spiegelungen / Reflexionen</label>
+      <label><input type="checkbox"> Augen (Pupillen, Symmetrie)</label>
+      <label><input type="checkbox"> Haaransatz / Haut-Textur</label>
+      <label><input type="checkbox"> Lippen-/Tonsynchronität (bei Video)</label>
+      <label><input type="checkbox"> Metadaten / Dateiquelle prüfbar?</label>
+      <label><input type="checkbox"> Kontext: Wer hat das Bild geteilt? Primärquelle?</label>
+    </div>
+  </div>
+
+  <div class="q">
+    <h3>Unsere Analyse des vorgelegten Beispiels</h3>
+    <textarea placeholder="Welche Merkmale sprechen für KI-Generierung, welche dagegen?"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>Unser Fazit</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:13px">
+      <label><input type="radio" name="c2-f"> KI-generiert</label>
+      <label><input type="radio" name="c2-f"> echt</label>
+      <label><input type="radio" name="c2-f"> unklar</label>
+    </div>
+    <div style="height:6px"></div>
+    <textarea placeholder="Begründung in 2–3 Sätzen"></textarea>
+  </div>
+</div>
+
+<!-- C3 -->
+<div class="sheet">
+  <div class="sheet-head">
+    <div class="sheet-num">C3</div>
+    <div><h2>Bias-Analyse</h2><div class="sub">Stereotype in KI-Antworten erkennen und hinterfragen</div></div>
+  </div>
+
+  <div class="q">
+    <h3>1. Unser Test-Prompt</h3>
+    <textarea placeholder="z. B. „Beschreibe eine typische Krankenschwester …" oder „Zeichne einen CEO am Schreibtisch …""></textarea>
+  </div>
+
+  <div class="q">
+    <h3>2. KI-Antwort (Kurzfassung)</h3>
+    <textarea placeholder="Was hat die KI geantwortet? Welche Eigenschaften wurden zugeschrieben?"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>3. Welche Stereotype tauchen auf?</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:13px">
+      <label><input type="checkbox"> Geschlecht (z. B. nur weiblich / nur männlich)</label>
+      <label><input type="checkbox"> Alter (z. B. nur jung / nur alt)</label>
+      <label><input type="checkbox"> Aussehen (Haut, Haare, Größe)</label>
+      <label><input type="checkbox"> Herkunft / Nationalität</label>
+      <label><input type="checkbox"> Soziale Schicht / Beruf</label>
+      <label><input type="checkbox"> Fähigkeiten / Eigenschaften</label>
+    </div>
+  </div>
+
+  <div class="q">
+    <h3>4. Woher kommen diese Stereotype?</h3>
+    <textarea placeholder="Trainingsdaten · Medienbilder · gesellschaftliche Klischees · …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>5. Wie könnten wir den Prompt verbessern, um Bias zu reduzieren?</h3>
+    <textarea placeholder="Unser verbesserter Prompt …"></textarea>
+  </div>
+</div>
+
+<!-- C4 -->
+<div class="sheet">
+  <div class="sheet-head">
+    <div class="sheet-num">C4</div>
+    <div><h2>Mein KI-Prüf-Pass</h2><div class="sub">Urheberrecht &amp; persönliche Prüfregeln</div></div>
+  </div>
+
+  <div class="q">
+    <h3>1. Urheberrecht bei KI-Inhalten (Merke)</h3>
+    <p>Nach aktueller deutscher Rechtsprechung genießen rein KI-generierte Inhalte in der Regel
+    <strong>keinen eigenen Urheberrechtsschutz</strong>, weil die notwendige „persönliche
+    geistige Schöpfung" fehlt (§ 2 UrhG). Wichtig ist aber:</p>
+    <ul style="margin-left:22px;font-size:12px;color:#374151">
+      <li>Trainingsdaten können urheberrechtlich geschützt sein.</li>
+      <li>Deine eigene gestalterische Leistung (Prompt, Auswahl, Bearbeitung) kann schutzfähig werden.</li>
+      <li>Persönlichkeitsrechte (Bild, Stimme) gelten immer – auch bei Deepfakes.</li>
+    </ul>
+  </div>
+
+  <div class="q">
+    <h3>2. Meine drei wichtigsten Prüfregeln</h3>
+    <textarea placeholder="Regel 1 …"></textarea>
+    <div style="height:6px"></div>
+    <textarea placeholder="Regel 2 …"></textarea>
+    <div style="height:6px"></div>
+    <textarea placeholder="Regel 3 …"></textarea>
+  </div>
+
+  <div class="q">
+    <h3>3. Bewertung der heutigen Einheit (Selbsteinschätzung)</h3>
+    <div class="rubric"><div class="crit">Ich kann Quellen prüfen.</div>
+      <label class="opt"><input type="radio" name="r1"> noch nicht</label>
+      <label class="opt"><input type="radio" name="r1"> teilweise</label>
+      <label class="opt"><input type="radio" name="r1"> sicher</label></div>
+    <div class="rubric"><div class="crit">Ich erkenne Deepfake-Merkmale.</div>
+      <label class="opt"><input type="radio" name="r2"> noch nicht</label>
+      <label class="opt"><input type="radio" name="r2"> teilweise</label>
+      <label class="opt"><input type="radio" name="r2"> sicher</label></div>
+    <div class="rubric"><div class="crit">Ich erkenne Bias in KI-Antworten.</div>
+      <label class="opt"><input type="radio" name="r3"> noch nicht</label>
+      <label class="opt"><input type="radio" name="r3"> teilweise</label>
+      <label class="opt"><input type="radio" name="r3"> sicher</label></div>
+    <div class="rubric"><div class="crit">Ich kenne die Grundregel Urheberrecht.</div>
+      <label class="opt"><input type="radio" name="r4"> noch nicht</label>
+      <label class="opt"><input type="radio" name="r4"> teilweise</label>
+      <label class="opt"><input type="radio" name="r4"> sicher</label></div>
+  </div>
+
+  <div class="name-row" style="grid-template-columns:1fr 1fr;">
+    <div><label>Unterschrift Schüler:in</label><input type="text"></div>
+    <div><label>Kenntnis genommen (Lehrkraft)</label><input type="text"></div>
+  </div>
+</div>
+
+<div class="footer">
+  KI-Entdecker · Kurs 3 Arbeitsblätter · Zum Ausdrucken auf A4 oder digital als PDF ausfüllbar · Autor: Belkis Aslani
+</div>
+</body>
+</html>

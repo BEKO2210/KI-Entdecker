@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lehrkraft-Handreichung · Kurs 3 – KI kritisch prüfen (Klasse 7/8)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Outfit', sans-serif; color: #1a1a2e; background: #fff; padding: 40px; max-width: 900px; margin: 0 auto; line-height: 1.55; }
+  @page { size: A4; margin: 14mm 14mm 16mm; }
+  @media print {
+    html, body { background: #fff !important; }
+    body { padding: 0 !important; max-width: none !important; font-size: 10.5pt; line-height: 1.45; }
+    .no-print { display: none !important; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3 { break-after: avoid-page; page-break-after: avoid; }
+    h2 + *, h3 + * { break-before: avoid-page; page-break-before: avoid; }
+    p, li { orphans: 3; widows: 3; }
+    .phase, .callout, .meta-grid, .meta-grid .cell, table, tr, .checklist li, .header { break-inside: avoid; page-break-inside: avoid; }
+    .section { break-inside: auto; margin-bottom: 14px; }
+    .phase { margin-bottom: 8px; padding: 10px 12px; }
+    .header { margin-bottom: 18px; padding-bottom: 14px; }
+    .meta-grid { margin: 14px 0 18px; }
+    .footer { margin-top: 20px; padding-top: 10px; break-before: avoid; }
+  }
+  .badge { display: inline-block; background: #f97316; color: #fff; padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 12px; }
+  .header { text-align: center; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 3px solid #f97316; }
+  .header h1 { font-size: 26px; font-weight: 700; color: #1a1a2e; }
+  .header .sub { color: #6b7280; font-size: 14px; margin-top: 6px; }
+  .meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 22px 0 28px; }
+  .meta-grid .cell { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px; padding: 10px 12px; }
+  .meta-grid .cell .label { font-size: 10px; color: #c2410c; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+  .meta-grid .cell .value { font-size: 13px; color: #1a1a2e; font-weight: 600; margin-top: 2px; }
+  .section { margin-bottom: 26px; }
+  .section h2 { font-size: 18px; font-weight: 700; color: #c2410c; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid #f3f4f6; }
+  .section p, .section li { font-size: 13px; color: #4b5563; }
+  .section ul { margin-left: 20px; }
+  .section li { margin-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px; }
+  th { background: #f3f4f6; text-align: left; padding: 8px 10px; font-weight: 600; color: #374151; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+  td { padding: 8px 10px; border-top: 1px solid #e5e7eb; vertical-align: top; color: #374151; }
+  .phase { background: #fff; border: 1px solid #e5e7eb; border-left: 4px solid #f97316; border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; }
+  .phase .phase-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .phase h3 { font-size: 14px; font-weight: 700; color: #1a1a2e; }
+  .phase .time { font-size: 12px; color: #c2410c; font-weight: 600; }
+  .phase p { font-size: 12px; color: #4b5563; }
+  .callout { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px; padding: 12px 14px; margin: 10px 0; font-size: 12px; color: #9a3412; }
+  .callout.warn { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+  .checklist { list-style: none; margin-left: 0; }
+  .checklist li { padding-left: 24px; position: relative; margin-bottom: 6px; font-size: 13px; color: #374151; }
+  .checklist li::before { content: ""; position: absolute; left: 0; top: 3px; width: 14px; height: 14px; border: 2px solid #f97316; border-radius: 3px; }
+  .footer { text-align: center; color: #9ca3af; font-size: 11px; margin-top: 36px; padding-top: 14px; border-top: 1px solid #e5e7eb; }
+  .print-bar { position: sticky; top: 0; background: #fff; padding: 10px 0; text-align: right; z-index: 10; }
+  .print-btn { padding: 10px 22px; background: #f97316; color: #fff; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; }
+</style>
+</head>
+<body>
+<div class="no-print print-bar"><button class="print-btn" onclick="window.print()">Als PDF speichern / Drucken</button></div>
+
+<div class="header">
+  <span class="badge">Lehrkraft-Handreichung · Kurs 3</span>
+  <h1>KI kritisch prüfen – Quellen, Deepfakes, Bias, Urheberrecht</h1>
+  <div class="sub">Sekundarstufe I · Klasse 7/8 · Projekttag 180 Minuten (4 Schulstunden)</div>
+</div>
+
+<div class="meta-grid">
+  <div class="cell"><div class="label">Klassenstufe</div><div class="value">7 – 8</div></div>
+  <div class="cell"><div class="label">Dauer</div><div class="value">180 Minuten</div></div>
+  <div class="cell"><div class="label">Sozialform</div><div class="value">Gruppen (3–4)</div></div>
+  <div class="cell"><div class="label">Format</div><div class="value">Projekttag · BYOD/Tablet</div></div>
+</div>
+
+<div class="section">
+  <h2>1 · Ziel der Einheit</h2>
+  <p>Schüler:innen der Klasse 7/8 kennen KI als Werkzeug – dieser Projekttag vertieft die
+  <strong>kritische Urteilskompetenz</strong>. Im Zentrum stehen vier Themenfelder:
+  Quellenprüfung und Fakten-Check, Erkennen von <em>Deepfakes</em> und KI-generierten Medien,
+  Bias und Stereotype in KI-Antworten sowie der Umgang mit Urheberrecht bei
+  KI-generierten Inhalten. Die Einheit knüpft an den <strong>Aufbaukurs Informatik (Kl. 7)</strong>
+  an und ist am Bildungsplan BW 2016 ausgerichtet.</p>
+</div>
+
+<div class="section">
+  <h2>2 · Bezüge zum Bildungsplan Baden-Württemberg (Sek I)</h2>
+  <table>
+    <thead><tr><th>Fach / Bereich</th><th>Anknüpfung</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Aufbaukurs Informatik Kl. 7</strong></td><td>Algorithmen, Daten, Mensch-Maschine-Interaktion, Grundzüge maschinellen Lernens</td></tr>
+      <tr><td><strong>Deutsch Kl. 7/8</strong></td><td>Informationen prüfen, argumentieren, Quellen nutzen und kritisch bewerten</td></tr>
+      <tr><td><strong>Gemeinschaftskunde Kl. 8</strong></td><td>Medien als Einflussfaktor, politische Meinungsbildung, Desinformation</td></tr>
+      <tr><td><strong>Leitperspektive MB</strong></td><td>Medienanalyse, Information und Wissen, Medienkritik</td></tr>
+      <tr><td><strong>Leitperspektive BTV</strong></td><td>Bias, Stereotype, Vielfalt und Diskriminierungssensibilität</td></tr>
+      <tr><td><strong>Leitperspektive VB</strong></td><td>Urheberrecht, Persönlichkeitsrecht, Konsumentscheidung</td></tr>
+      <tr><td><strong>KMK-Empfehlung KI (2024)</strong></td><td>Orientierung an „Kritisches Denken" und „Transparenz"</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">Die konkrete Konformität mit der jeweiligen Schule wird vor Durchführung
+  mit Schulleitung und schulischem Datenschutzbeauftragten abgestimmt.</div>
+</div>
+
+<div class="section">
+  <h2>3 · Kompetenzen &amp; Lernziele</h2>
+  <ul>
+    <li>Die SuS prüfen KI-Antworten systematisch mit mindestens zwei unabhängigen Quellen.</li>
+    <li>Die SuS erkennen typische Merkmale von <strong>Deepfakes</strong> und KI-generierten Bildern/Videos.</li>
+    <li>Die SuS benennen Bias-Kategorien (sozial, kulturell, geschlechtsspezifisch) und identifizieren sie in konkreten KI-Outputs.</li>
+    <li>Die SuS unterscheiden zwischen <strong>Input</strong> (Prompt), <strong>Trainingsdaten</strong> und <strong>Output</strong> in der urheberrechtlichen Bewertung.</li>
+    <li>Die SuS dokumentieren ihren Prüfprozess transparent in einem Prüf-Protokoll.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>4 · Unterrichtsverlauf (4 × 45 Min)</h2>
+
+  <div class="phase">
+    <div class="phase-head"><h3>Stunde 1 · Quellen &amp; Fakten-Check</h3><span class="time">45 Min</span></div>
+    <p>Einstieg mit einer vorab generierten KI-Antwort zu einem geschichtlichen oder
+    naturwissenschaftlichen Thema. In Vierergruppen prüfen SuS die Antwort mit mindestens zwei
+    unabhängigen Quellen (Schulbuch, seriöse Website, ggf. Lexikon). Dokumentation in
+    Arbeitsblatt C1.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h3>Stunde 2 · Deepfakes und synthetische Medien</h3><span class="time">45 Min</span></div>
+    <p>Lehrkraft zeigt drei vorbereitete Bild-/Video-Beispiele (zwei KI-generiert, eins echt).
+    SuS entwickeln eine Merkmals-Checkliste (Hände, Ohren, Texte auf Bildern, Schatten,
+    Metadaten). Anschließend in Gruppen eigene Checkliste erweitern. Arbeitsblatt C2.</p>
+    <div class="callout warn"><b>Datenschutz:</b> Es werden ausschließlich vorab kuratierte
+    Beispielbilder verwendet – keine Bilder von Mitschüler:innen, Lehrkräften oder realen
+    Personen aus dem Schulumfeld.</div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h3>Stunde 3 · Bias-Analyse</h3><span class="time">45 Min</span></div>
+    <p>SuS formulieren Prompts, die erfahrungsgemäß Stereotype triggern („eine Krankenschwester
+    beschreiben", „ein CEO am Schreibtisch"). Lehrkraft führt am Beamer mit telli (SCHULE@BW)
+    durch, SuS dokumentieren Ergebnisse. Reflexion: Welche Stereotype tauchen auf? Woher kommen
+    sie? Arbeitsblatt C3.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h3>Stunde 4 · Urheberrecht &amp; Abschluss</h3><span class="time">45 Min</span></div>
+    <p>Input: Wer ist Urheber:in eines KI-Textes/-Bildes? Grundregel: KI-Output genießt nach
+    deutscher Rechtsprechung keinen eigenen Urheberrechtsschutz – aber die <em>Trainingsdaten</em>
+    und ggf. <em>Eigenleistungen beim Prompting</em> sind relevant. SuS erstellen einen Prüf-Pass
+    (Arbeitsblatt C4) mit ihren persönlichen Prüfregeln für zukünftige KI-Nutzung.</p>
+  </div>
+</div>
+
+<div class="section">
+  <h2>5 · Kriterienraster für die Bewertung</h2>
+  <table>
+    <thead><tr><th>Kriterium</th><th>0 Pkt</th><th>1 Pkt</th><th>2 Pkt</th></tr></thead>
+    <tbody>
+      <tr><td>Quellen-Prüfung</td><td>keine Quelle</td><td>1 Quelle</td><td>≥ 2 unabhängige Quellen</td></tr>
+      <tr><td>Deepfake-Erkennung</td><td>nicht erkannt</td><td>ansatzweise</td><td>Merkmale benannt</td></tr>
+      <tr><td>Bias-Reflexion</td><td>fehlt</td><td>knapp</td><td>differenziert mit Beispielen</td></tr>
+      <tr><td>Urheberrecht</td><td>nicht beachtet</td><td>Grundregel benannt</td><td>Trainingsdaten / Prompt-Rolle unterschieden</td></tr>
+      <tr><td>Dokumentation</td><td>unvollständig</td><td>okay</td><td>vollständig &amp; nachvollziehbar</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>6 · Technik- &amp; Material-Check</h2>
+  <ul class="checklist">
+    <li>Beamer/Whiteboard · 1 Tablet oder PC pro Gruppe (BYOD möglich nach Schulordnung)</li>
+    <li>Zugang zur Landes-KI <strong>telli</strong> (über SCHULE@BW, Lehrer-Account)</li>
+    <li>Kuratierte Bild-/Video-Beispiele (vorab gespeichert, offline verfügbar)</li>
+    <li>Arbeitsblätter C1 – C4 ausgedruckt oder als fillable PDF</li>
+    <li>Plakatpapier, Moderationskarten, Filzstifte</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>7 · Differenzierung</h2>
+  <ul>
+    <li><strong>Basisniveau:</strong> Vorgegebene Prüf-Checkliste abarbeiten, Partnerarbeit statt Gruppe.</li>
+    <li><strong>Mittleres Niveau:</strong> Standard-Projekttag wie beschrieben.</li>
+    <li><strong>Erweitert:</strong> Eigene Fallstudie recherchieren (z. B. gefälschte Pressemeldung, Deepfake-Kampagne) und in 3-Minuten-Vortrag präsentieren.</li>
+    <li>Barrierearm: Arbeitsblätter in 12–14 pt, hoher Kontrast, einfache Sprache auf Anfrage.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>8 · Nutzungsmodelle</h2>
+  <ul>
+    <li><strong>Modell A – Lehrkraft allein:</strong> Durchführung in Eigenregie nach kurzer Einweisung.</li>
+    <li><strong>Modell B – Team-Teaching:</strong> Gemeinsame Durchführung mit Belkis Aslani (KI-Entdecker).</li>
+    <li><strong>Modell C – Externe Durchführung:</strong> Belkis Aslani übernimmt den Projekttag komplett.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  KI-Entdecker · Kurs 3 Lehrkraft-Handreichung · Stand April 2026 · Autor: Belkis Aslani ·
+  Für interne Nutzung an der buchenden Schule
+</div>
+</body>
+</html>

@@ -228,7 +228,7 @@ const Datenschutz = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 bg-primary-purple rounded-full mt-2" aria-hidden="true" />
-                    <span className="text-neutral-gray">DSGVO-konform arbeiten</span>
+                    <span className="text-neutral-gray">Auf eine DSGVO-konforme Nutzung ausgelegt sind</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 bg-primary-purple rounded-full mt-2" aria-hidden="true" />
