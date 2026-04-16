@@ -71,12 +71,12 @@ Deshalb habe ich KI-Entdecker gebaut: einen Kurs, der Kindern ab 8 Jahren beibri
 
 - **15 Lektionen** in 5 Kurstagen (je ~45 Minuten, Tag 5: ~60 Minuten)
 - **5 Badges** als Belohnung für jeden abgeschlossenen Tag
-- **Professionelles Zertifikat** zum Ausdrucken nach Abschluss
-- **Arbeitsblätter** mit Übungen und Lösungen
+- **Zertifikat als PDF** nach Abschluss, zum Selbstausdruck auf A4
+- **Arbeitsblätter** zum Ausdrucken oder direkt am Bildschirm ausfüllen
 - **Prompt-Cheat-Sheet** mit dem 5-Sterne-Rezept
 - **Eltern-Guide** mit Gesprächsanregungen für jeden Tag
 - **Wochenplan** zum Drucken für die Kursplanung
-- **KI-Tools-Übersicht** mit kindersicheren, kostenlosen Tools
+- **KI-Tools-Übersicht** mit klaren „Was zu beachten ist"-Hinweisen pro Tool
 
 ---
 
@@ -124,10 +124,67 @@ KI-Entdecker ist eine Progressive Web App (PWA). Auf dem Handy oder Tablet kann 
 
 ---
 
+## Für Schulen in Baden-Württemberg
+
+Zusätzlich zum kostenfreien Online-Kurs gibt es ein vor-Ort-Angebot für
+Schulen. Drei fertige Workshop-Formate, ausgerichtet am Bildungsplan BW
+2016 und an der KMK-Empfehlung KI (2024):
+
+| Kurs | Klassenstufe | Dauer | Format |
+|------|--------------|-------|--------|
+| **Kurs 1 · KI verstehen** | 3 / 4 | 90 Minuten | Grundschule · 2 Schulstunden |
+| **Kurs 2 · Prompt-Werkstatt** | 5 / 6 | 180 Minuten | Sek I · Projektformat |
+| **Kurs 3 · KI kritisch prüfen** | 7 / 8 | 180 Minuten | Sek I · Projekttag (Quellen, Deepfakes, Bias, Urheberrecht) |
+
+Jeder Workshop kommt mit Lehrkraft-Handreichung, fillable Arbeitsblättern
+und datenschutzfreundlichem Konzept (primär mit der Landes-KI **telli** /
+**F13** über SCHULE@BW).
+
+Drei Nutzungsmodelle: Lehrkraft allein, Team-Teaching mit uns, oder wir
+übernehmen die Durchführung komplett.
+
+Details + Konzept-Downloads: [Schulen-Seite](https://beko2210.github.io/KI-Entdecker/#/schulen)
+
+---
+
+## Das Team
+
+| Rolle | Person |
+|-------|--------|
+| Projektleitung, Konzeption, Technik | **Belkis Aslani** (seit Projektstart) |
+| Organisation, Kooperationen, Verwaltung | **Damien Eynius** (seit 2026) |
+
+---
+
 ## Kontakt
 
-**Belkis Aslani**
-[belkis.aslani@gmail.com](mailto:belkis.aslani@gmail.com)
+**Belkis Aslani** · Projektleitung
+[belkis.aslani@gmail.com](mailto:belkis.aslani@gmail.com) · +49 176 81462526
+
+---
+
+## Für Entwickler:innen &amp; Mitarbeitende
+
+Dieses Projekt arbeitet mit **zwei verbindlichen Leitdokumenten** – bitte
+beide lesen, bevor du etwas am Code änderst:
+
+- **[CLAUDE.md](./CLAUDE.md)** — zentrale Steuerungs- und Arbeitsdatei.
+  Enthält Regel Null (Aufgabe eintragen → planen → abarbeiten → dokumentieren
+  → archivieren), Projekt-Kompass, Datei-Index, rechtlichen Status,
+  Arbeits-Regeln und die **lückenlose Projekt-Chronologie** vom ersten
+  Commit bis heute.
+- **[BILDER.md](./BILDER.md)** — komplette Bild-Inventur, Ordnerstruktur,
+  Verwendung pro Bild, Anleitung zum Austauschen.
+
+**Dokumentationspflicht:** Jede Code-Änderung muss in der passenden
+Dokumentation beschrieben werden. Es darf kein Drift zwischen Code und
+Doku entstehen. Details stehen in CLAUDE.md „Regel Null · Schritt 5".
+
+**Build-Pflicht:**
+```bash
+npm run build   # muss grün
+npm run lint    # muss grün
+```
 
 ---
 

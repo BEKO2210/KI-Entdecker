@@ -11,20 +11,31 @@
 
 **Bei jedem neuen Arbeitsauftrag:**
 
-1. **LESEN** — Diese Datei zuerst komplett lesen.
+1. **LESEN** — Diese Datei zuerst komplett lesen. Immer. Ohne Ausnahme.
 2. **EINTRAGEN** — Die neue Aufgabe unten im Abschnitt **„Aktuelle Aufgaben"**
    als Eintrag mit Datum und Kurzbeschreibung ergänzen.
 3. **PLANEN** — Unter dem Aufgaben-Eintrag 3–6 konkrete Schritte skizzieren.
 4. **ABARBEITEN** — Schritte schrittweise erledigen, nach jedem Schritt
    den Status am Aufgaben-Eintrag aktualisieren (⏳ offen / 🔧 in Arbeit / ✅ fertig).
-5. **NACH FERTIG** — Erledigte Aufgabe aus „Aktuelle Aufgaben" ins
+5. **DOKUMENTIEREN — HARTE PFLICHT** 🔒
+   - **Jede Code-Änderung** wird in der passenden Dokumentation beschrieben.
+   - **Bilder / Assets** → in [`BILDER.md`](./BILDER.md) einpflegen
+   - **Fördermappe-Änderungen** → in [`foerdermappe/README.md`](./foerdermappe/README.md)
+   - **Workflow / Arbeitsregeln / Projekt-Struktur** → in dieser Datei (CLAUDE.md)
+   - **Öffentlich sichtbare Features** → in [`README.md`](./README.md)
+   - **Rechtliches / Datenschutz** → Snapshot weiter unten aktualisieren
+   - Nach jeder erledigten Aufgabe: im „Erledigt-Archiv" einen Eintrag mit
+     Datum, Titel, Kurz-Bilanz der Änderungen. Kein Drift zwischen Code
+     und Dokumentation zulassen.
+6. **NACH FERTIG** — Erledigte Aufgabe aus „Aktuelle Aufgaben" ins
    **„Erledigt-Archiv"** (am Ende der Datei) verschieben.
 
 **Keine Aufgabe gilt als abgeschlossen**, bevor:
 - Build (`npm run build`) grün ist
 - Lint (`npm run lint`) grün ist
 - Neue/geänderte Dateien committet und gepusht sind
-- Ggf. betroffene Abschnitte in CLAUDE.md oder BILDER.md aktualisiert wurden
+- **Alle betroffenen Doku-Dateien aktualisiert sind** (siehe Schritt 5)
+- Summary-Antwort an Belkis mit Links zu geänderten Dateien gesendet wurde
 
 ---
 
@@ -179,7 +190,184 @@ _(leer — kein laufender Auftrag)_
 
 ---
 
+## Projekt-Chronologie (lückenlos von Beginn bis heute)
+
+Diese Chronik ist die Pflicht-Referenz, damit jeder Mitarbeitende (und
+Claude) jederzeit weiß, **was bereits existiert, was gelöst wurde und
+warum bestimmte Entscheidungen getroffen sind**. Änderungen immer hier
+ergänzen, sobald ein neuer Commit zum Branch gelangt.
+
+### 📅 Phase 1 · Projektstart &amp; Grundlagen (3. April 2026)
+
+Der erste Entwicklungs-Sprint legte das Fundament des interaktiven
+5-Tage-KI-Kurses inklusive Build-Pipeline, PWA-Fähigkeit und erstem
+Zertifikat. Wichtige Schritte in der Reihenfolge:
+
+- **Base-Setup & Deployment:** Vite + React + Tailwind + TypeScript,
+  GitHub-Pages-Routing über HashRouter, GH-Pages-Action korrekt
+  konfiguriert, Basis-URL `/KI-Entdecker` gesetzt.
+- **Kurs-Framework:** 5 Kurstage (`CourseDay1–5.tsx`) mit je 3 Lektionen
+  + FAQ. Progress via `useProgress`-Hook im LocalStorage, Badges pro Tag.
+  Lock-Logik für Folgeinhalte.
+- **Seiten:** Home, Kurs, Materialien, Eltern, Wochenplan, Impressum,
+  Datenschutz, 404. Navigation, Footer, Hero, CourseOverview als
+  Sections/Components. Lazy-Loading für die Kurstage.
+- **Materialien & Downloads:** erste HTML-PDFs (`wochenplan.html`,
+  `arbeitsblaetter.html`, `prompt-cheat-sheet.html`,
+  `ki-tools-uebersicht.html`, `eltern-guide.html`, `zertifikat.html`).
+- **Bug-Fixes (Tag der ersten Veröffentlichung):** Lock-Bypass auf
+  Homepage, kaputte CSS-Klassen, Typos. `42b8222` — 404 bei
+  Seitenrefresh beseitigt durch HashRouter-Umstellung. `21dcb64` —
+  Download-Links nutzen GitHub-Pages-Basis-Pfad korrekt.
+- **Interaktion:** `34ca1d5` — Infinite-Render-Loop in FAQs gefixt;
+  `76fff02` — Scroll-to-Top beim Navigieren; `d8c2973` — Reading-Timer
+  verhindert Speed-Klicken; `542e92c` — Section-Skipping unterbunden.
+- **PWA & Branding:** `f6d03df` — App als PWA installierbar mit
+  Roboter-Maskottchen als App-Icon. `85e0a60` — Sparkles-Icon durch
+  Roboter ersetzt.
+- **Zertifikat:** `f3e5dd5` — erste herunterladbare PDF-Version;
+  `1be26b8` — Harvard-Style-Redesign; `3980db7` — Preview auf Home;
+  `5b23d5c` — Download erst nach Abschluss freigeschaltet.
+- **Policy:** `0747844` — README als Mission Statement + CC BY-NC-ND.
+
+### 📅 Phase 2 · Absicherung &amp; Dependencies (5.–6. April 2026)
+
+- **Sicherheits-Policy:** `6f35e72` — Supported Versions aktualisiert;
+  `345add5` — SECURITY.md ins Deutsche übersetzt.
+- **Lizenz:** `f54bd8c` / `6ba74d9` / `45267a9` — deutsche
+  CC-Formulierung, Formatierung, verbindlicher Lizenzhinweis.
+- **Dependabot-Wellen:** `f42184e` rollup 4.55.1→4.60.1, `32b0e78`
+  flatted 3.3.3→3.4.2, `871f31d` minimatch, `d9849af` lodash
+  4.17.21→4.18.1, `8016550` picomatch.
+- **README:** `e04b2bb` animiertes Herz-GIF; `b844388` Autorenverweis.
+  `2f1f37b` alte `info.md` gelöscht.
+
+### 📅 Phase 3 · Schulen-Seite (13. April 2026)
+
+- `6b8729c` — erste dedizierte Schulen-Seite mit Fokus auf Lehrkräfte
+  und Schulkooperationen (Klassenstufen 3–8, 90-/180-Minuten-Formate,
+  datenschutzfreundliche Workshop-Vorlage).
+
+### 📅 Phase 4 · Lehrer-Kurse, Material &amp; erste Fördermaterialien (14. April 2026)
+
+- `7b973bf` — **Kurs 1 (Kl. 3/4, 90 Min) + Kurs 2 (Kl. 5/6, 180 Min
+  Projektformat)** inkl. Handreichungen und fillable Arbeitsblätter
+  A1–A3 / B1–B4.
+- `ab1376b` — drei Nutzungsmodelle (Lehrkraft allein / Team-Teaching /
+  externe Durchführung), Service-Worker-Anpassungen für Downloads.
+- `25bcd27` — „Premium"-Claims und OPS-Formulierungen entfernt; sachlichere
+  Beschreibung, konformer zum Bildungsplan.
+- `186001c` — Print-Layout aller Teacher-PDFs optimiert (saubere
+  Seitenumbrüche, Farben im Druck).
+
+### 📅 Phase 5 · Live-Kurs-Fixes (15. April 2026)
+
+- `aa951bc` — Tag 1 vorzeitige „Geschafft"-Banner entfernt (hatte
+  fälschlich Back-Button vor FAQ gezeigt).
+- `7959ca5` — Gleicher Fix für Tage 2–4; Tag 5 war bereits korrekt.
+
+### 📅 Phase 6 · Zertifikat-Vorschau, Security-Patches, Fördermappe (16. April 2026)
+
+- `2cb3afa` — Zertifikat-Vorschau-Bild auf Materialien-Seite und im
+  README.
+- `f24136f` — Vorschau-Bild komprimiert: **10,9 MB → 827 KB PNG und
+  162 KB WebP**.
+- `e5850f9` — Mini-Zertifikat auf Home durch echtes Vorschau-Bild
+  ersetzt.
+- `6307d7a` — **Alle 5 offenen Dependabot-Advisories** gepatcht
+  (vite 7.3.2, serialize-javascript 7.0.5 via overrides,
+  brace-expansion über audit fix).
+- `a9366a0` + `6830054` + `5630c98` + `9dc6ee2` + `cce3274` —
+  **Komplette Fördermappe** (README, 00 Checkliste, 01 Pädagogisches
+  Konzept, 02 Datenschutz, 03 Durchführung, 04 Evaluation, 05
+  Kostenplan, 06 Partnerliste, 07 Elternbrief, 08 Anschreiben,
+  09 Executive Summary, 10 Business Model Canvas).
+- `847c56d` — Schulen-Seite „förderfähig" gemacht: Kompetenzen,
+  Bildungsplan-Tabelle, Methoden, detaillierter Datenschutz mit
+  Tool-Liste, Pilot-2026/27-CTA, 6 Konzept-Downloads.
+
+### 📅 Phase 7 · Landes-KI, Rechtstatsächlichkeit, Content-Finesse (16. April 2026)
+
+- `86d542c` — **telli / F13 (SCHULE@BW)** überall als primäre
+  KI-Empfehlung verankert, Bildgenerierung ehrlich als „in Entwicklung"
+  markiert.
+- `6d2b4ea` — konsequente Umlaute/ß nach aktueller Rechtschreibung
+  (160+ Ersetzungen in 5 Downloads).
+- `9779283` — TMG → DDG/TDDDG, Art. 13/20/21/22/77 DSGVO, GitHub-Pages-
+  Drittlandstransfer mit DPF/SCC offengelegt, Server-Log-Speicherdauer,
+  Kostenmodell-Klarstellung (Online frei vs. Schul-Workshops
+  kostenpflichtig), Elternbrief: Geburtsdatum → Jahrgang +
+  Sorgerecht-Hinweis, Fördermappe 02 AVV-Erklärung + Art. 22.
+- `77dc217` — Bildungsplan-Tabelle in Mobile-Ansicht sichtbar
+  (Card-Layout unter sm-Breakpoint).
+- `f4e5f5f` — **Kurs 3 (Kl. 7/8, Quellen / Deepfakes / Bias /
+  Urheberrecht)** angelegt; Pitch in zwei Versionen gesplittet (09a
+  Bildung, 09b Business); Kostenplan mit Musterbeträgen befüllt;
+  Gender auf männliche Form korrigiert.
+
+### 📅 Phase 8 · Kontakt, Team, Details (16. April 2026)
+
+- `fd716a2` — **Telefon +49 176 81462526** überall (Impressum,
+  Datenschutz, Schulen, Fördermappe 02/07/08/09/09b, schulen-
+  konformitaet.html).
+- `dd04d3f` — Footer KI-Tools in zwei Reihen: „Für die Schule (BW)"
+  mit telli/F13 + „Zu Hause (mit Eltern)" mit den Consumer-Tools.
+- `09ddbeb` — KI-Tools-Übersicht: „Was zu beachten ist"-Boxen pro
+  Tool (Altersgrenze, US-Server, Halluzinationen …) + Print-CSS aller
+  alten Downloads robuster gemacht.
+- `967d0aa` — **Damien Eynius** als Mitgesellschafter für Verwaltung
+  subtil eingebunden (Impressum, Datenschutz Art. 26, Schulen-Kontakt,
+  Fördermappe 02/09/09b/10).
+- `98804d2` — Zertifikat-Hinweis auf der Webseite: PDF zum
+  Selbstausdruck vs. Druck im Seminar.
+- `ad9c661` + `d120d98` + `ab892e8` — Zertifikat: stilisierte
+  Namens-Unterschrift „B. Aslani" (Schreibschrift `Great Vibes`, keine
+  echte Handschrift im öffentlichen Repo); Klarstellung dass Name
+  und Datum vom Nutzer einzutragen sind.
+- `16663ef` — **Zertifikat-Druck-Fix:** `print-color-adjust: exact`
+  aktiviert Hintergrundfarben, `@page 297mm 210mm` + `min-height: 0`
+  beseitigen die erzwungene Leerseite.
+- `9d5e5c3` — **Elternbrief-Leerseiten-Bug** behoben
+  (`.letter { break-inside: avoid }` auf Großblock entfernt,
+  `.form { break-before: page }` sauber gesetzt, `.page-break`-Div
+  per `display: none` deaktiviert); `print-color-adjust: exact` auf
+  **allen 27 PDFs** ergänzt.
+
+### 📅 Phase 9 · Dokumentation &amp; Workflow-System (16. April 2026)
+
+- `01d29c2` — **BILDER.md** als zentrale Bild-Dokumentation; Inline-
+  🖼️-Kommentare in Home, Kurs, CourseOverview, Materialien,
+  Navigation, Footer, Hero, alle 5 CourseDay-Dateien.
+- `13841b0` — **CLAUDE.md** als zentrale Steuerungs- und
+  Arbeitsdatei inkl. Regel Null, Projekt-Kompass, Datei-Index,
+  10 Regeln für Claude. BILDER.md um Einbau-Vorschläge für Waisen-
+  Bilder erweitert.
+- `21b1d4f` — **Bilder-Reorganisation nach Regel Null:**
+  `dayN-extra/` aufgelöst → flache `dayN/`-Struktur, Kurs-
+  Übersichtsbilder nach `images/overview/`, 10 Waisen-Bilder nach
+  `archive/images-unused/` (außerhalb `public/`, nicht im Build).
+  Solo-Ordner `images/day4/` gelöscht. Alle 17 Code-Referenzen
+  aktualisiert, 20+ Inline-Kommentare. Build-Precache von 83 → 72
+  Einträge, 64,8 MB → 48,3 MB (−16,5 MB).
+
+---
+
 ## Erledigt-Archiv (chronologisch, neueste zuerst)
+
+### 2026-04-16 · Lückenlose Projekt-Chronologie + Dokumentationspflicht ✅
+- **Regel Null** um Schritt 5 (Dokumentationspflicht 🔒) erweitert: jede
+  Code-Änderung muss in der passenden Doku beschrieben werden
+  (BILDER.md / CLAUDE.md / README.md / Fördermappe-README / rechtlicher
+  Snapshot). Kein Drift mehr zulässig.
+- **Projekt-Chronologie** als neuer Abschnitt: lückenlose Darstellung
+  aller bisherigen Commits in 9 thematischen Phasen von Projektstart
+  (3. April 2026) bis heute (16. April 2026), jeweils mit Commit-Hashes
+  und Kurz-Beschreibung der jeweiligen Änderungen.
+- **README.md** aktualisiert: Kurs 3 ergänzt, neuer Abschnitt „Für
+  Schulen in Baden-Württemberg" (3 Workshop-Formate), Team-Block mit
+  Belkis + Damien, Telefon +49 176 81462526, neuer Abschnitt „Für
+  Entwickler:innen &amp; Mitarbeitende" mit Verweisen auf CLAUDE.md &amp;
+  BILDER.md sowie Dokumentations- und Build-Pflicht.
 
 ### 2026-04-16 · Bilder-Neuordnung: flache dayN/-Struktur, Overview-Ordner, Archiv außerhalb public/ ✅
 - 10 Bilder aus `dayN-extra/` nach `dayN/` verschoben (flache Struktur)
@@ -211,3 +399,4 @@ _(leer — kein laufender Auftrag)_
 | Datum | Änderung |
 |-------|----------|
 | 2026-04-16 | Erstellung. Regel Null, Projekt-Kompass, Datei-Verlinkung, Regeln für Claude. |
+| 2026-04-16 | Regel Null Schritt 5 (Dokumentationspflicht 🔒) hart festgeschrieben. Komplette Projekt-Chronologie (Phase 1–9) mit allen Commits seit Projektstart eingetragen. |
