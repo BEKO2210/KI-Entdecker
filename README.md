@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/images/robot-hero.png" alt="KI-Entdecker Maskottchen" width="180">
+![KI-Entdecker Logo Animation](public/gif/Logo_GIF_hell.gif)
 
 # KI-Entdecker
 
