@@ -1,4 +1,4 @@
-import { Mail, MapPin, User } from 'lucide-react';
+import { Mail, MapPin, Phone, User } from 'lucide-react';
 
 const Impressum = () => {
   return (
@@ -60,12 +60,28 @@ const Impressum = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-primary-purple/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-primary-purple" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-neutral-gray mb-1">Telefon</p>
+                    <a
+                      href="tel:+4917681462526"
+                      className="font-medium text-primary-purple hover:text-primary-purple/80 transition-colors"
+                      aria-label="Telefonnummer anrufen"
+                    >
+                      +49 176 81462526
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-accent-pink/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5 text-accent-pink" aria-hidden="true" />
                   </div>
                   <div>
-                    <p className="text-sm text-neutral-gray mb-1">Kontakt</p>
-                    <a 
+                    <p className="text-sm text-neutral-gray mb-1">E-Mail</p>
+                    <a
                       href="mailto:belkis.aslani@gmail.com"
                       className="font-medium text-primary-purple hover:text-primary-purple/80 transition-colors"
                       aria-label="E-Mail an belkis.aslani@gmail.com senden"

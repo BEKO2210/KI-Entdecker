@@ -667,13 +667,21 @@ const Schulen = () => {
               Für Anfragen von Schulen, Medienzentren oder Fördervereinen bitte mit Klassenstufe,
               gewünschtem Zeitraum und Technik-Setup melden.
             </p>
-            <a
-              href="mailto:belkis.aslani@gmail.com?subject=Kooperation%20Schulworkshop%20KI-Entdecker"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary-purple text-white rounded-xl font-medium hover:bg-primary-purple/90 transition-colors"
-            >
-              <Mail className="w-5 h-5" />
-              Kooperation anfragen
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href="mailto:belkis.aslani@gmail.com?subject=Kooperation%20Schulworkshop%20KI-Entdecker"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-purple text-white rounded-xl font-medium hover:bg-primary-purple/90 transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+                E-Mail schreiben
+              </a>
+              <a
+                href="tel:+4917681462526"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-purple border-2 border-primary-purple rounded-xl font-medium hover:bg-primary-purple/5 transition-colors"
+              >
+                +49 176 81462526
+              </a>
+            </div>
           </div>
         </div>
       </section>

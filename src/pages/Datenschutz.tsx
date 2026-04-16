@@ -1,4 +1,4 @@
-import { Shield, Database, Cookie, UserCheck, Mail, ExternalLink } from 'lucide-react';
+import { Shield, Database, Cookie, UserCheck, Mail, Phone, ExternalLink } from 'lucide-react';
 
 const Datenschutz = () => {
   return (
@@ -64,9 +64,19 @@ const Datenschutz = () => {
                     71691 Freiberg am Neckar<br />
                     Deutschland
                   </p>
-                  <p className="mt-4">
+                  <p className="mt-3">
+                    <span className="text-neutral-gray">Telefon: </span>
+                    <a
+                      href="tel:+4917681462526"
+                      className="text-primary-purple hover:text-primary-purple/80 transition-colors"
+                      aria-label="Telefonnummer anrufen"
+                    >
+                      +49 176 81462526
+                    </a>
+                  </p>
+                  <p className="mt-1">
                     <span className="text-neutral-gray">E-Mail: </span>
-                    <a 
+                    <a
                       href="mailto:belkis.aslani@gmail.com"
                       className="text-primary-purple hover:text-primary-purple/80 transition-colors"
                       aria-label="E-Mail an belkis.aslani@gmail.com senden"
@@ -364,14 +374,24 @@ const Datenschutz = () => {
                     Vogelsangstraße 32<br />
                     71691 Freiberg am Neckar
                   </p>
-                  <a 
-                    href="mailto:belkis.aslani@gmail.com?subject=Datenschutzanfrage"
-                    className="inline-flex items-center gap-2 mt-4 text-primary-purple hover:text-primary-purple/80 transition-colors"
-                    aria-label="E-Mail mit Datenschutzanfrage senden"
-                  >
-                    <Mail className="w-4 h-4" aria-hidden="true" />
-                    belkis.aslani@gmail.com
-                  </a>
+                  <div className="flex flex-wrap gap-4 mt-4">
+                    <a
+                      href="tel:+4917681462526"
+                      className="inline-flex items-center gap-2 text-primary-purple hover:text-primary-purple/80 transition-colors"
+                      aria-label="Telefonnummer anrufen"
+                    >
+                      <Phone className="w-4 h-4" aria-hidden="true" />
+                      +49 176 81462526
+                    </a>
+                    <a
+                      href="mailto:belkis.aslani@gmail.com?subject=Datenschutzanfrage"
+                      className="inline-flex items-center gap-2 text-primary-purple hover:text-primary-purple/80 transition-colors"
+                      aria-label="E-Mail mit Datenschutzanfrage senden"
+                    >
+                      <Mail className="w-4 h-4" aria-hidden="true" />
+                      belkis.aslani@gmail.com
+                    </a>
+                  </div>
                 </div>
               </article>
             </div>
