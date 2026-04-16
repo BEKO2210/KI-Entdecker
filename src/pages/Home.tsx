@@ -459,8 +459,10 @@ const Home = ({ progress }: HomeProps) => {
                 </h2>
                 <p className="text-neutral-gray mb-3">
                   Nach Abschluss aller 5 Kurstage erhältst du dein Zertifikat als hochwertige
-                  <strong> PDF-Datei</strong> mit deinem Namen, allen erreichten Kompetenzstufen
-                  und dem KI-Entdecker-Siegel.
+                  <strong> PDF-Datei</strong> mit allen erreichten Kompetenzstufen und dem
+                  KI-Entdecker-Siegel. <strong>Name und Datum trägst du nach dem Ausdrucken
+                  selbst in Druckschrift ein</strong> – so wird es zu deinem ganz persönlichen
+                  Zertifikat.
                 </p>
                 <p className="text-sm text-neutral-gray/80 mb-5">
                   Der Online-Kurs ist kostenlos – der Ausdruck erfolgt zu Hause oder im Copyshop
