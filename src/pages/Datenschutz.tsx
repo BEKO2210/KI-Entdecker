@@ -55,35 +55,52 @@ const Datenschutz = () => {
               <article>
                 <h2 className="text-xl font-outfit font-bold text-neutral-dark mb-4 flex items-center gap-3">
                   <UserCheck className="w-6 h-6 text-primary-purple" aria-hidden="true" />
-                  Verantwortlicher
+                  Gemeinsam Verantwortliche (Art. 26 DSGVO)
                 </h2>
-                <div className="bg-neutral-light rounded-xl p-6">
-                  <p className="font-medium text-neutral-dark">Belkis Aslani</p>
-                  <p className="text-neutral-gray mt-1">
-                    Vogelsangstraße 32<br />
-                    71691 Freiberg am Neckar<br />
-                    Deutschland
-                  </p>
-                  <p className="mt-3">
-                    <span className="text-neutral-gray">Telefon: </span>
-                    <a
-                      href="tel:+4917681462526"
-                      className="text-primary-purple hover:text-primary-purple/80 transition-colors"
-                      aria-label="Telefonnummer anrufen"
-                    >
-                      +49 176 81462526
-                    </a>
-                  </p>
-                  <p className="mt-1">
-                    <span className="text-neutral-gray">E-Mail: </span>
-                    <a
-                      href="mailto:belkis.aslani@gmail.com"
-                      className="text-primary-purple hover:text-primary-purple/80 transition-colors"
-                      aria-label="E-Mail an belkis.aslani@gmail.com senden"
-                    >
-                      belkis.aslani@gmail.com
-                    </a>
-                  </p>
+                <p className="text-sm text-neutral-gray mb-4">
+                  Für die Verarbeitung personenbezogener Daten im Rahmen dieses Angebots sind die
+                  folgenden Personen gemeinsam verantwortlich. Hauptansprechperson für
+                  Datenschutzanfragen ist Belkis Aslani.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="bg-neutral-light rounded-xl p-6">
+                    <p className="font-medium text-neutral-dark">Belkis Aslani</p>
+                    <p className="text-xs text-neutral-gray mt-0.5 mb-2">Projektleitung · Datenschutz-Kontakt</p>
+                    <p className="text-neutral-gray text-sm">
+                      Vogelsangstraße 32<br />
+                      71691 Freiberg am Neckar<br />
+                      Deutschland
+                    </p>
+                    <p className="mt-3 text-sm">
+                      <span className="text-neutral-gray">Telefon: </span>
+                      <a
+                        href="tel:+4917681462526"
+                        className="text-primary-purple hover:text-primary-purple/80 transition-colors"
+                        aria-label="Telefonnummer anrufen"
+                      >
+                        +49 176 81462526
+                      </a>
+                    </p>
+                    <p className="mt-1 text-sm">
+                      <span className="text-neutral-gray">E-Mail: </span>
+                      <a
+                        href="mailto:belkis.aslani@gmail.com"
+                        className="text-primary-purple hover:text-primary-purple/80 transition-colors"
+                      >
+                        belkis.aslani@gmail.com
+                      </a>
+                    </p>
+                  </div>
+
+                  <div className="bg-neutral-light rounded-xl p-6">
+                    <p className="font-medium text-neutral-dark">Damien Eynius</p>
+                    <p className="text-xs text-neutral-gray mt-0.5 mb-2">Organisation · Verwaltung</p>
+                    <p className="text-neutral-gray text-sm">
+                      Ziegelsteige 11<br />
+                      74329 Hardthausen am Kocher<br />
+                      Deutschland
+                    </p>
+                  </div>
                 </div>
               </article>
 

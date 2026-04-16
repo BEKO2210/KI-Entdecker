@@ -663,9 +663,13 @@ const Schulen = () => {
         <div className="section-padding">
           <div className="container-wide text-center bg-white rounded-3xl p-8 shadow-sm">
             <h2 className="text-2xl font-outfit font-bold text-neutral-dark mb-2">Kontakt für Kooperationen</h2>
-            <p className="text-neutral-gray mb-6">
+            <p className="text-neutral-gray mb-2">
               Für Anfragen von Schulen, Medienzentren oder Fördervereinen bitte mit Klassenstufe,
               gewünschtem Zeitraum und Technik-Setup melden.
+            </p>
+            <p className="text-sm text-neutral-gray/80 mb-6">
+              <strong className="text-neutral-dark">Belkis Aslani</strong> (Projektleitung, Konzeption, Technik)
+              · gemeinsam mit <strong className="text-neutral-dark">Damien Eynius</strong> (Organisation &amp; Verwaltung)
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a

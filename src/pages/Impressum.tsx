@@ -30,18 +30,22 @@ const Impressum = () => {
           <div className="container-wide max-w-3xl">
             {/* Provider Information */}
             <div className="bg-neutral-light rounded-2xl p-8 mb-8">
-              <h2 className="text-xl font-outfit font-bold text-neutral-dark mb-6">
-                Dienstanbieter
+              <h2 className="text-xl font-outfit font-bold text-neutral-dark mb-2">
+                Anbieter
               </h2>
-              
-              <div className="space-y-4">
+              <p className="text-sm text-neutral-gray mb-6">
+                Gemeinsames Angebot nach § 5 DDG. Hauptansprechperson für inhaltliche und technische
+                Fragen ist Belkis Aslani; Damien Eynius verantwortet Organisation und Verwaltung.
+              </p>
+
+              <div className="space-y-4 pb-6 border-b border-white/80">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-primary-purple/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <User className="w-5 h-5 text-primary-purple" aria-hidden="true" />
                   </div>
                   <div>
-                    <p className="text-sm text-neutral-gray mb-1">Name</p>
                     <p className="font-medium text-neutral-dark">Belkis Aslani</p>
+                    <p className="text-xs text-neutral-gray">Projektleitung · Konzeption · Technik</p>
                   </div>
                 </div>
 
@@ -88,6 +92,32 @@ const Impressum = () => {
                     >
                       belkis.aslani@gmail.com
                     </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4 pt-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-primary-purple/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <User className="w-5 h-5 text-primary-purple" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-neutral-dark">Damien Eynius</p>
+                    <p className="text-xs text-neutral-gray">Organisation · Kooperationen · Verwaltung</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-primary-teal/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-primary-teal" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-neutral-gray mb-1">Anschrift</p>
+                    <p className="font-medium text-neutral-dark">
+                      Ziegelsteige 11<br />
+                      74329 Hardthausen am Kocher<br />
+                      Deutschland
+                    </p>
                   </div>
                 </div>
               </div>
