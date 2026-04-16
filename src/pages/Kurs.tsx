@@ -29,6 +29,12 @@ const Kurs = ({ progress }: KursProps) => {
   const unlockedCount = progress.getUnlockedBadgesCount();
   const completedDays = progress.getCompletedDaysCount();
 
+  /* ══════════════════════════════════════════════════════════════════════
+     🖼️  BILDER – KURS-ÜBERSICHTSBILDER (5 Stück auf /kurs)
+     Pfad: public/images/dayN-xxx.png
+     Zum Austauschen: Datei unter gleichem Pfad ersetzen (gleicher Name).
+     Alle Details + alternative Bilder: siehe BILDER.md
+     ══════════════════════════════════════════════════════════════════════ */
   const days: DayCourse[] = [
     {
       id: 1,

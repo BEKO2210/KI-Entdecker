@@ -14,8 +14,16 @@ interface CourseDayProps {
 }
 
 // ============================================================================
-// COURSE DAY 2: PROMPT ENGINEERING - Comprehensive Expanded Version
-// 5x Content Expansion with Premium Design
+// COURSE DAY 2: PROMPT ENGINEERING
+//
+// 🖼️  VERWENDETE BILDER (alle unter public/images/courses/):
+//    • day2/magic-prompt.png              · 2x (Opener + Wrap-up)
+//    • day2/robot-speaking.png            · Prompt-Grundlagen
+//    • day2-extra/five-stars-recipe.png   · 5-Sterne-Rezept
+//    • day2-extra/prompt-transformation.png · Vorher/Nachher
+//
+//    Zum Austauschen: Datei unter gleichem Pfad ersetzen (gleicher Name).
+//    Komplette Bild-Dokumentation: siehe BILDER.md im Projekt-Root.
 // ============================================================================
 
 const CourseDay2 = ({ progress }: CourseDayProps) => {

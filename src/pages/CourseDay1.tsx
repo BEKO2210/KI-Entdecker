@@ -14,8 +14,19 @@ interface CourseDayProps {
 }
 
 // ============================================================================
-// COURSE DAY 1: WAS IST KI? - Comprehensive Expanded Version
-// 5x Content Expansion with Premium Design
+// COURSE DAY 1: WAS IST KI?
+//
+// 🖼️  VERWENDETE BILDER (alle unter public/images/courses/):
+//    • day1/robot-confused.png       · Kapitel-Opener
+//    • day1/brain-circuits.png       · 2x: "Wie lernen Computer?"
+//    • day1/robot-learning.png       · Maschinelles Lernen
+//    • day1-extra/ai-vs-program.png  · Vergleichsgrafik
+//    • day1-extra/chatbot-friendly.png · Chatbot-Demo
+//    • day1-extra/robot-teacher.png  · FAQ-Section
+//
+//    Zum Austauschen: Datei unter gleichem Pfad ersetzen (gleicher Name).
+//    Komplette Bild-Dokumentation: siehe BILDER.md im Projekt-Root.
+// ============================================================================
 // ============================================================================
 
 const CourseDay1 = ({ progress }: CourseDayProps) => {

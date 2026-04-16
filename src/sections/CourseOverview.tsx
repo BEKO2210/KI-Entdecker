@@ -21,6 +21,12 @@ const CourseOverview = () => {
   const navigate = useNavigate();
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  /* ══════════════════════════════════════════════════════════════════════
+     🖼️  BILDER – KURS-VORSCHAU IM HOMEPAGE-SECTION-COMPONENT
+     Diese Section-Komponente spiegelt die Kurs-Karten auf der Startseite.
+     Verwendete Bilder: public/images/dayN-xxx.png (5 Stück)
+     Details + Austausch-Anleitung: siehe BILDER.md im Projekt-Root.
+     ══════════════════════════════════════════════════════════════════════ */
   const days: DayCourse[] = [
     {
       id: 1,

@@ -10,6 +10,20 @@ interface CourseDayProps {
   progress: ReturnType<typeof useProgress>;
 }
 
+// ============================================================================
+// COURSE DAY 5: ABSCHLUSSPROJEKT & ZERTIFIKAT
+//
+// 🖼️  VERWENDETE BILDER (alle unter public/images/courses/day5/):
+//    • trophy-celebration.png   · 2x (Opener + Abschluss-Screen)
+//    • robot-presentation.png   · Projekt-Vorstellung
+//    • rocket-launch.png        · "Du startest durch"
+//    • robot-graduate.png       · Absolvent-Figur
+//    • certificate.png          · Zertifikat-Vorschau im Abschluss-Dialog
+//
+//    Das druckbare Zertifikat liegt als HTML unter:
+//    public/downloads/zertifikat.html (siehe BILDER.md)
+// ============================================================================
+
 const CourseDay5 = ({ progress }: CourseDayProps) => {
   const [activeSection, setActiveSection] = useState(0);
   const [maxReachedSection, setMaxReachedSection] = useState(0);

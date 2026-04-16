@@ -9,6 +9,19 @@ interface CourseDayProps {
   progress: ReturnType<typeof useProgress>;
 }
 
+// ============================================================================
+// COURSE DAY 4: PROBLEMLÖSEN MIT KI
+//
+// 🖼️  VERWENDETE BILDER (alle unter public/images/courses/day4/):
+//    • puzzle-solution.png        · Opener
+//    • robot-math.png             · Mathe-Beispiel
+//    • magnifying-glass.png       · Recherche-Abschnitt
+//    • robot-problem-solver.png   · 2x (Korrektur + Abschluss-Banner)
+//
+//    Zum Austauschen: Datei unter gleichem Pfad ersetzen (gleicher Name).
+//    Komplette Bild-Dokumentation: siehe BILDER.md im Projekt-Root.
+// ============================================================================
+
 const CourseDay4 = ({ progress }: CourseDayProps) => {
   const [activeSection, setActiveSection] = useState(0);
   const [maxReachedSection, setMaxReachedSection] = useState(0);

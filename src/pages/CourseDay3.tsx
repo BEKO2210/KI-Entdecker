@@ -14,8 +14,17 @@ interface CourseDayProps {
 }
 
 // ============================================================================
-// COURSE DAY 3: KREATIV MIT KI - Comprehensive Expanded Version
-// 5x Content Expansion with Premium Design
+// COURSE DAY 3: KREATIV MIT KI
+//
+// 🖼️  VERWENDETE BILDER (alle unter public/images/courses/):
+//    • day3/art-easel.png              · Opener
+//    • day3/robot-painting.png         · Bild-Generierung
+//    • day3/robot-artist.png           · Kreativ-Projekte
+//    • day3-extra/story-magic.png      · Story-Abschnitt
+//    • day3-extra/robot-artist-painting.png · FAQ-Section
+//
+//    Zum Austauschen: Datei unter gleichem Pfad ersetzen (gleicher Name).
+//    Komplette Bild-Dokumentation: siehe BILDER.md im Projekt-Root.
 // ============================================================================
 
 const CourseDay3 = ({ progress }: CourseDayProps) => {

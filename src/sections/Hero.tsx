@@ -155,7 +155,7 @@ const Hero = () => {
                 <div className="absolute w-80 h-80 border-2 border-primary-teal/10 rounded-full animate-spin-slow" style={{ animationDirection: 'reverse', animationDuration: '12s' }} />
               </div>
 
-              {/* Robot Image */}
+              {/* 🖼️  HERO-MASKOTTCHEN: public/images/robot-hero.png (siehe BILDER.md) */}
               <div className="relative z-10 floating">
                 <img
                   src={buildAssetUrl('images/robot-hero.png')}

@@ -29,6 +29,12 @@ const Home = ({ progress }: HomeProps) => {
     'Für Kinder ab 8 Jahren',
   ];
 
+  /* ══════════════════════════════════════════════════════════════════════
+     🖼️  BILDER – KURS-ÜBERSICHTSKARTEN (5 Stück auf der Startseite)
+     Jedes 'image:' referenziert ein Bild unter public/images/courses/…
+     Zum Austauschen: Datei unter gleichem Pfad ersetzen (gleicher Name).
+     Komplette Bild-Dokumentation: siehe BILDER.md im Projekt-Root.
+     ══════════════════════════════════════════════════════════════════════ */
   const courses = [
     {
       day: '1',
