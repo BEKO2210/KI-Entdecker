@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, CheckCircle, Copy, Trophy, Rocket, GraduationCap, Star, Medal, Sparkles, Send, HelpCircle, ChevronDown, ChevronUp, BookOpen, Download } from 'lucide-react';
+import { CheckCircle, Copy, Trophy, Rocket, GraduationCap, Star, Medal, Sparkles, Send, HelpCircle, ChevronDown, ChevronUp, BookOpen, Download } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { buildAssetUrl, buildDownloadUrl } from '@/lib/paths';
+import CourseDayLayout from '@/components/course/CourseDayLayout';
 import type { useProgress } from '../hooks/useProgress';
 
 interface CourseDayProps {
@@ -31,7 +32,6 @@ const CourseDay5 = ({ progress }: CourseDayProps) => {
   const [projectIdea, setProjectIdea] = useState('');
   const [completedTasks, setCompletedTasks] = useState<string[]>([]);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
   const canProceed = useRef(false);
 
   const { completeDay, unlockBadge } = progress;
@@ -646,95 +646,20 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-yellow-500 to-amber-500 text-white py-12">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="flex items-center gap-4 mb-4">
-            <Link to="/kurs" className="text-white/80 hover:text-white flex items-center gap-2">
-              <ArrowLeft className="w-5 h-5" />
-              Zurück
-            </Link>
-            <span className="text-white/60">|</span>
-            <span className="text-white/80">Tag 5 von 5</span>
-          </div>
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">Abschlussprojekt</h1>
-          <p className="text-white/80">Deine große KI-Premiere!</p>
-        </div>
-      </div>
-
-      {/* Progress Bar */}
-      <div className="bg-white border-b sticky top-16 z-30 shadow-sm">
-        <div className="max-w-4xl mx-auto px-4 py-4">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-sm text-gray-500">Fortschritt</span>
-            <span className="text-sm font-medium text-yellow-600">{Math.round(((activeSection + 1) / sections.length) * 100)}%</span>
-          </div>
-          <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-yellow-500 transition-all duration-300"
-              style={{ width: `${((activeSection + 1) / sections.length) * 100}%` }}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Navigation */}
-      <div className="max-w-4xl mx-auto px-4 py-6">
-        <div className="flex flex-wrap gap-2 mb-8">
-          {sections.map((section, index) => (
-            <button
-              key={section.id}
-              onClick={() => index <= maxReachedSection && setActiveSection(index)}
-              disabled={index > maxReachedSection}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
-                activeSection === index
-                  ? 'bg-yellow-500 text-white'
-                  : index <= maxReachedSection
-                  ? 'bg-green-100 text-green-700'
-                  : 'bg-white text-gray-400 border border-gray-200 opacity-50 cursor-not-allowed'
-              }`}
-            >
-              {index <= maxReachedSection && activeSection !== index ? (
-                <CheckCircle className="w-4 h-4" />
-              ) : (
-                <section.icon className="w-4 h-4" />
-              )}
-              <span className="hidden sm:inline">{section.title}</span>
-              <span className="sm:hidden">{index + 1}</span>
-            </button>
-          ))}
-        </div>
-
-        {/* Content */}
-        <div ref={sectionRef} className="animate-fade-in-up">
-          {sections[activeSection].content}
-        </div>
-
-        {/* Spacer for sticky nav */}
-        <div className="h-24" />
-      </div>
-
-      {/* Navigation Buttons - sticky bottom */}
-      <div className="sticky bottom-0 z-20 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between">
-          <button
-            onClick={() => setActiveSection(Math.max(0, activeSection - 1))}
-            disabled={activeSection === 0}
-            className="flex items-center gap-2 px-6 py-3 bg-white text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors border-2 border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            Zurück
-          </button>
-          <button
-            onClick={handleNext}
-            className="flex items-center gap-2 px-6 py-3 bg-yellow-500 text-white rounded-xl font-medium hover:bg-yellow-600 transition-colors shadow-lg shadow-yellow-200 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {activeSection === sections.length - 1 ? 'Zertifikat anzeigen' : 'Weiter'}
-            <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
-      </div>
+    <>
+      <CourseDayLayout
+        dayNumber={5}
+        title="Abschlussprojekt"
+        subtitle="Deine große KI-Premiere!"
+        colorScheme="yellow"
+        sections={sections}
+        activeSection={activeSection}
+        maxReachedSection={maxReachedSection}
+        onSelectSection={setActiveSection}
+        onBack={() => setActiveSection(Math.max(0, activeSection - 1))}
+        onNext={handleNext}
+        lastSectionLabel="Zertifikat anzeigen"
+      />
 
       {/* Certificate Dialog */}
       <Dialog open={showCertificate} onOpenChange={setShowCertificate}>
@@ -771,7 +696,7 @@ Stell dich vor und frag mich, wie du mir helfen kannst!`)} className="absolute t
           </div>
         </DialogContent>
       </Dialog>
-    </div>
+    </>
   );
 };
 
