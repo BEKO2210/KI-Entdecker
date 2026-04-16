@@ -72,7 +72,8 @@ PIN autorisiert werden; neuer PIN wird in diesem Block dokumentiert.
 **Betreiber:** Belkis Aslani (Projektleitung, Konzeption, Technik) +
 Damien Eynius (Organisation, Verwaltung) · **Live:**
 [beko2210.github.io/KI-Entdecker](https://beko2210.github.io/KI-Entdecker/)
-**Branch für Entwicklung:** `claude/teacher-courses-materials-FGVWb`
+**Branch für Entwicklung:** jeweils der in der aktuellen Task-Anweisung
+genannte `claude/...`-Branch (wechselt pro Auftrag, nie direkt auf `main`).
 **Kontakt:** belkis.aslani@gmail.com · +49 176 81462526
 
 ### Ziel in einem Satz
@@ -109,7 +110,7 @@ für Start-up-BW-/IHK-/Stiftungsanträge.
 ### Branding & Navigation
 - [`Navigation.tsx`](./src/components/Navigation.tsx) — Top-Navigation
 - [`Footer.tsx`](./src/components/Footer.tsx) — Footer mit KI-Tool-Liste (telli/F13 + Consumer getrennt)
-- [`Hero.tsx`](./src/sections/Hero.tsx) — Hero-Section der Startseite
+- Hero-Section: inline in [`Home.tsx`](./src/pages/Home.tsx) (ab „Hero Section"-Kommentar). Einen eigenen `Hero.tsx` gibt es bewusst nicht mehr.
 
 ### Fördermappe (`foerdermappe/`) — intern, nicht im Web-Build
 - [`README.md`](./foerdermappe/README.md) — Inhaltsübersicht
@@ -195,8 +196,10 @@ npm run lint    # muss grün
 3. **Niemals sensible Daten** (echte Schülernamen, private Telefonnummern außer der Hauptnummer,
    echte Handschriften-Unterschriften) ins Repo legen.
 4. **Jeder Build muss grün sein**, bevor gepusht wird.
-5. **Branch-Regel:** Entwicklungsbranch ist `claude/teacher-courses-materials-FGVWb`.
-   Nicht auf `main` pushen, kein Force-Push, keine Rebase auf shared branches.
+5. **Branch-Regel:** Entwicklungsbranch ist immer der in der aktuellen
+   Task-Anweisung genannte `claude/...`-Branch. Nicht auf `main` pushen,
+   kein Force-Push, keine Rebase auf shared branches. (Stand 2026-04-16
+   generalisiert mit PIN 1518 — früher fest: `claude/teacher-courses-materials-FGVWb`.)
 6. **Legal-Guard:** Bei Änderungen an Impressum/Datenschutz/Elternbrief Prüfreihenfolge:
    Claude → Review durch Belkis → ggf. externer DSB/Steuerberater → Live-Push.
 7. **Kein Claims-Inflationismus:** „DSGVO-konform" → „datenschutzfreundlich konzipiert, vor
@@ -331,9 +334,10 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 - `77dc217` — Bildungsplan-Tabelle in Mobile-Ansicht sichtbar
   (Card-Layout unter sm-Breakpoint).
 - `f4e5f5f` — **Kurs 3 (Kl. 7/8, Quellen / Deepfakes / Bias /
-  Urheberrecht)** angelegt; Pitch in zwei Versionen gesplittet (09a
+  Urheberrecht)** angelegt; Pitch in zwei Versionen gesplittet (09
   Bildung, 09b Business); Kostenplan mit Musterbeträgen befüllt;
-  Gender auf männliche Form korrigiert.
+  Gender-Formulierungen im Projekt vereinheitlicht (laut Commit
+  „Gender-Fix").
 
 ### 📅 Phase 8 · Kontakt, Team, Details (16. April 2026)
 
@@ -383,6 +387,31 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 ---
 
 ## Erledigt-Archiv (chronologisch, neueste zuerst)
+
+### 2026-04-16 · CLAUDE.md-Bugs gefixt + Dead-Code-Ordner `src/sections/` entfernt ✅
+- **Auftrag:** „Checke die claude.md und prüfe auf bugs" — Fix-Freigabe
+  für Bug 1.a und Drift 3 (mit PIN 1518).
+- **Bug 1 + 2 (Dead Code):** Ordner `src/sections/` komplett entfernt
+  (9 Dateien: `Hero.tsx`, `Navigation.tsx`, `Footer.tsx`,
+  `CourseOverview.tsx`, `CTA.tsx`, `Features.tsx`, `Materials.tsx`,
+  `Parents.tsx`, `ProgressTracker.tsx`). Keine davon war aus `src/`
+  importiert; `sections/Navigation.tsx` verwendete noch das alte
+  Sparkles-Icon. Hero-Section liegt weiterhin inline in
+  [`Home.tsx`](./src/pages/Home.tsx).
+- **Drift 3 (Branch):** Projekt-Kompass (Zeile 75) und Regel 5
+  (Zeile 198) auf generische Formulierung umgestellt
+  („jeweils der in der Task-Anweisung genannte `claude/...`-Branch").
+  Regel 5 ist PIN-geschützt — mit PIN 1518 autorisiert.
+- **Drift 4 (Chronologie):** Phase 7 sagte „09a Bildung, 09b Business",
+  Datei heißt aber `09-executive-summary.html` → auf „09 Bildung,
+  09b Business" korrigiert.
+- **Kosmetik 5:** „Gender auf männliche Form korrigiert" → „Gender-
+  Formulierungen im Projekt vereinheitlicht (laut Commit ‚Gender-Fix')".
+- **Mit-Doku:** `BILDER.md` Zeile 71 (Hero.tsx-Referenz entfernt),
+  `.planning/codebase/STRUCTURE.md` + `ARCHITECTURE.md` (sections/
+  aus Struktur-Beschreibung und „Where to add new code" gestrichen,
+  mit Historien-Hinweis).
+- **Build + Lint grün**, gepusht auf `claude/check-claude-dm-bugs-jQrpw`.
 
 ### 2026-04-16 · Badge-Bubble auf Home (Mobile) nach oben verschoben ✅
 - `src/pages/Home.tsx` Zeile 283: Klasse `top-10` → `top-2 sm:top-10`
@@ -452,3 +481,4 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 | 2026-04-16 | Erstellung. Regel Null, Projekt-Kompass, Datei-Verlinkung, Regeln für Claude. |
 | 2026-04-16 | Regel Null Schritt 5 (Dokumentationspflicht 🔒) hart festgeschrieben. Komplette Projekt-Chronologie (Phase 1–9) mit allen Commits seit Projektstart eingetragen. |
 | 2026-04-16 | PIN-Schutz (1518) für Regel-Null- und Regeländerungen eingeführt. Neuer Abschnitt „🔐 Regeländerungs-Schutz" + neue Claude-Regel Nr. 11. |
+| 2026-04-16 | Bugs aus Audit gefixt: Dead-Code-Ordner `src/sections/` gelöscht, Hero-Eintrag aus Datei-Index entfernt, Branch-Angabe (Zeile 75 + Regel 5, mit PIN 1518) auf generische Formulierung umgestellt, Chronologie-Drift „09a"→„09" korrigiert, Gender-Fix-Zeile klarer formuliert. Zusätzlich BILDER.md + `.planning/codebase/STRUCTURE.md` + `ARCHITECTURE.md` entsprechend nachgezogen. |

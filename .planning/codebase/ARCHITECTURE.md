@@ -35,15 +35,15 @@
 - Purpose: Full-page components representing distinct user destinations
 - Location: `src/pages/`
 - Contains: Home.tsx, Kurs.tsx, CourseDay1-5.tsx, Materialien.tsx, Eltern.tsx, Wochenplan.tsx, Impressum.tsx, Datenschutz.tsx
-- Depends on: Hooks (useProgress), UI components, sections, icons (lucide-react)
+- Depends on: Hooks (useProgress), UI components, icons (lucide-react)
 - Used by: App.tsx route definitions
 
-**Sections Layer:**
-- Purpose: Reusable page sections and composed layouts (typically displayed on Home page)
-- Location: `src/sections/`
-- Contains: Hero.tsx, CourseOverview.tsx, Features.tsx, Materials.tsx, Parents.tsx, ProgressTracker.tsx, CTA.tsx, Navigation.tsx, Footer.tsx
-- Depends on: UI components, icons, hooks
-- Used by: Home.tsx and potentially other pages
+**Sections Layer:** (entfernt 2026-04-16)
+- Früher: `src/sections/` mit Hero, CourseOverview, Features, Materials,
+  Parents, ProgressTracker, CTA, parallelen Navigation/Footer.
+- Heute: Sections werden inline in der jeweiligen Page komponiert
+  (v. a. `src/pages/Home.tsx`). Kein eigener Ordner mehr — war Dead Code
+  und wurde entfernt.
 
 **Global Components:**
 - Purpose: Site-wide layout components and shared utilities
