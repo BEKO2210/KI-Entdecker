@@ -14,8 +14,16 @@ interface CourseDayProps {
 }
 
 // ============================================================================
-// COURSE DAY 2: PROMPT ENGINEERING - Comprehensive Expanded Version
-// 5x Content Expansion with Premium Design
+// COURSE DAY 2: PROMPT ENGINEERING
+//
+// 🖼️  VERWENDETE BILDER (alle unter public/images/courses/):
+//    • day2/magic-prompt.png              · 2x (Opener + Wrap-up)
+//    • day2/robot-speaking.png            · Prompt-Grundlagen
+//    • day2/five-stars-recipe.png         · 5-Sterne-Rezept
+//    • day2/prompt-transformation.png     · Vorher/Nachher
+//
+//    Zum Austauschen: Datei unter gleichem Pfad ersetzen (gleicher Name).
+//    Komplette Bild-Dokumentation: siehe BILDER.md im Projekt-Root.
 // ============================================================================
 
 const CourseDay2 = ({ progress }: CourseDayProps) => {
@@ -109,9 +117,10 @@ const CourseDay2 = ({ progress }: CourseDayProps) => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-teal-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-cyan-200/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
             
-            <img 
-              src={buildAssetUrl('images/courses/day2/magic-prompt.png')} 
-              alt="Magischer Prompt" 
+            {/* 🖼️  BILD: day2/magic-prompt.png – Zauber-Prompt (Opener + Wrap-up, 2x verwendet) */}
+            <img
+              src={buildAssetUrl('images/courses/day2/magic-prompt.png')}
+              alt="Magischer Prompt"
               className="w-40 h-40 sm:w-56 sm:h-56 mx-auto mb-8 relative z-10 animate-float"
             />
             
@@ -209,9 +218,10 @@ const CourseDay2 = ({ progress }: CourseDayProps) => {
         <div className="space-y-8">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
-            <img 
-              src={buildAssetUrl('images/courses/day2/robot-speaking.png')} 
-              alt="Sprechender Roboter" 
+            {/* 🖼️  BILD: day2/robot-speaking.png – sprechender Roboter (Was ist ein Prompt?) */}
+            <img
+              src={buildAssetUrl('images/courses/day2/robot-speaking.png')}
+              alt="Sprechender Roboter"
               className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 mx-auto md:mx-0"
             />
             <div>
@@ -441,9 +451,10 @@ const CourseDay2 = ({ progress }: CourseDayProps) => {
         <div className="space-y-8">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
-            <img 
-              src={buildAssetUrl('images/courses/day2-extra/five-stars-recipe.png')} 
-              alt="Fünf Sterne Rezept" 
+            {/* 🖼️  BILD: day2/five-stars-recipe.png – 5-Sterne-Rezept-Grafik */}
+            <img
+              src={buildAssetUrl('images/courses/day2/five-stars-recipe.png')}
+              alt="Fünf Sterne Rezept"
               className="w-32 h-32 md:w-48 md:h-32 flex-shrink-0 mx-auto md:mx-0 object-cover rounded-xl"
             />
             <div>
@@ -669,9 +680,10 @@ const CourseDay2 = ({ progress }: CourseDayProps) => {
         <div className="space-y-8">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
-            <img 
-              src={buildAssetUrl('images/courses/day2-extra/prompt-transformation.png')} 
-              alt="Prompt Transformation" 
+            {/* 🖼️  BILD: day2/prompt-transformation.png – Vorher/Nachher-Vergleich */}
+            <img
+              src={buildAssetUrl('images/courses/day2/prompt-transformation.png')}
+              alt="Prompt Transformation"
               className="w-32 h-32 md:w-48 md:h-32 flex-shrink-0 mx-auto md:mx-0 object-cover rounded-xl"
             />
             <div>
@@ -874,9 +886,10 @@ const CourseDay2 = ({ progress }: CourseDayProps) => {
         <div className="space-y-8">
           {/* Final Summary */}
           <div className="bg-gradient-to-br from-teal-100 via-cyan-50 to-teal-100 rounded-3xl p-8 text-center">
-            <img 
-              src={buildAssetUrl('images/courses/day2/magic-prompt.png')} 
-              alt="Magischer Prompt" 
+            {/* 🖼️  BILD: day2/magic-prompt.png – Zauber-Prompt (Opener + Wrap-up, 2x verwendet) */}
+            <img
+              src={buildAssetUrl('images/courses/day2/magic-prompt.png')}
+              alt="Magischer Prompt"
               className="w-32 h-32 mx-auto mb-6"
             />
             <h3 className="text-2xl font-bold text-teal-800 mb-4">

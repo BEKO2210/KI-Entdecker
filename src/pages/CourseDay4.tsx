@@ -9,6 +9,19 @@ interface CourseDayProps {
   progress: ReturnType<typeof useProgress>;
 }
 
+// ============================================================================
+// COURSE DAY 4: PROBLEMLÖSEN MIT KI
+//
+// 🖼️  VERWENDETE BILDER (alle unter public/images/courses/day4/):
+//    • puzzle-solution.png        · Opener
+//    • robot-math.png             · Mathe-Beispiel
+//    • magnifying-glass.png       · Recherche-Abschnitt
+//    • robot-problem-solver.png   · 2x (Korrektur + Abschluss-Banner)
+//
+//    Zum Austauschen: Datei unter gleichem Pfad ersetzen (gleicher Name).
+//    Komplette Bild-Dokumentation: siehe BILDER.md im Projekt-Root.
+// ============================================================================
+
 const CourseDay4 = ({ progress }: CourseDayProps) => {
   const [activeSection, setActiveSection] = useState(0);
   const [maxReachedSection, setMaxReachedSection] = useState(0);
@@ -61,9 +74,10 @@ const CourseDay4 = ({ progress }: CourseDayProps) => {
       content: (
         <div className="space-y-6">
           <div className="bg-gradient-to-br from-orange-100 to-amber-100 rounded-2xl p-8 text-center">
-            <img 
-              src={buildAssetUrl('images/courses/day4/puzzle-solution.png')} 
-              alt="Puzzle-Lösung" 
+            {/* 🖼️  BILD: day4/puzzle-solution.png – Puzzle-Lösung (Opener) */}
+            <img
+              src={buildAssetUrl('images/courses/day4/puzzle-solution.png')}
+              alt="Puzzle-Lösung"
               className="w-48 h-48 mx-auto mb-6"
             />
             <h2 className="text-2xl font-bold text-orange-800 mb-4">Problemlösen mit KI</h2>
@@ -114,9 +128,10 @@ const CourseDay4 = ({ progress }: CourseDayProps) => {
         <div className="space-y-6">
           <div className="bg-white rounded-2xl border-2 border-gray-100 p-8">
             <div className="flex items-start gap-6 mb-8">
-              <img 
-                src={buildAssetUrl('images/courses/day4/robot-math.png')} 
-                alt="Mathe-Roboter" 
+              {/* 🖼️  BILD: day4/robot-math.png – Mathe-Roboter (Mathe-Schritt-für-Schritt) */}
+              <img
+                src={buildAssetUrl('images/courses/day4/robot-math.png')}
+                alt="Mathe-Roboter"
                 className="w-32 h-32 flex-shrink-0"
               />
               <div>
@@ -214,9 +229,10 @@ Zeige mir jeden Zwischenschritt und erkläre, warum man das macht.`}
         <div className="space-y-6">
           <div className="bg-white rounded-2xl border-2 border-gray-100 p-8">
             <div className="flex items-start gap-6 mb-8">
-              <img 
-                src={buildAssetUrl('images/courses/day4/magnifying-glass.png')} 
-                alt="Lupe" 
+              {/* 🖼️  BILD: day4/magnifying-glass.png – Lupe (Recherche-Abschnitt) */}
+              <img
+                src={buildAssetUrl('images/courses/day4/magnifying-glass.png')}
+                alt="Lupe"
                 className="w-32 h-32 flex-shrink-0"
               />
               <div>
@@ -326,9 +342,10 @@ Mache es interessant und verständlich!`}
         <div className="space-y-6">
           <div className="bg-white rounded-2xl border-2 border-gray-100 p-8">
             <div className="flex items-start gap-6 mb-8">
-              <img 
-                src={buildAssetUrl('images/courses/day4/robot-problem-solver.png')} 
-                alt="Problem-Löser Roboter" 
+              {/* 🖼️  BILD: day4/robot-problem-solver.png – Problem-Löser (2x verwendet) */}
+              <img
+                src={buildAssetUrl('images/courses/day4/robot-problem-solver.png')}
+                alt="Problem-Löser Roboter"
                 className="w-32 h-32 flex-shrink-0"
               />
               <div>
@@ -449,6 +466,7 @@ Markiere die Fehler und erkläre kurz, was falsch war.`}
         <div className="space-y-8">
           {/* Zusammenfassung */}
           <div className="bg-gradient-to-br from-orange-100 to-amber-100 rounded-3xl p-8 text-center">
+            {/* 🖼️  BILD: day4/robot-problem-solver.png – Abschluss-Banner */}
             <img
               src={buildAssetUrl('images/courses/day4/robot-problem-solver.png')}
               alt="Problem-Löser Roboter"

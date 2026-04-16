@@ -74,6 +74,7 @@ const Navigation = ({ progress }: NavigationProps) => {
               className="flex items-center gap-2 group"
               aria-label="Zur Startseite"
             >
+              {/* 🖼️  LOGO: public/images/robot-hero.png (siehe BILDER.md) */}
               <img
                 src={buildAssetUrl('images/robot-hero.png')}
                 alt=""

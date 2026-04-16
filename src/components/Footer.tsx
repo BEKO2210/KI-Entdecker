@@ -31,6 +31,7 @@ const Footer = () => {
           <div className="flex flex-col gap-4 items-center mb-4">
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 w-full justify-between">
               <Link to="/" className="flex items-center gap-2" aria-label="Zur Startseite">
+                {/* 🖼️  LOGO: public/images/robot-hero.png (siehe BILDER.md) */}
                 <img src={buildAssetUrl('images/robot-hero.png')} alt="" className="w-7 h-7 rounded-md object-contain" />
                 <span className="font-outfit font-bold text-neutral-dark">KI-Entdecker</span>
               </Link>

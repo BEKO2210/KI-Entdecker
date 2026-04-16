@@ -231,6 +231,10 @@ const Materialien = ({ progress }: MaterialienProps) => {
                 – du trägst sie nach dem Druck per Hand in Druckschrift ein.
               </p>
             </div>
+            {/* 🖼️  ZERTIFIKAT-VORSCHAU
+                 WebP primär: public/images/preview/zertifikatvorschau.webp (162 KB)
+                 PNG Fallback: public/images/preview/zertifikatvorschau.png (827 KB)
+                 Siehe BILDER.md für Austausch-Anleitung. */}
             <div className="bg-gradient-to-br from-primary-purple/5 to-primary-teal/5 rounded-3xl p-4 sm:p-8 shadow-inner border border-neutral-light">
               <picture>
                 <source

@@ -7,16 +7,25 @@
   @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Outfit',sans-serif;color:#1a1a2e;background:#fff;padding:40px;max-width:900px;margin:0 auto;line-height:1.6}
-  @page{size:A4;margin:18mm 16mm 18mm}
+  @page{size:A4;margin:15mm 16mm 15mm 16mm}
   @media print{
-    html,body{background:#fff!important}
-    body{padding:0!important;max-width:none!important;font-size:11pt;line-height:1.5}
+    *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;color-adjust:exact!important}
+    html,body{background:#fff!important;margin:0!important;padding:0!important}
+    body{max-width:none!important;font-size:10.5pt;line-height:1.45}
     .no-print{display:none!important}
-    h2,h3{break-after:avoid-page;page-break-after:avoid}
+    h1,h2,h3{break-after:avoid-page;page-break-after:avoid}
+    h2+*,h3+*{break-before:avoid-page;page-break-before:avoid}
     p,li{orphans:3;widows:3}
-    .letter,.form,.info-box,.signature{break-inside:avoid;page-break-inside:avoid}
+    /* Atomische Blöcke bleiben zusammen */
+    .head-row,.info-box,.choice,.signature{break-inside:avoid;page-break-inside:avoid}
+    /* Der Brief fließt natürlich, wird NICHT als Block zusammengehalten */
+    .letter{break-inside:auto;page-break-inside:auto}
+    /* Form startet auf neuer Seite und bleibt zusammen */
+    .form{break-before:page;page-break-before:always;break-inside:avoid;page-break-inside:avoid;margin-top:0!important}
+    /* Der manuelle page-break-Div entfällt, die Regel oben regelt alles */
+    .page-break{display:none!important}
     input,textarea{border:1px solid #9ca3af!important;background:#fff!important}
-    .page-break{page-break-before:always}
+    .footer{break-before:avoid}
   }
   .letter{padding:10px 0}
   .letter .head-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:22px;font-size:11px;color:#6b7280}
