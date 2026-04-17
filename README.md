@@ -10,7 +10,8 @@
 das wichtigste Werkzeug unserer Zeit zu verstehen und zu nutzen.**
 
 [![Live](https://img.shields.io/badge/Live%20Demo-beko2210.github.io-7F56D9?style=for-the-badge&logo=github)](https://beko2210.github.io/KI-Entdecker/)
-[![Lizenz](https://img.shields.io/badge/Lizenz-CC%20BY--NC--ND%204.0-14b8a6?style=for-the-badge)](LICENSE)
+[![Inhalte: CC BY-NC-SA 4.0](https://img.shields.io/badge/Inhalte-CC%20BY--NC--SA%204.0-14b8a6?style=for-the-badge)](LICENSE)
+[![Code: All Rights Reserved](https://img.shields.io/badge/Code-All%20Rights%20Reserved-6b7280?style=for-the-badge)](LICENSE)
 
 ---
 
@@ -190,17 +191,36 @@ npm run lint    # muss grün
 
 ## Lizenz
 
-Dieses Projekt steht unter der **Creative Commons BY-NC-ND 4.0** Lizenz.
+Dieses Projekt nutzt eine **zweigeteilte Standard-Lizenz**:
+
+### Inhalte · Creative Commons BY-NC-SA 4.0
+
+Kurs-Lektionen, Arbeitsblätter, Handreichungen, pädagogische Konzepte,
+Texte, Bilder, Zertifikatvorlage, Fördermappe-Inhalte.
 
 **Du darfst:**
-- Den Kurs kostenlos nutzen und teilen
+- **Teilen** – kopieren, verbreiten, in jedem Medium weitergeben
+- **Bearbeiten** – remixen, verändern, übersetzen, an deine Klasse oder Zielgruppe anpassen
 
 **Unter folgenden Bedingungen:**
-- **Namensnennung** – Der Name „KI-Entdecker" und der Autor müssen genannt werden
-- **Nicht kommerziell** – Keine kommerzielle Nutzung
-- **Keine Bearbeitung** – Das Material darf nicht verändert oder als Grundlage für eigene Werke genutzt werden
+- **Namensnennung** – „KI-Entdecker · Belkis Aslani & Damien Eynius" plus Link auf das Projekt
+- **Nicht kommerziell** – Keine kommerzielle Nutzung (Einsatz an öffentlichen Schulen und in nicht-kommerziellen Bildungskontexten ist ausdrücklich erwünscht)
+- **Weitergabe unter gleichen Bedingungen** – Bearbeitete Fassungen dürfen nur unter derselben Lizenz CC BY-NC-SA 4.0 weitergegeben werden
 
-Vollständiger Lizenztext: [LICENSE](LICENSE)
+### Code / Website / System · All Rights Reserved
+
+Quellcode (`src/`), Build-Konfiguration, Komponenten-Bibliothek, PWA-
+und Service-Worker-Setup, HTML-/CSS-/JS-Gerüste der Download-Dokumente
+und der Fördermappe, sowie die gesamte technische Plattform.
+
+**Copyright © 2026 Belkis Aslani & Damien Eynius. Alle Rechte vorbehalten.**
+
+Nutzung, Vervielfältigung, Modifikation und Verbreitung des Codes —
+ob ganz oder teilweise — bedürfen der vorherigen schriftlichen
+Zustimmung der Rechteinhaber. Die öffentliche Sichtbarkeit auf GitHub
+ist keine Lizenzerteilung. Anfragen: [belkis.aslani@gmail.com](mailto:belkis.aslani@gmail.com).
+
+Vollständiger Lizenztext mit allen Details: [LICENSE](LICENSE)
 
 ---
 

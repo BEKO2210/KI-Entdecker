@@ -169,18 +169,40 @@ const Impressum = () => {
                   Urheberrecht
                 </h2>
                 <p className="text-neutral-gray leading-relaxed">
-                  Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
-                  unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung,
-                  Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes
-                  bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
-                  Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen
-                  Gebrauch gestattet. Es gilt die Lizenz
+                  Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
+                  unterliegen dem deutschen Urheberrecht. Es gilt eine zweigeteilte
+                  Standard-Lizenz:
+                </p>
+                <ul className="mt-3 space-y-2 text-neutral-gray leading-relaxed list-disc pl-6">
+                  <li>
+                    <strong>Inhalte</strong> (Kurs-Lektionen, Arbeitsblätter, Handreichungen,
+                    Konzepte, Bilder, Zertifikat-Vorlage, Fördermappe-Inhalte) stehen unter
+                    <a
+                      href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-purple hover:text-primary-purple/80 transition-colors"
+                    > Creative Commons BY-NC-SA 4.0</a>. Nutzung in nicht-kommerziellen Bildungs-
+                    kontexten ist ausdrücklich erwünscht; bei Bearbeitung gilt die gleiche
+                    Lizenz, Namensnennung vorausgesetzt.
+                  </li>
+                  <li>
+                    <strong>Code, Website und technische Plattform</strong> (Quellcode, Build-
+                    Konfiguration, HTML-/CSS-/JS-Gerüste, PWA-Setup) stehen unter
+                    <strong> „Alle Rechte vorbehalten"</strong> (Copyright © 2026 Belkis
+                    Aslani &amp; Damien Eynius). Nutzung, Vervielfältigung, Modifikation oder
+                    Verbreitung des Codes nur mit vorheriger schriftlicher Zustimmung.
+                  </li>
+                </ul>
+                <p className="text-neutral-gray leading-relaxed mt-3">
+                  Downloads und Kopien der Inhalte sind für den privaten und nicht kommerziellen
+                  Gebrauch gestattet. Vollständiger Lizenztext:
                   <a
-                    href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de"
+                    href="https://github.com/BEKO2210/KI-Entdecker/blob/main/LICENSE"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary-purple hover:text-primary-purple/80 transition-colors"
-                  > Creative Commons BY-NC-ND 4.0</a>.
+                  > LICENSE im Repository</a>.
                 </p>
                 <p className="text-neutral-gray leading-relaxed mt-4">
                   Soweit die Inhalte auf dieser Seite nicht von uns erstellt wurden, werden die

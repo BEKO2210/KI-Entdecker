@@ -140,7 +140,7 @@ für Start-up-BW-/IHK-/Stiftungsanträge.
 ### Zentrale Dokumentation
 - [`BILDER.md`](./BILDER.md) — **Bild-Inventar + Waisen + Austausch-Anleitung**
 - [`README.md`](./README.md) — öffentliche Projektbeschreibung
-- [`LICENSE`](./LICENSE) — CC BY-NC-ND 4.0
+- [`LICENSE`](./LICENSE) — Hybrid-Lizenz: Inhalte CC BY-NC-SA 4.0, Code/Website/System All Rights Reserved
 - [`SECURITY.md`](./SECURITY.md) — Sicherheits-Hinweise
 
 ---
@@ -179,6 +179,7 @@ npm run lint    # muss grün
 - Sorgerecht-Hinweis im Elternbrief ✓
 - AVV-Erläuterung im Datenschutzkonzept ✓
 - Telefon +49 176 81462526 im Impressum ✓
+- **Standard-Lizenz (Hybrid):** Inhalte unter CC BY-NC-SA 4.0, Code/Website/System All Rights Reserved. Details in [`LICENSE`](./LICENSE). ✓
 
 **Noch offen (muss Belkis / Damien liefern):**
 - Steuernummer/USt-ID nach Gewerbeanmeldung
@@ -387,6 +388,52 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 ---
 
 ## Erledigt-Archiv (chronologisch, neueste zuerst)
+
+### 2026-04-16 · Standard-Lizenz auf Hybrid umgestellt (Inhalte CC BY-NC-SA 4.0 · Code/Website/System All Rights Reserved) ✅
+- **Auftrag:** „Standard-Lizenz: Inhalte CC BY-NC-SA 4.0 · Website/
+  Code/System All Rights Reserved. Ändere das überall in jeder Datei
+  und überall wo man es sehen muss — am Ende muss das Repo komplett
+  fertig und in sich konsistent lizenz-technisch sein."
+- **Begründung:** CC BY-NC-**SA** erlaubt Bearbeitung und Anpassung
+  (z. B. Übersetzung, Klassen-Anpassung) unter derselben Lizenz — die
+  alte CC BY-NC-**ND**-Variante hätte das verboten. Sinnvoller für
+  Bildungskontext. Code bleibt separat geschützt, um kommerzielle
+  Forks / White-Label-Kopien auszuschließen.
+- **[`LICENSE`](./LICENSE):** komplett neu geschrieben. Vier
+  Abschnitte: (1) Inhalte CC BY-NC-SA 4.0 mit expliziter Scope-Liste
+  (Lektionen, Arbeitsblätter, Handreichungen, Konzepte, Bilder,
+  Fördermappe-Inhalte), (2) Code/Website/System All Rights Reserved
+  mit Scope-Liste (src/, Build-Konfig, Komponenten, PWA, HTML-
+  Gerüste), (3) Drittkomponenten bleiben unter ihren eigenen Lizenzen
+  (React MIT, Radix MIT, lucide ISC, Google Fonts OFL), (4)
+  verbindlicher Lizenzhinweis.
+- **[`README.md`](./README.md):** Badge-Zeile von 1 auf 2 Badges
+  („Inhalte: CC BY-NC-SA 4.0" teal + „Code: All Rights Reserved"
+  grau); Lizenz-Abschnitt in zwei Teile gegliedert mit Erläuterung
+  zum Unterschied SA (Bearbeitung erlaubt, gleiche Lizenz) vs. ND.
+- **[`Impressum.tsx`](./src/pages/Impressum.tsx):** Urheberrecht-
+  Absatz neu formuliert, zweigeteilte Bulletpoint-Liste (Inhalte
+  CC BY-NC-SA 4.0 mit neuem Deep-Link auf `by-nc-sa/4.0/deed.de`;
+  Code „Alle Rechte vorbehalten"), Link auf LICENSE-Datei.
+- **Fördermappe:** [`09-executive-summary.html`](./foerdermappe/09-executive-summary.html)
+  Open-Access-Absatz aktualisiert, [`09b-pitch-business.html`](./foerdermappe/09b-pitch-business.html)
+  KPI-Kachel „CC BY-NC-ND" → „CC BY-NC-SA · Inhalte · Open Access"
+  (angepasste Label-Zeile), Mirror
+  [`projekt-uebersicht.html`](./public/downloads/projekt-uebersicht.html)
+  synchron.
+- **[`package.json`](./package.json):** `license`-Feld gesetzt auf
+  `SEE LICENSE IN LICENSE` (npm-Standard für Hybrid-Lizenzen mit
+  eigener LICENSE-Datei).
+- **Legal-Guard (Regel 6):** Lizenz-Umstellung berührt Impressum-
+  Urheberrechts-Absatz und öffentliche Lizenz-Angaben — vor dem
+  nächsten Antragsversand Fördermappe 09/09b gegenprüfen und
+  Impressum-Änderung ggf. mit DSB/Anwalt sichten lassen.
+- **Grep-Verifikation:** `CC BY-NC-ND` liefert nur noch 2 Treffer in
+  CLAUDE.md: (1) diese Plan-Zeile im Archiv, (2) historischer
+  Chronologie-Eintrag „Commit 0747844" aus Phase 1. Beide legitim
+  (Historie nicht rückdatieren).
+- **Build + Lint grün**, Precache 72 / 48,3 MB, auf
+  `claude/check-claude-dm-bugs-jQrpw` gepusht.
 
 ### 2026-04-16 · Dead-Code `chart.tsx` gelöscht + CourseDay1–5 auf `CourseDayLayout` umgestellt ✅
 - **Auftrag:** Reaktion auf roastmycode.ai-Bewertung. Schritt 1:
@@ -647,3 +694,4 @@ Zertifikat. Wichtige Schritte in der Reihenfolge:
 | 2026-04-16 | Fördermappe + Mirror-Downloads auf Team Belkis + Damien: 08-Anschreiben (11 Briefe-Ichs → wir, Unterschriften beider Namen), 09/projekt-uebersicht (1), 07/elternbrief-mirror (1 + Signatur), 10-Canvas (Subtitle), 03-Durchführung (Phasen 1+4, Rollen-Tabelle um Damien), 01+09b Footer „Team:…", foerdermappe/README.md. Schüler-Ichs, Eltern-Ichs und konkrete Workshop-Durchführungs-Nennungen absichtlich unverändert. |
 | 2026-04-16 | Finanzierungsplan (05-Kostenplan) + restliche Fördermappe auf Team-Version + Gender-Korrektur: neue Damien-Zeilen (Kooperationen/Förderantragsmanagement 1.350 € + Termin-/Vertragsverwaltung 900 €), BA/DE-Kennzeichnung, Fahrtkosten-Zeile Hardthausen→Ludwigsburg, Gesamt 14.939 € → 17.237 €; Finanzierung Start-up BW 4.000 → 5.000 €, Stiftungen 2.000 → 2.500 €, neue Damien-Honorar-Zeile, Summe 15.000 → 16.500 €. 09+Mirror: Title+Footer „09a" → „09"; 09b: KPI 15.000 → 17.000 € Team-Budget; 09+09b+10: Kontakt-Kästen auf Team, 10-Canvas Kostenstruktur+Ressourcen um Damien. Gender-Fix: „(Haupt-)Antragstellerin" → „(Haupt-)Antragsteller" (Belkis ist männlich). |
 | 2026-04-16 | Roastmycode-Reaktion: `src/components/ui/chart.tsx` (Dead Code, False-Positive-XSS) gelöscht. Neuer Shared-Component `src/components/course/CourseDayLayout.tsx` (201 Zeilen, 5 Farb-Schemas). CourseDay1–5 auf Layout umgestellt, −395 Zeilen netto, Bundle-Größen kleiner. Keine Verhaltensänderung. |
+| 2026-04-16 | Standard-Lizenz auf Hybrid umgestellt: Inhalte CC BY-NC-SA 4.0 (Bearbeitung jetzt erlaubt unter gleicher Lizenz), Code/Website/System All Rights Reserved. LICENSE-Datei komplett neu (4 Abschnitte), README-Badges + Lizenz-Abschnitt, Impressum-Urheberrecht in Bulletpoint-Liste, Fördermappe 09/09b + Mirror, `package.json` `license: SEE LICENSE IN LICENSE`. Grep nach `CC BY-NC-ND` liefert nur noch historische Chronologie-Einträge. |

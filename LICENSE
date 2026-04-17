@@ -1,58 +1,122 @@
-Lizenz
+KI-Entdecker · Lizenzbestimmungen
+=================================
 
-Creative Commons Namensnennung – Nicht kommerziell – Keine Bearbeitungen 4.0 International
-Kurzform: CC BY-NC-ND 4.0
+Copyright (c) 2026 Belkis Aslani & Damien Eynius
+https://beko2210.github.io/KI-Entdecker/
 
-Copyright (c) 2026 Belkis Aslani
-
-Dieses Projekt steht unter der Lizenz Creative Commons BY-NC-ND 4.0 International.
-
-In einfacher Sprache bedeutet das:
-
-Du darfst dieses Material teilen, kopieren und weitergeben.
-Das ist auch über normale Wege wie WhatsApp, E-Mail, private Nachrichten oder das Versenden eines Links erlaubt.
-
-Dabei musst du Folgendes beachten:
-
-1. Namensnennung
-Du musst angeben, von wem das Projekt stammt.
-
-2. Nicht kommerziell
-Du darfst das Material nicht für geschäftliche oder kommerzielle Zwecke nutzen.
-Das bedeutet zum Beispiel:
-- nicht verkaufen
-- nicht in bezahlten Produkten verwenden
-- nicht für Werbung oder geschäftliche Angebote nutzen
-
-3. Keine Bearbeitungen
-Du darfst das Material nicht verändert weiterverbreiten.
-Das bedeutet:
-- keine umgebaute Version veröffentlichen
-- keine angepasste Version weitergeben
-- keine bearbeitete Fassung hochladen oder verbreiten
-
-Verbindlicher Lizenzhinweis:
-Diese Lizenz ist verbindlicher Bestandteil dieses Projekts.
-Sie darf weder entfernt, verändert, abgeschwächt noch durch andere Regelungen ersetzt werden.
-Bei jeder erlaubten Weitergabe müssen die Lizenzangaben vollständig und unverändert erhalten bleiben.
-
-Außerdem darfst du keine zusätzlichen rechtlichen oder technischen Einschränkungen hinzufügen.
-
-Wichtige Hinweise:
-- Wenn einzelne Inhalte ohnehin frei nutzbar sind, gilt diese Einschränkung dafür nicht.
-- Diese Lizenz gibt keine Garantie.
-- Andere Rechte können zusätzlich eine Rolle spielen, zum Beispiel Persönlichkeitsrechte, Datenschutzrechte, Markenrechte oder Urheberrechte Dritter.
-
-Kurz gesagt:
-Du darfst dieses Projekt teilen und weitergeben, auch über WhatsApp und ähnliche Wege,
-aber nur, wenn du den Urheber nennst, es nicht kommerziell nutzt und es nicht verändert weiterverbreitest.
-
-Vollständiger offizieller Lizenztext:
-https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+Dieses Projekt nutzt eine zweigeteilte Standard-Lizenz. Für Inhalte und
+für Code/Website/System gelten unterschiedliche Bedingungen. Bitte den
+jeweils passenden Abschnitt beachten.
 
 
-Verbindlicher Lizenzhinweis:
-Diese Lizenz ist verbindlicher Bestandteil dieses Projekts.
-Sie darf weder entfernt, verändert, abgeschwächt noch durch andere Regelungen ersetzt werden.
+─────────────────────────────────────────────
+1. INHALTE  ·  CC BY-NC-SA 4.0
+─────────────────────────────────────────────
 
-Bei jeder erlaubten Weitergabe müssen die Lizenzangaben vollständig und unverändert erhalten bleiben.
+Betrifft: Kurs-Lektionen, Arbeitsblätter, Handreichungen, pädagogische
+Konzepte, Texte, Bilder/Assets, Zertifikatvorlage, Eltern- und
+Schul-Infos, Fördermappe-Dokumente (inhaltliche Texte), Prompt-
+Cheatsheets, Wochenplan, FAQ-Antworten, Kurs-Übersichten.
+
+Lizenz: Creative Commons Namensnennung – Nicht kommerziell – Weitergabe
+unter gleichen Bedingungen 4.0 International (CC BY-NC-SA 4.0).
+
+Du darfst:
+
+  * TEILEN — das Material in jedwedem Format oder Medium vervielfältigen
+    und weiterverbreiten.
+  * BEARBEITEN — das Material remixen, verändern, übersetzen, an deine
+    Klasse oder Zielgruppe anpassen und darauf aufbauen.
+
+Unter folgenden Bedingungen:
+
+  1. NAMENSNENNUNG
+     Du musst angemessene Urheber- und Rechteangaben machen, einen Link
+     zur Lizenz beifügen und angeben, ob Änderungen vorgenommen wurden.
+     Anzugeben sind „KI-Entdecker · Belkis Aslani & Damien Eynius" sowie
+     ein Link auf https://beko2210.github.io/KI-Entdecker/.
+
+  2. NICHT KOMMERZIELL
+     Du darfst das Material nicht für geschäftliche oder kommerzielle
+     Zwecke nutzen. Das bedeutet zum Beispiel:
+       - nicht verkaufen
+       - nicht in kostenpflichtigen Produkten oder Paketen verwenden
+       - nicht für Werbung oder geschäftliche Angebote nutzen
+     Nutzung an öffentlichen Schulen und in nicht-kommerziellen
+     Bildungskontexten ist ausdrücklich erwünscht.
+
+  3. WEITERGABE UNTER GLEICHEN BEDINGUNGEN (SHARE-ALIKE)
+     Wenn du das Material veränderst, anpasst oder darauf aufbaust,
+     darfst du deine Beiträge nur unter derselben Lizenz wie das
+     Original (CC BY-NC-SA 4.0) verbreiten.
+
+Keine weiteren Einschränkungen: Du darfst keine zusätzlichen rechtlichen
+oder technischen Maßnahmen anwenden, die anderen die Nutzung in einer
+Weise rechtlich einschränken, wie sie die Lizenz erlaubt.
+
+Vollständiger offizieller Lizenztext (deutsch):
+  https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.de
+Kurzfassung (deutsch):
+  https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de
+
+
+─────────────────────────────────────────────
+2. CODE / WEBSITE / SYSTEM  ·  Alle Rechte vorbehalten
+─────────────────────────────────────────────
+
+Betrifft: gesamter Quellcode (src/**), Build-/Bundler-Konfiguration
+(vite.config.ts, tsconfig.json, eslint.config.js, tailwind.config.js,
+postcss.config.js, package.json), PWA- und Service-Worker-Setup,
+React-Komponenten-Bibliothek, Layout-, Navigations- und Fortschritts-
+Logik, HTML-/CSS-/JS-Gerüste der Download-Dokumente und der
+Fördermappe (Markup, Styles, Interaktionen), sowie die gesamte
+technische Plattform, die das Projekt live hält.
+
+Copyright (c) 2026 Belkis Aslani & Damien Eynius
+Alle Rechte vorbehalten. All Rights Reserved.
+
+Nutzung, Vervielfältigung, Modifikation und Verbreitung des Codes oder
+der technischen Infrastruktur in jeder Form — ob ganz oder teilweise —
+bedürfen der vorherigen schriftlichen Zustimmung der Rechteinhaber.
+
+Insbesondere NICHT erlaubt sind:
+
+  * Forks, die den Code unter einer anderen (freizügigeren) Lizenz
+    weiterverbreiten.
+  * Einsatz des Codes in konkurrierenden oder fremden Produkten.
+  * Weitergabe des Codes als Template, Boilerplate oder Kursbaukasten.
+  * Kommerzielle Nutzung der Plattform.
+  * Entfernen oder Ändern dieser Lizenzangabe oder der Copyright-Zeile.
+
+Die Einsicht des Codes auf GitHub zu Lern- und Prüfzwecken bleibt davon
+unberührt. Öffentliche Sichtbarkeit ist keine Lizenzerteilung.
+
+Anfragen zur Code-Nutzung: belkis.aslani@gmail.com
+
+
+─────────────────────────────────────────────
+3. DRITTKOMPONENTEN
+─────────────────────────────────────────────
+
+Das Projekt nutzt Open-Source-Bibliotheken mit eigenen Lizenzen
+(z. B. React, Vite, Tailwind CSS, Radix UI, Recharts, lucide-react,
+react-router, date-fns). Diese bleiben unter ihren jeweiligen Lizenzen
+(überwiegend MIT, Apache-2.0, ISC) — Details im `package.json` und in
+`node_modules/*/LICENSE`.
+
+Schriften (Inter, Outfit, Great Vibes) werden über Google Fonts
+eingebunden und stehen unter der Open Font License (OFL).
+
+Lucide-Icons: ISC-Lizenz (https://lucide.dev/license).
+
+
+─────────────────────────────────────────────
+4. VERBINDLICHER LIZENZHINWEIS
+─────────────────────────────────────────────
+
+Diese Lizenzbestimmungen sind verbindlicher Bestandteil des Projekts.
+Sie dürfen weder entfernt, verändert, abgeschwächt noch durch andere
+Regelungen ersetzt werden. Bei jeder erlaubten Weitergabe von Inhalten
+müssen die Lizenzangaben vollständig und unverändert erhalten bleiben.
+
+Stand: April 2026
